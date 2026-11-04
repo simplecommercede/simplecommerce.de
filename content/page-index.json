@@ -175,8 +175,8 @@
   },
   {
     "path": "/hilfe/google-export/",
-    "title": "Google-Produktfeed prüfen und exportieren – Hilfe",
-    "description": "Produkte für Google Shopping vorbereiten, den Feed prüfen und für das Merchant Center bereitstellen.",
+    "title": "Google-Export und Produktdaten – Hilfe",
+    "description": "Produktdaten für Google vorbereiten, Exportdatei prüfen und eine passende Datenquelle einrichten.",
     "noindex": false
   },
   {
@@ -306,6 +306,12 @@
     "noindex": false
   },
   {
+    "path": "/hilfe/begriffe-und-editor/",
+    "title": "Begriffe und HTML-Editor – Hilfe",
+    "description": "HTML-Editor, Variablen, Schnittstellen und Webbegriffe verständlich erklärt.",
+    "noindex": false
+  },
+  {
     "path": "/hilfe/",
     "title": "Online-Hilfe zur Shopverwaltung",
     "description": "Anleitungen zu Produkten, Bestellungen, Kunden und Einstellungen in simplecommerce. Finden Sie das passende Thema für Ihre Shopverwaltung.",
@@ -337,20 +343,20 @@
   },
   {
     "path": "/hilfe/andoo/",
-    "title": "Frühere Andoo-Anbindung",
-    "description": "Die frühere Andoo-Anbindung gehört nicht mehr zu den aktuellen freigegebenen Import-/Export-Menüpunkten. Die alte Schrittfolge ist daher keine Anleitung für die neue Verwaltung. Für einen aktuellen Datenaustausch sprechen Sie uns bitte an.",
+    "title": "Datenaustausch und Schnittstellen",
+    "description": "Sie möchten Produkt- oder Bestelldaten mit einem weiteren System austauschen? Wir besprechen die passende Schnittstelle für Ihren Shop.",
     "noindex": false
   },
   {
     "path": "/hilfe/shopbackup/",
     "title": "Datensicherung des Shops",
-    "description": "Die frühere Backup-/Restore-Funktion im Web-Admin ist gesperrt. Verwenden Sie die alte Anleitung nicht für eine Wiederherstellung. Datensicherungen und Rücksicherungen müssen mit dem zuständigen Betrieb abgestimmt werden.",
+    "description": "Stimmen Sie Sicherungsumfang, Aufbewahrung und Wiederherstellung mit dem zuständigen Betrieb ab. Wir unterstützen Sie bei einem passenden Sicherungskonzept.",
     "noindex": false
   },
   {
     "path": "/hilfe/yatego/",
-    "title": "Frühere Yatego-Exportanleitung",
-    "description": "Die historische Yatego-Hilfe beschreibt einen älteren Exportablauf. Partnerprofil, Verfügbarkeit und Dateiformat müssen vor einer aktuellen Nutzung geprüft werden. Kontaktieren Sie uns, wenn Sie eine solche Anbindung benötigen.",
+    "title": "Weitere Verkaufskanäle",
+    "description": "Sie planen einen zusätzlichen Verkaufskanal? Wir klären die Anforderungen, die benötigten Produktdaten und den passenden Ablauf mit Ihnen.",
     "noindex": false
   }
 ]

@@ -144,7 +144,7 @@
     "data": "synthetisch"
   },
   "rabattsystem": {
-    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showrabattadmin",
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showrabattadmin&Rabatte:RabattID=1",
     "captured": "2026-11-04",
     "desktop": "/assets/help/rabattsystem-desktop.jpg",
     "mobile": "/assets/help/rabattsystem-mobile.jpg",
@@ -152,7 +152,8 @@
       "width": 390,
       "height": 844
     },
-    "data": "synthetisch"
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
   },
   "shopdaten": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopdatenadmin",
@@ -274,5 +275,578 @@
       "height": 844
     },
     "data": "synthetisch"
+  },
+  "produkt-artikeldaten": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=artikeldaten",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-artikeldaten-desktop.jpg",
+    "mobile": "/assets/help/produkt-artikeldaten-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "title": "Artikeldaten und Kennungen"
+  },
+  "produkt-preise": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=preise",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-preise-desktop.jpg",
+    "mobile": "/assets/help/produkt-preise-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "title": "Preise und Werte"
+  },
+  "produkt-artikeltexte": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=artikeltexte",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-artikeltexte-desktop.jpg",
+    "mobile": "/assets/help/produkt-artikeltexte-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "title": "Artikeltexte und Produkt-Tabs"
+  },
+  "produkt-artikelbilder": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=artikelbilder",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-artikelbilder-desktop.jpg",
+    "mobile": "/assets/help/produkt-artikelbilder-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "title": "Produktbilder in der Übersicht"
+  },
+  "produkt-kategorien": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=kategorien",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-kategorien-desktop.jpg",
+    "mobile": "/assets/help/produkt-kategorien-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "title": "Kategorien zuordnen"
+  },
+  "produkt-darstellung": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=darstellung",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-darstellung-desktop.jpg",
+    "mobile": "/assets/help/produkt-darstellung-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "title": "Zubehör und Attributset"
+  },
+  "produkt-merkmale": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=merkmale",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-merkmale-desktop.jpg",
+    "mobile": "/assets/help/produkt-merkmale-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "title": "Varianten und ihre Werte"
+  },
+  "produkt-export": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=export",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-export-desktop.jpg",
+    "mobile": "/assets/help/produkt-export-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "title": "Exportfreigaben am Produkt"
+  },
+  "produkt-sonstiges": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=sonstiges",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-sonstiges-desktop.jpg",
+    "mobile": "/assets/help/produkt-sonstiges-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "title": "Zusatzfelder des Produkts"
+  },
+  "produkt-tags": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=tags",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-tags-desktop.jpg",
+    "mobile": "/assets/help/produkt-tags-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "title": "Tag-Zuordnung"
+  },
+  "versand-einstellungen": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showversandadmin&VersandGruppen:VersandKlassenID=1&tab=einstellungen",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/versand-einstellungen-desktop.jpg",
+    "mobile": "/assets/help/versand-einstellungen-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "versand-texte": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showversandadmin&VersandGruppen:VersandKlassenID=1&tab=texte",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/versand-texte-desktop.jpg",
+    "mobile": "/assets/help/versand-texte-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "versand-bedingungen": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showversandadmin&VersandGruppen:VersandKlassenID=1&tab=bedingungen",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/versand-bedingungen-desktop.jpg",
+    "mobile": "/assets/help/versand-bedingungen-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "versand-laender": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showversandadmin&VersandGruppen:VersandKlassenID=1&tab=laender",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/versand-laender-desktop.jpg",
+    "mobile": "/assets/help/versand-laender-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "shopdaten-firmendaten": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopdatenadmin&tab=firmendaten",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/shopdaten-firmendaten-desktop.jpg",
+    "mobile": "/assets/help/shopdaten-firmendaten-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "shopdaten-email": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopdatenadmin&tab=email",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/shopdaten-email-desktop.jpg",
+    "mobile": "/assets/help/shopdaten-email-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "shopdaten-bankdaten": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopdatenadmin&tab=bankdaten",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/shopdaten-bankdaten-desktop.jpg",
+    "mobile": "/assets/help/shopdaten-bankdaten-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "shopdaten-steuer": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopdatenadmin&tab=steuer",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/shopdaten-steuer-desktop.jpg",
+    "mobile": "/assets/help/shopdaten-steuer-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "shopdaten-formularfelder": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopdatenadmin&tab=formularfelder",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/shopdaten-formularfelder-desktop.jpg",
+    "mobile": "/assets/help/shopdaten-formularfelder-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "shopdaten-seo": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopdatenadmin&tab=seo",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/shopdaten-seo-desktop.jpg",
+    "mobile": "/assets/help/shopdaten-seo-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "shopdaten-rest": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopdatenadmin&tab=rest",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/shopdaten-rest-desktop.jpg",
+    "mobile": "/assets/help/shopdaten-rest-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "shopdaten-script": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopdatenadmin&tab=script",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/shopdaten-script-desktop.jpg",
+    "mobile": "/assets/help/shopdaten-script-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "startseite-texte": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showstartseitenadmin&tab=texte",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/startseite-texte-desktop.jpg",
+    "mobile": "/assets/help/startseite-texte-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "startseite-artikel": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showstartseitenadmin&tab=artikel",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/startseite-artikel-desktop.jpg",
+    "mobile": "/assets/help/startseite-artikel-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "startseite-news": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showstartseitenadmin&tab=news",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/startseite-news-desktop.jpg",
+    "mobile": "/assets/help/startseite-news-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "startseite-kategorien": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showstartseitenadmin&tab=kategorien",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/startseite-kategorien-desktop.jpg",
+    "mobile": "/assets/help/startseite-kategorien-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "startseite-seo": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showstartseitenadmin&tab=seo",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/startseite-seo-desktop.jpg",
+    "mobile": "/assets/help/startseite-seo-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "mailvorlage-bearbeiten": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showmailtemplateadmin&Sprache=de&MailTemplateID=1",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/mailvorlage-bearbeiten-desktop.jpg",
+    "mobile": "/assets/help/mailvorlage-bearbeiten-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "dokumentvorlage-bearbeiten": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showdocumenttemplateadmin&Sprache=de&MailTemplateID=2",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/dokumentvorlage-bearbeiten-desktop.jpg",
+    "mobile": "/assets/help/dokumentvorlage-bearbeiten-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "cms-seite-bearbeiten": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showeigeneseitenadmin&Sprache=de&PageID=1",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/cms-seite-bearbeiten-desktop.jpg",
+    "mobile": "/assets/help/cms-seite-bearbeiten-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "cms-fusszeile": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showeditbox&nextadd=showeditbox&Box=footer&iamapopup=1",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/cms-fusszeile-desktop.jpg",
+    "mobile": "/assets/help/cms-fusszeile-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "attribute-set": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add[]=showattribute&ProduktAttributSets:ProduktAttributSetID=1",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/attribute-set-desktop.jpg",
+    "mobile": "/assets/help/attribute-set-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "attribute-werte": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?height=450&width=800&add=showattributwerte&nextadd=showattributwerte&ProduktAttributSetID=1&ProduktAttributOberGruppenID=1&ProduktAttributGruppenID=1&ProduktAttributID=1&iamapopup=1&random=1793796061322",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/attribute-werte-desktop.jpg",
+    "mobile": "/assets/help/attribute-werte-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "gutschein-set": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showgutscheinadmin&Gutscheine:GutscheinID=1",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/gutschein-set-desktop.jpg",
+    "mobile": "/assets/help/gutschein-set-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "zahlung-einstellungen": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showzahlungsadmin&Zahlungsmoeglichkeiten:ZahlungsmoeglichkeitenID=1&tab=einstellungen",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/zahlung-einstellungen-desktop.jpg",
+    "mobile": "/assets/help/zahlung-einstellungen-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "zahlung-texte": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showzahlungsadmin&Zahlungsmoeglichkeiten:ZahlungsmoeglichkeitenID=1&tab=texte",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/zahlung-texte-desktop.jpg",
+    "mobile": "/assets/help/zahlung-texte-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "zahlung-laender": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showzahlungsadmin&Zahlungsmoeglichkeiten:ZahlungsmoeglichkeitenID=1&tab=laender",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/zahlung-laender-desktop.jpg",
+    "mobile": "/assets/help/zahlung-laender-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "sprache-produkt": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showsprachenadmin&edit=1&translate=&search=&Sprache=de&Where=Produkt_YToyOntzOjk6IlByb2R1a3RJRCI7czoxOiIxIjtzOjc6IlNwcmFjaGUiO3M6MjoiZGUiO30=",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/sprache-produkt-desktop.jpg",
+    "mobile": "/assets/help/sprache-produkt-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "rss-einstellungen": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showrss",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/rss-einstellungen-desktop.jpg",
+    "mobile": "/assets/help/rss-einstellungen-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+  },
+  "verkauf-bestelldetails": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showverkaufsadmin&KundenID=1",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/verkauf-bestelldetails-desktop.jpg",
+    "mobile": "/assets/help/verkauf-bestelldetails-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "action": "Bestellung laden bzw. mobil Öffnen: Kunde1 / Bestellung1; asynchron geladen",
+    "title": "Geöffnete Beispielbestellung"
+  },
+  "verkauf-manuell": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showbestellunganlegen",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/verkauf-manuell-desktop.jpg",
+    "mobile": "/assets/help/verkauf-manuell-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "title": "Manuelle Bestellung: Kundenauswahl"
+  },
+  "produkt-warenwirtschaft": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showeinkaeufe&ProduktID=1&MerkmalID=1&MerkmalValueID=1",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-warenwirtschaft-desktop.jpg",
+    "mobile": "/assets/help/produkt-warenwirtschaft-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "title": "Bestand, Einkauf und Bewegungshistorie"
+  },
+  "verkauf-paketexport": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showverkaufsadmin&KundenID=1",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/verkauf-paketexport-desktop.jpg",
+    "mobile": "/assets/help/verkauf-paketexport-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; keine internen Banner; Schutzfunktionen aktiv",
+    "action": "Aktionsleiste im Viewport; kein Anbieterexport ausgeführt",
+    "title": "Export- und Kommunikationsaktionen"
+  },
+  "produkt-bildupload": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showimagetoolbox&nextadd=showimagetoolbox&ProduktID=1&ImageNr=new&MerkmalID=0&MerkmalValueID=0&iamapopup=1",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-bildupload-desktop.jpg",
+    "mobile": "/assets/help/produkt-bildupload-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "title": "Bilddateien, Galeriebild und Alternativtext"
+  },
+  "produkt-zubehoerauswahl": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showzubehoeredit&ProduktID=1",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-zubehoerauswahl-desktop.jpg",
+    "mobile": "/assets/help/produkt-zubehoerauswahl-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; keine internen Banner; Schutzfunktionen aktiv",
+    "action": "Desktop: Hersteller Demo Atelier gewählt; Mobil: Auswahlansicht vor Filterung",
+    "title": "Zubehörartikel auswählen und ordnen"
+  },
+  "produkt-crossselling": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showcrosssellingedit&ProduktID=1",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-crossselling-desktop.jpg",
+    "mobile": "/assets/help/produkt-crossselling-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1; keine internen Banner; Schutzfunktionen aktiv",
+    "action": "Desktop: manuelle Auswahl geöffnet; Mobil: Auswahl zwischen Zufall und manueller Auswahl; nichts gespeichert",
+    "title": "Cross-Selling konfigurieren"
   }
 }

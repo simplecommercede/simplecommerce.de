@@ -5,10 +5,12 @@ from html.parser import HTMLParser
 from html import escape,unescape
 from urllib.parse import urlparse,unquote
 import json,re,shutil
+from help_render import render_help
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'public'; BASE='https://simplecommerce.de'
 pages=json.loads((ROOT/'content/wordpress-public.json').read_text())
 pages.append({'ID':'help-quickstart','post_parent':'288','post_name':'produkt-schnellstart','post_title':'Produkt-Schnellstart','post_content':''})
+pages.append({'ID':'help-glossary','post_parent':'288','post_name':'begriffe-und-editor','post_title':'Begriffe und HTML-Editor','post_content':''})
 byid={p['ID']:p for p in pages}
 paths={p['ID']:('/' if p['ID']=='10' else '/'+(('hilfe/' if p['post_parent']=='288' else 'shopsystem/' if p['post_parent']=='727' else '')+p['post_name']).strip('/')+'/') for p in pages}
 registry=[]
@@ -94,6 +96,10 @@ page('/shopsystem/','Shopsystem für Ihren Onlinehandel','simplecommerce Shopsys
 help_pages=[p for p in pages if p['post_parent']=='288']
 help_data_path=ROOT/'content/help-updates.json'
 help_data=json.loads(help_data_path.read_text()) if help_data_path.exists() else {}
+help_details=json.loads((ROOT/'content/help-details.json').read_text())
+help_shots=json.loads((ROOT/'content/screenshots.json').read_text())
+for slug,sections in help_details.items():
+ help_data[slug]['html']=render_help(help_data[slug],sections,help_shots)
 for p in pages:
  if p['ID'] in ['10','288','727'] or p['post_name'] in ['kontakt','preise','cookie-richtlinie-eu'] or p['post_name'] in ['veranstaltungen','veranstaltungsorte','schlagwoerter','ihre-buchungen'] or p['post_parent']=='816':continue
  ishelp=p['post_parent']=='288'; title=p['post_title']; content=clean(p['post_content']);slug=p['post_name'];path=paths[p['ID']]
@@ -118,10 +124,10 @@ page('/cookie-richtlinie-eu/','Cookies & lokale Speicherung','Informationen zur 
 page('/404/','Seite nicht gefunden','Die gesuchte Seite wurde nicht gefunden. Hier gelangen Sie zu den Leistungen oder zur Hilfe.',intro('404','Hier geht es leider<br>nicht weiter.','Vielleicht hat sich die Adresse geändert. Über die Navigation finden Sie zu den aktuellen Inhalten.')+'<div class="wrap actions"><a class="button" href="/">Zur Startseite</a><a class="text-link" href="/hilfe/">Zur Hilfe →</a></div>',noindex=True)
 
 for slug,title,text in [
- ('andoo','Frühere Andoo-Anbindung','Die frühere Andoo-Anbindung gehört nicht mehr zu den aktuellen freigegebenen Import-/Export-Menüpunkten. Die alte Schrittfolge ist daher keine Anleitung für die neue Verwaltung. Für einen aktuellen Datenaustausch sprechen Sie uns bitte an.'),
- ('shopbackup','Datensicherung des Shops','Die frühere Backup-/Restore-Funktion im Web-Admin ist gesperrt. Verwenden Sie die alte Anleitung nicht für eine Wiederherstellung. Datensicherungen und Rücksicherungen müssen mit dem zuständigen Betrieb abgestimmt werden.'),
- ('yatego','Frühere Yatego-Exportanleitung','Die historische Yatego-Hilfe beschreibt einen älteren Exportablauf. Partnerprofil, Verfügbarkeit und Dateiformat müssen vor einer aktuellen Nutzung geprüft werden. Kontaktieren Sie uns, wenn Sie eine solche Anbindung benötigen.')]:
- page('/hilfe/'+slug+'/',title,text,intro('ONLINE-HILFE / FRÜHERE FUNKTION',title,text)+'<article class="prose wrap narrow"><p>Bestehende Links bleiben erhalten. Diese Seite bietet bewusst keine ungeprüfte alte Schrittfolge als aktuelle Anleitung an.</p><p><a href="/kontakt/">Anbindung oder Datensicherung besprechen →</a></p><p><a href="/hilfe/">Zur aktuellen Hilfe</a></p></article>')
+ ('andoo','Datenaustausch und Schnittstellen','Sie möchten Produkt- oder Bestelldaten mit einem weiteren System austauschen? Wir besprechen die passende Schnittstelle für Ihren Shop.'),
+ ('shopbackup','Datensicherung des Shops','Stimmen Sie Sicherungsumfang, Aufbewahrung und Wiederherstellung mit dem zuständigen Betrieb ab. Wir unterstützen Sie bei einem passenden Sicherungskonzept.'),
+ ('yatego','Weitere Verkaufskanäle','Sie planen einen zusätzlichen Verkaufskanal? Wir klären die Anforderungen, die benötigten Produktdaten und den passenden Ablauf mit Ihnen.')]:
+ page('/hilfe/'+slug+'/',title,text,intro('ONLINE-HILFE / SERVICE',title,text)+'<article class="prose wrap narrow"><p><a href="/kontakt/">Anbindung oder Datensicherung besprechen →</a></p><p><a href="/hilfe/">Zur aktuellen Hilfe</a></p></article>')
 
 (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+BASE+p['path']+'</loc></url>' for p in registry if not p['noindex'])+'</urlset>\n')
 (OUT/'robots.txt').write_text('User-agent: *\nAllow: /\nDisallow: /kontakt/senden.php\nSitemap: '+BASE+'/sitemap.xml\n')

@@ -2,6 +2,8 @@ Options -Indexes
 DirectoryIndex index.html
 ErrorDocument 404 /404/index.html
 RewriteEngine On
+RewriteRule ^sec_helpcenter/lexikon/[^/]+\.html$ /hilfe/begriffe-und-editor/ [R=301,L]
+RewriteRule ^sec_helpcenter/sonderzeichen\.php$ /hilfe/begriffe-und-editor/#html [R=301,L,NE]
 RewriteRule ^sec_helpcenter/_?help_andoo\.html$ /hilfe/andoo/ [R=301,L]
 RewriteRule ^sec_helpcenter/_?help_shopbackup\.html$ /hilfe/shopbackup/ [R=301,L]
 RewriteRule ^sec_helpcenter/_?help_yatego\.html$ /hilfe/yatego/ [R=301,L]

@@ -1,0 +1,841 @@
+{
+  "artikel-anlegen": [
+    {
+      "id": "neu",
+      "title": "1. Artikel oder Vorlage anlegen",
+      "html": "<p>Öffnen Sie <strong>Verwaltung → Artikelliste</strong> und wählen Sie das Plus „neuen Artikel anlegen“. Vergeben Sie eine eindeutige Artikelnummer und einen verständlichen Titel, beispielsweise „Keramikbecher Salbei“. Die Artikelnummer ist Ihre interne Kennung; sie ist nicht automatisch die EAN des Herstellers. Wählen Sie bei Bedarf eine vorhandene Vorlage und gehen Sie mit „Weiter“ in die Bearbeitung.</p><p>Eine Vorlage spart wiederkehrende Eingaben. Prüfen Sie trotzdem bei jedem neuen Produkt die übernommenen Preise, Texte, Zuordnungen und Bilder. Zum Vorbereiten eines Produkts lassen Sie es zunächst inaktiv. Erst wenn Pflichtangaben und Vorschau stimmen, aktivieren Sie den Artikel. Ein gespeicherter Datensatz allein bedeutet noch nicht, dass der Artikel im Shop auffindbar oder kaufbar ist.</p>",
+      "shots": [
+        "artikel-anlegen"
+      ]
+    },
+    {
+      "id": "stammdaten",
+      "title": "2. Artikeldaten: Aktivität, Kennungen und Lieferant",
+      "html": "<p>Im Reiter „Artikeldaten“ legen Sie fest, ob das Produkt aktiv oder inaktiv ist. Falls Sie einen Zeitraum verwenden, prüfen Sie Beginn und Ende gemeinsam mit der Aktivität: Eine zeitlich begrenzte Aktion soll weder vorzeitig noch nach ihrem Ende sichtbar bleiben. Kontrollieren Sie die Ausgabe in der Shopvorschau.</p><dl><dt>Artikelnummer und Hersteller-Artikelnummer</dt><dd>Ihre interne Nummer und die Nummer Ihres Herstellers erfüllen unterschiedliche Zwecke. Verwenden Sie nachvollziehbare, eindeutige Kennungen. Eine spätere Änderung kann bestehende Abläufe und Exporte betreffen.</dd><dt>EAN / ISBN</dt><dd>Tragen Sie die tatsächlich zum Produkt gehörende Kennung ein. Erfinden Sie keine Nummer, um ein Feld zu füllen. Bei Varianten kann jede Ausführung eine eigene EAN haben.</dd><dt>Hersteller</dt><dd>Wählen Sie den passenden Eintrag. Über die zugehörigen Aktionen lassen sich Hersteller anlegen und bearbeiten; Logo und Beschreibung pflegen Sie in der <a href=\"/hilfe/hersteller/\">Herstellerverwaltung</a>.</dd><dt>Lieferant</dt><dd>Ordnen Sie den Bezugsbetrieb zu. Die Lieferantenbearbeitung gehört zu den Einkaufs- und Kontaktdaten und ist vom Hersteller getrennt.</dd><dt>PDF</dt><dd>Hier kann eine produktbezogene PDF-Datei, etwa ein Datenblatt, hinterlegt werden. Verwenden Sie eine passende, aktuelle Datei und kontrollieren Sie den Download aus der Produktansicht.</dd></dl>",
+      "shots": [
+        "produkt-artikeldaten"
+      ]
+    },
+    {
+      "id": "preise",
+      "title": "3. Verkaufspreis, Steuer und weitere Werte",
+      "html": "<p>Öffnen Sie „Preise &amp; Werte“. Tragen Sie den Verkaufswert in das passende Netto- oder Bruttofeld ein und wählen Sie die für das Produkt vorgesehene Steuerart. Kontrollieren Sie nach der Umrechnung beide Werte und nach dem Speichern die Ausgabe. Beispiel: Bei einem vorgesehenen Bruttopreis von 19,90 Euro darf im Nettofeld nicht nochmals derselbe Betrag als Nettopreis stehen.</p><p>Die Affiliate-Felder gehören zur Zuordnung bzw. Vergütung eines eingerichteten Partnerprogramms. Die UVP ist ein separater Vergleichswert und ersetzt den Verkaufspreis nicht. Ob und wie dieser Wert angezeigt wird, hängt von der Shopdarstellung ab. „Dienstleistung“ und „Artikelzustand“ beschreiben die Produktart bzw. Beschaffenheit; wählen Sie die tatsächlich zutreffenden Werte.</p><p>Für digitale Inhalte enthält die aktuelle Maske „Download-Produkt“ und „Download Content“. Diese Funktion ist von einem PDF-Datenblatt und von einer Datei zu unterscheiden, die ein Kunde eventuell bei einer Bestellung hochladen soll. Bei entsprechend eingerichteten Shops erscheinen zusätzlich „Dateien für Upload“ (Anzahl 0 bis 4) und „Pflichtangabe“. Damit bestimmen Sie, wie viele Dateien ein Kunde zum Produkt hochladen darf und ob ein Upload verlangt wird. Prüfen Sie den Ablauf im Bestellprozess.</p><p>Bei Variantenartikeln können die Preisfelder des Hauptartikels gesperrt sein. Pflegen Sie dann die Preise der einzelnen Ausführungen im Reiter „Merkmale“ und kontrollieren Sie den daraus angezeigten Produktpreis.</p>",
+      "shots": [
+        "produkt-preise"
+      ]
+    },
+    {
+      "id": "bestand",
+      "title": "4. Bestand und Warenwirtschaft",
+      "html": "<p>Der Mengenwert und die Schaltfläche „WW“ gehören zur Bestandsführung. Öffnen Sie die Warenwirtschaft, wenn Sie einen Zu- oder Abgang dokumentieren oder eine Bestandsbewegung nachvollziehen möchten. Unterscheiden Sie einen absoluten Istbestand von einer Bewegung: Bei 20 vorhandenen Stück und einer Lieferung von 5 Stück ist der neue Istbestand 25; die Zugangsmenge ist 5.</p><p>Die Bestandsfunktionen der bisherigen Hilfe umfassen Verkauf/Abgang, Einkauf/Zugang, erwartete Lieferung und Bewegungshistorie. Nutzen Sie die jeweils tatsächlich angebotene Buchungsart und kontrollieren Sie den Bestand anschließend in der <a href=\"/hilfe/bestanduebersicht/\">Bestandsübersicht</a>. Eine Korrektur sollte nicht zusätzlich als Zugang gebucht werden, sonst wird dieselbe Änderung doppelt gezählt.</p><p>„Bei Bestand 0 deaktivieren“ und „Warenwirtschaft deaktivieren“ haben unterschiedliche Folgen. Der erste Schalter beeinflusst das Verhalten bei leerem Lager; der zweite nimmt den Artikel aus der normalen Bestandsführung. Prüfen Sie diese Einstellungen besonders bei Dienstleistungen und bei Varianten mit eigenem Lagerbestand. Die Dropshipping-Einstellung verwenden Sie nur, wenn Ihr entsprechender Lieferablauf eingerichtet ist.</p><p>Bei einem Variantenartikel wählen Sie im WW-Dialog zuerst die Ausführung. Danach sehen Sie den aktuellen Bestand, manuelle Bewegungen und den Bereich „Bestellung erfassen“. Für eine erwartete Lieferung pflegen Sie Lieferdatum, bestellte Menge, Einkaufspreis, Lieferkosten und Lieferant. Die Einkäufe und die Warenbestands-Historie stehen darunter.</p>",
+      "shots": [
+        "produkt-warenwirtschaft"
+      ]
+    },
+    {
+      "id": "masse",
+      "title": "5. Gewicht, Maße und Mengeneinheit",
+      "html": "<p>Pflegen Sie Gewicht mit der richtigen Einheit (Kilogramm oder Gramm), Länge, Breite und Höhe sowie die Mengeneinheit. Diese Angaben können Versandbedingungen und die Darstellung von Grundpreisen beeinflussen. Ein Wert von 500 Gramm ist nicht gleichbedeutend mit 500 Kilogramm. Vergleichen Sie daher Einheit und Zahl, bevor Sie speichern.</p><p>Bei mengenbezogenen Produkten müssen Verkaufseinheit, Inhalt und die im Shop verwendete Grundpreisberechnung zusammenpassen. Kontrollieren Sie die tatsächliche Ausgabe am Produkt und im Warenkorb. Welche Maße eine Versandregel auswertet, erklären wir unter <a href=\"/hilfe/versand/\">Versandklassen</a>. Leere oder falsche Gewichte können dazu führen, dass eine für den Artikel vorgesehene Versandart nicht erscheint.</p>",
+      "shots": []
+    },
+    {
+      "id": "texte",
+      "title": "6. Artikeltexte und Produkt-Tabs",
+      "html": "<p>Unter „Artikeltexte“ stehen Schlagwort, Titel, Kurzbeschreibung, Meta-Text und Keywords sowie die ausführlichen Textbereiche zur Verfügung. Der Titel benennt das Produkt klar. Die Kurzbeschreibung fasst den Nutzen und wichtige Eigenschaften zusammen. Im ausführlichen Text beantworten Sie Fragen zu Material, Verwendung, Lieferumfang, Pflege und Besonderheiten.</p><p>Die aktuelle Verwaltung bietet einen freien Text und die Produkt-Tabs 1 bis 4 mit zugehörigen Bezeichnungen. Teilen Sie längere Inhalte sinnvoll auf, etwa „Beschreibung“, „Maße“, „Pflege“ und „Lieferumfang“. Welche Bereiche im Shop erscheinen, bestimmt das eingesetzte Template. Leere Tabs sollten nicht mit bedeutungslosen Platzhaltern gefüllt werden.</p><p>Im Editor formatieren Sie Absätze, Überschriften, Listen und Links. Die Schaltfläche „HTML“ wechselt zur Quelltextansicht. Übernehmen Sie aus anderen Programmen möglichst einfachen Text, damit keine fremden Schriftgrößen oder unnötigen Tabellen mitkommen. Prüfen Sie eingefügte Links und Bilder im Ergebnis. Nach Änderungen an deutschen Texten müssen gegebenenfalls auch <a href=\"/hilfe/sprachen/\">Übersetzungen</a> angepasst werden.</p><p>Der Meta-Text beschreibt das Produkt für Suchergebnis-Vorschauen. Die alte Empfehlung, bestimmte Wörter in einer festen Dichte zu wiederholen, übernehmen wir nicht: Schreiben Sie für Ihre Kunden, nicht für eine Prozentvorgabe. Google verwendet das Meta-Keywords-Feld nicht zur Rangfolge. Das Feld kann für vorhandene interne Abläufe bestehen bleiben; daraus folgt kein Ranking-Vorteil. <a href=\"https://developers.google.com/search/docs/crawling-indexing/special-tags\">Hinweise von Google zu Metadaten</a>.</p>",
+      "shots": [
+        "produkt-artikeltexte"
+      ]
+    },
+    {
+      "id": "bilder",
+      "title": "7. Produktbilder, Sound und Video",
+      "html": "<ol><li>Wechseln Sie zu „Artikelbilder“. Wählen Sie den gewünschten Bildplatz und laden Sie eine passende Produktaufnahme hoch.</li><li>Verwenden Sie ein klares Hauptbild und weitere Ansichten, die Details, Größe und Verwendung zeigen. Die gezeigte Demo bietet zehn Bildplätze; die Anzahl richtet sich nach der Shopkonfiguration.</li><li>Kontrollieren Sie die Vorschau, die Reihenfolge und gegebenenfalls beschreibende Bildtexte. Ein gutes Produktbild zeigt den verkauften Artikel eindeutig und enthält keine fremden Kundendaten.</li><li>Speichern Sie und prüfen Sie die Ausgabe im Shop. Kontrollieren Sie auch eine schmale Ansicht: Wichtige Bildteile dürfen nicht ungewollt abgeschnitten sein.</li></ol><p>Bewahren Sie die Originaldateien separat auf. Kleine Vorschaubilder sind kein Ersatz für Ihre Originale. Entfernen Sie nur einen wirklich nicht mehr benötigten Bildplatz; das Löschen eines Bildes ist eine andere Aktion als das Löschen des Artikels.</p><p>Sound und Video sind zusätzliche Felder der aktuellen Maske. Ob die Inhalte ausgegeben werden und welche Formate unterstützt sind, hängt vom Shoptemplate ab. Für Varianten können eigene Bilder im Reiter „Merkmale“ hinterlegt werden. Die Option zur Anzeige von Merkmalbildern als Thumbnails betrifft diese Variantenbilder, nicht die allgemeine Reihenfolge der Produktfotos.</p><p>Im Upload-Dialog wählen Sie pro freiem Bildplatz eine Datei. Markieren Sie das gewünschte Galeriebild und ergänzen Sie „Alt.-Bildtext“ als kurze, konkrete Bildbeschreibung. Mit „Dateien hochladen“ übernehmen Sie die Auswahl. Kontrollieren Sie danach die Bildübersicht. Die Medienfelder sind im Dialog als Audio (mp3) und Video (mp4/m4a) beschriftet.</p>",
+      "shots": [
+        "produkt-artikelbilder",
+        "produkt-bildupload"
+      ]
+    },
+    {
+      "id": "kategorien",
+      "title": "8. Kategorien zuordnen",
+      "html": "<p>Unter „Kategorien“ stehen vorhandene Kategorien und die aktuelle Zuordnung gegenüber. Wählen Sie die gewünschten Kategorien und übernehmen Sie sie über die Zuordnungspfeile. Entfernen Sie eine falsche Zuordnung über den Gegenpfeil. Ein Produkt kann in mehreren passenden Kategorien erscheinen.</p><p>Fehlt die benötigte Kategorie, legen Sie sie in der <a href=\"/hilfe/kategorien/\">Kategorieverwaltung</a> an. Beachten Sie Haupt- und Unterkategorien. Nach dem Speichern prüfen Sie den Artikel in der vorgesehenen Kategorieansicht. Aktivität, Sprache und Template können ebenfalls beeinflussen, ob er dort angezeigt wird.</p>",
+      "shots": [
+        "produkt-kategorien"
+      ]
+    },
+    {
+      "id": "zubehoer",
+      "title": "9. Zubehör, Cross-Selling und Attributset",
+      "html": "<p>Im Reiter „Zubehör“ wählen Sie ein Attributset für konfigurierbare Optionen, beispielsweise eine Geschenkverpackung. Ein Set kann von mehreren Produkten genutzt werden. Seine Änderung wirkt deshalb möglicherweise auf weitere Artikel. Die <a href=\"/hilfe/artikel-attribute/\">Attributanleitung</a> erklärt Werte, Pflichtauswahl und Berechnung.</p><p>„Zubehör anzeigen“ und „CrossSelling“ steuern zusätzliche Produktempfehlungen. Aktivieren Sie die benötigte Funktion und prüfen Sie die dazu angebotene Produktauswahl. Ordnen Sie passende Artikel zu und entfernen Sie unpassende Zuordnungen. Zubehör ergänzt das aktuelle Produkt; eine Variante beschreibt dagegen eine andere Ausführung desselben Produkts.</p><p>Farbe, Geschlecht und Altersgruppe sind zusätzliche Produkteigenschaften in dieser Maske. Verwenden Sie nur passende Angaben. Die Auswahl allein veröffentlicht noch keinen Artikel bei einem externen Portal. Prüfen Sie Empfehlungen und Optionen anschließend in der Produktvorschau, insbesondere ob verknüpfte Artikel aktiv und verfügbar sind.</p><p>Öffnen Sie zur Zuordnung die Bearbeiten-Aktion neben der aktivierten Funktion. In der Zubehöransicht wählen Sie zuerst eine Kategorie oder einen Hersteller, markieren Produkte im Vorrat und übernehmen sie mit „Hinzufügen“. „Entfernen“ löst die Zuordnung, die Auf-/Ab-Pfeile ändern die Reihenfolge.</p><p>Cross-Selling bietet eine zufällige Anzeige oder eine manuelle Auswahl. Bei manueller Auswahl wählen Sie eine Kategorie, übernehmen die gewünschten Artikel in die rechte Liste und ordnen sie. Speichern Sie die Auswahl und kontrollieren Sie anschließend die Produktdarstellung.</p>",
+      "shots": [
+        "produkt-darstellung",
+        "produkt-zubehoerauswahl",
+        "produkt-crossselling"
+      ]
+    },
+    {
+      "id": "varianten",
+      "title": "10. Merkmale und Varianten",
+      "html": "<p>Der Reiter „Merkmale“ steht bei Produkten ohne zugewiesenes Attributset zur Verfügung. Wählen Sie daher passend zur Aufgabe zwischen Varianten und einem Attributset.</p><p>Im Reiter „Merkmale“ verwalten Sie Ausführungen, beispielsweise einen Becher mit 300 oder 450 ml Inhalt. Wählen bzw. erstellen Sie das Merkmal und die benötigten Werte. Arbeiten Sie die Kombinationen bewusst durch: Jede kaufbare Ausführung benötigt die für sie richtigen Preise, Bestände und Kennungen.</p><dl><dt>Suffix</dt><dd>Unterscheidet die Variante innerhalb der Artikelnummern-Systematik. Verwenden Sie eine eindeutige und nachvollziehbare Kennung.</dd><dt>Lager und Preise</dt><dd>Pflegen Sie den Lagerbestand sowie Netto-/Bruttopreis je Ausführung. Einkaufspreise und UVP sind davon getrennte Angaben. Gehen Sie nicht davon aus, dass jede Variante automatisch denselben Preis wie der Hauptartikel erhalten soll.</dd><dt>EAN, Farbe und Mengeneinheit</dt><dd>Ordnen Sie Werte der konkreten Ausführung zu. Eine EAN für eine andere Größe gehört nicht in diese Variante.</dd><dt>Merkmaltext und Bilder</dt><dd>Beschreiben und bebildern Sie bei Bedarf die Ausführung. Die aktuelle Maske bietet mehrere Bildplätze je Variante.</dd></dl><p>Speichern Sie die Bearbeitung und klappen Sie den Artikel anschließend in der Artikelliste auf. Kontrollieren Sie die vorhandenen Ausführungen. In der Shopvorschau wählen Sie jede angebotene Variante einmal aus und prüfen Bild, Preis und Verfügbarkeit. Das Entfernen eines Merkmals betrifft die zugehörige Ausführung; prüfen Sie zuvor bestehende Zuordnungen und Aufträge.</p>",
+      "shots": [
+        "produkt-merkmale"
+      ]
+    },
+    {
+      "id": "export",
+      "title": "11. Export-Einstellungen",
+      "html": "<p>Unter „Export Einstellungen“ markieren Sie die für das Produkt vorgesehenen Datenkanäle, beispielsweise Google. Prüfen Sie vor der Weiterverarbeitung Titel, Preis, Verfügbarkeit, Produktlink und Bildlink in der erzeugten Datei.</p><p>Produktfreigabe, Dateierzeugung und Einrichtung einer Datenquelle sind getrennte Schritte. Die <a href=\"/hilfe/google-export/\">Anleitung zum Google-Export</a> führt durch Vorbereitung und Kontrolle. Verwenden Sie die für Ihren Shop eingerichteten Kanäle und prüfen Sie nach Änderungen deren Ergebnis.</p>",
+      "shots": [
+        "produkt-export"
+      ]
+    },
+    {
+      "id": "sonstiges",
+      "title": "12. Sonstiges und Tags",
+      "html": "<p>„Sonstiges“ enthält Einkaufspreise, Energieangaben, freie Datenfelder, „Zusatzmail bei Bestellung“ und weitere integrationsbezogene Felder. Freie Felder mit Längenangaben wie 13, 20, 50, 100 oder 255 sind technische Zusatzfelder. Ihre Bedeutung ergibt sich aus dem konkreten Shoptemplate oder einer Schnittstelle. Ändern Sie sie nicht beliebig, wenn ein bestehender Ablauf darauf zugreift.</p><p>Unter „Tags“ werden vorhandene Schlagwortzuordnungen in einer eigenen Liste gepflegt. Eine leere Liste kann bedeuten, dass noch keine Tags vorhanden oder zugewiesen sind. Tags sind von den Meta-Keywords und von den Kategorien zu unterscheiden. Nutzen Sie einheitliche Begriffe und speichern Sie die Zuordnung in der vorgesehenen Maske.</p><p>Unter „Zusatzmail bei Bestellung“ wählen Sie eine zusätzliche Mailvorlage für den vorgesehenen Bestellablauf. Mit „keine weitere EMail“ bleibt diese Zusatznachricht ausgeschaltet. Prüfen Sie Vorlage, Empfänger und Inhalt, bevor Sie die Zusatzmail verwenden.</p>",
+      "shots": [
+        "produkt-sonstiges",
+        "produkt-tags"
+      ]
+    },
+    {
+      "id": "abschluss",
+      "title": "13. Speichern, Vorlage und Abschlusskontrolle",
+      "html": "<p>„speichern“ übernimmt die Änderungen, „speichern und zur Liste“ führt anschließend zur Übersicht zurück. „Als Vorlage verwenden“ kennzeichnet einen geeigneten Ausgangsartikel für weitere Produkte. Verwenden Sie dafür einen kontrollierten Datenstand und prüfen Sie später trotzdem jeden neu angelegten Artikel.</p><ul><li>Stimmen Titel, Artikelnummer, Aktivität und Zeitraum?</li><li>Sind Verkaufspreis, Steuerart, Bestand und Versandgewicht korrekt?</li><li>Sind Texte, Bilder, Kategorien und Übersetzungen vollständig?</li><li>Zeigen alle Varianten den richtigen Preis und Bestand?</li><li>Funktionieren PDF, Empfehlungen und die Auswahloptionen im eigenen Shop?</li><li>Enthält ein benötigter Export die erwarteten Daten?</li></ul><p>Auf dem Smartphone können Sie die Reiter nacheinander öffnen; breite Variantentabellen werden innerhalb ihres Bereichs seitlich gescrollt. Für umfangreiche Texte und viele Varianten ist ein größerer Bildschirm übersichtlicher. Die Bilder hier zeigen einen neutralen Demoshop, keine echten Kundendaten.</p>",
+      "shots": []
+    }
+  ],
+  "artikel-attribute": [
+    {
+      "id": "set",
+      "title": "Attributset anlegen, wählen und wiederverwenden",
+      "html": "<p>Attribute bieten konfigurierbare Optionen wie Geschenkverpackung, Material oder Auflage. Öffnen Sie „Artikel Attribute“, wählen Sie ein vorhandenes Set oder legen Sie über das Plus ein neues Set an. Geben Sie einen eindeutigen Namen ein und prüfen Sie die Preisdarstellung netto/brutto. Ordnen Sie das Set anschließend beim Produkt unter „Zubehör“ zu.</p><p>Ein Set kann mehreren Artikeln zugeordnet sein. Änderungen und Löschungen wirken daher über den gerade geöffneten Artikel hinaus. Eine Kopie eignet sich als Ausgangspunkt für eine abweichende Konfiguration; geben Sie ihr sofort einen unterscheidbaren Namen. Prüfen Sie vor dem Löschen, welche Produkte das Set verwenden.</p>",
+      "shots": [
+        "attribute-set"
+      ]
+    },
+    {
+      "id": "gruppen",
+      "title": "Obergruppen, Attributgruppen und Attribute",
+      "html": "<ol><li>Legen Sie bei Bedarf über das jeweilige Plus eine Obergruppe an, beispielsweise „Geschenkoptionen“.</li><li>Wählen Sie eine Attributgruppe zur Unterteilung oder „keine“, wenn keine zusätzliche Gruppierung benötigt wird.</li><li>Legen Sie das eigentliche Attribut an, etwa „Verpackung“.</li><li>Wählen Sie die Kombination aus den drei Auswahlfeldern und übernehmen Sie sie mit „hinzufügen“ in die Attributliste.</li></ol><p>Die Liste enthält danach eine Zeile je zugeordneter Kombination. Über „sortieren“ legen Sie die Reihenfolge fest. Diese ist bei Berechnungen relevant: Eine spätere Zeile kann auf vorherige Ergebnisse aufbauen. Verwechseln Sie das Entfernen einer Zuordnung nicht mit dem Löschen des zugrunde liegenden Attributs.</p>",
+      "shots": []
+    },
+    {
+      "id": "berechnung",
+      "title": "Die Berechnungs- und Anzeigefelder",
+      "html": "<dl><dt>Pflichtfeld</dt><dd>Unterbindet die leere Auswahl. Ein definierter Standardwert bildet dann die Ausgangsauswahl.</dd><dt>Zwischensumme</dt><dd>Steuert die Ausgabe des Zwischenpreises für dieses Attribut.</dd><dt>Runden</dt><dd>Rundet den Zwischenwert auf zwei Nachkommastellen. Prüfen Sie bei Ihrer Berechnung insbesondere Werte mit Nachkommastellen.</dd><dt>Multiplikator</dt><dd>Wählt eine vorherige Berechnungsgrundlage. Die Reihenfolge wird von oben nach unten ausgewertet; eine darunter stehende Zeile kann noch nicht als vorheriges Ergebnis dienen.</dd><dt>Rechnung</dt><dd>Unterscheidet bei einer Multiplikation die Multiplikatormenge eines Wertes von der Zwischensumme des ausgewählten Attributs.</dd><dt>Addieren</dt><dd>Nimmt das Ergebnis in die Gesamtsumme auf. Für eine reine Hilfsberechnung kann die Addition ausgeschaltet bleiben.</dd><dt>Anzeige</dt><dd>Steuert die Sichtbarkeit im Shop. Ein ausgeblendetes Attribut kann mit seinem Standardwert weiterhin an der Berechnung teilnehmen.</dd></dl><p>Die Einstellung der Preisdarstellung ändert nicht die Bedeutung eines ausdrücklich als „Preis(netto)“ beschrifteten Eingabefeldes. Testen Sie eine einfache Kombination von Hand, bevor Sie mehrere voneinander abhängige Berechnungen einsetzen.</p>",
+      "shots": []
+    },
+    {
+      "id": "werte",
+      "title": "Werte, Preise, Standardauswahl und Bilder",
+      "html": "<p>Öffnen Sie in der Attributzeile „Attributwerte anlegen“. Jede Zeile entspricht einer auswählbaren Ausprägung. Geben Sie eine kundenverständliche Bezeichnung, die Multiplikatormenge und gegebenenfalls einen Nettopreis ein. Das Keyword ist eine zusätzliche Kennung. Die Spalte „wenn Regel“ gehört zu bedingten Werten; verwenden Sie dort nur eine für Ihren Ablauf eingerichtete Regel.</p><p>Markieren Sie den vorgesehenen Standardwert und ergänzen Sie bei Bedarf ein Bild. Beispiel: „Ohne Geschenkverpackung“ kann der Standard mit 0 Euro sein, „Geschenkpapier Salbei“ ein zusätzlicher Wert mit 3 Euro netto. Speichern Sie die Werte. Kontrollieren Sie anschließend die übergeordnete Set-Konfiguration und die Artikelzuordnung.</p>",
+      "shots": [
+        "attribute-werte"
+      ]
+    },
+    {
+      "id": "pruefung",
+      "title": "Berechnung und Shopausgabe prüfen",
+      "html": "<p>Verwenden Sie die Attributset-Vorschau, um Kombinationen und Rechenwege zu prüfen. Die Vorschau dient besonders der Berechnung; die tatsächliche optische Ausgabe prüfen Sie zusätzlich am Produkt im Shop. Wählen Sie jede Option, vergleichen Sie Zwischen- und Endpreis und testen Sie die Pflichtauswahl.</p><p>Prüfen Sie bei ausgeblendeten Attributen den Standardwert, bei Multiplikatoren die Reihenfolge und bei reinen Hilfswerten den Schalter „Addieren“. Eine Preisabweichung lässt sich so gezielt auf eine Zeile eingrenzen. Auf schmalen Bildschirmen sind die Tabellen horizontal scrollbar; beachten Sie die rechts liegenden Spalten „Anzeige“ und „Werte“.</p>",
+      "shots": []
+    }
+  ],
+  "artikelliste": [
+    {
+      "id": "finden",
+      "title": "Artikel suchen, filtern und sortieren",
+      "html": "<p>Die Artikelliste ist der Einstieg in die Produktpflege. Grenzen Sie die Anzeige über Kategorie, Lieferant und Hersteller ein oder verwenden Sie das Suchfeld. Prüfen Sie bei einem vermeintlich fehlenden Artikel zuerst die aktiven Filter. „Zurücksetzen“ hebt die Eingrenzung wieder auf.</p><p>Die Auswahl „Einträge“ bestimmt die Anzahl sichtbarer Zeilen. Über Spaltenüberschriften ändern Sie die Sortierung. Mit „Listenfelder auswählen“ passen Sie die sichtbaren Spalten und ihre Reihenfolge an. Stellen Sie für Ihre Aufgabe passende Felder zusammen, etwa Nummer, Titel, Preis, Lager und Aktivität. Eine Druckansicht oder ein Export ersetzt nicht die Prüfung, welche Filter gerade wirksam sind.</p>",
+      "shots": [
+        "artikelliste"
+      ]
+    },
+    {
+      "id": "bearbeiten",
+      "title": "Artikel öffnen, Varianten ansehen und neue Produkte anlegen",
+      "html": "<p>Öffnen Sie das Stiftsymbol „Artikel bearbeiten“ in der betreffenden Zeile. Das Augensymbol führt zur Vorschau. Das Plus am Variantenartikel klappt seine Ausführungen auf; es ist vom Plus zum Anlegen eines neuen Artikels in der Aktionsleiste zu unterscheiden.</p><p>Für ein neues Produkt verwenden Sie „neuen Artikel anlegen“ und folgen der <a href=\"/hilfe/artikel-anlegen/\">ausführlichen Artikelanleitung</a>. Beim Duplizieren entsteht ein neuer Datensatz. Prüfen Sie dessen Nummer, Titel, Aktivität, Bilder und Varianten, bevor Sie ihn anbieten. Verlassen Sie sich nicht allein auf eine automatisch ergänzte Kopiekennung.</p>",
+      "shots": []
+    },
+    {
+      "id": "gemeinsam",
+      "title": "Mehrere Artikel gemeinsam bearbeiten",
+      "html": "<ol><li>Filtern Sie die Liste und markieren Sie gezielt die gewünschten Artikel.</li><li>Öffnen Sie „Artikel gemeinsam bearbeiten“.</li><li>Wählen Sie das zu ändernde Feld und gehen Sie zum nächsten Schritt.</li><li>Geben Sie den gemeinsamen Wert ein und kontrollieren Sie vor dem Speichern die Auswahl.</li><li>Öffnen Sie anschließend mindestens einen betroffenen Artikel und kontrollieren Sie den neuen Wert.</li></ol><p>Eine gemeinsame Änderung setzt denselben Wert für die Auswahl. Für unterschiedliche Produktpreise oder abweichende Beschreibungen ist die Einzelbearbeitung passender. Beenden Sie eine Auswahl, bevor Sie danach eine andere Gruppenaktion ausführen. „Löschen“ ist eine separate Aktion und kein Ersatz für „inaktiv“.</p>",
+      "shots": []
+    },
+    {
+      "id": "export",
+      "title": "Drucken, XLSX und CSV",
+      "html": "<p>Die Liste bietet Druck- und Exportaktionen. Die aktuelle Verwaltung erzeugt einen echten XLSX-Export sowie CSV; ältere Hinweise auf einen lediglich als Excel bezeichneten Download beschreiben nicht mehr den ganzen Stand. Öffnen Sie die erzeugte Datei und prüfen Sie Spalten, Umlaute, Artikelnummern und Dezimalwerte. Tabellenprogramme dürfen führende Nullen in Kennungen nicht unbemerkt entfernen.</p><p>Ein Listenexport ist keine vollständige Sicherung von Produktbildern, Zuordnungen und Shopkonfiguration. Auf dem Smartphone können breite Tabellen innerhalb des Tabellenbereichs seitlich gescrollt werden; die Aktionsleiste bleibt oberhalb der Filter erreichbar.</p>",
+      "shots": []
+    }
+  ],
+  "bestanduebersicht": [
+    {
+      "id": "auswahl",
+      "title": "Bestände eingrenzen und Artikel finden",
+      "html": "<p>Öffnen Sie die Bestandsübersicht. Filtern Sie bei Bedarf nach Kategorie und Aktivität und suchen Sie über Artikelnummer, EAN, ISBN oder Titel. Prüfen Sie die gefundene Zeile genau, besonders wenn ähnliche Artikel oder mehrere Varianten existieren.</p><p>Bei Varianten muss die Buchung zur konkreten Ausführung passen. Ein Bestand für den Becher mit 300 ml darf nicht versehentlich beim 450-ml-Modell landen. Beachten Sie auch Artikel, bei denen die Warenwirtschaft deaktiviert wurde.</p>",
+      "shots": [
+        "bestanduebersicht"
+      ]
+    },
+    {
+      "id": "buchung",
+      "title": "Istbestand, Verkauf, Einkauf und Defekt unterscheiden",
+      "html": "<dl><dt>Istbestand</dt><dd>Erfasst den tatsächlich gezählten Gesamtbestand, etwa nach einer Inventur.</dd><dt>Verkauf</dt><dd>Erfasst eine entsprechende Abgangsbewegung. Prüfen Sie, ob der Verkauf nicht bereits über eine Bestellung berücksichtigt wurde.</dd><dt>Einkauf</dt><dd>Erfasst einen Zugang; verwenden Sie die neu hinzugekommene Menge, nicht erneut den gesamten Lagerbestand.</dd><dt>Defekt</dt><dd>Dokumentiert Ware, die wegen eines Defekts aus dem verfügbaren Bestand genommen werden soll.</dd></dl><p>Beispiel: Sie zählen 12 Stück, erhalten später 4 weitere und nehmen ein beschädigtes Stück heraus. Eine absolute Bestandskorrektur auf 12 ist etwas anderes als ein Zugang von 12. Prüfen Sie nach jeder gewählten Buchungsart Vorzeichen und Ergebnis, bevor Sie weitere Bewegungen erfassen.</p>",
+      "shots": []
+    },
+    {
+      "id": "kontrolle",
+      "title": "Speichern und nachvollziehen",
+      "html": "<p>Speichern Sie die Eingabe und kontrollieren Sie den resultierenden Bestand in der Übersicht sowie am Artikel. Für Einzelheiten zur Bewegungshistorie und erwarteten Lieferung öffnen Sie die Warenwirtschaft über „WW“ in der Produktbearbeitung. Wiederholen Sie eine Buchung nicht nur deshalb, weil Sie die Rückmeldung übersehen haben; lesen Sie zuerst den aktuellen Bestand.</p><p>Die mobile Tabelle kann seitlich gescrollt werden. Vergewissern Sie sich vor der Eingabe anhand der Artikelnummer, dass Sie noch dieselbe Zeile bearbeiten.</p>",
+      "shots": []
+    }
+  ],
+  "hersteller": [
+    {
+      "id": "anlegen",
+      "title": "Hersteller anlegen und auswählen",
+      "html": "<p>Öffnen Sie die Herstellerverwaltung und legen Sie über das Plus einen neuen Hersteller an. Geben Sie eine eindeutige Bezeichnung ein oder wählen Sie einen vorhandenen Eintrag. Aktivität und Titel bestimmen zusammen mit dem Shoptemplate, wie der Hersteller im Shop verwendet wird.</p><p>Vermeiden Sie doppelte Einträge mit leicht abweichender Schreibweise. Hersteller und Lieferant sind unterschiedliche Zuordnungen: Der Hersteller beschreibt die Marke bzw. Herkunft des Produkts, der Lieferant Ihren Bezugsbetrieb.</p>",
+      "shots": [
+        "hersteller"
+      ]
+    },
+    {
+      "id": "inhalte",
+      "title": "Logo und Beschreibung pflegen",
+      "html": "<p>Laden Sie ein passendes Logo hoch und pflegen Sie den Informationstext. Die bisherige Hilfe beschreibt eine Herstellerinformation als Popup; die konkrete Darstellung hängt vom Shoptemplate ab. Prüfen Sie Lesbarkeit, Bildqualität und eventuell gesetzte Links in der Shopansicht.</p><p>Speichern Sie und ordnen Sie den Hersteller anschließend beim Produkt im Reiter „Artikeldaten“ zu. Eine Herstellerbox kann in der <a href=\"/hilfe/boxen-anlegen-und-verwalten/\">Boxenverwaltung</a> eingebunden werden, sofern das Template diesen Bereich verwendet.</p>",
+      "shots": []
+    },
+    {
+      "id": "entfernen",
+      "title": "Ändern und entfernen",
+      "html": "<p>Prüfen Sie vor dem Löschen, welche Artikel den Hersteller verwenden. Eine Umbenennung sollte bewusst erfolgen, weil sie an mehreren Produkten erscheinen kann. Kontrollieren Sie nach einer Änderung die Produktauswahl, die Herstellerinformation und gegebenenfalls die Herstellerbox.</p>",
+      "shots": []
+    }
+  ],
+  "kategorien": [
+    {
+      "id": "struktur",
+      "title": "Haupt- und Unterkategorien aufbauen",
+      "html": "<p>Legen Sie über die Kategorieverwaltung eine Hauptkategorie oder unter einer ausgewählten Kategorie eine Unterkategorie an. Wählen Sie vorher bewusst die richtige Ebene. Eine verständliche Struktur könnte „Wohnen → Küche“ und „Outdoor → Taschen“ enthalten. Vermeiden Sie unnötig tiefe Unterteilungen für wenige Produkte.</p><p>Ordnen Sie Kategorien mit den angebotenen Sortierfunktionen. Die bisherige Hilfe unterscheidet manuelle und alphabetische Sortierung; prüfen Sie nach einer automatischen Sortierung die gewünschte Reihenfolge im Shop. Das Verschieben einer Kategorie ist von der Zuordnung eines Artikels zu dieser Kategorie getrennt.</p>",
+      "shots": [
+        "kategorien"
+      ]
+    },
+    {
+      "id": "texte",
+      "title": "Linkbezeichnung, Texte und Bild",
+      "html": "<p>Die Linkbezeichnung benennt den Navigationspunkt, der Titel die Kategorieansicht. Ergänzen Sie eine hilfreiche Beschreibung und bei Bedarf ein Kategorienbild. Das Bild und die Beschreibung können auch für Kategorieelemente auf der Startseite verwendet werden.</p><p>Browser-Titel und Meta-Beschreibung helfen, die Seite eindeutig zu beschreiben. Schreiben Sie passende Angaben statt denselben Text für jede Kategorie zu kopieren. Das historische Meta-Keywords-Feld ist kein Rankingversprechen; alte Elmar-Zuordnungen betreffen frühere Exportverfahren und sind nur mit einer konkret verwendeten Anbindung relevant.</p>",
+      "shots": []
+    },
+    {
+      "id": "artikel",
+      "title": "Artikel zuordnen und Ausgabe prüfen",
+      "html": "<p>Speichern Sie die Kategorie. Öffnen Sie anschließend den gewünschten Artikel und weisen Sie ihn unter „Kategorien“ zu. Prüfen Sie Navigation, Kategorieansicht und die enthaltenen Produkte. Bei mehreren Sprachen müssen die Kategorietexte separat übersetzt werden.</p><p>Vor dem Löschen kontrollieren Sie Unterkategorien und Artikelzuordnungen. Entfernen Sie nicht versehentlich eine ganze Struktur, wenn lediglich ein Produkt anders einsortiert werden soll.</p>",
+      "shots": []
+    }
+  ],
+  "kundenliste": [
+    {
+      "id": "suchen",
+      "title": "Kunden finden und Listenansicht anpassen",
+      "html": "<p>Die Kundenliste lässt sich über Suche und Filter eingrenzen, etwa Kundengruppe, Bestellungen oder Newslettermerkmal. Prüfen Sie Filter, Zeilenanzahl und Sortierung, wenn ein erwarteter Kunde nicht erscheint. „Listenfelder auswählen“ passt die sichtbaren Spalten und deren Reihenfolge an.</p><p>Die Druckansicht und XLSX-/CSV-Exporte unterstützen die Weiterbearbeitung. Prüfen Sie vor einem Export den Umfang der Auswahl und öffnen Sie die erzeugte Datei zur Kontrolle. Ein Newslettermerkmal beschreibt einen gespeicherten Zustand; es ersetzt keine Prüfung des vorgesehenen Versandzwecks.</p>",
+      "shots": [
+        "kundenliste"
+      ]
+    },
+    {
+      "id": "stammdaten",
+      "title": "Kunden anlegen und Stammdaten bearbeiten",
+      "html": "<p>Verwenden Sie die Aktion zum Anlegen eines Kunden oder öffnen Sie einen vorhandenen Eintrag zur Bearbeitung. Kontrollieren Sie Name, Kontaktangaben, Adresse, Sprache und die benötigten Zusatzfelder. Vermeiden Sie ein zweites Kundenkonto, wenn derselbe Kunde bereits vorhanden ist.</p><p>Kundenstammdaten und die Adressen einer konkreten Bestellung sind getrennte Datensätze. Eine Adressänderung am Kunden korrigiert nicht automatisch jede ältere Bestellung. Prüfen Sie eine notwendige Rechnungs- oder Lieferadresskorrektur daher zusätzlich im <a href=\"/hilfe/verkaufsmanager/\">Verkaufsmanager</a>.</p>",
+      "shots": []
+    },
+    {
+      "id": "gruppen",
+      "title": "Kundengruppen und Nachrichten",
+      "html": "<p>Über die Gruppenverwaltung ordnen Sie Kunden einer Gruppe zu. Solche Gruppen können in <a href=\"/hilfe/rabattsystem/\">Rabattregeln</a> oder <a href=\"/hilfe/gutscheine/\">Gutscheinbedingungen</a> verwendet werden. Kontrollieren Sie nach einer Zuordnung die tatsächlichen Bedingungen der Aktion; ein Gruppenname allein gewährt noch keinen Rabatt.</p><p>Für eine Nachricht wählen Sie die vorgesehenen Kunden und die passende Mailvorlage. Prüfen Sie Empfänger, Sprache, Betreff und Vorschau, bevor Sie einen Versand auslösen. Eine Mehrfachauswahl kann mehrere Nachrichten erzeugen. </p>",
+      "shots": []
+    },
+    {
+      "id": "loeschen",
+      "title": "Löschen bewusst behandeln",
+      "html": "<p>Prüfen Sie vor einer Löschung die Auswahl, verknüpfte Bestellungen und den vorgesehenen Aufbewahrungsprozess. Für eine Adress- oder Kontaktkorrektur verwenden Sie die Bearbeitung des vorhandenen Datensatzes. So bleiben zusammengehörige Vorgänge nachvollziehbar.</p>",
+      "shots": []
+    }
+  ],
+  "emailvorlagen": [
+    {
+      "id": "auswahl",
+      "title": "Vorlage und Sprache auswählen",
+      "html": "<p>Wählen Sie links die gewünschte Mailvorlage; erst danach sind die zugehörigen Felder bearbeitbar. Für eine neue Vorlage verwenden Sie das Plus und vergeben einen eindeutigen internen Namen. Achten Sie auf die Sprache der Vorlage. Systemvorlagen können besondere Aufgaben haben und sind nicht beliebig löschbar.</p><p>Die Bezeichnung hilft Ihnen bei der Auswahl, während der Betreff später beim Empfänger erscheint. Verwenden Sie unterschiedliche Namen für Bestellbestätigung, Zahlungsinformation und Versandinformation. Prüfen Sie vor dem Löschen, ob ein Ablauf oder Formular diese Vorlage verwendet.</p>",
+      "shots": [
+        "mailvorlage-bearbeiten"
+      ]
+    },
+    {
+      "id": "versand",
+      "title": "Kopien, Statuswechsel und Dokumentanhang",
+      "html": "<p>„Kopie (Cc)“ und „Blindkopie (Bcc)“ ergänzen Empfänger. Kontrollieren Sie diese Felder besonders bei kopierten Vorlagen. Unter „Status setzen“ kann eine Statusänderung mit dem Versand verknüpft sein. Wenn der Versand keinen Status ändern soll, wählen Sie „Kein Statuswechsel“.</p><p>Ein Dokument kann als Anhang zugeordnet werden; zusätzlich stehen PDF- und Vorschauoptionen zur Verfügung. Wählen Sie bewusst die richtige <a href=\"/hilfe/dokumentvorlagen/\">Dokumentvorlage</a>. Ein falscher Anhang kann fachlich etwas anderes aussagen als der Mailtext. Das Speichern der Vorlage ist noch kein Versand.</p>",
+      "shots": []
+    },
+    {
+      "id": "textinhalt",
+      "title": "Betreff, Variablen und HTML-Inhalt",
+      "html": "<p>Schreiben Sie einen klaren Betreff und bearbeiten Sie den Inhalt im Editor. Die Variablenliste liefert Platzhalter für Shop-, Kunden-, Bestell- und Positionswerte. Fügen Sie die vollständige Variable an der gewünschten Stelle ein. Fest eingetragene Kundennamen oder Bestellnummern würden sonst in jeder erzeugten Nachricht wieder auftauchen.</p><p>Vorhandene bedingte Bereiche, etwa Texte für eine bestimmte Zahlungsart, müssen als vollständige Blöcke erhalten bleiben. Kopieren Sie keine zufälligen Ausschnitte aus einer Bedingung. Prüfen Sie den Inhalt mit Beispielbestellungen für beide Fälle, in denen ein Bereich erscheinen bzw. nicht erscheinen soll.</p><p>Der aktuelle Editor bietet Überschriften, Listen, Links, Bilder, Tabellen und eine HTML-Ansicht. Er ersetzt die alten SPAW-Bedienbilder. Halten Sie Mail-Layouts einfach und kontrollieren Sie Links sowie die Darstellung ohne nachgeladene Bilder.</p>",
+      "shots": []
+    },
+    {
+      "id": "textversion",
+      "title": "Textmail und Vorschau prüfen",
+      "html": "<p>Unter „Textemail (ohne HTML)“ steht die reine Textfassung. Wenn Sie sie aus dem HTML-Inhalt übernehmen bzw. erzeugen, kontrollieren Sie Absätze, Links und Platzhalter anschließend manuell. HTML- und Textfassung müssen inhaltlich zueinander passen.</p><p>Speichern Sie und prüfen Sie eine Vorschau mit einer neutralen Beispielbestellung. Kontrollieren Sie Empfänger, Sprache, Beträge, Anhang und einen eventuell ausgelösten Statuswechsel. Einen tatsächlichen Testversand richten Sie nur an einen vorgesehenen Testempfänger; verwenden Sie dabei neutrale Beispieldaten.</p>",
+      "shots": []
+    }
+  ],
+  "dokumentvorlagen": [
+    {
+      "id": "auswahl",
+      "title": "Dokumentvorlage anlegen und auswählen",
+      "html": "<p>Wählen Sie eine vorhandene Dokumentvorlage oder legen Sie über das Plus eine neue an. Vergeben Sie einen eindeutigen Namen und beachten Sie die Sprache. Eine Vorlage für einen Lieferschein hat einen anderen Zweck als eine Rechnung; ein geänderter Titel allein macht noch kein fachlich vollständiges Dokument.</p><p>Unter „Status setzen“ kann die Dokumentaktion mit einer Statusänderung verbunden sein. Wählen Sie „Kein Statuswechsel“, wenn dies nicht vorgesehen ist. Kontrollieren Sie vorhandene PDF- und Hintergrund-PDF-Felder, bevor Sie eine Vorlage kopieren oder neu verwenden.</p>",
+      "shots": [
+        "dokumentvorlage-bearbeiten"
+      ]
+    },
+    {
+      "id": "editor",
+      "title": "Inhalt, Variablen und Bedingungen",
+      "html": "<p>Bearbeiten Sie den Inhalt im Editor. Die Variablenliste stellt Werte aus Shop, Kunde, Bestellung und Positionen zur Verfügung. Verwenden Sie diese Platzhalter vollständig, statt feste Beispieldaten in einer produktiven Vorlage stehen zu lassen.</p><p>Für Positionslisten und bedingte Abschnitte müssen die zugehörigen Blöcke erhalten bleiben. Ein Abschnitt für eine Zahlungsart soll nur im passenden Fall erscheinen. Prüfen Sie vorhandene Bedingungen vor Änderungen und testen Sie sowohl kurze als auch längere Bestellungen.</p><p>Über „HTML“ können Sie den Quelltext bearbeiten. Achten Sie bei Tabellen auf sinnvolle Breiten und bei Bildern auf druckfähige Abmessungen. Der Editor ersetzt die alte SPAW-Oberfläche; die fachlichen Inhalte und Platzhalter bleiben trotzdem sorgfältig zu prüfen.</p>",
+      "shots": []
+    },
+    {
+      "id": "ausgabe",
+      "title": "Dokument aus einer Bestellung kontrollieren",
+      "html": "<p>Speichern Sie die Vorlage und erzeugen Sie eine Vorschau aus dem Verkaufsmanager mit einer passenden Beispielbestellung. Kontrollieren Sie Adresse, Nummern, Datum, Positionen, Mengen, Einzel- und Gesamtbeträge sowie Seitenumbrüche. Prüfen Sie die PDF-Ausgabe und bei Bedarf einen Ausdruck.</p><p>Die technische Vorschau ist keine rechtliche Prüfung Ihrer Rechnungs- oder Geschäftsdokumente. Vor dem produktiven Einsatz müssen die benötigten Angaben fachlich stimmen. Wenn eine Mailvorlage dieses Dokument anhängt, kontrollieren Sie auch diesen gemeinsamen Ablauf.</p>",
+      "shots": []
+    }
+  ],
+  "versand": [
+    {
+      "id": "klasse",
+      "title": "Versandklasse anlegen oder auswählen",
+      "html": "<p>Öffnen Sie die Versandverwaltung. Wählen Sie eine vorhandene Klasse oder legen Sie eine neue an. Verwenden Sie einen eindeutigen internen Namen, beispielsweise „Standardpaket Inland“. Die für Kunden sichtbare Bezeichnung und Beschreibung pflegen Sie getrennt unter „Texte“.</p><p>Ein kompletter Versandweg besteht aus Einstellungen, Bedingungen und Länderzuordnung. Eine aktive Klasse allein reicht nicht, wenn keine passende Kombination mit Warenkorb und Lieferland entsteht. Prüfen Sie vor dem Löschen einer Klasse, wo sie eingesetzt wird.</p>",
+      "shots": [
+        "versand-einstellungen"
+      ]
+    },
+    {
+      "id": "kosten",
+      "title": "Preis, Berechnungsregel und Priorität",
+      "html": "<p>Unter „Einstellungen“ aktivieren Sie die Klasse und bestimmen Preis und Berechnung. Die Maske unterscheidet absolute und prozentuale Werte sowie positive bzw. negative Beträge. Achten Sie auf die gewählte Einheit; 5 Prozent sind nicht 5 Euro.</p><p>Die Regel legt fest, ob Kosten auf den Warenkorb, auf Artikel oder auf Produkttypen bezogen werden. Eine Gewichtsberechnung ist ebenfalls als eigene Option vorhanden. Prüfen Sie dieselbe Klasse mit einem und mehreren Artikeln, damit die Kosten nicht unbeabsichtigt mehrfach entstehen.</p><p>Die Priorität entscheidet bei gleichzeitig passenden Klassen mit über die Auswahl: Kleinere Prioritätswerte haben Vorrang; gleich priorisierte passende Klassen können zur Auswahl stehen. Prüfen Sie die tatsächliche Checkout-Ausgabe. Die Vorausberechnung betrifft die Darstellung vor der vollständigen Bestellangabe und ersetzt keine abschließende Prüfung der Lieferadresse.</p>",
+      "shots": []
+    },
+    {
+      "id": "texte",
+      "title": "Bezeichnung und Beschreibung",
+      "html": "<p>Geben Sie unter „Texte“ einen verständlichen Namen und eine kurze Beschreibung ein. Beschreiben Sie den tatsächlichen Versandablauf, ohne interne Klassennamen oder ungeprüfte Lieferzusagen zu verwenden. Für mehrsprachige Shops pflegen Sie die Übersetzungen ebenfalls.</p>",
+      "shots": [
+        "versand-texte"
+      ]
+    },
+    {
+      "id": "bedingungen",
+      "title": "Bedingungen für Warenkorb und Artikel",
+      "html": "<p>Unter „Bedingungen“ wählen Sie die benötigte Bedingungsart und fügen sie hinzu. Angeboten werden Preis, Menge, Gewicht, Packvolumen, lange/kurze Seite, Länge, Breite, Höhe, Zahlungsart, Artikel und Kategorien. Die Voraussetzungen müssen zu den Produktdaten passen; eine Gewichtsbedingung hilft nicht, wenn die Artikel kein korrektes Gewicht haben.</p><p>Bei Bereichen prüfen Sie die Grenzen ausdrücklich: einen Wert darunter, genau an der Grenze und einen darüber. So finden Sie Lücken oder Überschneidungen zwischen Versandstufen. Die alte Hilfe verwendete Beispiele mit scheinbar nahtlosen Zahlenbereichen; übernehmen Sie diese nicht ohne Prüfung der tatsächlichen Vergleichslogik.</p><p>Beispiel: Für eine Gewichtsstaffel legen Sie mehrere passende Klassen mit klaren Bereichen an. Für Selbstabholung benötigen Sie eine eigene kundenverständliche Bezeichnung und die passenden Kosten und Bedingungen. Prüfen Sie Kombinationen aus normalen Artikeln und Sonderartikeln sowie einen gemischten Warenkorb.</p>",
+      "shots": [
+        "versand-bedingungen"
+      ]
+    },
+    {
+      "id": "laender",
+      "title": "Länder zuordnen und Abschlussprüfung",
+      "html": "<p>Wählen Sie unter „Länder“ die vorgesehenen Länder aus und übernehmen Sie sie in die Auswahl. Ein Land muss außerdem in der Länderverwaltung eingerichtet sein. Die Zahlungsart kann eigene Länderbeschränkungen haben; beide Konfigurationen müssen zusammenpassen.</p><ol><li>Speichern Sie die Klasse.</li><li>Testen Sie einen passenden Warenkorb mit dem vorgesehenen Lieferland.</li><li>Prüfen Sie Kosten, Bezeichnung und verfügbare Alternativen.</li><li>Testen Sie Grenzwerte und einen nicht passenden Fall.</li><li>Prüfen Sie die Übergabe der Kosten in Bestellung, Mail und Dokument.</li></ol>",
+      "shots": [
+        "versand-laender"
+      ]
+    }
+  ],
+  "zahlungsarten": [
+    {
+      "id": "modul",
+      "title": "Zahlungsmodul auswählen",
+      "html": "<p>Wählen Sie links das vorhandene Zahlungsmodul, etwa „Vorkasse“. Erst danach bearbeiten Sie dessen Einstellungen. Die Reihenfolge lässt sich über die angebotenen Pfeile ändern. Welche Module verfügbar sind, hängt von der Installation ab.</p>",
+      "shots": [
+        "zahlung-einstellungen"
+      ]
+    },
+    {
+      "id": "regeln",
+      "title": "Aktivität, Einkaufswerte und Zu-/Abschläge",
+      "html": "<p>Aktivieren Sie das Modul nur für den vorgesehenen Einsatz. Mit dem Einkaufswert von/bis begrenzen Sie die Verfügbarkeit. Prüfen Sie die Grenzwerte mit passenden Testwarenkörben.</p><p>Die Aufschlagsauswahl unterscheidet positive bzw. negative und prozentuale bzw. absolute Werte. Die Regel bezieht die Berechnung auf den Bruttowarenkorb mit oder ohne Versandkosten. Kontrollieren Sie das Ergebnis insbesondere bei einem prozentualen Wert. Ob ein Entgelt für eine Zahlungsart zulässig ist, wird durch dieses technische Eingabefeld nicht beantwortet.</p><p>Bei Bedarf laden Sie ein passendes Logo hoch und prüfen dessen Darstellung. Speichern Sie die Einstellungen, bevor Sie zu einer anderen Zahlungsart wechseln.</p>",
+      "shots": []
+    },
+    {
+      "id": "texte",
+      "title": "Kundentexte und Länder",
+      "html": "<p>Unter „Texte“ pflegen Sie Bezeichnung und Kurzbeschreibung. Erklären Sie den Ablauf so, dass Kunden die Zahlungsart verstehen. Zahlungsdaten aus den Shopdaten und variable Angaben in Mails sollten zu diesem Text passen.</p><p>Unter „Länder“ übernehmen Sie die vorgesehenen Länder in die Auswahl. Prüfen Sie den Zusammenhang mit Versandklassen: Eine angebotene Zahlungsart hilft nicht, wenn für dasselbe Land keine passende Versandart vorhanden ist.</p>",
+      "shots": [
+        "zahlung-texte",
+        "zahlung-laender"
+      ]
+    },
+    {
+      "id": "anbindung",
+      "title": "Anbieterkonfiguration und Prüfung",
+      "html": "<p>Bei Modulen mit eigener Konfiguration erscheint ein zusätzlicher Konfigurationsbereich. Tragen Sie dort nur die für diesen Shop vorgesehenen Zugangsdaten ein und unterscheiden Sie Test- und Produktivzugänge. Zugangsdaten gehören nicht in Screenshots oder Hilfetexte.</p><p>Prüfen Sie Anzeige, Auswahl, Kosten und die weitere Verarbeitung mit der vorgesehenen Testumgebung. Ein gespeichertes Formular bestätigt noch keinen erfolgreichen Zahlungsvorgang oder Rückruf des Anbieters. Betreiben Sie die produktive Shopkommunikation über HTTPS.</p>",
+      "shots": []
+    }
+  ],
+  "gutscheine": [
+    {
+      "id": "set",
+      "title": "Gutscheinset vorbereiten",
+      "html": "<p>Ein Gutscheinset fasst Wert, Bedingungen und die daraus erzeugten Codes zusammen. Legen Sie ein neues Set an oder wählen Sie ein vorhandenes. Vergeben Sie eine interne Bezeichnung, legen Sie Aktivität bzw. Gültigkeitszeitraum fest und tragen Sie bei Bedarf einen Mindesteinkaufswert ein.</p><p>Der Gutscheinwert ist entweder absolut oder prozentual. Kontrollieren Sie die gewählte Art zusammen mit dem Betrag. Ein 10-Euro-Gutschein und ein 10-Prozent-Gutschein sind unterschiedliche Aktionen. Speichern Sie die Definition, bevor Sie Codes erzeugen.</p>",
+      "shots": [
+        "gutschein-set"
+      ]
+    },
+    {
+      "id": "bedingungen",
+      "title": "Artikel und Kunden begrenzen",
+      "html": "<p>Unter „Auf Artikel“ wählen Sie alle Artikel, eine Auswahl oder eine Ausschlussauswahl. Übernehmen Sie die vorgesehenen Produkte bzw. Kategorien mit den angebotenen Zuordnungsfunktionen. Unter „Auf Kunden“ gilt das Set entweder allgemein, für bestimmte Kunden oder für eine Kundengruppe.</p><p>Prüfen Sie gemeinsam Zeitraum, Mindestwert, Artikel und Kundenzuordnung. Ein korrekt eingegebener Code kann im konkreten Warenkorb trotzdem nicht anwendbar sein. Testen Sie deshalb einen passenden und einen bewusst unpassenden Fall.</p>",
+      "shots": []
+    },
+    {
+      "id": "codes",
+      "title": "Codes erzeugen, anzeigen und exportieren",
+      "html": "<p>Bei „System generiert“ legen Sie die benötigte Anzahl fest und erzeugen individuelle Codes. Bei „eigene Eingabe“ geben Sie einen gemeinsamen Aktionscode ein. Die alte Hilfe unterscheidet einmalige Systemcodes und wiederverwendbare eigene Codes; kontrollieren Sie das gewünschte Einlöseverhalten im konkreten Shop, bevor Sie eine Aktion veröffentlichen.</p><p>Nach der Erzeugung sind Teile der Set-Definition nicht mehr frei bearbeitbar. Das erklärt auch ausgegraute Felder bei einem bereits erzeugten Set. Für andere Bedingungen erstellen Sie ein neues Set, statt einen bereits verteilten Code stillschweigend umzudeuten.</p><p>Über „Gutscheine anzeigen“ sehen Sie die erzeugten Codes. Der Export dient der Weiterverarbeitung. Behandeln Sie tatsächlich gültige Codes wie einlösbare Werte und veröffentlichen Sie keine vollständige Codeliste versehentlich in einer Hilfeaufnahme.</p>",
+      "shots": []
+    },
+    {
+      "id": "kontrolle",
+      "title": "Einlösung und Löschen kontrollieren",
+      "html": "<p>Prüfen Sie den Abzug, den verbleibenden Warenkorbwert, Gültigkeit und Kundenbindung. Kontrollieren Sie auch das Zusammenspiel mit automatischen Rabatten. Aus einer separat funktionierenden Gutscheinregel folgt nicht, dass jede Kombination gewünscht ist.</p><p>Beim Löschen eines Sets können die zugehörigen Codes betroffen sein. Prüfen Sie daher vorab bereits verteilte oder verwendete Codes. Die neutrale Demo verwendet ausschließlich fiktive Beispiele.</p>",
+      "shots": []
+    }
+  ],
+  "rabattsystem": [
+    {
+      "id": "anlegen",
+      "title": "Rabattregel anlegen und aktivieren",
+      "html": "<p>Legen Sie ein neues Rabattsystem an oder wählen Sie ein vorhandenes. Vergeben Sie einen verständlichen internen Namen. Legen Sie fest, ob die Regel dauerhaft, inaktiv oder nur in einem Zeitraum gilt. Prüfen Sie Start und Ende vor einer zeitlich begrenzten Aktion.</p><p>Ein Rabatt ist eine automatisch anhand von Bedingungen angewendete Regel. Ein <a href=\"/hilfe/gutscheine/\">Gutschein</a> arbeitet zusätzlich mit einem Code. Verwenden Sie für denselben Zweck nicht versehentlich beide Verfahren.</p>",
+      "shots": [
+        "rabattsystem"
+      ]
+    },
+    {
+      "id": "berechnung",
+      "title": "Wert, Vorzeichen und Berechnungsgrundlage",
+      "html": "<p>Bestimmen Sie Betrag und Art: absolut oder prozentual sowie Zu- oder Abschlag. Wählen Sie die angebotene Regel für Warenkorb bzw. Artikel und beachten Sie, ob Versand und Netto-/Bruttowerte einbezogen werden. Einkaufswertgrenzen sind nur dort relevant, wo die gewählte Regel sie verwendet.</p><p>Beispiel: Ein prozentualer Abschlag auf ausgewählte Artikel ist etwas anderes als derselbe Prozentsatz auf den gesamten Warenkorb einschließlich Versand. Prüfen Sie das Ergebnis an einem einfachen Beispiel, dessen Summe Sie von Hand nachvollziehen können.</p>",
+      "shots": []
+    },
+    {
+      "id": "zuordnung",
+      "title": "Artikel, Kategorien, Kunden und Gruppen",
+      "html": "<p>Übernehmen Sie die gewünschten Artikel oder Kategorien mit den Auswahlpfeilen. Legen Sie anschließend fest, ob die Aktion für alle Kunden, einzelne Kunden oder eine Kundengruppe gilt. Kontrollieren Sie beide Seiten der Zuordnung: Die vorhandene Liste ist nicht automatisch die aktive Auswahl.</p><p>Für die Bewerbung einer Aktion kann die Rabattbox verwendet werden, wenn das Template sie unterstützt. Sichtbarkeit und Laufzeit einer Box sind von der eigentlichen Preisregel zu unterscheiden; eine angezeigte Aktion muss zu den aktiven Bedingungen passen.</p>",
+      "shots": []
+    },
+    {
+      "id": "testen",
+      "title": "Regel speichern und Kombinationen testen",
+      "html": "<p>Speichern Sie und prüfen Sie einen passenden Warenkorb, einen Fall unterhalb einer Grenze und einen nicht berechtigten Kunden. Testen Sie Überschneidungen mit anderen Rabatten, Gutscheinen und Zahlungsabschlägen. Prüfen Sie auch den Ablauf nach Ende einer Aktion.</p><p>Wenn das Ergebnis nicht stimmt, kontrollieren Sie zuerst Aktivität, Zeitraum, Grundlage und Zuordnungen. Mehrere aktive Regeln sollten nicht durch zufälliges Ändern von Vorzeichen kompensiert werden.</p>",
+      "shots": []
+    }
+  ],
+  "eigene-seiten-shop-cms": [
+    {
+      "id": "seite",
+      "title": "Seite auswählen, anlegen und benennen",
+      "html": "<p>Wählen Sie eine vorhandene Seite in der Liste oder legen Sie über „Neue Seite erstellen“ eine neue an. Erst nach der Auswahl werden die Inhaltsfelder bearbeitbar. Der interne Name dient Ihrer Übersicht. Aktivität und Sprache bestimmen, in welchem Zusammenhang die Seite genutzt werden kann.</p><p>Die Linkbezeichnung benennt den Navigationslink; der Browser-Titel beschreibt die Seite im Browser und für Suchsysteme. Ergänzen Sie eine eigene Meta-Beschreibung. Die Indexierungsoption unterscheidet Seiten, die für Suchmaschinen vorgesehen sind, von solchen, die nicht indexiert werden sollen. Das ersetzt keine Zugriffssperre für vertrauliche Inhalte.</p>",
+      "shots": [
+        "cms-seite-bearbeiten"
+      ]
+    },
+    {
+      "id": "navigation",
+      "title": "Teaser, Obermenüpunkt und Ladeziel",
+      "html": "<p>Teasertext und Teaserbild liefern eine kurze Vorschau, sofern das Template diese ausgibt. Wählen Sie einen passenden Obermenüpunkt oder belassen Sie die Seite auf der Hauptebene. Prüfen Sie dabei die bestehende Hierarchie, damit keine unverständliche Verschachtelung entsteht.</p><p>„lade Seite“ bestimmt das Ziel, das beim Aufruf verwendet wird. Die Popup-Einstellung wird bei der Linkgenerierung im Editor berücksichtigt. Kontrollieren Sie den tatsächlichen Link nach dem Speichern; eine interne Bezeichnung ist noch kein Nachweis für das gewünschte Ziel.</p>",
+      "shots": []
+    },
+    {
+      "id": "textinhalt",
+      "title": "Überschrift, Editor, Variablen und Formulare",
+      "html": "<p>Pflegen Sie Überschrift und Inhalt im aktuellen HTML-Editor. Verwenden Sie Absätze, Zwischenüberschriften und aussagekräftige Linktexte. Im Variablenbereich können wiederkehrende Shopangaben eingefügt werden. Platzhalter müssen vollständig erhalten bleiben.</p><p>Der Bereich „Formular-Elemente“ enthält Formularstart, Abschicken-Knopf, Spam-Bot-Schutz und Eingabefelder. Ein sichtbares Formular ist erst mit korrekt eingerichteter Verarbeitung, Zielseite und Mailvorlagen vollständig. Prüfen Sie diese Zuordnung, bevor Sie ein Formular für Kunden freigeben. </p><p>Der neue Editor ersetzt die alten SPAW-Dialoge. Über „HTML“ können Sie Quelltext prüfen; für normale Textpflege genügen die Formatierungsfunktionen. Kontrollieren Sie nach dem Speichern Bilder, Tabellen, Links und die mobile Ausgabe.</p>",
+      "shots": []
+    },
+    {
+      "id": "box",
+      "title": "Seitenbox und Fußzeile zusammenstellen",
+      "html": "<p>Über „Eigene Seiten Box bearbeiten“ stellen Sie die Links der Seitenbox zusammen. Wählen Sie Seiten aus dem Vorrat, übernehmen Sie sie mit „Hinzufügen“ und ordnen Sie die Auswahl mit den Auf-/Ab-Pfeilen. „Entfernen“ löst eine Zuordnung. Für die Ausgabe muss die Box im verwendeten Layout vorgesehen sein.</p><p>„Shop-Fusszeile bearbeiten“ verwaltet die entsprechende Seitenauswahl für den Footer. Auch hier sind Auswahl und Reihenfolge getrennt vom eigentlichen Seiteninhalt. Speichern Sie die Zuordnung und prüfen Sie die Links im Shop. Welche Boxen in welchen Seitenkontexten erscheinen, hängt von Boxkonfiguration und Template ab.</p>",
+      "shots": [
+        "cms-fusszeile"
+      ]
+    },
+    {
+      "id": "abschluss",
+      "title": "Vorschau, Übersetzungen und Entfernen",
+      "html": "<p>Nutzen Sie die Vorschau und prüfen Sie die Seite zusätzlich in der tatsächlichen Navigation. Ergänzen Sie benötigte Übersetzungen. Kontrollieren Sie vor dem Löschen, ob die Seite noch aus Boxen, Footer, Menüs, Formularen oder anderen Texten verlinkt ist. Ein entfernter Inhalt sollte keine toten Links zurücklassen.</p>",
+      "shots": []
+    }
+  ],
+  "shopdaten": [
+    {
+      "id": "firma",
+      "title": "Firmendaten und separate Lageradresse",
+      "html": "<p>Die Shopdaten enthalten gemeinsam verwendete Angaben. Öffnen Sie „Firmendaten“ und kontrollieren Sie Shopname, Firma, URL, Logo, Anschrift und Kontaktdaten. Eine Änderung kann über Variablen auch Mails, Dokumente und Seiten beeinflussen. Verwenden Sie deshalb keine Testwerte in einer produktiven Konfiguration.</p><p>Die Lageradresse ist von der Firmenadresse getrennt. Tragen Sie die tatsächlich für den entsprechenden Ablauf vorgesehene Adresse ein. Das Zahlungsziel wird von geeigneten Vorlagen verwendet; prüfen Sie, ob deren Formulierungen dazu passen. Historische integrationsbezogene Felder wie Yatego sind keine Pflichtangaben für einen normalen Shopbetrieb.</p>",
+      "shots": [
+        "shopdaten-firmendaten"
+      ]
+    },
+    {
+      "id": "email",
+      "title": "E-Mail-Adressen und Versandkonfiguration",
+      "html": "<p>Unter „Emails“ pflegen Sie die vorgesehenen Informations-, Service- und Kontaktadressen sowie gegebenenfalls Kopieempfänger und Versandangaben. Prüfen Sie bei SMTP-Einstellungen Server, Port und die für diesen Shop vorgesehenen Zugangsdaten. Zugangsdaten gehören nicht in Hilfebilder oder öffentliche Dokumentation.</p><p>Eine gespeicherte Adresse bestätigt noch keine Zustellung. Prüfen Sie die verwendeten Mailvorlagen und einen kontrollierten Versand an einen Testempfänger. Die lokale Hilfe-Demo blockiert echten Versand; die Screenshots belegen die Maske, nicht die Erreichbarkeit eines Mailservers.</p>",
+      "shots": [
+        "shopdaten-email"
+      ]
+    },
+    {
+      "id": "bank",
+      "title": "Bankdaten und Zahlungsinformationen",
+      "html": "<p>Bankname, Kontoinhaber, IBAN und BIC müssen zu den tatsächlich verwendeten Zahlungsinformationen passen. Ältere Kontonummer-/BLZ-Felder können für bestehende Vorlagen erhalten sein. Kontrollieren Sie, welche Variablen Ihre Dokumente und E-Mails verwenden, damit nicht alte und neue Angaben nebeneinander ausgegeben werden.</p><p>Ein PayPal-Adressfeld in den Shopdaten ist nicht gleichbedeutend mit einer vollständig eingerichteten modernen Zahlungsanbindung. Die eigentliche Konfiguration und Prüfung erfolgt beim verwendeten Zahlungsmodul.</p>",
+      "shots": [
+        "shopdaten-bankdaten"
+      ]
+    },
+    {
+      "id": "steuer",
+      "title": "Steuer- und Registerangaben",
+      "html": "<p>Pflegen Sie die vorgesehenen Steuer- und Registerkennungen sorgfältig. Die Kleinunternehmer-Einstellung und weitere Steueroptionen beeinflussen technische Ausgaben und Berechnungen; sie entscheiden nicht, welche steuerliche Behandlung für Ihr Unternehmen richtig ist.</p><p>Kontrollieren Sie nach einer Änderung Artikelpreise, Steuerdarstellung, Warenkorb, Mails und Dokumente gemeinsam. Die Screenshots zeigen Beispielwerte, die nicht als Vorlage für Ihre steuerlichen Angaben gedacht sind.</p>",
+      "shots": [
+        "shopdaten-steuer"
+      ]
+    },
+    {
+      "id": "texte",
+      "title": "Zentrale Texte und RSS",
+      "html": "<p>Im Reiter „Texte“ pflegen Sie die zentralen Sprachtexte des Shops, beispielsweise freie Textbausteine, Shopbeschreibung und Widerrufstext. Die angebotenen Felder richten sich nach der Shopkonfiguration. Kontrollieren Sie die Ausgabe in den jeweiligen Seiten und Vorlagen, die diese Textbausteine verwenden.</p><p>Die separate RSS-Verwaltung enthält „RSS Einstellungen“ und „RSS Links“. Pflegen Sie die Anzahl der Produkte bzw. News sowie die vorgesehenen Titel und Beschreibungen. Prüfen Sie anschließend die ausgegebenen Feed-Links. RSS-Texte werden in diesem Bereich verwaltet.</p>",
+      "shots": [
+        "rss-einstellungen"
+      ]
+    },
+    {
+      "id": "formulare",
+      "title": "Formularfelder anzeigen und als Pflichtfeld markieren",
+      "html": "<p>Unter „Formulare“ bestimmen Sie für die angebotenen Formularbereiche, welche Angaben erscheinen und welche verpflichtend sind. Sichtbarkeit und Pflichtangabe sind unterschiedliche Einstellungen. Ein ausgeblendetes Pflichtfeld darf einen Kunden nicht daran hindern, das Formular abzuschließen.</p><p>Gehen Sie die Bereiche nacheinander durch, etwa Registrierung, Kundenangaben und abweichende Adressdaten. Testen Sie ein korrekt ausgefülltes Formular, eine fehlende Pflichtangabe und den vorgesehenen Spam-Bot-Schutz. Erheben Sie nur die Daten, die Ihr Ablauf benötigt.</p>",
+      "shots": [
+        "shopdaten-formularfelder"
+      ]
+    },
+    {
+      "id": "seo",
+      "title": "SEO- und URL-Einstellungen",
+      "html": "<p>SEO-Einstellungen können die Form von Produkt- und Seitenadressen beeinflussen, beispielsweise lesbare URLs und Groß-/Kleinschreibung. Ändern Sie solche Einstellungen bei einem bestehenden Shop nicht nebenbei: Bereits veröffentlichte Links, externe Verweise und Suchmaschineneinträge können betroffen sein.</p><p>Planen Sie nötige Weiterleitungen und prüfen Sie Produkt-, Kategorie- und Inhaltsseiten nach einer Umstellung. Meta-Keywords und feste Wortdichten garantieren keine besseren Platzierungen. Entscheidend für die Inhalte sind verständliche Texte und eindeutig erreichbare Seiten.</p>",
+      "shots": [
+        "shopdaten-seo"
+      ]
+    },
+    {
+      "id": "rest",
+      "title": "Weitere Einstellungen unter „Rest“",
+      "html": "<p>Unter „Rest“ stehen zusätzliche Optionen, etwa zu Warenkorb, Kommentaren, Datum und Uhrzeit, Mindestbestellwert, Zubehöranzahl und Gastbestellung. Lesen Sie jeweils die konkrete Feldbezeichnung und ändern Sie zusammengehörige Optionen gemeinsam.</p><p>Nach einer Änderung am Mindestbestellwert prüfen Sie einen Warenkorb darunter und darüber. Nach einer Änderung an Gastbestellungen prüfen Sie den Einstieg und die erforderlichen Adressen. Datums- und Zeitformate kontrollieren Sie auch in Mails und Dokumenten. Die Anzahl angezeigter Zubehörartikel muss zum verwendeten Layout passen.</p>",
+      "shots": [
+        "shopdaten-rest"
+      ]
+    },
+    {
+      "id": "script",
+      "title": "Script-Feld und Abschlussprüfung",
+      "html": "<p>Das Script-Feld kann zusätzlichen Code in die Shopausgabe einbinden. Verwenden Sie hier Code, dessen Zweck, Einbindung und Auswirkungen für Ihren Shop geklärt sind. Eine erforderliche Einwilligungssteuerung wird separat eingerichtet.</p><p>Speichern Sie die geplanten Änderungen und kontrollieren Sie die betroffenen Ausgaben. Prüfen Sie bei zentralen Einstellungen auch passende Mails, Dokumente und den Bestellablauf.</p>",
+      "shots": [
+        "shopdaten-script"
+      ]
+    }
+  ],
+  "startseite": [
+    {
+      "id": "texte",
+      "title": "Startseitentexte bearbeiten",
+      "html": "<p>Die Startseitenverwaltung hängt vom eingesetzten Shoptemplate ab. Öffnen Sie den Reiter „Texte“ und bearbeiten Sie die angebotenen Begrüßungs- und Inhaltsbereiche. Verwenden Sie kurze, klare Aussagen und prüfen Sie die Ausgabe nach dem Speichern.</p><p>Die alte Hilfe beschrieb zusätzlich einen Top-Produkt-Banner. Ob ein solches Element verfügbar ist, bestimmt die konkrete Vorlage; ein Textfeld allein erzeugt keinen neuen Bannerbereich. Die aktuellen Aufnahmen zeigen die in der neutralen Demo vorhandenen Reiter.</p>",
+      "shots": [
+        "startseite-texte"
+      ]
+    },
+    {
+      "id": "produkte",
+      "title": "Produkte für die Startseite auswählen",
+      "html": "<p>Unter „Artikel“ wählen Sie passende Produkte aus dem Vorrat und übernehmen sie in die Startseitenauswahl. Grenzen Sie den Vorrat bei Bedarf über Kategorien ein. Kontrollieren Sie die Auswahl und entfernen Sie nicht mehr passende Produkte.</p><p>Wie viele Artikel angezeigt werden und wie sie angeordnet sind, hängt vom Template ab. Prüfen Sie Aktivität, Bild, Titel und Preis der ausgewählten Produkte. Eine Zuordnung auf der Startseite ersetzt keine vollständige Produktpflege.</p>",
+      "shots": [
+        "startseite-artikel"
+      ]
+    },
+    {
+      "id": "news",
+      "title": "News anlegen und pflegen",
+      "html": "<p>Wählen Sie unter „News“ einen Eintrag oder legen Sie einen neuen an. Pflegen Sie Aktivität, Titel, Text, Datum und gegebenenfalls ein Bild. Eine zeitbezogene Meldung sollte auch nach Ablauf verständlich sein oder rechtzeitig deaktiviert werden.</p><p>Kontrollieren Sie die Darstellung im Shop und ergänzen Sie bei Bedarf Übersetzungen. Für News-RSS gelten die Einstellungen der separaten RSS-Verwaltung.</p>",
+      "shots": [
+        "startseite-news"
+      ]
+    },
+    {
+      "id": "kategorien",
+      "title": "Kategorien präsentieren",
+      "html": "<p>Unter „Kategorien“ wählen Sie alle oder nur bestimmte Kategorien für die Startseite. Für eine ansprechende Ausgabe benötigen die ausgewählten Kategorien geeignete Bilder und Texte in der Kategorieverwaltung.</p><p>Prüfen Sie die Ziele der Kategorielinks, die Reihenfolge und die mobile Darstellung. Ein leeres Kategorieelement liegt häufig an fehlenden Inhalten oder einer nicht zum Template passenden Auswahl.</p>",
+      "shots": [
+        "startseite-kategorien"
+      ]
+    },
+    {
+      "id": "seo",
+      "title": "Titel und Suchbeschreibung der Startseite",
+      "html": "<p>Pflegen Sie unter „SEO“ einen eindeutigen Browser-Titel und eine passende Beschreibung des Shops. Zusätzliche Metafelder können aus älteren Vorlagen stammen. Weder Meta-Keywords noch geografische Metatags garantieren eine Aufnahme in Kartenangebote oder eine bestimmte Suchposition.</p><p>Speichern Sie die Einstellungen und prüfen Sie die tatsächliche Startseite. Die Verwaltungsvorschau zeigt die Eingaben; die endgültige Gestaltung ergibt sich aus dem Shoptemplate.</p>",
+      "shots": [
+        "startseite-seo"
+      ]
+    }
+  ],
+  "sprachen": [
+    {
+      "id": "verwalten",
+      "title": "Sprache hinzufügen und Aktivität prüfen",
+      "html": "<p>Bereiten Sie zuerst die Texte der Standardsprache vor. Wählen Sie dann in der Sprachenverwaltung eine neue Sprache und übernehmen Sie sie über die vorgesehene Hinzufügen-Aktion. Eine angelegte Sprache muss nicht sofort aktiv sein; vervollständigen Sie die Texte vor der Freigabe.</p><p>Die Standardsprache wird in der Maske angezeigt. Stimmen Sie eine grundlegende Änderung der Standardsprache mit der Shopkonfiguration ab, bevor Sie bestehende Inhalte umstellen.</p><p>Für die Auswahl im Shop muss das Template eine Sprachauswahl anbieten, beispielsweise die Sprachenbox. Aktivierung und sichtbare Umschaltung sind zwei getrennte Punkte.</p>",
+      "shots": [
+        "sprachen"
+      ]
+    },
+    {
+      "id": "bearbeiten",
+      "title": "Bereich und konkreten Text auswählen",
+      "html": "<ol><li>Markieren Sie die Sprache und öffnen Sie „Sprache bearbeiten“.</li><li>Wählen Sie eine Sprachkategorie.</li><li>Öffnen Sie darin das konkrete Objekt, beispielsweise einen Artikel oder eine Kategorie.</li><li>Bearbeiten Sie die angebotenen Texte und speichern Sie.</li></ol><p>Zu den Bereichen gehören Template-Texte, Kategorien, Artikel, Merkmale und Merkmalwerte, Mailvorlagen, eigene Seiten, Dokumentvorlagen, Versand, Zahlung, News, Shopsprachtexte sowie Attribute und deren Gruppen/Werte. Arbeiten Sie die tatsächlich angebotenen Bereiche systematisch durch.</p>",
+      "shots": [
+        "sprache-produkt"
+      ]
+    },
+    {
+      "id": "fehlend",
+      "title": "Unübersetzte und neue Texte finden",
+      "html": "<p>Verwenden Sie die Übersetzungsansicht bzw. Suche nach unübersetzten Texten, um fehlende Inhalte zu finden. Neu angelegte Produkte, News oder Vorlagen benötigen auch in einem bereits übersetzten Shop neue Übersetzungen. Eine bisher vollständige Sprache bleibt nicht automatisch vollständig.</p><p>Bei Änderungen an einem vorhandenen Ausgangstext müssen Sie außerdem bereits gefüllte Übersetzungen prüfen. Ein gefülltes Feld kann inhaltlich veraltet sein und wird nicht zwangsläufig als „fehlend“ erkannt.</p>",
+      "shots": []
+    },
+    {
+      "id": "html",
+      "title": "HTML, Platzhalter und Links erhalten",
+      "html": "<p>Einige Texte enthalten HTML, Variablen und Bedingungen. Übernehmen Sie die Struktur vollständig und übersetzen Sie die sichtbaren Textteile. Lassen Sie Variablennamen, Linkziele und notwendige Formatierungsmarkierungen unverändert, sofern kein gezielter Austausch vorgesehen ist.</p><p>Beispiel: Bei einem formatierten Absatz ändern Sie den Satz, nicht die öffnende und schließende Absatzmarkierung. Prüfen Sie Mail- und Dokumentvorlagen zusätzlich mit einer Beispielbestellung; ein zerstörter Platzhalter fällt in einem normalen Textfeld nicht immer auf.</p>",
+      "shots": []
+    },
+    {
+      "id": "freigabe",
+      "title": "Prüfen, freigeben und Zugänge begrenzen",
+      "html": "<p>Kontrollieren Sie Navigation, Produkttexte, Varianten, Warenkorb, Versand-/Zahlungstexte und die ausgelösten Vorlagen in der Zielsprache. Aktivieren Sie die Sprache erst nach dieser Prüfung. Für externe Übersetzer können Benutzerrechte auf die benötigten Bereiche begrenzt werden.</p><p>Beim Löschen einer Sprache sind deren Texte betroffen. Prüfen Sie die Auswahl sorgfältig; eine Deaktivierung und eine Löschung sind unterschiedliche Aktionen. Sichern Sie benötigte Übersetzungen, bevor Sie sie endgültig entfernen.</p>",
+      "shots": []
+    }
+  ],
+  "boxen-anlegen-und-verwalten": [
+    {
+      "id": "auswahl",
+      "title": "Boxen einer Position zuordnen",
+      "html": "<p>In der Boxenverwaltung wählen Sie vorhandene Funktionen oder eigene Inhaltsboxen aus. Übernehmen Sie eine Box mit dem Zuordnungspfeil auf die vorgesehene linke oder rechte Seite. Die verfügbaren Positionen und die tatsächliche Darstellung hängen vom Shoptemplate ab.</p><p>Beispiele sind Suche, Warenkorb, Login, Newsletter, Hersteller, Sprachen und Währung. Eigene Boxen enthalten selbst gepflegte Inhalte. Eine zusätzliche Boxzuordnung schafft keinen neuen Layoutbereich, wenn das Template diesen nicht ausgibt.</p>",
+      "shots": [
+        "boxen-anlegen-und-verwalten"
+      ]
+    },
+    {
+      "id": "reihenfolge",
+      "title": "Reihenfolge, Bearbeitung und Sichtbarkeit",
+      "html": "<p>Ordnen Sie zugewiesene Boxen mit den Auf-/Ab-Pfeilen. Über „bearbeiten“ öffnen Sie die jeweilige Konfiguration. Je nach Box gibt es Inhalt, Auswahl und Anzeigeoptionen für unterschiedliche Seitenkontexte. Prüfen Sie die tatsächlich angebotenen Einstellungen, statt alle Boxen gleich zu behandeln.</p><p>„entfernen“ löst die Zuordnung aus der Position. Es ist nicht zwingend dasselbe wie das Löschen des Inhalts. Speichern Sie und kontrollieren Sie die Ausgabe auf Startseite, Kategorie- und Produktseiten sowie im Bestellablauf, soweit diese Kontexte vom Template unterstützt werden.</p>",
+      "shots": []
+    },
+    {
+      "id": "seiten",
+      "title": "Eigene Seiten und Fußzeile",
+      "html": "<p>Die Seitenbox verwendet eine Auswahl der im Shop-CMS angelegten Seiten. Übernehmen Sie die gewünschten Seiten und ordnen Sie die Links. Die Fußzeile besitzt eine separate Auswahl; die ausführlichen Schritte finden Sie unter <a href=\"/hilfe/eigene-seiten-shop-cms/#box\">Seitenbox und Fußzeile</a>.</p><p>Prüfen Sie auf dem Smartphone, wo die Boxen im Template erscheinen. Eine Desktop-Seitenspalte kann mobil unterhalb des Hauptinhalts oder in einem eigenen Bereich dargestellt werden. Die Verwaltungsansicht und die Shopansicht sind dabei zu unterscheiden.</p>",
+      "shots": []
+    }
+  ],
+  "benutzer-verwalten-und-anlegen": [
+    {
+      "id": "anlegen",
+      "title": "Benutzerkonto anlegen",
+      "html": "<p>Öffnen Sie die Benutzerverwaltung und wählen Sie die Aktion zum Anlegen. Pflegen Sie Namen, E-Mail-Adresse und die vorgesehenen Zugangsdaten. Jeder Mitarbeiter sollte einen eigenen Zugang haben, damit Änderungen nachvollziehbar bleiben.</p><p>Verwenden Sie ein starkes, individuelles Passwort und bewahren Sie es in einem geeigneten Passwortmanager auf. Die alte Empfehlung einer schriftlichen Passwortnotiz wird nicht übernommen. Zugangsdaten gehören nicht in Screenshots oder gemeinsam veröffentlichte Hilfetexte.</p>",
+      "shots": [
+        "benutzer-verwalten-und-anlegen"
+      ]
+    },
+    {
+      "id": "rechte",
+      "title": "Zugriffe passend zur Aufgabe vergeben",
+      "html": "<p>Wählen Sie den Benutzer und aktivieren Sie nur die benötigten Bereiche. Ein Übersetzer benötigt beispielsweise die Sprachpflege, aber nicht automatisch die gesamte Bestell- und Shopkonfiguration. Kontrollieren Sie die vollständige Berechtigungsliste und speichern Sie die Auswahl.</p><p>Prüfen Sie danach mit dem vorgesehenen Konto, ob benötigte Menüpunkte erreichbar und nicht benötigte Funktionen gesperrt sind. Auf dem Smartphone stehen Berechtigungsbereiche untereinander; achten Sie darauf, dass Sie weiterhin den richtigen Benutzer bearbeiten.</p>",
+      "shots": []
+    },
+    {
+      "id": "anmelden",
+      "title": "Anmelden und Konten pflegen",
+      "html": "<p>Die neue Verwaltung wird über den für Ihren Shop eingerichteten Adminzugang aufgerufen; in den gezeigten Beispielen ist dies „admin2“. Die alten Bilder des früheren Adminpfads entsprechen nicht der neuen Oberfläche.</p><p>Ändern oder entziehen Sie Zugriffe, wenn Aufgaben wechseln. Prüfen Sie vor dem Entfernen eines Kontos, ob noch ein eigener administrativer Zugang verfügbar bleibt. Eine Passwortänderung sollte kontrolliert durch den zuständigen Kontoinhaber bzw. Administrator erfolgen.</p>",
+      "shots": []
+    }
+  ],
+  "laender": [
+    {
+      "id": "auswahl",
+      "title": "Länder auswählen und zuordnen",
+      "html": "<p>Die Länderverwaltung legt fest, welche Länder im Shop zur Verfügung stehen. Wählen Sie ein Land aus dem Vorrat und übernehmen Sie es in die verwendete Auswahl. Entfernen Sie eine Zuordnung nur, wenn das Land künftig nicht mehr in diesem Zusammenhang angeboten werden soll.</p><p>Prüfen Sie Länderbezeichnung, ISO-Kennung und die angebotenen Standard-/Sprachzuordnungen. Verwenden Sie keine selbst erfundenen ISO-Codes. Das Standardland sollte zu Ihrem vorgesehenen Bestellablauf passen.</p>",
+      "shots": [
+        "laender"
+      ]
+    },
+    {
+      "id": "steuer",
+      "title": "Steueroptionen und Versand zusammen prüfen",
+      "html": "<p>Länderbezogene Steueroptionen beeinflussen technische Berechnungen. Sie sind keine automatische Entscheidung darüber, ob eine Lieferung steuerfrei oder steuerpflichtig ist. Stimmen Sie die benötigte Behandlung mit Ihrer fachlichen Konfiguration ab.</p><p>Richten Sie für die vorgesehenen Lieferländer auch passende Versand- und Zahlungsarten ein. Prüfen Sie einen vollständigen Testwarenkorb mit Rechnungs- und Lieferadresse. Ein eingerichtetes Land allein garantiert noch keinen abschließbaren Bestellvorgang.</p>",
+      "shots": []
+    }
+  ],
+  "waehrungen": [
+    {
+      "id": "anlegen",
+      "title": "Währung und Darstellung einrichten",
+      "html": "<p>Fügen Sie die benötigte Währung hinzu oder wählen Sie eine vorhandene. Pflegen Sie Bezeichnung, ISO-Kennung und Symbol. Legen Sie fest, ob das Symbol vor oder hinter dem Betrag steht, welches Dezimal- und Tausendertrennzeichen verwendet wird und wie viele Nachkommastellen erscheinen.</p><p>Prüfen Sie Beispielbeträge mit und ohne Tausenderstelle. Eine falsch konfigurierte Trennung kann einen korrekten Zahlenwert missverständlich darstellen. Die Anzeige muss in Produktlisten, Warenkorb, Mails und Dokumenten zusammenpassen.</p>",
+      "shots": [
+        "waehrungen"
+      ]
+    },
+    {
+      "id": "kurs",
+      "title": "Umrechnungskurs und Länderzuordnung",
+      "html": "<p>Kontrollieren Sie den Kurs zur Basiswährung und die angezeigten Aktualisierungsinformationen. Bei manueller Pflege dokumentieren Sie den verwendeten Stand. Wenn ein Aktualisierungsdienst eingerichtet ist, prüfen Sie den angezeigten Kursstand nach dessen Lauf.</p><p>Ordnen Sie die Währung den vorgesehenen Ländern zu, soweit Ihre Konfiguration dies verwendet. Eine Währungsbox bzw. Auswahl muss außerdem vom Template unterstützt werden. Prüfen Sie nach dem Speichern einen nachvollziehbaren Beispielpreis und die Gesamtsumme einer Bestellung.</p>",
+      "shots": []
+    }
+  ],
+  "verkaufsmanager": [
+    {
+      "id": "liste",
+      "title": "Bestellungen suchen und filtern",
+      "html": "<p>Öffnen Sie den Verkaufsmanager. Verwenden Sie Status, Marktplatz, Zahlungsart und Suchfeld, um die Liste einzugrenzen. Wählen Sie zuerst die Bedeutung des Suchfelds, beispielsweise Rechnungsnummer oder Nachname, und geben Sie dann den Suchbegriff ein. „Filter zurücksetzen“ stellt die ungefilterte Auswahl wieder her.</p><p>Über „Einträge“, Spaltenüberschriften und „Listenfelder auswählen“ passen Sie Anzahl, Sortierung und sichtbare Spalten an. Auf dem Desktop öffnen Sie den Auftrag über „Bestellung laden“. Auf dem Smartphone zeigt die Liste Karten mit einer Schaltfläche „Öffnen“. Warten Sie, bis die Bestelldaten geladen sind, bevor Sie sie bearbeiten.</p><p>Eine geöffnete Bestellung und markierte Zeilen für eine Gruppenaktion sind unterschiedliche Auswahlen. Prüfen Sie vor jeder Aktion, welche Aufträge tatsächlich betroffen sind.</p>",
+      "shots": [
+        "verkaufsmanager"
+      ]
+    },
+    {
+      "id": "details",
+      "title": "Bestelldaten, Preise und Status lesen",
+      "html": "<p>Nach dem Öffnen erscheinen Bestelldaten, Versand und Zahlung sowie Kundendaten und Adressen. Prüfen Sie Rechnungs- und Auftragsnummer, damit Sie im richtigen Auftrag arbeiten. Brutto-, Netto- und Steuerwerte beschreiben die Summen des gewählten Auftrags.</p><p>Das Feld „Rabatt +/-“ kann den Auftragswert verändern. Beachten Sie das Vorzeichen und kontrollieren Sie die neue Summe nach dem Speichern. Ein manuell eingetragener Auftragsrabatt ist von einer automatischen Rabattregel zu unterscheiden.</p><p>Der aktuelle Status beschreibt den Bearbeitungsstand. Die Historie zeigt zuvor erstellte E-Mails und Dokumente bzw. protokollierte Vorgänge. Aktueller Status und Verlauf erfüllen unterschiedliche Aufgaben; prüfen Sie bei Rückfragen auch Zeitpunkte und Bearbeitungseinträge.</p>",
+      "shots": [
+        "verkauf-bestelldetails"
+      ]
+    },
+    {
+      "id": "versand",
+      "title": "Versand, Zahlung und Tracking",
+      "html": "<p>Kontrollieren Sie Versandkosten, Versandsteuer, Versandart und Zahlungsart. Eine Änderung an einer globalen Versandklasse ist nicht dasselbe wie eine Änderung im einzelnen Auftrag. Prüfen Sie bei einer Auftragskorrektur die Auswirkungen auf die Gesamtsumme.</p><p>Tragen Sie die zum Paket gehörende Trackingnummer in das vorgesehene Feld ein. „Freie Zahl“ und „Freier Text“ sind zusätzliche Auftragsfelder; verwenden Sie sie nach einer einheitlichen internen Konvention. Speichern Sie und prüfen Sie, ob Vorlagen die gewünschten Angaben übernehmen.</p>",
+      "shots": []
+    },
+    {
+      "id": "adressen",
+      "title": "Kundendaten und Auftragsadressen",
+      "html": "<p>Über „Kundendaten bearbeiten“ öffnen Sie die Kundenstammdaten. Rechnungs- und Lieferadresse des Auftrags sind davon getrennt. Eine Änderung am Kundenkonto korrigiert daher nicht automatisch eine bereits erfasste Bestellung.</p><p>Prüfen Sie Name, Firma, Straße, Hausnummer, Postleitzahl, Ort und Land für beide Adressen. Die Kopieraktion übernimmt die zugehörige Adresse in den vorgesehenen anderen Bereich; kontrollieren Sie danach das Ergebnis. Bei einer abweichenden Lieferadresse dürfen Sie nicht versehentlich beide Adressen vereinheitlichen.</p><p>Die Kundennachricht enthält die Mitteilung des Käufers. Eine interne Bemerkung dient Ihrer Bearbeitung. Verwechseln Sie diese Inhalte nicht, insbesondere wenn eine Mail- oder Dokumentvorlage Kommentare übernimmt.</p>",
+      "shots": []
+    },
+    {
+      "id": "positionen",
+      "title": "Positionen bearbeiten und ergänzen",
+      "html": "<p>Öffnen Sie die Positionsdetails des Auftrags. Prüfen Sie Artikel, Variante, Menge, Preis und Steuer. Wählen Sie bei einer Ergänzung die konkrete Ausführung und gegebenenfalls deren Attribute. Ein ähnlicher Artikeltitel genügt nicht, um die richtige Variante zu identifizieren.</p><p>Nach einer Änderung speichern Sie und kontrollieren Positions- und Auftragssumme sowie gegebenenfalls den Bestand. Prüfen Sie vor Mengenänderungen an bereits bearbeiteten Aufträgen den bisherigen Bearbeitungsstand. Eine Preis- oder Mengenkorrektur und eine Stornierung sind unterschiedliche Vorgänge.</p>",
+      "shots": []
+    },
+    {
+      "id": "manuell",
+      "title": "Eine Bestellung manuell anlegen",
+      "html": "<ol><li>Öffnen Sie „Bestellung manuell hinzufügen“.</li><li>Wählen Sie unter „Kunde“ einen vorhandenen Kunden oder erfassen Sie den vorgesehenen neuen Datensatz.</li><li>Fügen Sie unter „Artikel“ die Produkte mit Variante, Menge und gegebenenfalls Attributen hinzu. Prüfen Sie den Warenkorb.</li><li>Kontrollieren Sie unter „Adressen“ Rechnungs- und Lieferadresse.</li><li>Wählen Sie „Zahlung“ und anschließend „Versand“ passend zum Auftrag.</li><li>Prüfen Sie Positionen, Kosten und Gesamtsumme vor dem Abschluss.</li></ol><p>Öffnen Sie die angelegte Bestellung danach in der Liste und kontrollieren Sie den Status. Verwenden Sie für eine weitere Bestellung die passende Neuanlage; eine Duplizierung übernimmt Angaben, die erneut geprüft werden müssen.</p>",
+      "shots": [
+        "verkauf-manuell"
+      ]
+    },
+    {
+      "id": "kommunikation",
+      "title": "E-Mail und Dokument aus einer Bestellung",
+      "html": "<p>Wählen Sie die vorgesehene Bestellung bzw. die bewusst markierte Mehrfachauswahl. Über „Email versenden“ verwenden Sie die passende Vorlage. Prüfen Sie Empfänger, Sprache, Betreff, Inhalt und Anhang in der vorgesehenen Vorschau, bevor Sie den Versand auslösen. Beachten Sie einen eventuell in der Vorlage konfigurierten Statuswechsel.</p><p>Über „Dokument drucken“ wählen Sie eine Dokumentvorlage. Kontrollieren Sie vor dem Ausdruck oder PDF-Einsatz Adresse, Nummern, Positionen, Summen und Umbrüche. Vorlagen für besondere Vorgänge benötigen den passenden Kontext; ein normales Auftragsdokument ist nicht automatisch eine Gutscheinvorlage.</p><p>Der Verlauf „Emails &amp; Dokumente“ hilft, bereits erzeugte Ausgaben nachzuvollziehen. Prüfen Sie ihn, bevor Sie eine Nachricht unbeabsichtigt erneut versenden. Die Pflege der Inhalte erklären <a href=\"/hilfe/emailvorlagen/\">E-Mail-Vorlagen</a> und <a href=\"/hilfe/dokumentvorlagen/\">Dokumentvorlagen</a>.</p>",
+      "shots": []
+    },
+    {
+      "id": "status",
+      "title": "Status ändern und Vorgänge nachvollziehen",
+      "html": "<p>Wählen Sie unter „Status ändern“ den zur tatsächlichen Bearbeitung passenden Zustand, beispielsweise bezahlt, versendet oder erledigt. Prüfen Sie vorher die Auswahl der Aufträge. Ein gesetzter Status sollte einen bereits geklärten Vorgang abbilden, nicht eine noch ausstehende Zahlung oder Lieferung vorwegnehmen.</p><p>Kontrollieren Sie Rückmeldung und Verlauf. Bei Fehlern prüfen Sie den aktuellen Stand, bevor Sie dieselbe Aktion wiederholen. Stornieren und Löschen haben unterschiedliche Zwecke; aus einer Statusänderung lässt sich nicht ohne Prüfung eine bestimmte Lager- oder externe Anbieteraktion ableiten.</p>",
+      "shots": []
+    },
+    {
+      "id": "export",
+      "title": "Listenexport, Paketdienste und Trackingimport",
+      "html": "<p>„Excel“ und „CSV Export“ exportieren Listendaten. Prüfen Sie Filter, Auswahl, Spalten und die erzeugte Datei. „Paketdienste“ öffnet dagegen den Adress-/Versandexport für das vorgesehene Versandverfahren. Wählen Sie den passenden Anbieter und kontrollieren Sie Empfänger und Adressfelder vor der Weiterverarbeitung.</p><p>Ein Paketdienstexport ist eine Datendatei für den jeweiligen Ablauf. Bei einem Trackingimport verwenden Sie das erwartete Text-/CSV-Format und ordnen die Nummern den richtigen Aufträgen zu. Eine PDF-Datei mit einem Paketlabel ist nicht dieselbe Art von Importdatei.</p>",
+      "shots": [
+        "verkauf-paketexport"
+      ]
+    },
+    {
+      "id": "sonderaktionen",
+      "title": "Duplizieren, Aufteilen, Zusammenführen und Löschen",
+      "html": "<p>Solche Aktionen verändern die Auftragsstruktur. Prüfen Sie vorab Kunde, Adressen, Zahlungen, Positionen und bereits erzeugte Dokumente. Verwenden Sie die jeweils angebotene Bestätigung und kontrollieren Sie danach die betroffenen Aufträge einzeln.</p><p>Für die Korrektur eines Felds ist die normale Bearbeitung vorgesehen. Löschen ist kein allgemeiner Ersatz für eine nachvollziehbare Stornierung oder Retourenbearbeitung. Bei bereits bezahlten oder extern übernommenen Bestellungen müssen die zugehörigen Abläufe zusammenpassen.</p>",
+      "shots": []
+    }
+  ],
+  "google-export": [
+    {
+      "id": "vorbereiten",
+      "title": "Produkte für den Google-Export vorbereiten",
+      "html": "<p>Öffnen Sie den Artikel und wählen Sie unter „Export Einstellungen“ die Freigabe für Google. Kontrollieren Sie Titel, Beschreibung, Preis, Verfügbarkeit, Kennungen sowie Produkt- und Bildlinks. Die Angaben in der Exportdatei sollen zur tatsächlichen Shopseite passen.</p><p>Die Produktfreigabe und die Einrichtung einer Datenquelle sind getrennte Schritte. Prüfen Sie zunächst den erzeugten Datenbestand, bevor Sie ihn an einen Anbieter übergeben.</p>",
+      "shots": [
+        "produkt-export"
+      ]
+    },
+    {
+      "id": "datei",
+      "title": "Exportdatei erzeugen und kontrollieren",
+      "html": "<p>Öffnen Sie unter Import/Export den Google-Bereich und verwenden Sie die angebotene Downloadfunktion. Speichern Sie die Datei und prüfen Sie, ob die vorgesehenen Artikel enthalten sind. Kontrollieren Sie insbesondere Preis, Währung, Verfügbarkeit, Bild- und Produktadresse.</p><p>Richten Sie im Google Merchant Center eine zu diesem Datenformat passende Produktdatenquelle ein. Laden Sie die Datei hoch bzw. verwenden Sie einen dafür eingerichteten Abruf. Prüfen Sie die Rückmeldungen zu den eingelesenen Artikeln und korrigieren Sie beanstandete Daten an ihrer Quelle. <a href=\"https://support.google.com/merchants/answer/14990942?hl=de\">Google: Produktdatenquellen einrichten</a>.</p><p>Aktualisieren Sie die Quelle passend zu Preis- und Bestandsänderungen. Bei einem geplanten Abruf kontrollieren Sie die Aktualisierungseinstellungen und deren Ergebnis. <a href=\"https://support.google.com/merchants/answer/14991445?hl=de\">Google: Aktualisierungen von Datenquellen planen</a>.</p>",
+      "shots": [
+        "google-export"
+      ]
+    },
+    {
+      "id": "sitemap",
+      "title": "Sitemap und Eigentumsbestätigung",
+      "html": "<p>Die Sitemap enthält Seitenadressen des Shops. Sie ist von der Produktdatei für das Merchant Center zu unterscheiden. Verwenden Sie den für Ihren Shop ausgegebenen Sitemap-Link und prüfen Sie, ob er öffentlich erreichbar ist.</p><p>Für die Verwaltung in Google Search Console bestätigen Sie die Inhaberschaft über eine dort angebotene Methode. Wenn Sie die HTML-Tag-Methode verwenden, übernehmen Sie die vollständige Bestätigungsangabe in den vorgesehenen Bereich und kontrollieren Sie die tatsächliche Seitenausgabe. Reichen Sie danach die passende Sitemap ein und prüfen Sie die Rückmeldungen.</p>",
+      "shots": []
+    },
+    {
+      "id": "analyse",
+      "title": "Besucheranalyse als eigene Einrichtung",
+      "html": "<p>Eine Besucheranalyse ist ein eigener Vorgang und nicht erforderlich, um eine Produktdatei zu erzeugen. Wenn Sie ein Analysewerkzeug einsetzen, richten Sie die aktuelle, für Ihren Shop vorgesehene Einbindung einschließlich der benötigten Einwilligungssteuerung ein. Prüfen Sie anschließend, welche Daten tatsächlich übertragen werden.</p><p>Für Unterstützung bei Produktdaten, Sitemap oder Analyse beschreiben Sie uns die konkrete Aufgabe und die verwendete Shopkonfiguration.</p>",
+      "shots": []
+    }
+  ],
+  "begriffe-und-editor": [
+    {
+      "id": "editor",
+      "title": "HTML-Editor und WYSIWYG",
+      "html": "<p>Ein HTML-Editor hilft, Inhalte für Webseiten zu formatieren. In der visuellen Ansicht sehen Sie Absätze, Überschriften und Listen während der Bearbeitung. WYSIWYG bedeutet sinngemäß „Was Sie sehen, entspricht der Ausgabe“. Die endgültige Darstellung prüfen Sie trotzdem im verwendeten Shoptemplate.</p><p>Die aktuelle Werkzeugleiste bietet Absatzformat, Rückgängig/Wiederholen, Fett, Kursiv, Unterstreichen, Listen, Einzüge, Links, Bilder und Tabellen. „Tx“ entfernt Formatierungen; „HTML“ öffnet die Quelltextansicht. Die Tabellenauswahl enthält Aktionen für Zeilen, Spalten und Tabelleneigenschaften. Verwenden Sie Tabellen für zusammengehörige Daten und prüfen Sie schmale Ansichten.</p>",
+      "shots": [
+        "dokumentvorlage-bearbeiten"
+      ]
+    },
+    {
+      "id": "html",
+      "title": "HTML, XHTML und Sonderzeichen",
+      "html": "<p>HTML beschreibt die Struktur einer Webseite. Beispielsweise kennzeichnet <code>&lt;p&gt;Text&lt;/p&gt;</code> einen Absatz. Ändern Sie bei normaler Textpflege den Inhalt und erhalten Sie passende öffnende und schließende Markierungen. XHTML bezeichnet eine strengere, XML-basierte Schreibweise von HTML und begegnet Ihnen vor allem in älteren Vorlagen.</p><p>Schreiben Sie Umlaute und Sonderzeichen normalerweise direkt im Editor. In HTML-Quelltext müssen Zeichen mit besonderer Bedeutung passend geschrieben werden, beispielsweise <code>&amp;amp;</code> für ein kaufmännisches Und oder <code>&amp;lt;</code> für ein sichtbares Kleinerzeichen. Kontrollieren Sie nach dem Speichern, ob das Zeichen tatsächlich angezeigt wird.</p>",
+      "shots": []
+    },
+    {
+      "id": "variablen",
+      "title": "Variablen und Platzhalter",
+      "html": "<p>Eine Variable steht für einen Wert, der bei der Ausgabe eingesetzt wird, etwa Kundenname oder Bestellnummer. Wählen Sie Platzhalter aus der aktuellen Variablenliste und übernehmen Sie sie vollständig. Platzhalter sind nicht automatisch normaler Text, den Sie beliebig umbenennen oder übersetzen können.</p><p>Prüfen Sie die Ausgabe mit einem konkreten Beispiel. Ein Platzhalter für Bestelldaten benötigt einen passenden Bestellkontext. Bedingungen steuern, wann ein Textblock erscheint; erhalten Sie deren vollständige Struktur.</p>",
+      "shots": []
+    },
+    {
+      "id": "schnittstellen",
+      "title": "API, XML und RSS",
+      "html": "<p>Eine API ist eine definierte Schnittstelle, über die Programme Daten oder Funktionen austauschen. Welche Angaben erforderlich sind und wie ein Vorgang bestätigt wird, legt die jeweilige Schnittstelle fest.</p><p>XML ist ein strukturiertes Textformat für Daten. Eine XML-Datei ist nicht automatisch eine sichtbare Shopseite. RSS verwendet strukturierte Feeds, um etwa neue Produkte oder Nachrichten bereitzustellen. Titel, Beschreibungen und Links pflegen Sie in der RSS-Verwaltung.</p>",
+      "shots": []
+    },
+    {
+      "id": "standards",
+      "title": "W3C und Vorlagenpflege",
+      "html": "<p>Das W3C entwickelt Webstandards. Für Ihre tägliche Pflege sind eine klare Inhaltsstruktur, vollständige Markierungen, aussagekräftige Links und verständliche Bildbeschreibungen wichtig. Bewahren Sie eine funktionierende Vorlage auf, bevor Sie umfangreich im Quelltext arbeiten.</p><p>Die Begriffe aus dem bisherigen Lexikon bleiben damit erklärt; die gezeigte Bedienung bezieht sich auf den aktuellen Editor.</p>",
+      "shots": []
+    }
+  ]
+}
