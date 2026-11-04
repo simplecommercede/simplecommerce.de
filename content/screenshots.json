@@ -8,7 +8,8 @@
       "width": 390,
       "height": 844
     },
-    "data": "synthetisch"
+    "data": "synthetisch",
+    "review_note": "Am 04.11.2026 nach Admin-Korrektur der gemeinsamen Aktionsleiste neu aufgenommen: Schliessen und Weiter auf gleicher Zeile; Desktop und 390-Pixel-Mobilansicht visuell geprüft."
   },
   "artikel-attribute": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showattribute",
