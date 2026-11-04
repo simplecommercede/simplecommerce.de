@@ -5,7 +5,7 @@ Stand: 04.11.2026. Gilt für dieses Repository. Bei Änderungen diese Regeln zus
 ## Auftrag und Inhalt
 - Statische Unternehmenswebsite als Ersatz für WordPress. PHP nur für das Kontaktformular; kein neues CMS oder unnötiger Build-Stack.
 - Angebote: Shopsystem, Service, Webseitenerstellung, professionelle IT-Beratung sowie IT-Projekte und individuelle Software. „IP-Projekte“ war ein Schreibfehler.
-- Schritt 1 priorisiert Bedienbarkeit. Das endgültige Design übernimmt der Kollege. Funktionierende Navigation, Semantik, Tastaturbedienung und responsive Darstellung erhalten.
+- Schritt 1 priorisiert Bedienbarkeit. Der Nutzer hat anschließend eine professionelle Markenüberarbeitung mit Originalorange und Froschmotiven beauftragt; spätere Designarbeit mit dem Kollegen abstimmen. Funktionierende Navigation, Semantik, Tastaturbedienung und responsive Darstellung erhalten.
 - Hauptnavigation: Shop, Leistungen, Hilfe, Kontakt. Shop-Preise gehören unter Shop; die bestehende URL `/preise/` bleibt erhalten. Andere Leistungen bekommen individuelle Angebote und verweisen auf Kontakt.
 - Grundlegende Bestandsinhalte, Preise, Kontakt und Rechtsseiten erhalten. Keine Preise erfinden. Widersprüchliche Telefonzeiten sowie Preis- und Rechtsinhalte vor Livegang klären; keine rechtliche Aktualitätsprüfung behaupten.
 
@@ -46,3 +46,7 @@ git diff --check
 - Kontaktformular nur mit fiktiven Daten und lokalem Dateitransport testen. Live-Zustellung nicht aus lokal erfolgreichen Tests ableiten; Konfiguration und Grenzen in `docs/betrieb.md` beachten.
 - SEO/GEO: eindeutige Titel/Beschreibungen, Canonicals, Sitemap, semantische Inhalte, interne Links und wahrheitsgemäße strukturierte Daten erhalten. Keine Rankings oder KI-Zitate versprechen.
 - `README.md` ist der Einstieg; `docs/migration.md` beschreibt Quellen/URL-Entscheidungen, `docs/betrieb.md` Betrieb/Live-Voraussetzungen und `docs/hilfe-pruefung.md` Screenshotverfahren/Prüftiefe. Bei Änderungen jeweils passende Dokumente mitführen.
+
+## Markenbild
+- Markenorange `#ff6600` aus der bisherigen Startseite verwenden, mit Anthrazit und Weiß. Dunklere Orangevariante für kleine Texte auf Weiß.
+- Originalfroschmotive aus `uploads/2020/10/` gezielt verwenden; veröffentlichte Kopien und Herkunft stehen in `content/brand-assets.json`. Alte in Bilder eingebrannte Werbeaussagen nicht wieder als aktuelle Zusagen zeigen. Bildausschnitte per CSS erhalten den Originalfrosch.

@@ -1,0 +1,31 @@
+{
+  "orange": "#ff6600",
+  "orange_source": "https://simplecommerce.de/whiteegr/elementor/css/post-10.css",
+  "assets": [
+    {
+      "file": "public/assets/brand/v_shop_cms.jpg",
+      "source": "uploads/2020/10/v_shop_cms.jpg",
+      "use": "Unverändertes Original; sichtbarer Ausschnitt per CSS, alte Bildtexte nicht anzeigen"
+    },
+    {
+      "file": "public/assets/brand/v_bedienung.jpg",
+      "source": "uploads/2020/10/v_bedienung.jpg",
+      "use": "Unverändertes Original; sichtbarer Ausschnitt per CSS, alte Bildtexte nicht anzeigen"
+    },
+    {
+      "file": "public/assets/brand/v_sicherheit.jpg",
+      "source": "uploads/2020/10/v_sicherheit.jpg",
+      "use": "Unverändertes Original; sichtbarer Ausschnitt per CSS, alte Bildtexte nicht anzeigen"
+    },
+    {
+      "file": "public/assets/brand/v_warenwirtschaft.jpg",
+      "source": "uploads/2020/10/v_warenwirtschaft.jpg",
+      "use": "Unverändertes Original; sichtbarer Ausschnitt per CSS, alte Bildtexte nicht anzeigen"
+    },
+    {
+      "file": "public/assets/brand/v_updates.jpg",
+      "source": "uploads/2020/10/v_updates.jpg",
+      "use": "Unverändertes Original; sichtbarer Ausschnitt per CSS, alte Bildtexte nicht anzeigen"
+    }
+  ]
+}

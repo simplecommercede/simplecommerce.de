@@ -33,4 +33,6 @@ Semantisches HTML, aussagekräftige Titel und Beschreibungen, kanonische URLs, S
 
 SEO-Grundlage im aktuellen Generator: Organization, WebPage (bzw. übergebener Seitentyp) und BreadcrumbList als JSON-LD, individuelle Titel/Beschreibungen, Canonicals und Sitemap. Dies ist keine Garantie für Indexierung, Rankings oder Aufnahme in KI-Antworten.
 
-Die Teil-Commits sind umgesetzt; das Git-Protokoll ist die Quelle für konkrete Revisionen. Offen bleiben das endgültige Design sowie die in `betrieb.md` aufgeführten Schritte vor Veröffentlichung. Öffentliche Alttexte sind als Quelle erhalten; eine rechtliche Abnahme ist damit nicht verbunden.
+Die Teil-Commits sind umgesetzt; das Git-Protokoll ist die Quelle für konkrete Revisionen. Die Markenüberarbeitung ergänzt den Erstentwurf; offen bleiben die in `betrieb.md` aufgeführten Schritte vor Veröffentlichung. Öffentliche Alttexte sind als Quelle erhalten; eine rechtliche Abnahme ist damit nicht verbunden.
+
+Markenüberarbeitung vom 04.11.2026: Originalorange `#ff6600`, Anthrazit/Weiß und fotografische Froschmotive aus dem bereitgestellten Bestand. Startseite und Leistungs-/Themenansichten individueller gestaltet; Herkunft in `content/brand-assets.json`. Diese vom Nutzer beauftragte Überarbeitung ergänzt den funktionalen Erstentwurf.

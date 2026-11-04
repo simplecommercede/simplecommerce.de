@@ -37,3 +37,5 @@ Nachkorrektur: Verkaufsmanager auf Desktop und Mobil ohne DEV-Banner neu aufgeno
 5. Fertige Hilfeseite auf Desktop und Mobil visuell prüfen. Mit `http://127.0.0.1:1892/admin2/?help_screenshots=0` den Modus beenden. Demo bei Bedarf mit `bash dev/help-demo.sh stop` stoppen, niemals Volumes löschen.
 
 Die oben aufgeführten Tests sind Nachweise für den jeweiligen lokalen Stand vom 04.11.2026. Sie bedeuten keine laufende Überwachung und keine vollständige Abnahme aller Adminaktionen. Bei betroffenen Änderungen gezielt erneut prüfen. Der Websitevalidator kontrolliert Struktur und lokale Ziele; er ersetzt keine visuelle Prüfung, keine fachliche Schema.org-Validierung und keine Live-Mailprobe.
+
+Markenüberarbeitung: 59 Seiten erneut strukturell geprüft; Startseite und Warenwirtschaft bei 390 Pixel Rahmenbreite ohne horizontalen Seitenüberlauf. Startseite, Warenwirtschaft und Sicherheit auf Desktop visuell geprüft. Originalfroschmotive per CSS-Ausschnitt eingebunden; Hilfescreenshots und Handyrahmen bleiben erhalten.

@@ -31,4 +31,6 @@ Die Website-Vorschau nutzt Port 1890. Der PHP-Webserver verarbeitet `.htaccess` 
 
 Die Hilfe-Demo des Shopprojekts auf Port 1892 ist unabhängig von der Website. Sie wird nicht zusammen mit `public/` veröffentlicht. Start/Stop und Screenshotmodus sind in [Hilfe und Prüfung](hilfe-pruefung.md) beschrieben.
 
-Stand 04.11.2026: lokale Prüfung abgeschlossen; kein Nachweis einer Produktivzustellung oder eines Deployments. Die abschließenden Designarbeiten bleiben beim Kollegen.
+Stand 04.11.2026: lokale Prüfung abgeschlossen; kein Nachweis einer Produktivzustellung oder eines Deployments. Die ursprüngliche Designübergabe wurde durch den Auftrag zur Markenüberarbeitung ergänzt; weitere Abstimmung erfolgt mit dem Kollegen.
+
+Markenüberarbeitung vom 04.11.2026: Originalorange `#ff6600`, Anthrazit/Weiß und fotografische Froschmotive aus dem bereitgestellten Bestand. Startseite und Leistungs-/Themenansichten individueller gestaltet; Herkunft in `content/brand-assets.json`. Diese vom Nutzer beauftragte Überarbeitung ergänzt den funktionalen Erstentwurf.
