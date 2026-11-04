@@ -19,7 +19,7 @@ Im UI-Chat gemeldete Probleme: leere Boxen-/Startseitenansicht, abgeschnittene S
 
 ## Abschlussprüfung
 - 59 statische Seiten: keine Fehler bei internen Zielen, Ankern, Überschriften und strukturierten Daten.
-- 24 aktuelle Hilfeartikel, 50 Screenshots aus 25 Ansichten; drei historische Funktionen mit Statushinweis.
+- Ursprünglicher Stand vor der Detailüberarbeitung: 24 Kurzartikel und 50 Screenshots. Dieser Umfang war inhaltlich nicht vollständig und wurde durch die unten dokumentierte Detailüberarbeitung ersetzt.
 - Mobile Hilfeseite: Inhaltsbreite und Scrollbreite identisch (375 Pixel plus Scrollbar im 390-Pixel-Rahmen), kein Seitenüberlauf. Hilfesuche mit Treffern, leeren Treffern und zurückgesetzter Suche geprüft.
 - Kontaktformular lokal mit Dateitransport: GET 405, fremder Origin 403, ungültige Werte/Array/Header-Injektion 422, Honeypot ohne Zustellung, fünf gültige Testmails, sechste Anfrage 429. Kein echter Versand.
 - Apache 2.4: alte Hilfe-URL und WordPress-ID liefern 301 auf passende Ziele; Hilfe 200, unbekannte URL 404. Zielhost nach Deployment erneut prüfen.
@@ -39,3 +39,12 @@ Nachkorrektur: Verkaufsmanager auf Desktop und Mobil ohne DEV-Banner neu aufgeno
 Die oben aufgeführten Tests sind Nachweise für den jeweiligen lokalen Stand vom 04.11.2026. Sie bedeuten keine laufende Überwachung und keine vollständige Abnahme aller Adminaktionen. Bei betroffenen Änderungen gezielt erneut prüfen. Der Websitevalidator kontrolliert Struktur und lokale Ziele; er ersetzt keine visuelle Prüfung, keine fachliche Schema.org-Validierung und keine Live-Mailprobe.
 
 Markenüberarbeitung: 59 Seiten erneut strukturell geprüft; Startseite und Warenwirtschaft bei 390 Pixel Rahmenbreite ohne horizontalen Seitenüberlauf. Startseite, Warenwirtschaft und Sicherheit auf Desktop visuell geprüft. Originalfroschmotive per CSS-Ausschnitt eingebunden; Hilfescreenshots und Handyrahmen bleiben erhalten.
+
+## Detailüberarbeitung der Hilfe
+Die ausführlichen Anleitungen stehen in `content/help-details.json` und werden durch `scripts/help_render.py` in `scripts/build.py` eingebunden. Metadaten und der bewusst knappe Schnellstart bleiben in `content/help-updates.json`. Alle 23 bisherigen WordPress-Hilfethemen wurden gegen die Altinhalte geprüft und um Fachabschnitte ergänzt. Das Lexikon wird als eigenes zusätzliches Thema erhalten. Die Kapitelzuordnung und bewussten Ausschlüsse stehen in `hilfe-inhaltsabgleich.md`; der Admin-Chat hat den Codeabgleich in `admin-hilfe-abgleich.md` geliefert.
+
+Zusatzaufnahmen umfassen Produktreiter, Bild-Upload, Variantenbestand, Attributwerte, gewählte Mail-/Dokument-/CMS-Vorlagen, Versand-/Zahlungsreiter, Shopdaten, Startseite, Sprachtexte und Bestellbearbeitung. Jede veröffentlichte Ansicht hat eine Desktop- und eine Mobilaufnahme. Bei der visuellen Prüfung gefundene mobile Ladeabdeckungen wurden durch erneute Aufnahme nach Ende von `#TB_load`/`#TB_overlay` beseitigt. Keine Oberfläche nachgezeichnet. Die vollständige Anzahl ergibt sich aus `content/screenshots.json`; Bilder stehen bei den zugehörigen Abschnitten.
+
+Abschluss der Detailüberarbeitung: 60 statische Seiten strukturell geprüft, 0 Fehler und 0 Ankerhinweise. Artikelanleitung: 13 Abschnitte mit Sprungnavigation, Desktop-/Mobilbildern und zusätzlichen Dialogansichten für Upload, Warenwirtschaft, Zubehör und Cross-Selling. Mobile Hilfeseite bei 390-Pixel-Rahmen: 375 Pixel Inhalts- und Scrollbreite, kein horizontaler Seitenüberlauf. Desktop-Bildpaar und CSS-Handyrahmen visuell geprüft. UI-Chat korrigierte die Demo-Bestellanlage (c663343b), bedingte Paketdialoghinweise (d9c9d4d4) und interne Herkunftszeile nur im Screenshotmodus (a96fe509).
+
+Finaler Website-Stand: 25 Hilfethemen (23 ausführlich überarbeitete Bestandsartikel, der kurze Produkt-Schnellstart und das neue Begriffs-/Editor-Lexikon), 112 ausführliche Abschnitte und 122 tatsächlich eingebundene Screenshots aus 61 Desktop-/Mobilpaaren. Das Manifest enthält zusätzlich frühere, erhaltene Übersichtsaufnahmen. Die Artikelanleitung enthält 15 Bildpaare; Zubehör- und Cross-Selling-Dialoge wurden nach der ersten Inhaltsabnahme ergänzt. Im öffentlichen HTML der Hilfe kein Amazon-Text.

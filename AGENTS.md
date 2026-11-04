@@ -12,7 +12,7 @@ Stand: 04.11.2026. Gilt für dieses Repository. Bei Änderungen diese Regeln zus
 ## Dateien und Änderungen
 - `scripts/build.py` erzeugt HTML, Sitemap, Weiterleitungen und Seitenindex. Generierte Dateien in `public/` nicht von Hand ändern; Quelle im Generator oder in `content/` bearbeiten und neu bauen.
 - `public/assets/site.css`, `public/assets/site.js` und `public/kontakt/senden.php` werden direkt gepflegt.
-- Aktuelle Hilfe: `content/help-updates.json`. Öffentlicher Altbestand: `content/wordpress-public.json`. Screenshotnachweise: `content/screenshots.json`. Bildherkunft: `content/image-provenance.json`.
+- Aktuelle Hilfe: Metadaten in `content/help-updates.json`, ausführliche Abschnitte in `content/help-details.json`, Darstellung in `scripts/help_render.py`. Öffentlicher Altbestand: `content/wordpress-public.json`. Screenshotnachweise: `content/screenshots.json`. Bildherkunft: `content/image-provenance.json`.
 - Originaldump, `uploads/` und `sec_helpcenter/` bleiben lokale, ignorierte Quellen. Keine Benutzer, Zugangsdaten, Einstellungen oder Einsendungen aus dem Dump übernehmen. `scripts/inventory-wordpress.py` ersetzt den öffentlichen Extrakt; nur bei bewusster Neuübernahme ausführen und Diff prüfen.
 - Ausschließlich `public/` ausliefern. Keine SQL-Dumps, internen Dokumente oder veralteten CGI-/Flash-Dateien veröffentlichen.
 - Vor Änderungen Arbeitsbaum prüfen und fremde Änderungen erhalten. Fachliche Teil-Commits mit deutschen Texten. Push und Produktivumstellung sind getrennte Aktionen; bisher wurde lokal gearbeitet.
@@ -50,3 +50,8 @@ git diff --check
 ## Markenbild
 - Markenorange `#ff6600` aus der bisherigen Startseite verwenden, mit Anthrazit und Weiß. Dunklere Orangevariante für kleine Texte auf Weiß.
 - Originalfroschmotive aus `uploads/2020/10/` gezielt verwenden; veröffentlichte Kopien und Herkunft stehen in `content/brand-assets.json`. Alte in Bilder eingebrannte Werbeaussagen nicht wieder als aktuelle Zusagen zeigen. Bildausschnitte per CSS erhalten den Originalfrosch.
+
+## Hilfeumfang und Freigaben
+- Vollständige aktuelle Anleitungen mit Inhaltsverzeichnis und abschnittsbezogenen Desktop-/Mobilbildern pflegen; nicht wieder auf wenige Übersichtsschritte kürzen. Inhaltsabgleich: `docs/hilfe-inhaltsabgleich.md`, technische Belege: `docs/admin-hilfe-abgleich.md`.
+- Nutzerentscheidung: Amazon vorerst nicht in öffentlichen Anleitungstexten oder eigenen Bildabschnitten erklären. Offene bzw. nicht freigegebene Funktionen intern dokumentieren; öffentliche Hilfe beschreibt nutzbare Abläufe. Keine Funktionsreife durch Retusche von Warnungen vortäuschen.
+- Vor Produktaufnahmen zusätzlich warten, bis `#TB_load` und `#TB_overlay` verschwunden sind. Bei dynamischen Tabellen/Formularen auf den eigentlichen Inhalt warten, nicht nur die Überschrift.

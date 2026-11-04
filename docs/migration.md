@@ -36,3 +36,5 @@ SEO-Grundlage im aktuellen Generator: Organization, WebPage (bzw. übergebener S
 Die Teil-Commits sind umgesetzt; das Git-Protokoll ist die Quelle für konkrete Revisionen. Die Markenüberarbeitung ergänzt den Erstentwurf; offen bleiben die in `betrieb.md` aufgeführten Schritte vor Veröffentlichung. Öffentliche Alttexte sind als Quelle erhalten; eine rechtliche Abnahme ist damit nicht verbunden.
 
 Markenüberarbeitung vom 04.11.2026: Originalorange `#ff6600`, Anthrazit/Weiß und fotografische Froschmotive aus dem bereitgestellten Bestand. Startseite und Leistungs-/Themenansichten individueller gestaltet; Herkunft in `content/brand-assets.json`. Diese vom Nutzer beauftragte Überarbeitung ergänzt den funktionalen Erstentwurf.
+
+Ausführliche Hilfe: `content/help-details.json` enthält die redaktionell abgeglichenen Abschnitte; `scripts/help_render.py` erzeugt Inhaltsverzeichnisse und Bildpaare. Umfang, bewusste Ausschlüsse und alte Lexikonziele sind in `docs/hilfe-inhaltsabgleich.md` dokumentiert. Die frühere Kurzfassung war keine vollständige Inhaltsmigration.
