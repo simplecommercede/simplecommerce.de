@@ -63,7 +63,8 @@
       "width": 390,
       "height": 844
     },
-    "data": "synthetisch"
+    "data": "synthetisch",
+    "capture_mode": "help_screenshots=1: nur DEV-Banner visuell ausgeblendet; Mailblockade unverändert"
   },
   "benutzer-verwalten-und-anlegen": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showbenutzeradmin",

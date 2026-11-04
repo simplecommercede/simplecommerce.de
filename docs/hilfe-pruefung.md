@@ -26,3 +26,5 @@ Im UI-Chat gemeldete Probleme: leere Boxen-/Startseitenansicht, abgeschnittene S
 - UI-Chat meldet abschließend 24 vollständige HTTP-Prüfungen ohne neue Fehlerlogeinträge. Auch arrParents bei eigenen Seiten korrigiert. Shop-Commits: 95fb8c60, 4713ba02, b0a1b0a1, 4a6f4bdf, 2ecc53eb, 16892e77.
 - Demo-Grenzen: keine Storefront, keine externen Anbieteraktionen, keine vollständige Prüfung aller Speicheraktionen. PHP-Konfigurationsschreiben im Demo-Bootstrap nicht eingerichtet; Google-Download enthält ohne freigegebene Artikel nur eine Kopfzeile.
 - Bildprompts und Dateipfade: content/image-provenance.json.
+
+Nachkorrektur: Verkaufsmanager auf Desktop und Mobil ohne DEV-Banner neu aufgenommen (Demo-eigener help_screenshots-Modus, Mailblockade unverändert). Alle mobilen Rahmen als Blockelement mit Kameraaussparung und unterer Gestenleiste dargestellt.
