@@ -21,7 +21,7 @@ Schritt 1 priorisiert Bedienbarkeit. Styles: `public/assets/site.css`. Interakti
 
 ## Vor Live-Umschaltung
 - Preiswerte und Kontaktzeiten bestätigen (Altseiten widersprechen sich bei Telefonzeiten).
-- Rechtsseiten sind aus dem Altbestand erhalten; Datenschutz an den tatsächlichen neuen Betrieb anpassen/freigeben.
+- Rechtsseiten werden in `content/legal/` gepflegt. Technische Inhalte wurden am 04.11.2026 aktualisiert; offene Betriebs- und Unternehmensangaben in `docs/rechtliches.md` vor Livegang ergänzen.
 - Mailzustellung konfigurieren und Ende-zu-Ende prüfen.
 - Domain, HTTPS, 301-Weiterleitungen und 404-Status am Zielhost testen.
 - Keine ungeprüften Althilfe-Seiten als aktuelle Anleitung freigeben.

@@ -7,12 +7,12 @@ Stand: 04.11.2026. Gilt für dieses Repository. Bei Änderungen diese Regeln zus
 - Angebote: Shopsystem, Service, Webseitenerstellung, professionelle IT-Beratung sowie IT-Projekte und individuelle Software. „IP-Projekte“ war ein Schreibfehler.
 - Schritt 1 priorisiert Bedienbarkeit. Der Nutzer hat anschließend eine professionelle Markenüberarbeitung mit Originalorange und Froschmotiven beauftragt; spätere Designarbeit mit dem Kollegen abstimmen. Funktionierende Navigation, Semantik, Tastaturbedienung und responsive Darstellung erhalten.
 - Hauptnavigation: Shop, Leistungen, Hilfe, Kontakt. Shop-Preise gehören unter Shop; die bestehende URL `/preise/` bleibt erhalten. Andere Leistungen bekommen individuelle Angebote und verweisen auf Kontakt.
-- Grundlegende Bestandsinhalte, Preise, Kontakt und Rechtsseiten erhalten. Keine Preise erfinden. Widersprüchliche Telefonzeiten sowie Preis- und Rechtsinhalte vor Livegang klären; keine rechtliche Aktualitätsprüfung behaupten.
+- Grundlegende Bestandsinhalte, Preise, Kontakt und Rechtsseiten erhalten. Keine Preise erfinden. Widersprüchliche Telefonzeiten sowie Preis- und Rechtsinhalte vor Livegang klären; keine vollständige rechtliche Freigabe ohne geklärte Betriebsangaben behaupten. Rechtsquellen und offene Angaben stehen in `docs/rechtliches.md`.
 
 ## Dateien und Änderungen
 - `scripts/build.py` erzeugt HTML, Sitemap, Weiterleitungen und Seitenindex. Generierte Dateien in `public/` nicht von Hand ändern; Quelle im Generator oder in `content/` bearbeiten und neu bauen.
 - `public/assets/site.css`, `public/assets/site.js` und `public/kontakt/senden.php` werden direkt gepflegt.
-- Aktuelle Hilfe: Metadaten in `content/help-updates.json`, ausführliche Abschnitte in `content/help-details.json`, Darstellung in `scripts/help_render.py`. Öffentlicher Altbestand: `content/wordpress-public.json`. Screenshotnachweise: `content/screenshots.json`. Bildherkunft: `content/image-provenance.json`.
+- Aktuelle Hilfe: Metadaten in `content/help-updates.json`, ausführliche Abschnitte in `content/help-details.json`, Darstellung in `scripts/help_render.py`. Aktuelle Rechtstexte: `content/legal/`. Öffentlicher Altbestand: `content/wordpress-public.json`. Screenshotnachweise: `content/screenshots.json`. Bildherkunft: `content/image-provenance.json`.
 - Originaldump, `uploads/` und `sec_helpcenter/` bleiben lokale, ignorierte Quellen. Keine Benutzer, Zugangsdaten, Einstellungen oder Einsendungen aus dem Dump übernehmen. `scripts/inventory-wordpress.py` ersetzt den öffentlichen Extrakt; nur bei bewusster Neuübernahme ausführen und Diff prüfen.
 - Ausschließlich `public/` ausliefern. Keine SQL-Dumps, internen Dokumente oder veralteten CGI-/Flash-Dateien veröffentlichen.
 - Vor Änderungen Arbeitsbaum prüfen und fremde Änderungen erhalten. Fachliche Teil-Commits mit deutschen Texten. Push und Produktivumstellung sind getrennte Aktionen; bisher wurde lokal gearbeitet.

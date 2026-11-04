@@ -254,13 +254,13 @@
   {
     "path": "/impressum/",
     "title": "Impressum",
-    "description": "Impressum bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Anbieterkennzeichnung und Kontaktdaten der simplecommerce GmbH.",
     "noindex": false
   },
   {
     "path": "/datenschutz/",
     "title": "Datenschutz",
-    "description": "Datenschutz bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Informationen zur Verarbeitung personenbezogener Daten auf unserer Website und bei Kontaktanfragen.",
     "noindex": false
   },
   {
