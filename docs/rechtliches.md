@@ -14,11 +14,11 @@ Benjamin Bartels ist Datenschutz-Ansprechpartner. Er ist zugleich Geschäftsfüh
 
 ## Noch zu klären
 - Vorhandenen AV-Vertrag mit Hetzner und gebuchten Backup-Umfang prüfen.
-- Teilnahme/Verpflichtung zur Verbraucherschlichtung ist noch unbeantwortet. Aktuelle Mitarbeiterzahl eins bestätigt, Stichtag 31.12.2025 noch nicht ausdrücklich. Keine Teilnahme oder Nichtteilnahme erfinden; § 36 VSBG vor Livegang abschließen.
-- Etwaig zugeteilte Wirtschafts-Identifikationsnummer erfragt; vorhandene USt-ID übernommen.
+- Betreiberantwort „Nein, Rest passt“ bestätigt keine Verpflichtung/freiwillige Zusage zur Verbraucherschlichtung; entsprechender Hinweis im Impressum ergänzt. Er wird unabhängig von der Kleinunternehmer-Ausnahme nach § 36 Abs. 3 VSBG angezeigt.
+- Keine zusätzliche Wirtschafts-Identifikationsnummer mitgeteilt; übrige Angaben vom Betreiber bestätigt. Vorhandene USt-ID übernommen; bei späterer Zuteilung erneut prüfen.
 - Unternehmensangaben und tatsächliche Produktionskonfiguration vor Freigabe bestätigen. Weitere Dienste erfordern erneute Anpassung.
 
-Die lokale Fassung ist wegen der verbleibenden Angaben noch keine abschließende Rechtsfreigabe.
+Die Texte sind anhand der bestätigten Angaben und des Quellcodes aktualisiert. Eine Prüfung der tatsächlichen Serverkonfiguration und eine abschließende rechtliche Einzelfallprüfung sind damit nicht ersetzt.
 
 ## Amtliche Prüfquellen
 - Anbieterkennzeichnung: https://www.gesetze-im-internet.juris.de/ddg/__5.html
