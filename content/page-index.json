@@ -121,135 +121,135 @@
   },
   {
     "path": "/hilfe/artikel-attribute/",
-    "title": "Artikel Attribute – Hilfe",
-    "description": "Artikel Attribute: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Artikelattribute und Sets verwalten – Hilfe",
+    "description": "Attributsets fassen zusammengehörige Auswahlfelder zusammen. Sie helfen, wiederkehrende Produkteigenschaften strukturiert anzulegen.",
+    "noindex": false
   },
   {
     "path": "/hilfe/artikelliste/",
-    "title": "Artikelliste – Hilfe",
-    "description": "Artikelliste: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Artikel finden, filtern und bearbeiten – Hilfe",
+    "description": "In der Artikelliste finden Sie Produkte und öffnen deren Bearbeitung. Mehrere Artikel lassen sich für gemeinsame Aktionen auswählen.",
+    "noindex": false
   },
   {
     "path": "/hilfe/artikel-anlegen/",
-    "title": "Artikel anlegen – Hilfe",
-    "description": "Artikel anlegen: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Einen neuen Artikel anlegen – Hilfe",
+    "description": "Legen Sie zuerst den Artikel an und ergänzen Sie anschließend seine Daten, Texte, Bilder und Varianten.",
+    "noindex": false
   },
   {
     "path": "/hilfe/benutzer-verwalten-und-anlegen/",
-    "title": "Benutzer verwalten und anlegen – Hilfe",
-    "description": "Benutzer verwalten und anlegen: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Benutzer und Menüfreigaben verwalten – Hilfe",
+    "description": "Benutzerkonten erhalten die Menüpunkte, die sie für ihre Aufgaben benötigen.",
+    "noindex": false
   },
   {
     "path": "/hilfe/bestanduebersicht/",
-    "title": "Bestandübersicht – Hilfe",
-    "description": "Bestandübersicht: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Bestände und Varianten überblicken – Hilfe",
+    "description": "Die Bestandsübersicht zeigt Artikel und Ausführungen gemeinsam mit Lager- und Verkaufsinformationen.",
+    "noindex": false
   },
   {
     "path": "/hilfe/boxen-anlegen-und-verwalten/",
-    "title": "Boxen anlegen und verwalten – Hilfe",
-    "description": "Boxen anlegen und verwalten: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Boxen und Inhalte zuordnen – Hilfe",
+    "description": "Boxen bündeln Inhalte oder Funktionen, die im Shoplayout verwendet werden.",
+    "noindex": false
   },
   {
     "path": "/hilfe/dokumentvorlagen/",
-    "title": "Dokumentvorlagen – Hilfe",
-    "description": "Dokumentvorlagen: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Dokumentvorlagen bearbeiten – Hilfe",
+    "description": "Dokumentvorlagen bestimmen den Inhalt erzeugter Dokumente. Variablen übernehmen Werte aus Shop und Bestellung.",
+    "noindex": false
   },
   {
     "path": "/hilfe/eigene-seiten-shop-cms/",
-    "title": "Eigene Seiten & Shop CMS – Hilfe",
-    "description": "Eigene Seiten & Shop CMS: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Eigene Seiten im Shop-CMS bearbeiten – Hilfe",
+    "description": "Im Shop-CMS pflegen Sie zusätzliche Inhaltsseiten und deren Darstellung in der Navigation.",
+    "noindex": false
   },
   {
     "path": "/hilfe/emailvorlagen/",
-    "title": "Emailvorlagen – Hilfe",
-    "description": "Emailvorlagen: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "E-Mail-Vorlagen pflegen – Hilfe",
+    "description": "Mit E-Mail-Vorlagen gestalten Sie wiederkehrende Nachrichten. Platzhalter liefern die zugehörigen Shop- und Bestellinformationen.",
+    "noindex": false
   },
   {
     "path": "/hilfe/google-export/",
-    "title": "Google Export – Hilfe",
-    "description": "Google Export: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Google-Produktfeed prüfen und exportieren – Hilfe",
+    "description": "Produkte für Google Shopping vorbereiten, den Feed prüfen und für das Merchant Center bereitstellen.",
+    "noindex": false
   },
   {
     "path": "/hilfe/gutscheine/",
-    "title": "Gutscheine – Hilfe",
-    "description": "Gutscheine: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Gutscheinsets und Bedingungen verwalten – Hilfe",
+    "description": "Gutscheinsets verbinden einen Gutscheinwert mit zeitlichen, produktbezogenen oder kundenspezifischen Bedingungen.",
+    "noindex": false
   },
   {
     "path": "/hilfe/kategorien/",
-    "title": "Kategorien – Hilfe",
-    "description": "Kategorien: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Kategorien strukturieren – Hilfe",
+    "description": "Kategorien ordnen Ihre Produkte und helfen Besuchern, das Sortiment zu durchsuchen.",
+    "noindex": false
   },
   {
     "path": "/hilfe/kundenliste/",
-    "title": "Kundenliste – Hilfe",
-    "description": "Kundenliste: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Kunden finden und bearbeiten – Hilfe",
+    "description": "Suchen Sie Kunden und öffnen Sie die zugehörigen Stammdaten. Die Screenshots zeigen ausschließlich fiktive Personen.",
+    "noindex": false
   },
   {
     "path": "/hilfe/laender/",
-    "title": "Länder – Hilfe",
-    "description": "Länder: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Verfügbare Länder auswählen – Hilfe",
+    "description": "Die Länderauswahl legt den verfügbaren Länderbestand fest. Versand- und Zahlungsarten besitzen zusätzlich eigene Länderzuordnungen.",
+    "noindex": false
   },
   {
     "path": "/hilfe/rabattsystem/",
-    "title": "Rabattsystem – Hilfe",
-    "description": "Rabattsystem: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Rabattregeln einrichten – Hilfe",
+    "description": "Rabattregeln berechnen Zu- oder Abschläge anhand von Einkaufswert, Artikeln, Kategorien oder Kundengruppen.",
+    "noindex": false
   },
   {
     "path": "/hilfe/shopdaten/",
-    "title": "Shopdaten – Hilfe",
-    "description": "Shopdaten: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Geschäfts- und Kontaktdaten zentral pflegen – Hilfe",
+    "description": "Shopdaten bilden die gemeinsame Grundlage für Firmenangaben, Kommunikation, Bankdaten und weitere Texte.",
+    "noindex": false
   },
   {
     "path": "/hilfe/sprachen/",
-    "title": "Sprachen – Hilfe",
-    "description": "Sprachen: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Shopsprachen verwalten – Hilfe",
+    "description": "Legen Sie fest, welche Sprachen im Shop verfügbar sind und welche Sprache standardmäßig verwendet wird.",
+    "noindex": false
   },
   {
     "path": "/hilfe/startseite/",
-    "title": "Startseite – Hilfe",
-    "description": "Startseite: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Inhalte der Shopstartseite pflegen – Hilfe",
+    "description": "Die Startseitenverwaltung bearbeitet Inhalte der Shopaußenseite. Sie ist nicht mit dem Dashboard der Administration zu verwechseln.",
+    "noindex": false
   },
   {
     "path": "/hilfe/verkaufsmanager/",
-    "title": "Verkaufsmanager – Hilfe",
-    "description": "Verkaufsmanager: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Bestellungen im Verkaufsmanager bearbeiten – Hilfe",
+    "description": "Der Verkaufsmanager verbindet Bestellübersicht, Kundendaten, Versand, Zahlung und die nächsten Bearbeitungsschritte.",
+    "noindex": false
   },
   {
     "path": "/hilfe/versand/",
-    "title": "Versand – Hilfe",
-    "description": "Versand: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Versandklassen und Kosten einstellen – Hilfe",
+    "description": "Versandklassen bestimmen Verfügbarkeit und Berechnung der Versandkosten.",
+    "noindex": false
   },
   {
     "path": "/hilfe/waehrungen/",
-    "title": "Währungen – Hilfe",
-    "description": "Währungen: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Währungen und Darstellung pflegen – Hilfe",
+    "description": "Währungen legen fest, wie Geldbeträge bezeichnet, dargestellt und umgerechnet werden.",
+    "noindex": false
   },
   {
     "path": "/hilfe/zahlungsarten/",
-    "title": "Zahlungsarten – Hilfe",
-    "description": "Zahlungsarten: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Zahlungsarten konfigurieren – Hilfe",
+    "description": "Zahlungsarten verbinden Aktivität, Bedingungen, Texte und gegebenenfalls Gebühren.",
+    "noindex": false
   },
   {
     "path": "/impressum/",
@@ -283,9 +283,9 @@
   },
   {
     "path": "/hilfe/hersteller/",
-    "title": "Hersteller – Hilfe",
-    "description": "Hersteller: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
-    "noindex": true
+    "title": "Hersteller verwalten – Hilfe",
+    "description": "Herstellerdaten lassen sich zentral pflegen und den Produkten zuordnen.",
+    "noindex": false
   },
   {
     "path": "/leistungsmerkmale/",
@@ -297,6 +297,12 @@
     "path": "/vertriebspartner/",
     "title": "Vertriebspartner",
     "description": "Vertriebspartner bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/hilfe/produkt-schnellstart/",
+    "title": "Neue Produkte mit Datei und Bildern anlegen – Hilfe",
+    "description": "Der Produkt-Schnellstart legt neue Produkte aus XLSX oder UTF-8-CSV an. Vorhandene Artikel werden dabei nicht geändert.",
     "noindex": false
   },
   {
@@ -328,5 +334,23 @@
     "title": "Seite nicht gefunden",
     "description": "Die gesuchte Seite wurde nicht gefunden. Hier gelangen Sie zu den Leistungen oder zur Hilfe.",
     "noindex": true
+  },
+  {
+    "path": "/hilfe/andoo/",
+    "title": "Frühere Andoo-Anbindung",
+    "description": "Die frühere Andoo-Anbindung gehört nicht mehr zu den aktuellen freigegebenen Import-/Export-Menüpunkten. Die alte Schrittfolge ist daher keine Anleitung für die neue Verwaltung. Für einen aktuellen Datenaustausch sprechen Sie uns bitte an.",
+    "noindex": false
+  },
+  {
+    "path": "/hilfe/shopbackup/",
+    "title": "Datensicherung des Shops",
+    "description": "Die frühere Backup-/Restore-Funktion im Web-Admin ist gesperrt. Verwenden Sie die alte Anleitung nicht für eine Wiederherstellung. Datensicherungen und Rücksicherungen müssen mit dem zuständigen Betrieb abgestimmt werden.",
+    "noindex": false
+  },
+  {
+    "path": "/hilfe/yatego/",
+    "title": "Frühere Yatego-Exportanleitung",
+    "description": "Die historische Yatego-Hilfe beschreibt einen älteren Exportablauf. Partnerprofil, Verfügbarkeit und Dateiformat müssen vor einer aktuellen Nutzung geprüft werden. Kontaktieren Sie uns, wenn Sie eine solche Anbindung benötigen.",
+    "noindex": false
   }
 ]

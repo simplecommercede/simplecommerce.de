@@ -1,0 +1,277 @@
+{
+  "artikel-anlegen": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=new&height=450&width=640",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/artikel-anlegen-desktop.jpg",
+    "mobile": "/assets/help/artikel-anlegen-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "artikel-attribute": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showattribute",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/artikel-attribute-desktop.jpg",
+    "mobile": "/assets/help/artikel-attribute-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "bestanduebersicht": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showbestandsuebersicht",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/bestanduebersicht-desktop.jpg",
+    "mobile": "/assets/help/bestanduebersicht-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "hersteller": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showherstelleradmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/hersteller-desktop.jpg",
+    "mobile": "/assets/help/hersteller-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "kundenliste": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showkundenadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/kundenliste-desktop.jpg",
+    "mobile": "/assets/help/kundenliste-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "verkaufsmanager": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showverkaufsadmin&archiv=0",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/verkaufsmanager-desktop.jpg",
+    "mobile": "/assets/help/verkaufsmanager-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "benutzer-verwalten-und-anlegen": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showbenutzeradmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/benutzer-verwalten-und-anlegen-desktop.jpg",
+    "mobile": "/assets/help/benutzer-verwalten-und-anlegen-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "dokumentvorlagen": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showdocumenttemplateadmin&Sprache=de&MailTemplateID=2",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/dokumentvorlagen-desktop.jpg",
+    "mobile": "/assets/help/dokumentvorlagen-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "eigene-seiten-shop-cms": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showeigeneseitenadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/eigene-seiten-shop-cms-desktop.jpg",
+    "mobile": "/assets/help/eigene-seiten-shop-cms-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "gutscheine": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showgutscheinadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/gutscheine-desktop.jpg",
+    "mobile": "/assets/help/gutscheine-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "kategorien": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showkategorieadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/kategorien-desktop.jpg",
+    "mobile": "/assets/help/kategorien-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "laender": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showlaenderadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/laender-desktop.jpg",
+    "mobile": "/assets/help/laender-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "emailvorlagen": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showmailtemplateadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/emailvorlagen-desktop.jpg",
+    "mobile": "/assets/help/emailvorlagen-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "rabattsystem": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showrabattadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/rabattsystem-desktop.jpg",
+    "mobile": "/assets/help/rabattsystem-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "shopdaten": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopdatenadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/shopdaten-desktop.jpg",
+    "mobile": "/assets/help/shopdaten-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "sprachen": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showsprachenadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/sprachen-desktop.jpg",
+    "mobile": "/assets/help/sprachen-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "versand": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showversandadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/versand-desktop.jpg",
+    "mobile": "/assets/help/versand-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "waehrungen": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showwaehrungsadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/waehrungen-desktop.jpg",
+    "mobile": "/assets/help/waehrungen-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "zahlungsarten": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showzahlungsadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/zahlungsarten-desktop.jpg",
+    "mobile": "/assets/help/zahlungsarten-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "produkt-schnellstart": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showexcelimportexport",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/produkt-schnellstart-desktop.jpg",
+    "mobile": "/assets/help/produkt-schnellstart-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "artikelbilder": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=artikelbilder",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/artikelbilder-desktop.jpg",
+    "mobile": "/assets/help/artikelbilder-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "boxen-anlegen-und-verwalten": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showboxadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/boxen-anlegen-und-verwalten-desktop.jpg",
+    "mobile": "/assets/help/boxen-anlegen-und-verwalten-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "startseite": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showstartseitenadmin",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/startseite-desktop.jpg",
+    "mobile": "/assets/help/startseite-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "google-export": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showfroogle",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/google-export-desktop.jpg",
+    "mobile": "/assets/help/google-export-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  },
+  "artikelliste": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopproduktliste",
+    "captured": "2026-11-04",
+    "desktop": "/assets/help/artikelliste-desktop.jpg",
+    "mobile": "/assets/help/artikelliste-mobile.jpg",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch"
+  }
+}

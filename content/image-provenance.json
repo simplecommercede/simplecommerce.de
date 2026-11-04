@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-04",
+  "tool": "Built-in image generation",
+  "images": [
+    {
+      "path": "public/assets/demo/keramikbecher.png",
+      "prompt": "Use case: product-mockup. Square premium ecommerce studio product photograph of a single beautiful sage green handmade ceramic coffee mug with gently speckled matte glaze and rounded handle, on warm off-white background, soft daylight shadow, three-quarter front view, centered product filling 70 percent frame. Realistic tactile ceramic. No branding, text, logos, watermark or other objects. Intended for a fictional neutral demonstration shop."
+    },
+    {
+      "path": "public/assets/demo/rucksack.png",
+      "prompt": "Use case: product-mockup. Square premium ecommerce studio product photograph of a tasteful sand-colored canvas rolltop daypack with dark forest green straps and simple brass hardware, standing upright, three-quarter view, warm off-white seamless background with soft natural shadows. Product fully visible centered filling 75 percent frame. No brand, logos, text, watermark. Fictional neutral demonstration shop."
+    },
+    {
+      "path": "public/assets/demo/tischleuchte.png",
+      "prompt": "Use case: product-mockup. Square premium ecommerce studio product photograph of an elegant terracotta-colored portable mushroom table lamp, round dome and cylindrical base, subtle warm light, on warm off-white seamless backdrop, soft daylight shadows, centered fully visible product occupying 70 percent frame. No logos, text or watermark. Fictional neutral demonstration shop."
+    }
+  ]
+}

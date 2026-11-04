@@ -8,6 +8,7 @@ import json,re,shutil
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'public'; BASE='https://simplecommerce.de'
 pages=json.loads((ROOT/'content/wordpress-public.json').read_text())
+pages.append({'ID':'help-quickstart','post_parent':'288','post_name':'produkt-schnellstart','post_title':'Produkt-Schnellstart','post_content':''})
 byid={p['ID']:p for p in pages}
 paths={p['ID']:('/' if p['ID']=='10' else '/'+(('hilfe/' if p['post_parent']=='288' else 'shopsystem/' if p['post_parent']=='727' else '')+p['post_name']).strip('/')+'/') for p in pages}
 registry=[]
@@ -21,14 +22,14 @@ def page(path,title,desc,body,section='',kind='WebPage',noindex=False):
  if path!='/':schema['@graph'].append({'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Startseite','item':BASE+'/'},{'@type':'ListItem','position':2,'name':title,'item':canonical}]})
  html=f'''<!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} | simplecommerce</title><meta name="description" content="{escape(desc,quote=True)}"><link rel="canonical" href="{canonical}"><meta name="robots" content="{'noindex,follow' if noindex else 'index,follow'}"><meta name="theme-color" content="#142c29"><meta property="og:type" content="website"><meta property="og:title" content="{escape(title,quote=True)}"><meta property="og:description" content="{escape(desc,quote=True)}"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{BASE}/assets/logo.jpg"><link rel="stylesheet" href="/assets/site.css"><script src="/assets/site.js" defer></script><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False).replace('<','\\u003c')}</script></head><body><a class="skip" href="#inhalt">Zum Inhalt</a><header class="header"><a href="/" class="brand" aria-label="simplecommerce – Startseite"><img src="/assets/logo.jpg" width="309" height="78" alt="simplecommerce"></a><nav aria-label="Hauptnavigation">{''.join(f'<a href="{u}"'+(' aria-current="page"' if path==u else '')+f'>{t}</a>' for t,u in NAV)}</nav><a class="header-cta" href="/kontakt/">Projekt besprechen <span aria-hidden="true">↗</span></a></header><main id="inhalt"><span id="top"></span>{body}</main><footer><div class="footer-main"><div><p class="eyebrow">SIMPLECOMMERCE · BISPINGEN</p><h2>Eine Idee ist ein<br>guter Anfang.</h2><a class="text-link" href="mailto:info@simplecommerce.de">info@simplecommerce.de ↗</a></div><div><h3>Was wir für Sie tun</h3>{links([('Shopsystem','/shopsystem/'),('Webseiten','/webseiten/'),('IT-Beratung','/it-beratung/'),('IT-Projekte','/it-projekte/'),('Service','/service/')])}</div><div><h3>Gut zu wissen</h3>{links([('Preise','/preise/'),('Online-Hilfe','/hilfe/'),('Vertriebspartner','/vertriebspartner/'),('Kontakt','/kontakt/')])}<p>+49 151 270 36 178<br>Vor den Höfen 20a<br>29646 Bispingen</p></div></div><div class="footer-bottom"><span>© 2026 simplecommerce GmbH</span><div><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="/cookie-richtlinie-eu/">Cookies</a></div></div></footer></body></html>'''
- dest=OUT/path.strip('/')/'index.html';dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(html)
+ dest=OUT/path.strip('/')/'index.html';dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text('\n'.join(line.rstrip() for line in html.splitlines())+'\n')
  registry.append({'path':path,'title':title,'description':desc,'noindex':noindex})
 def intro(label,title,desc):return f'<section class="page-intro wrap"><p class="eyebrow">{label}</p><h1>{title}</h1><p class="lead">{desc}</p></section>'
 def cta():return '<section class="cta wrap"><div><p class="eyebrow">LASSEN SIE UNS ANFANGEN</p><h2>Was haben Sie vor?</h2><p>Ein neuer Shop, eine Website oder ein Prozess, der einfacher werden soll.</p></div><a class="button" href="/kontakt/">Projekt besprechen <span aria-hidden="true">↗</span></a></section>'
 services=[('01','Webseiten','Ein klarer Auftritt, der Ihr Unternehmen verständlich macht. Schnell, zugänglich und auf jedem Bildschirm.','/webseiten/'),('02','IT-Beratung','Anforderungen sortieren. Möglichkeiten bewerten. Entscheidungen auf eine solide Grundlage stellen.','/it-beratung/'),('03','IT-Projekte','Schnittstellen, Automatisierung und individuelle Software für Ihre Arbeitsabläufe.','/it-projekte/'),('04','Service','Persönliche Unterstützung für Ihren Shop und Ihre Website. Auch nach dem Start.','/service/')]
 # Preserve only inert editorial markup. Never execute old scripts, forms or shortcodes.
 class Cleaner(HTMLParser):
- def __init__(self):super().__init__(convert_charrefs=True);self.out=[];self.skip=0
+ def __init__(self):super().__init__(convert_charrefs=True);self.out=[];self.skip=0;self.ids=set()
  def handle_starttag(self,t,attrs):
   if t in ('script','style','iframe','form','object'):self.skip+=1;return
   if self.skip:return
@@ -45,11 +46,13 @@ class Cleaner(HTMLParser):
    elif href.startswith('help_') or href.startswith('_help_'):
     href=legacy.get(Path(urlparse(href).path).stem.removeprefix('_').removeprefix('help_'),'/hilfe/')
    anchor=a.get('id') or a.get('name')
-   extra=' id="'+escape(anchor,quote=True)+'"' if anchor else ''
+   extra=' id="'+escape(anchor,quote=True)+'"' if anchor and anchor not in self.ids else ''
+   if anchor:self.ids.add(anchor)
    self.out.append('<a href="'+escape(href,quote=True)+'"'+extra+'>')
   elif t in ('p','br','strong','em','b','i','ul','ol','li','h2','h3','h4','table','thead','tbody','tr','th','td','blockquote','sup','sub'):
    extra=''
-   if a.get('id'):extra=' id="'+escape(a['id'],quote=True)+'"'
+   if a.get('id') and a['id'] not in self.ids:
+    extra=' id="'+escape(a['id'],quote=True)+'"';self.ids.add(a['id'])
    if t in ('th','td'):
     for key in ['colspan','rowspan']:
      if a.get(key,'').isdigit():extra+=f' {key}="{a[key]}"'
@@ -89,7 +92,7 @@ for p in pages:
  if ishelp:
   upd=help_data.get(slug)
   if upd:
-   content=upd['html']; desc=upd['description']; note=''
+   content=upd['html']; desc=upd['description']; title=upd.get('title',title); note=''
   else:
    desc=f'{title}: Anleitung aus dem bisherigen simplecommerce Helpcenter.'
    note='<aside class="migration-note"><strong>Diese Anleitung wird überarbeitet.</strong> Der folgende Text stammt aus der bisherigen Hilfe. Menünamen und Schritte können in der neuen Verwaltung abweichen. <a href="/kontakt/">Bei Fragen unterstützen wir Sie persönlich.</a></aside>'
@@ -105,6 +108,13 @@ form='''<form action="/kontakt/senden.php" method="post" class="contact-form"><h
 page('/kontakt/','Kontakt – Ihr Projekt mit simplecommerce','Kontaktieren Sie simplecommerce in Bispingen: info@simplecommerce.de, +49 151 270 36 178 oder über das Kontaktformular.',intro('KONTAKT','Lassen Sie uns<br>darüber sprechen.','Sie planen etwas Neues oder benötigen Unterstützung? Beschreiben Sie uns kurz Ihr Anliegen.')+'<section class="wrap contact-grid"><div><h2>Direkt zu uns.</h2><a class="contact-link" href="mailto:info@simplecommerce.de">info@simplecommerce.de</a><a class="contact-link" href="tel:+4915127036178">+49 151 270 36 178</a><p>simplecommerce GmbH<br>Vor den Höfen 20a<br>29646 Bispingen</p><h3>Telefonische Erreichbarkeit</h3><p>Montag–Donnerstag: 11:00–16:30 Uhr<br>Freitag: 11:00–14:30 Uhr</p><p>Eine Frage zur Shopverwaltung?<br><a href="/hilfe/">Zur Online-Hilfe →</a></p></div>'+form+'</section>')
 page('/cookie-richtlinie-eu/','Cookies & lokale Speicherung','Informationen zur Nutzung von Cookies und lokalem Speicher auf simplecommerce.de.',intro('DATENSCHUTZ','Cookies & lokale Speicherung','Diese Website lädt ihre Schriften, Styles und Skripte lokal.')+'<article class="prose wrap narrow"><p>Die statischen Seiten setzen keine Analyse- oder Marketing-Cookies und binden keine externen Trackingdienste ein. Die Hilfesuche arbeitet direkt im Browser und überträgt keine Suchbegriffe an einen Server.</p><p>Beim Absenden des Kontaktformulars werden die eingegebenen Angaben zur Bearbeitung Ihrer Anfrage an unseren Server übertragen. Informationen zur Verarbeitung personenbezogener Daten finden Sie in der <a href="/datenschutz/">Datenschutzerklärung</a>.</p></article>')
 page('/404/','Seite nicht gefunden','Die gesuchte Seite wurde nicht gefunden. Hier gelangen Sie zu den Leistungen oder zur Hilfe.',intro('404','Hier geht es leider<br>nicht weiter.','Vielleicht hat sich die Adresse geändert. Über die Navigation finden Sie zu den aktuellen Inhalten.')+'<div class="wrap actions"><a class="button" href="/">Zur Startseite</a><a class="text-link" href="/hilfe/">Zur Hilfe →</a></div>',noindex=True)
+
+for slug,title,text in [
+ ('andoo','Frühere Andoo-Anbindung','Die frühere Andoo-Anbindung gehört nicht mehr zu den aktuellen freigegebenen Import-/Export-Menüpunkten. Die alte Schrittfolge ist daher keine Anleitung für die neue Verwaltung. Für einen aktuellen Datenaustausch sprechen Sie uns bitte an.'),
+ ('shopbackup','Datensicherung des Shops','Die frühere Backup-/Restore-Funktion im Web-Admin ist gesperrt. Verwenden Sie die alte Anleitung nicht für eine Wiederherstellung. Datensicherungen und Rücksicherungen müssen mit dem zuständigen Betrieb abgestimmt werden.'),
+ ('yatego','Frühere Yatego-Exportanleitung','Die historische Yatego-Hilfe beschreibt einen älteren Exportablauf. Partnerprofil, Verfügbarkeit und Dateiformat müssen vor einer aktuellen Nutzung geprüft werden. Kontaktieren Sie uns, wenn Sie eine solche Anbindung benötigen.')]:
+ page('/hilfe/'+slug+'/',title,text,intro('ONLINE-HILFE / FRÜHERE FUNKTION',title,text)+'<article class="prose wrap narrow"><p>Bestehende Links bleiben erhalten. Diese Seite bietet bewusst keine ungeprüfte alte Schrittfolge als aktuelle Anleitung an.</p><p><a href="/kontakt/">Anbindung oder Datensicherung besprechen →</a></p><p><a href="/hilfe/">Zur aktuellen Hilfe</a></p></article>')
+
 (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+BASE+p['path']+'</loc></url>' for p in registry if not p['noindex'])+'</urlset>\n')
 (OUT/'robots.txt').write_text('User-agent: *\nAllow: /\nDisallow: /kontakt/senden.php\nSitemap: '+BASE+'/sitemap.xml\n')
 (ROOT/'content/page-index.json').write_text(json.dumps(registry,ensure_ascii=False,indent=2)+'\n')

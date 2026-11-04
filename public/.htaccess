@@ -2,6 +2,9 @@ Options -Indexes
 DirectoryIndex index.html
 ErrorDocument 404 /404/index.html
 RewriteEngine On
+RewriteRule ^sec_helpcenter/_?help_andoo\.html$ /hilfe/andoo/ [R=301,L]
+RewriteRule ^sec_helpcenter/_?help_shopbackup\.html$ /hilfe/shopbackup/ [R=301,L]
+RewriteRule ^sec_helpcenter/_?help_yatego\.html$ /hilfe/yatego/ [R=301,L]
 RewriteRule ^sec_helpcenter/_?help_design\-layout\.html$ /design-und-layout/ [R=301,L,NE]
 RewriteRule ^seiten/[0-9]+/de/(?:help_)?design\-layout\.html$ /design-und-layout/ [R=301,L,NE]
 RewriteRule ^sec_helpcenter/_?help_bedienung\.html$ /bedienung/ [R=301,L,NE]
