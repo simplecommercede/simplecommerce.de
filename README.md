@@ -14,7 +14,7 @@ CONTACT_ENV=development php -S 127.0.0.1:1890 -t public
 ## Aufbau
 
 - `content/wordpress-public.json`: gesicherter öffentlicher Altbestand, keine DB-Konten oder Einsendungen.
-- `content/help-updates.json`: geprüfte neue Hilfeseiten, sobald verfügbar.
+- `content/help-updates.json`: 24 aktualisierte Anleitungen mit Desktop- und Mobilansichten.
 - `scripts/build.py`: reproduzierbarer HTML-Build ohne Fremdpakete.
 - `public/`: alleiniger Webroot mit statischen Seiten, Assets und Kontakt-Endpunkt.
 - `docs/`: Migration, Betrieb, Prüfung und Screenshot-Herkunft.
