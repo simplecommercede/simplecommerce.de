@@ -34,3 +34,8 @@ Die Hilfe-Demo des Shopprojekts auf Port 1892 ist unabhängig von der Website. S
 Stand 04.11.2026: lokale Prüfung abgeschlossen; kein Nachweis einer Produktivzustellung oder eines Deployments. Die ursprüngliche Designübergabe wurde durch den Auftrag zur Markenüberarbeitung ergänzt; weitere Abstimmung erfolgt mit dem Kollegen.
 
 Markenüberarbeitung vom 04.11.2026: Originalorange `#ff6600`, Anthrazit/Weiß und fotografische Froschmotive aus dem bereitgestellten Bestand. Startseite und Leistungs-/Themenansichten individueller gestaltet; Herkunft in `content/brand-assets.json`. Diese vom Nutzer beauftragte Überarbeitung ergänzt den funktionalen Erstentwurf.
+
+## Kontaktvorschau und Rückmeldungen (04.11.2026)
+Der PHP-Entwicklungsserver (`cli-server`) akzeptiert seinen exakten lokalen Origin, wenn Host und Client Loopback sind. Ohne explizites `CONTACT_TRANSPORT` prüft er das Formular und meldet einen klar bezeichneten Formulartest ohne Mailversand und ohne Speicherung der Nachricht. Produktive PHP-SAPIs erhalten diese Ausnahme nicht; ihre Origin-Liste und Versandkonfiguration bleiben verbindlich. Explizite lokale Dateitransporttests funktionieren weiterhin wie oben beschrieben.
+
+JavaScript fordert JSON an und zeigt Erfolg/Fehler direkt im Formular. Der Entwurf bleibt bei allen Rückmeldungen erhalten, doppelte laufende Übermittlungen werden verhindert. Ohne JavaScript liefert PHP eine gestaltete Rückmeldeseite mit Logo, Navigation und Kontaktlinks. Ein Netzwerkfehler bestätigt keine Zustellung; die Meldung behauptet deshalb keinen sicheren Versandstatus.

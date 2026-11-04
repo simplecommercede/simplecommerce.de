@@ -7,11 +7,23 @@ header('X-Content-Type-Options: nosniff');
 header("Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'");
 function finish(int $status, string $title, string $message): never {
     http_response_code($status);
+    if (str_contains($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json')) {
+        header('Content-Type: application/json; charset=UTF-8');
+        echo json_encode(['ok' => $status >= 200 && $status < 300, 'title' => $title, 'message' => $message], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
     $title = htmlspecialchars($title, ENT_QUOTES, 'UTF-8');
     $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
-    echo '<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>'.$title.' | simplecommerce</title><link rel="stylesheet" href="/assets/site.css"></head><body><main class="wrap page-intro"><a href="/">simplecommerce</a><h1>'.$title.'</h1><p class="lead">'.$message.'</p><p><a class="button" href="/kontakt/">Zur Kontaktseite</a></p><p>Alternativ erreichen Sie uns unter <a href="mailto:info@simplecommerce.de">info@simplecommerce.de</a>.</p></main></body></html>';
+    $label = $status >= 400 ? 'KONTAKT · BITTE PRÜFEN' : 'KONTAKT · IHRE ANFRAGE';
+    echo '<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>'.$title.' | simplecommerce</title><link rel="stylesheet" href="/assets/site.css"></head><body><header class="header"><a href="/" class="brand" aria-label="simplecommerce – Startseite"><img src="/assets/logo.jpg" width="309" height="78" alt="simplecommerce"></a><nav aria-label="Hauptnavigation"><a href="/shopsystem/">Shop</a><a href="/leistungen/">Leistungen</a><a href="/hilfe/">Hilfe</a><a href="/kontakt/">Kontakt</a></nav></header><main class="wrap contact-result"><article class="contact-result-card"><p class="eyebrow">'.$label.'</p><h1>'.$title.'</h1><p>'.$message.'</p><div class="actions"><a class="button" href="/kontakt/">Zur Kontaktseite</a><a class="text-link" href="mailto:info@simplecommerce.de">Direkt per E-Mail schreiben →</a></div></article><p class="fine">simplecommerce · Persönlich für Sie da.</p></main></body></html>';
     exit;
 }
+// The PHP development server on loopback is a preview, never an implicit mail sender.
+$localHost = $_SERVER['HTTP_HOST'] ?? '';
+$isLocalServer = PHP_SAPI === 'cli-server'
+    && in_array($_SERVER['REMOTE_ADDR'] ?? '', ['127.0.0.1', '::1'], true)
+    && preg_match('/^(127\.0\.0\.1|localhost|\[::1\]):[0-9]{1,5}$/D', $localHost) === 1;
+$isLocalPreview = $isLocalServer && getenv('CONTACT_TRANSPORT') === false;
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     header('Allow: POST');
     finish(405, 'Bitte nutzen Sie das Kontaktformular.', 'Diese Adresse nimmt nur abgesendete Kontaktanfragen entgegen.');
@@ -24,9 +36,12 @@ $allowed = ['https://simplecommerce.de', 'https://www.simplecommerce.de'];
 if (getenv('CONTACT_ENV') === 'development') {
     $allowed[] = 'http://127.0.0.1:1890';
     $allowed[] = 'http://127.0.0.1:1893';
+    $allowed[] = 'http://localhost:1890';
+    $allowed[] = 'http://localhost:1893';
 }
+if ($isLocalServer) $allowed[] = 'http://'.$localHost;
 if (!in_array($origin, $allowed, true)) {
-    finish(403, 'Bitte öffnen Sie das Formular neu.', 'Die Anfrage konnte nicht zugeordnet werden. Öffnen Sie die Kontaktseite und versuchen Sie es erneut.');
+    finish(403, 'Bitte öffnen Sie das Formular neu.', 'Die Anfrage konnte nicht zugeordnet werden. Ihre Nachricht wurde nicht versendet. Öffnen Sie die Kontaktseite über die Website-Adresse und versuchen Sie es erneut.');
 }
 $fields = [];
 foreach (['name', 'email', 'thema', 'nachricht', 'website'] as $key) {
@@ -47,6 +62,7 @@ if ($fields['name'] === '' || strlen($fields['name']) > 480 || preg_match('/[\r\
     || strlen($fields['nachricht']) < 10 || strlen($fields['nachricht']) > 10000 || str_contains($fields['nachricht'], "\0")) {
     finish(422, 'Bitte prüfen Sie Ihre Angaben.', 'Name, eine gültige E-Mail-Adresse und eine Nachricht mit 10 bis 10.000 Zeichen sind erforderlich. Nutzen Sie die Zurück-Funktion Ihres Browsers, um Ihre Eingaben zu korrigieren.');
 }
+if ($isLocalPreview) finish(200, 'Formulartest erfolgreich.', 'Sie sind in der lokalen Vorschau. Ihre Angaben wurden geprüft; es wurde keine E-Mail versendet.');
 $to = getenv('CONTACT_TO') ?: '';
 $from = getenv('CONTACT_FROM') ?: '';
 $transport = getenv('CONTACT_TRANSPORT') ?: 'mail';
