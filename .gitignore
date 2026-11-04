@@ -7,3 +7,5 @@
 .env.*
 !.env.example
 /var/
+.idea/
+__pycache__/

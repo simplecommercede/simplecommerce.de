@@ -1,0 +1,332 @@
+[
+  {
+    "path": "/",
+    "title": "Shops, Webseiten & IT-Beratung",
+    "description": "simplecommerce aus Bispingen: Shopsystem, Webseitenerstellung, IT-Beratung, individuelle Software und persönlicher Service.",
+    "noindex": false
+  },
+  {
+    "path": "/leistungen/",
+    "title": "Leistungen für Ihr digitales Unternehmen",
+    "description": "Webseitenerstellung, IT-Beratung, individuelle Software und Service von simplecommerce.",
+    "noindex": false
+  },
+  {
+    "path": "/webseiten/",
+    "title": "Webseitenerstellung",
+    "description": "Wir erstellen Websites, die Ihr Angebot klar vermitteln und Besucher zum passenden nächsten Schritt führen.",
+    "noindex": false
+  },
+  {
+    "path": "/it-beratung/",
+    "title": "Professionelle IT-Beratung",
+    "description": "Wir helfen Ihnen, Anforderungen zu ordnen, technische Möglichkeiten einzuschätzen und einen umsetzbaren Weg zu finden.",
+    "noindex": false
+  },
+  {
+    "path": "/it-projekte/",
+    "title": "IT-Projekte & individuelle Software",
+    "description": "Wir entwickeln individuelle Lösungen, verbinden Systeme und vereinfachen wiederkehrende Aufgaben.",
+    "noindex": false
+  },
+  {
+    "path": "/service/",
+    "title": "Service & Unterstützung",
+    "description": "Persönliche Unterstützung für Fragen, Änderungen und den laufenden Betrieb Ihrer digitalen Lösung.",
+    "noindex": false
+  },
+  {
+    "path": "/shopsystem/",
+    "title": "Shopsystem für Ihren Onlinehandel",
+    "description": "simplecommerce Shopsystem: Produkte, Bestellungen, Kunden und Inhalte verwalten. Individuelles Design, Schnittstellen und mobile Verwaltung.",
+    "noindex": false
+  },
+  {
+    "path": "/design-und-layout/",
+    "title": "Design und Layout",
+    "description": "Design und Layout bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/schnittestellen/",
+    "title": "Schnittstellen",
+    "description": "Schnittstellen bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/bedienung/",
+    "title": "Bedienung",
+    "description": "Bedienung bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/shopsystem/bestellwesen/",
+    "title": "Bestellwesen",
+    "description": "Bestellwesen bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/hosting/",
+    "title": "Hosting",
+    "description": "Hosting bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/shopsystem/multishop/",
+    "title": "Multishop",
+    "description": "Multishop bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/shopsystem/personalisierte-produkte/",
+    "title": "Personalisierte Produkte",
+    "description": "Personalisierte Produkte bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/shopsystem/ihre-produktpraesentation/",
+    "title": "Ihre Produktpräsentation",
+    "description": "Ihre Produktpräsentation bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/statistiken/",
+    "title": "Statistiken",
+    "description": "Statistiken bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/sicherheit/",
+    "title": "Sicherheit",
+    "description": "Sicherheit bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/updates/",
+    "title": "Updates",
+    "description": "Updates bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/warenwirtschaft/",
+    "title": "Warenwirtschaft",
+    "description": "Warenwirtschaft bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/shopsystem/shop-cms/",
+    "title": "Shop CMS",
+    "description": "Shop CMS bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/hilfe/artikel-attribute/",
+    "title": "Artikel Attribute – Hilfe",
+    "description": "Artikel Attribute: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/artikelliste/",
+    "title": "Artikelliste – Hilfe",
+    "description": "Artikelliste: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/artikel-anlegen/",
+    "title": "Artikel anlegen – Hilfe",
+    "description": "Artikel anlegen: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/benutzer-verwalten-und-anlegen/",
+    "title": "Benutzer verwalten und anlegen – Hilfe",
+    "description": "Benutzer verwalten und anlegen: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/bestanduebersicht/",
+    "title": "Bestandübersicht – Hilfe",
+    "description": "Bestandübersicht: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/boxen-anlegen-und-verwalten/",
+    "title": "Boxen anlegen und verwalten – Hilfe",
+    "description": "Boxen anlegen und verwalten: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/dokumentvorlagen/",
+    "title": "Dokumentvorlagen – Hilfe",
+    "description": "Dokumentvorlagen: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/eigene-seiten-shop-cms/",
+    "title": "Eigene Seiten & Shop CMS – Hilfe",
+    "description": "Eigene Seiten & Shop CMS: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/emailvorlagen/",
+    "title": "Emailvorlagen – Hilfe",
+    "description": "Emailvorlagen: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/google-export/",
+    "title": "Google Export – Hilfe",
+    "description": "Google Export: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/gutscheine/",
+    "title": "Gutscheine – Hilfe",
+    "description": "Gutscheine: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/kategorien/",
+    "title": "Kategorien – Hilfe",
+    "description": "Kategorien: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/kundenliste/",
+    "title": "Kundenliste – Hilfe",
+    "description": "Kundenliste: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/laender/",
+    "title": "Länder – Hilfe",
+    "description": "Länder: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/rabattsystem/",
+    "title": "Rabattsystem – Hilfe",
+    "description": "Rabattsystem: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/shopdaten/",
+    "title": "Shopdaten – Hilfe",
+    "description": "Shopdaten: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/sprachen/",
+    "title": "Sprachen – Hilfe",
+    "description": "Sprachen: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/startseite/",
+    "title": "Startseite – Hilfe",
+    "description": "Startseite: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/verkaufsmanager/",
+    "title": "Verkaufsmanager – Hilfe",
+    "description": "Verkaufsmanager: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/versand/",
+    "title": "Versand – Hilfe",
+    "description": "Versand: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/waehrungen/",
+    "title": "Währungen – Hilfe",
+    "description": "Währungen: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/hilfe/zahlungsarten/",
+    "title": "Zahlungsarten – Hilfe",
+    "description": "Zahlungsarten: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/impressum/",
+    "title": "Impressum",
+    "description": "Impressum bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/datenschutz/",
+    "title": "Datenschutz",
+    "description": "Datenschutz bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/wordpress-plugin/",
+    "title": "Wordpress Plugin",
+    "description": "Wordpress Plugin bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/programmierung/",
+    "title": "Programmierung",
+    "description": "Programmierung bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/shopsystem/shop-wechseln/",
+    "title": "Shop wechseln",
+    "description": "Shop wechseln bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/hilfe/hersteller/",
+    "title": "Hersteller – Hilfe",
+    "description": "Hersteller: Anleitung aus dem bisherigen simplecommerce Helpcenter.",
+    "noindex": true
+  },
+  {
+    "path": "/leistungsmerkmale/",
+    "title": "Leistungsmerkmale",
+    "description": "Leistungsmerkmale bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/vertriebspartner/",
+    "title": "Vertriebspartner",
+    "description": "Vertriebspartner bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "noindex": false
+  },
+  {
+    "path": "/hilfe/",
+    "title": "Online-Hilfe zur Shopverwaltung",
+    "description": "Anleitungen zu Produkten, Bestellungen, Kunden und Einstellungen in simplecommerce. Finden Sie das passende Thema für Ihre Shopverwaltung.",
+    "noindex": false
+  },
+  {
+    "path": "/preise/",
+    "title": "Preise für Shopsystem, Websites & IT",
+    "description": "Shopmiete und Umsatzprovision transparent im Überblick. Individuelle Angebote für Websites, IT-Beratung, Software und Service.",
+    "noindex": false
+  },
+  {
+    "path": "/kontakt/",
+    "title": "Kontakt – Ihr Projekt mit simplecommerce",
+    "description": "Kontaktieren Sie simplecommerce in Bispingen: info@simplecommerce.de, +49 151 270 36 178 oder über das Kontaktformular.",
+    "noindex": false
+  },
+  {
+    "path": "/cookie-richtlinie-eu/",
+    "title": "Cookies & lokale Speicherung",
+    "description": "Informationen zur Nutzung von Cookies und lokalem Speicher auf simplecommerce.de.",
+    "noindex": false
+  },
+  {
+    "path": "/404/",
+    "title": "Seite nicht gefunden",
+    "description": "Die gesuchte Seite wurde nicht gefunden. Hier gelangen Sie zu den Leistungen oder zur Hilfe.",
+    "noindex": true
+  }
+]
