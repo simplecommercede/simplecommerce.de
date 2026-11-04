@@ -1,0 +1,9 @@
+*.sql
+*.sql.gz
+/uploads/
+/sec_helpcenter/
+.DS_Store
+.env
+.env.*
+!.env.example
+/var/
