@@ -1,7 +1,7 @@
 # Betrieb und Übergabe
 
 ## Webserver
-Apache 2.4 mit mod_rewrite und AllowOverride FileInfo/Indexes oder gleichwertigen Regeln. DocumentRoot ausschließlich `public/`. PHP 8.2+ für `/kontakt/senden.php`, funktionsfähiger lokaler Mailtransfer-Agent. HTTPS auf der Produktivdomain konfigurieren. Nicht den Projektroot veröffentlichen: Dort liegen die lokalen Migrationsquellen.
+Apache 2.4 mit mod_rewrite und AllowOverride FileInfo Indexes Options oder gleichwertigen Regeln. `Options -Indexes` benötigt die Options-Freigabe; alternativ diese Direktive in die Serverkonfiguration übernehmen. mod_dir für DirectoryIndex und optional mod_headers für die mitgelieferten Sicherheitsheader verwenden. DocumentRoot ausschließlich `public/`. PHP 8.2+ für `/kontakt/senden.php`, funktionsfähiger lokaler Mailtransfer-Agent. HTTPS auf der Produktivdomain konfigurieren. Nicht den Projektroot veröffentlichen: Dort liegen die lokalen Migrationsquellen.
 
 ## Kontaktversand
 Im PHP-Prozess setzen, nicht in öffentlich zugänglichen Dateien:
@@ -25,3 +25,10 @@ Schritt 1 priorisiert Bedienbarkeit. Styles: `public/assets/site.css`. Interakti
 - Mailzustellung konfigurieren und Ende-zu-Ende prüfen.
 - Domain, HTTPS, 301-Weiterleitungen und 404-Status am Zielhost testen.
 - Keine ungeprüften Althilfe-Seiten als aktuelle Anleitung freigeben.
+
+## Lokale Prüfumgebung
+Die Website-Vorschau nutzt Port 1890. Der PHP-Webserver verarbeitet `.htaccess` nicht; Weiterleitungen und Fehlerstatus wurden separat unter Apache geprüft. Ein lokaler Kontakt-Testserver kann Port 1893 verwenden. Die Entwicklungs-Origin-Liste erlaubt `http://127.0.0.1:1890` und `http://127.0.0.1:1893`; andere lokale Hosts/Ports sind nicht automatisch erlaubt. Zustands- und Mailtestdateien außerhalb von `public/` ablegen. Testserver anschließend beenden.
+
+Die Hilfe-Demo des Shopprojekts auf Port 1892 ist unabhängig von der Website. Sie wird nicht zusammen mit `public/` veröffentlicht. Start/Stop und Screenshotmodus sind in [Hilfe und Prüfung](hilfe-pruefung.md) beschrieben.
+
+Stand 04.11.2026: lokale Prüfung abgeschlossen; kein Nachweis einer Produktivzustellung oder eines Deployments. Die abschließenden Designarbeiten bleiben beim Kollegen.

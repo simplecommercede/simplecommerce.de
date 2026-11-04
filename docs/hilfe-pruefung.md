@@ -28,3 +28,12 @@ Im UI-Chat gemeldete Probleme: leere Boxen-/Startseitenansicht, abgeschnittene S
 - Bildprompts und Dateipfade: content/image-provenance.json.
 
 Nachkorrektur: Verkaufsmanager auf Desktop und Mobil ohne DEV-Banner neu aufgenommen (Demo-eigener help_screenshots-Modus, Mailblockade unverändert). Alle mobilen Rahmen als Blockelement mit Kameraaussparung und unterer Gestenleiste dargestellt.
+
+## Screenshotmodus und Wiederaufnahme
+1. Neutrale Demo im Shoprepo mit `bash dev/help-demo.sh start` starten. Bestehende Daten und Volumes behalten.
+2. Im Aufnahmebrowser `http://127.0.0.1:1892/admin2/?help_screenshots=1` öffnen. Das demo-eigene Cookie gilt eine Stunde, auch für weitere Ansichten im iframe. Nur `.sc-dev-mail-banner` wird ausgeblendet. Mailblockade und Warnungen nach gesperrten Aktionen bleiben aktiv.
+3. Ziel aus `content/screenshots.json` öffnen, auf geladene Felder/Tabellen warten und Desktop bzw. 390 × 844 Pixel breite Mobilansicht aufnehmen. Der während der Erstaufnahme genutzte Hilfsserver auf Port 1891 und Dateien unter `/private/tmp` sind temporär; bei Bedarf neu anlegen. Nur lokale Demo-Inhalte einbetten.
+4. Original-JPEGs ersetzen, Herkunftsmanifest und gegebenenfalls Hilfetext anpassen. Die Geräterahmen entstehen auf der Website durch CSS, nicht in den JPEGs. `.phone` benötigt `display:block`; Kameraaussparung und Gestenleiste im gerenderten Ergebnis kontrollieren.
+5. Fertige Hilfeseite auf Desktop und Mobil visuell prüfen. Mit `http://127.0.0.1:1892/admin2/?help_screenshots=0` den Modus beenden. Demo bei Bedarf mit `bash dev/help-demo.sh stop` stoppen, niemals Volumes löschen.
+
+Die oben aufgeführten Tests sind Nachweise für den jeweiligen lokalen Stand vom 04.11.2026. Sie bedeuten keine laufende Überwachung und keine vollständige Abnahme aller Adminaktionen. Bei betroffenen Änderungen gezielt erneut prüfen. Der Websitevalidator kontrolliert Struktur und lokale Ziele; er ersetzt keine visuelle Prüfung, keine fachliche Schema.org-Validierung und keine Live-Mailprobe.

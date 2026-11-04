@@ -11,6 +11,16 @@ CONTACT_ENV=development php -S 127.0.0.1:1890 -t public
 
 Öffnen: http://127.0.0.1:1890/ . Ausschließlich `public/` als DocumentRoot ausliefern. Ein Aufruf des Generators ersetzt generierte HTML-Dateien; Änderungen an Inhalten im Generator bzw. in `content/` vornehmen. CSS und JavaScript liegen separat unter `public/assets/`.
 
+## Prüfen
+
+```sh
+python3 scripts/validate.py
+php -l public/kontakt/senden.php
+git diff --check
+```
+
+Der lokale PHP-Webserver prüft keine Apache-Weiterleitungen. Ohne Versandkonfiguration meldet das Kontaktformular einen Fehler; den lokalen Testtransport beschreibt die Betriebsdokumentation.
+
 ## Aufbau
 
 - `content/wordpress-public.json`: gesicherter öffentlicher Altbestand, keine DB-Konten oder Einsendungen.
@@ -20,3 +30,11 @@ CONTACT_ENV=development php -S 127.0.0.1:1890 -t public
 - `docs/`: Migration, Betrieb, Prüfung und Screenshot-Herkunft.
 
 Originaldump, alte Hilfe und Originaluploads bleiben lokal und sind ignoriert. Keine Dateien daraus pauschal hochladen. Git-Commits erfolgen in fachlichen Teilschritten mit deutschen Beschreibungen.
+
+## Dokumentation
+- [AGENTS.md](AGENTS.md): verbindliche Arbeitsregeln und bisherige Erkenntnisse.
+- [Migration](docs/migration.md): Quellen, Inhalte, Navigation und URLs.
+- [Betrieb](docs/betrieb.md): Webserver, Kontaktversand und Voraussetzungen für den Livegang.
+- [Hilfe und Prüfung](docs/hilfe-pruefung.md): Aufnahmeverfahren, Nachweise und Grenzen.
+
+Stand 04.11.2026: 59 statische Seiten, 24 aktualisierte Hilfeartikel, 50 Screenshots. Shop-Preise sind der Shop-Navigation zugeordnet; `/preise/` bleibt bestehen. Die neutrale Admin-Demo läuft getrennt auf Port 1892; deren Testdaten bleiben erhalten. Live-Mailzustellung und Produktivumstellung sind noch offen.

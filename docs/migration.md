@@ -14,7 +14,7 @@ Statische Website mit Shop, Service, Webseitenerstellung, IT-Beratung und IT-Pro
 Nur `public/` ist DocumentRoot. SQL-Dump, alte CGI-/Flash-Hilfe, Original-Uploads und interne Dokumentation werden nicht ausgeliefert. Der Dump und Originalbestände bleiben lokal und werden nicht eingecheckt. `content/wordpress-public.json` enthält ausschließlich öffentliche redaktionelle Seiten, keine Benutzer, Einstellungen oder Formulareinsendungen.
 
 ## Inhalt und URLs
-Bestehende Seiten und URLs werden inventarisiert und durch statische Seiten oder gezielte Weiterleitungen erhalten. Preiswerte aus dem Altbestand unverändert übernehmen; neue Leistungen individuell anbieten, keine erfundenen Preise. Abweichende Kontaktzeiten zwischen Startseite und Kontaktseite vor Veröffentlichung klären. Rechtsseiten aus dem Bestand erhalten und Änderungen der technischen Verarbeitung gesondert prüfen.
+Bestehende Seiten und URLs sind inventarisiert und durch statische Seiten oder gezielte Weiterleitungen erhalten. `content/legacy-links.json` und der Generator liefern die Regeln in `public/.htaccess`. Preiswerte aus dem Altbestand unverändert übernehmen; neue Leistungen individuell anbieten, keine erfundenen Preise. Abweichende Kontaktzeiten zwischen Startseite und Kontaktseite vor Veröffentlichung klären. Rechtsseiten aus dem Bestand erhalten und Änderungen der technischen Verarbeitung gesondert prüfen.
 
 ## Hilfe und Bilder
 Für jedes aktive Hilfethema den tatsächlichen Admin-Ablauf prüfen. Screenshots aus lokalem Admin mit geeigneten Beispieldaten; keine echten Kundendaten veröffentlichen. Desktop nur Browserinhalt. Mobil echte responsive Ansicht in wechselnden zeitgemäßen Geräterahmen. Historische Funktionen nicht als aktuell bewerben. Screenshot-Herkunft, Ansicht, Datum und geprüfter Ablauf werden dokumentiert.
@@ -27,3 +27,10 @@ Semantisches HTML, aussagekräftige Titel und Beschreibungen, kanonische URLs, S
 2. Website und statische Inhaltsstruktur erstellen.
 3. Hilfe und aktuelle Desktop-/Mobilansichten ergänzen.
 4. Kontaktversand, Weiterleitungen und Abschlussprüfung.
+
+## Umgesetzter Stand (04.11.2026)
+59 statische Seiten und 24 aktualisierte Hilfeartikel mit 50 Bildern. Andoo, Shopbackup und Yatego haben eigene historische Statusseiten. Die Hauptnavigation besteht aus Shop, Leistungen, Hilfe und Kontakt. Die Preisliste gilt ausschließlich für den Shop und ist unter Shop als „Shop-Preise“ verlinkt; `/preise/` bleibt aus Gründen der bestehenden Verlinkung unverändert. Neue Leistungen verweisen für Preise auf ein individuelles Kontaktangebot.
+
+SEO-Grundlage im aktuellen Generator: Organization, WebPage (bzw. übergebener Seitentyp) und BreadcrumbList als JSON-LD, individuelle Titel/Beschreibungen, Canonicals und Sitemap. Dies ist keine Garantie für Indexierung, Rankings oder Aufnahme in KI-Antworten.
+
+Die Teil-Commits sind umgesetzt; das Git-Protokoll ist die Quelle für konkrete Revisionen. Offen bleiben das endgültige Design sowie die in `betrieb.md` aufgeführten Schritte vor Veröffentlichung. Öffentliche Alttexte sind als Quelle erhalten; eine rechtliche Abnahme ist damit nicht verbunden.
