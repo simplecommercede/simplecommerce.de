@@ -1,6 +1,6 @@
 /*
- * Frosch-Wegweiser: Frosch, Sprechblase, ausweichende Texte und der Teich als Menü.
- * Verhalten siehe guide.js. Bei reduzierter Bewegung schaltet site.css alle Animationen ab.
+ * Frosch-Wegweiser: Frosch, Sprechblase, ausweichende Texte, der Teich als Menü und der Scheibenbruch.
+ * Verhalten siehe guide.js und guide-glass.js. Bei reduzierter Bewegung schaltet site.css alle Animationen ab.
  */
 :root {
   --pond-deep: #0d3b34;
@@ -20,7 +20,7 @@
 
 /* ---------- Frosch ---------- */
 .fg { position: fixed; top: 0; left: 0; z-index: 40; pointer-events: none; will-change: translate; }
-.fg-button { position: relative; display: block; width: 108px; height: 108px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; pointer-events: auto; touch-action: manipulation; }
+.fg-button { position: relative; display: block; width: 108px; height: 108px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: grab; pointer-events: auto; touch-action: none; }
 .fg-button:focus-visible { outline: 3px solid var(--orange-text); outline-offset: 2px; }
 .fg-svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 8px 10px #1f232240); }
 .fg-button:hover .fg-svg { animation: fg-excited .55s var(--ease); }
@@ -47,20 +47,26 @@
 .fg.is-listening .fg-head { transform: translateY(-3px) rotate(5deg); }
 .fg.is-air .fg-legs { transform: translateY(5px) scale(.86, 1.3); }
 
-.fg-ground { position: absolute; left: 14%; right: 14%; bottom: -2px; height: 12px; border-radius: 50%; background: #1f232226; transform: scale(calc(1 - var(--air, 0) * .55)); opacity: calc(1 - var(--air, 0) * .7); }
-.fg:not(.is-out) .fg-ground { opacity: 0; }
+.fg-ground { position: absolute; left: 14%; right: 14%; bottom: -14px; height: 12px; border-radius: 50%; background: #1f232226; }
+.fg:not(.is-dragging) .fg-ground { opacity: 0; }
+.fg.is-dragging { z-index: 45; }
+.fg.is-dragging .fg-button { cursor: grabbing; }
+.fg.is-dragging .fg-svg { scale: 1.08; filter: drop-shadow(0 18px 16px #1f232255); transition: scale .15s var(--ease); }
+.fg.is-dragging .fg-head { transform: rotate(-4deg); }
+.fg.is-dragging .fg-legs { transform: translateY(4px) scale(.9, 1.22); }
 
 /* Sprechblase */
 .fg-say { position: absolute; right: 8px; bottom: calc(100% + 8px); width: max-content; max-width: 280px; padding: 12px 16px; border-radius: 18px 18px 4px 18px; background: var(--ink); color: var(--white); font-size: 1rem; font-weight: 650; line-height: 1.35; box-shadow: 0 14px 28px #1f232244; opacity: 0; transform: translateY(10px) scale(.7) rotate(4deg); transform-origin: 90% 100%; transition: opacity .18s, transform .32s cubic-bezier(.3, 1.6, .5, 1); }
 .fg-say.is-right { right: auto; left: 8px; border-radius: 18px 18px 18px 4px; transform-origin: 10% 100%; }
+.fg-say.is-below { top: calc(100% + 8px); bottom: auto; border-radius: 4px 18px 18px 18px; transform-origin: 10% 0; }
 .fg-say.is-visible { opacity: 1; transform: none; }
 
 /* ---------- Teich ---------- */
-.pond { position: fixed; right: 22px; bottom: 138px; z-index: 41; width: 372px; max-width: calc(100vw - 24px); max-height: calc(100vh - 160px); overflow: hidden auto; padding: 22px 20px 20px; color: var(--white); background: radial-gradient(240px circle at var(--glow-x, 70%) var(--glow-y, 20%), #2fa98a55, transparent 70%), radial-gradient(circle at 18% 12%, var(--pond-light), transparent 46%), linear-gradient(160deg, var(--pond-mid), var(--pond-deep)); border-radius: 44px 34px 10px 48px / 38px 46px 10px 34px; box-shadow: 0 0 0 2px #ffffff22 inset, 0 30px 70px #0d3b3488; transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); transition: transform .2s ease-out; animation: pond-open .55s var(--ease); }
+.pond { position: fixed; z-index: 41; width: 372px; max-width: calc(100vw - 24px); max-height: calc(100vh - 160px); overflow: hidden auto; padding: 22px 20px 20px; color: var(--white); background: radial-gradient(240px circle at var(--glow-x, 70%) var(--glow-y, 20%), #2fa98a55, transparent 70%), radial-gradient(circle at 18% 12%, var(--pond-light), transparent 46%), linear-gradient(160deg, var(--pond-mid), var(--pond-deep)); border-radius: 44px 34px 10px 48px / 38px 46px 10px 34px; box-shadow: 0 0 0 2px #ffffff22 inset, 0 30px 70px #0d3b3488; transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); transition: transform .2s ease-out; animation: pond-open .55s var(--ease); }
 .pond[hidden] { display: none; }
 @keyframes pond-open {
-  from { clip-path: circle(0 at 92% 100%); }
-  to { clip-path: circle(150% at 92% 100%); }
+  from { clip-path: circle(0 at var(--open-x, 92%) var(--open-y, 100%)); }
+  to { clip-path: circle(150% at var(--open-x, 92%) var(--open-y, 100%)); }
 }
 .pond::before, .pond::after { content: ""; position: absolute; border: 1.5px solid #ffffff1f; border-radius: 50%; pointer-events: none; animation: pond-ripple 5s ease-out infinite; }
 .pond::before { left: 8%; top: 34%; width: 150px; height: 70px; }
@@ -106,19 +112,39 @@
 .pond-frog.is-here { opacity: 1; }
 .pond-frog .fg-svg { filter: drop-shadow(0 4px 4px #06231f99); }
 
-/* Aktionen */
-.pond-actions { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-.pond-next, .pond-hop { min-height: 44px; padding: 10px 18px; border: 0; border-radius: 999px; font-size: .95rem; font-weight: 800; cursor: pointer; transition: transform .16s var(--ease), box-shadow .16s var(--ease), background .16s; }
-.pond-next { display: inline-flex; align-items: center; background: var(--orange); color: var(--ink); box-shadow: 0 5px 0 #b84700, 0 14px 22px #0006; }
+/* Nächster Schritt */
+.pond-next { position: relative; z-index: 2; width: fit-content; min-height: 44px; padding: 10px 18px; border: 0; border-radius: 999px; font-size: .95rem; font-weight: 800; cursor: pointer; transition: transform .16s var(--ease), box-shadow .16s var(--ease), background .16s; }
+.pond-next { display: flex; align-items: center; background: var(--orange); color: var(--ink); box-shadow: 0 5px 0 #b84700, 0 14px 22px #0006; }
 .pond-next:hover { text-decoration: none; transform: translateY(-2px); box-shadow: 0 7px 0 #b84700, 0 18px 26px #0007; }
 .pond-next:active { transform: translateY(4px); box-shadow: 0 1px 0 #b84700; }
-.pond-hop { background: #ffffff1f; color: var(--white); }
-.pond-hop:hover { background: var(--leaf-hover); color: var(--ink); transform: translateY(-2px) rotate(-2deg); }
+
+/* ---------- Scheibenbruch ---------- */
+@view-transition { navigation: auto; }
+::view-transition-group(root) { animation-duration: .16s; }
+
+.fg.is-through { z-index: 60; }
+.fg.is-splat .fg-rig { transform: scale(1.2, 1.1); transition: transform .05s linear; }
+.fg.is-splat .fg-tongue { transform: none; }
+.fg.is-splat .fg-svg { filter: drop-shadow(0 2px 3px #1f232266); }
+
+.glass { position: fixed; inset: 0; z-index: 50; overflow: hidden; pointer-events: none; perspective: 900px; }
+.glass-next { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: var(--white); visibility: hidden; }
+.glass.is-broken .glass-next { visibility: visible; }
+.glass-tint { position: absolute; inset: 0; background: radial-gradient(circle at var(--x) var(--y), #ffffff88, #d6ecf42e 22%, #bfdce714 60%); animation: glass-flash .24s ease-out; }
+@keyframes glass-flash { from { background-color: #ffffffcc; } }
+.glass-cracks { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.glass-shard { position: absolute; inset: 0; visibility: hidden; background: var(--white); will-change: transform; }
+.glass-shard.is-loose { visibility: visible; }
+.glass-shard::after { content: ""; position: absolute; inset: 0; background: linear-gradient(var(--sheen), #fff0 34%, #ffffff66 47%, #d6ecf433 53%, #fff0 66%), #d6ecf414; }
+.glass-scroller { position: absolute; inset: 0; overflow: hidden; }
+.glass-page, .glass-page * { animation: none !important; transition: none !important; scroll-snap-type: none !important; }
+.glass-splinter { position: absolute; background: linear-gradient(135deg, #ffffffee, #bfdce788); clip-path: polygon(50% 0, 100% 72%, 28% 100%); }
 
 /* ---------- Schmale Bildschirme und Druck ---------- */
 @media (max-width: 760px) {
   .fg-button { width: 80px; height: 80px; }
   .fg-say { max-width: min(240px, calc(100vw - 40px)); padding: 10px 14px; font-size: .92rem; }
-  .pond { right: 12px; bottom: 100px; max-height: calc(100vh - 116px); padding: 18px 14px 16px; }
+  .pond { max-height: calc(100vh - 116px); padding: 18px 14px 16px; }
 }
-@media print { .fg, .pond { display: none; } }
+@media print { .fg, .pond, .glass { display: none; } }

@@ -2,9 +2,10 @@
 /*
  * Frosch-Wegweiser
  * Zusätzlich zur Navigation: Alle Ziele bleiben auch ohne ihn und ohne JavaScript erreichbar.
- * Er speichert nichts im Browser. Bei reduzierter Bewegung bleibt er still im Dock sitzen.
+ * Er speichert nichts im Browser und bewegt sich nie von selbst über die Seite: Man kann ihn
+ * verschieben, und erst bei der Wahl eines Ziels im Teich springt er durch die Scheibe (guide-glass.js).
  *
- * Aufbau: 1. Inhalte  2. Hilfsfunktionen  3. Ausweichen  4. Frosch  5. Teich  6. Start
+ * Aufbau: 1. Inhalte  2. Hilfsfunktionen  3. Ausweichen  4. Frosch  5. Teich  6. Sprung durch die Scheibe  7. Start
  */
 (() => {
   const motionOk = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
@@ -34,19 +35,15 @@
   const HELP_HINT = ['Eine andere Anleitung gesucht?', ['Alle Hilfethemen', '/hilfe/']];
   const DEFAULT_HINT = ['Mehr wissen? Ich bringe Sie hin.', ['Projekt besprechen', '/kontakt/']];
 
-  /* Was ausweicht: Buchstaben, Wörter und ganze Formen, jeweils mit eigener Reichweite und Stärke. */
+  /* Was beim Verschieben ausweicht: Buchstaben, Wörter und ganze Formen, jeweils mit eigener Reichweite und Stärke. */
   const SKIP_INSIDE = '.prose, .help-section, .help-sidebar, .calculator, .table-scroll, .contact-form, .faq';
   const SCATTER_GROUPS = [
     { split: 'letters', selector: 'main h1, main h2, main h3, .motif-caption', radius: 170, force: 72, spin: .9 },
     { split: 'words', selector: '.lead, .section-title p, .question p, .service-body p, .steps p, .contact-band p, .cta p, .service-content p, .note p', radius: 175, force: 38, spin: .3 },
-    { split: 'none', selector: '.door, .service, .question, .tier, .button, .screen, .phone, .note, .service-content article', radius: 200, force: 16, spin: 0 }
+    { split: 'none', selector: '.service, .question, .tier, .button, .screen, .phone, .note, .service-content article', radius: 200, force: 16, spin: 0 }
   ];
 
-  /* Worauf der Frosch springt. */
-  const TEXT_SPOTS = 'main h1, main h2, main h3';
-  const SHAPE_SPOTS = '.door, .service, .question, .tier, .button, .cta, .note, .service-content article, .feature-list';
-
-  const AUTO = { firstDelay: 5000, interval: 20000, bursts: 3, hopsPerBurst: 4 };
+  const KEY_STEP = 30;
 
   const FROG_SVG = `
     <svg class="fg-svg" viewBox="0 0 120 108" aria-hidden="true" focusable="false">
@@ -79,7 +76,6 @@
 
   const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
-  const pick = list => list[Math.floor(Math.random() * list.length)];
   const element = (tag, className, text) => {
     const node = document.createElement(tag);
     if (className) node.className = className;
@@ -87,7 +83,7 @@
     return node;
   };
 
-  /* ---------- 3. Ausweichen: Texte und Formen weichen federnd vor dem Frosch aus ---------- */
+  /* ---------- 3. Ausweichen: Texte und Formen weichen dem verschobenen Frosch federnd aus ---------- */
 
   class Scatter {
     constructor() {
@@ -154,7 +150,7 @@
       }
     }
 
-    /* Stoßwelle bei der Landung: alles in der Nähe bekommt einen kurzen Schubs nach außen. */
+    /* Kurzer Schubs nach außen, wenn der Frosch abgesetzt wird. */
     shock(point) {
       const px = point.x + window.scrollX;
       const py = point.y + window.scrollY;
@@ -213,26 +209,35 @@
     }
   }
 
-  /* ---------- 4. Frosch: Körper, Mimik, Sprünge, Sprechblase ---------- */
+  /* Ohne Bewegung bleibt der Text unzerlegt und still. */
+  class StillText {
+    measure() {}
+    setSource() {}
+    shock() {}
+  }
+
+  /* ---------- 4. Frosch: Körper, Mimik, Verschieben, Sprechblase ---------- */
 
   class Frog {
     constructor(scatter) {
       this.scatter = scatter;
-      this.motion = 0; /* Nummer des laufenden Sprungs; ein neuer Sprung bricht den alten ab. */
-      this.trip = 0; /* Nummer des laufenden Ausflugs; comeHome() beendet ihn. */
-      this.out = false;
+      this.dragging = false;
+      this.dragged = false;
+      this.moved = false; /* Wurde er aus dem Dock verschoben, bleibt er dort, wo man ihn absetzt. */
       this.root = element('div', 'fg');
       this.root.innerHTML = `
         <div class="fg-say" aria-hidden="true"></div>
         <span class="fg-ground"></span>
-        <button type="button" class="fg-button" aria-expanded="false" aria-controls="fg-pond" aria-label="Frosch-Wegweiser öffnen">${FROG_SVG}</button>`;
+        <button type="button" class="fg-button" aria-expanded="false" aria-controls="fg-pond" aria-label="Frosch-Wegweiser öffnen, mit den Pfeiltasten verschieben">${FROG_SVG}</button>`;
       document.body.append(this.root);
       this.button = this.root.querySelector('.fg-button');
       this.rig = this.root.querySelector('.fg-rig');
-      this.ground = this.root.querySelector('.fg-ground');
       this.bubble = this.root.querySelector('.fg-say');
       this.placeInDock();
-      window.addEventListener('resize', () => { if (!this.out) this.placeInDock(); });
+      this.bindDragging();
+      window.addEventListener('resize', () => {
+        if (this.moved) this.moveTo(this.x, this.y); else this.placeInDock();
+      });
       if (motionOk) this.startBlinking();
       if (motionOk && hasHover) {
         document.addEventListener('pointermove', event => this.lookAt(event.clientX, event.clientY), { passive: true });
@@ -241,28 +246,94 @@
 
     get size() { return this.button.offsetWidth; }
 
-    get dock() {
+    get center() { return { x: this.x + this.size / 2, y: this.y + this.size / 2 }; }
+
+    placeInDock() {
       const margin = window.innerWidth < 760 ? 12 : 22;
-      return { x: window.innerWidth - this.size - margin, y: window.innerHeight - this.size - margin };
+      this.moveTo(window.innerWidth - this.size - margin, window.innerHeight - this.size - margin);
     }
 
+    /* Bleibt innerhalb des Fensters. */
     moveTo(x, y) {
+      this.setPosition(clamp(x, 0, window.innerWidth - this.size), clamp(y, 0, window.innerHeight - this.size));
+      if (this.dragging) this.scatter.setSource(this.center);
+    }
+
+    setPosition(x, y) {
       this.x = x;
       this.y = y;
       this.root.style.translate = `${x}px ${y}px`;
       this.bubble.classList.toggle('is-right', x < window.innerWidth / 2);
-      if (this.out) this.scatter.setSource({ x: x + this.size / 2, y: y + this.size / 2 });
+      this.bubble.classList.toggle('is-below', y < 170);
     }
 
-    placeInDock() {
-      const { x, y } = this.dock;
-      this.moveTo(x, y);
+    /* Verschieben mit Maus, Finger und Pfeiltasten. */
+    bindDragging() {
+      let grab = null;
+      this.button.addEventListener('pointerdown', event => {
+        if (event.button !== 0) return;
+        grab = { x: event.clientX, y: event.clientY, offsetX: event.clientX - this.x, offsetY: event.clientY - this.y };
+        this.dragged = false;
+        this.button.setPointerCapture(event.pointerId);
+      });
+      this.button.addEventListener('pointermove', event => {
+        if (!grab) return;
+        if (!this.dragging) {
+          if (Math.hypot(event.clientX - grab.x, event.clientY - grab.y) < 6) return;
+          this.startDrag();
+        }
+        this.moveTo(event.clientX - grab.offsetX, event.clientY - grab.offsetY);
+      });
+      const release = () => {
+        grab = null;
+        if (this.dragging) this.endDrag();
+      };
+      this.button.addEventListener('pointerup', release);
+      this.button.addEventListener('pointercancel', release);
+      this.button.addEventListener('keydown', event => {
+        const step = { ArrowLeft: [-KEY_STEP, 0], ArrowRight: [KEY_STEP, 0], ArrowUp: [0, -KEY_STEP], ArrowDown: [0, KEY_STEP] }[event.key];
+        if (!step) return;
+        event.preventDefault();
+        this.moved = true;
+        this.moveTo(this.x + step[0], this.y + step[1]);
+        if (this.onPicked) this.onPicked();
+      });
+    }
+
+    startDrag() {
+      this.dragging = true;
+      this.dragged = true;
+      this.moved = true;
+      this.hush();
+      this.scatter.measure();
+      this.root.classList.add('is-dragging');
+      if (this.onPicked) this.onPicked();
+    }
+
+    endDrag() {
+      this.dragging = false;
+      this.root.classList.remove('is-dragging');
+      this.scatter.shock(this.center);
+      this.scatter.setSource(null);
+      if (!motionOk) return;
+      this.rig.animate(
+        [{ transform: 'scale(1.18, .76)' }, { transform: 'scale(.96, 1.06)', offset: .55 }, { transform: 'none' }],
+        { duration: 300, easing: 'ease-out' }
+      );
+      this.wink();
+    }
+
+    /* Liefert true, wenn der Klick nur das Ende des Verschiebens war. */
+    consumeDrag() {
+      const dragged = this.dragged;
+      this.dragged = false;
+      return dragged;
     }
 
     /* Mimik */
     lookAt(px, py) {
-      const dx = px - (this.x + this.size / 2);
-      const dy = py - (this.y + this.size / 2);
+      const dx = px - this.center.x;
+      const dy = py - this.center.y;
       const distance = Math.hypot(dx, dy) || 1;
       const reach = Math.min(distance / 60, 1) * 3;
       this.root.style.setProperty('--look', `${(dx / distance * reach).toFixed(2)}px ${(dy / distance * reach).toFixed(2)}px`);
@@ -294,112 +365,86 @@
 
     hush() { this.bubble.classList.remove('is-visible'); }
 
-    /* Ein Sprung mit Anlauf, Flugbogen und Landung. Liefert false, wenn er abgebrochen wurde. */
-    async hop(targetX, targetY) {
-      const id = ++this.motion;
-      const startX = this.x;
-      const startY = this.y;
-      const distance = Math.hypot(targetX - startX, targetY - startY);
-      const arc = Math.max(60, distance * .32);
-      const duration = clamp(380 + distance * .5, 420, 760);
-      const lean = clamp((targetX - startX) / 18, -16, 16);
-      this.lookAt(targetX + this.size / 2, targetY + this.size / 2);
-
+    /* Ein Satz mit Anlauf und Flugbogen, dabei kommt er dem Betrachter näher (Maßstab). */
+    async leap(center, scale, duration) {
+      const start = { ...this.center, scale: this.scale || 1 };
+      const distance = Math.hypot(center.x - start.x, center.y - start.y);
+      const arc = Math.max(50, distance * .38);
       await this.rig.animate(
-        [{ transform: 'none' }, { transform: 'scale(1.14, .78)' }],
-        { duration: 130, easing: 'ease-out', fill: 'forwards' }
+        [{ transform: 'none' }, { transform: 'scale(1.14, .78)' }, { transform: 'none' }],
+        { duration: 180, easing: 'ease-out' }
       ).finished;
-      if (id !== this.motion) return false;
-
       this.root.classList.add('is-air');
-      const flight = this.rig.animate(
-        [{ transform: 'scale(.92, 1.14)' }, { transform: `scale(.94, 1.1) rotate(${lean}deg)`, offset: .5 }, { transform: 'scale(1.02, .98)' }],
-        { duration, fill: 'forwards' }
-      );
-      const landed = await new Promise(resolve => {
+      await new Promise(resolve => {
         const begin = performance.now();
         const step = now => {
-          if (id !== this.motion) return resolve(false);
           const t = clamp((now - begin) / duration, 0, 1);
-          const height = arc * 4 * t * (1 - t);
-          this.moveTo(startX + (targetX - startX) * t, startY + (targetY - startY) * t - height);
-          this.ground.style.setProperty('--air', (height / arc).toFixed(3));
-          if (t < 1) requestAnimationFrame(step); else resolve(true);
+          const growth = t * t;
+          this.scale = start.scale + (scale - start.scale) * growth;
+          this.button.style.scale = this.scale;
+          this.setPosition(
+            start.x + (center.x - start.x) * t - this.size / 2,
+            start.y + (center.y - start.y) * t - arc * 4 * t * (1 - t) - this.size / 2
+          );
+          if (t < 1) requestAnimationFrame(step); else resolve();
         };
         requestAnimationFrame(step);
       });
-      flight.cancel();
       this.root.classList.remove('is-air');
-      if (!landed) return false;
-      if (this.out) this.scatter.shock({ x: this.x + this.size / 2, y: this.y + this.size / 2 });
-
-      await this.rig.animate(
-        [{ transform: 'scale(1.2, .72)' }, { transform: 'scale(.96, 1.06)', offset: .55 }, { transform: 'none' }],
-        { duration: 300, easing: 'ease-out' }
-      ).finished;
-      return id === this.motion;
     }
 
-    /* Nächster Landeplatz: abwechselnd mitten zwischen Buchstaben und auf Formen, nah genug für einen Sprung. */
-    nextSpot(onText) {
-      const size = this.size;
-      const spots = [...document.querySelectorAll(onText ? TEXT_SPOTS : SHAPE_SPOTS)]
-        .map(el => el.getBoundingClientRect())
-        .filter(box => box.width && box.top > 90 && box.top < window.innerHeight - size * .6)
-        .map(box => ({
-          x: clamp(box.left + Math.random() * Math.max(box.width - size, 0), 8, window.innerWidth - size - 8),
-          y: clamp(onText ? box.top + Math.random() * box.height - size * .7 : box.top - size * .84, 70, window.innerHeight - size - 8)
-        }))
-        .filter(spot => Math.hypot(spot.x - this.x, spot.y - this.y) > size);
-      if (!spots.length && onText) return this.nextSpot(false);
-      if (!spots.length) return null;
-      const near = spots.filter(spot => Math.hypot(spot.x - this.x, spot.y - this.y) < 700);
-      return pick(near.length ? near : spots);
+    /* Der Aufprall an der Scheibe: flach angedrückt. */
+    splat() {
+      this.root.classList.add('is-splat');
     }
 
-    /* Ein Ausflug über die Seite und zurück ins Dock. */
-    async wander(hops) {
-      if (!motionOk || this.out) return;
-      const trip = ++this.trip;
-      this.out = true;
-      this.scatter.measure();
-      this.root.classList.add('is-out');
-      for (let index = 0; index < hops; index += 1) {
-        const spot = this.nextSpot(index % 2 === 0);
-        if (!spot) break;
-        if (!(await this.hop(spot.x, spot.y))) return;
-        if (Math.random() < .5) this.wink();
-        await wait(420 + Math.random() * 420);
-        if (trip !== this.trip) return;
-      }
-      await this.comeHome();
+    /* Vom Aufprall zurückfedern, bevor er erneut zuschlägt. */
+    recoil(scale, duration) {
+      this.root.classList.remove('is-splat');
+      const from = this.scale;
+      return new Promise(resolve => {
+        const begin = performance.now();
+        const step = now => {
+          const t = clamp((now - begin) / duration, 0, 1);
+          this.scale = from + (scale - from) * (1 - (1 - t) ** 2);
+          this.button.style.scale = this.scale;
+          if (t < 1) requestAnimationFrame(step); else resolve();
+        };
+        requestAnimationFrame(step);
+      });
     }
 
-    async comeHome() {
-      this.trip += 1;
-      const { x, y } = this.dock;
-      const arrived = await this.hop(x, y);
-      if (!arrived) return false;
-      this.out = false;
-      this.root.classList.remove('is-out');
-      this.scatter.setSource(null);
-      this.wink();
-      return true;
+    /* Fällt mit den Scherben aus dem Bild. */
+    fall() {
+      this.root.classList.remove('is-splat');
+      return this.button.animate([
+        { transform: 'none', opacity: 1 },
+        { transform: `translateY(${window.innerHeight * .9 / this.scale}px) rotate(38deg)`, opacity: 1 }
+      ], { duration: 820, easing: 'cubic-bezier(.45, 0, .9, .55)', fill: 'forwards' }).finished;
+    }
+
+    /* Ausgangszustand, zum Beispiel nach dem Zurück-Knopf des Browsers. */
+    reset() {
+      this.scale = 1;
+      this.button.style.scale = '';
+      this.button.getAnimations().forEach(animation => animation.cancel());
+      this.root.classList.remove('is-air', 'is-splat', 'is-through');
+      this.placeInDock();
     }
   }
 
   /* ---------- 5. Teich: das Menü als Seerosenblätter ---------- */
 
   class Pond {
-    constructor(frog, text, next, destinations) {
+    constructor(frog, text, next, destinations, onGo) {
       this.frog = frog;
+      this.onGo = onGo;
       this.root = element('div', 'pond');
       this.root.id = 'fg-pond';
       this.root.hidden = true;
       this.root.innerHTML = `
         <div class="pond-head"><p class="pond-title"></p><button type="button" class="pond-close" aria-label="Wegweiser schließen">×</button></div>
         <nav class="pond-pads" aria-label="Schnell zu"></nav>
-        <div class="pond-actions"><button type="button" class="pond-hop">Hüpf mal!</button></div>
         <span class="pond-frog" aria-hidden="true">${FROG_SVG}</span>`;
       this.root.querySelector('.pond-title').textContent = text;
       const pads = this.root.querySelector('.pond-pads');
@@ -413,7 +458,7 @@
       if (next) {
         const link = element('a', 'pond-next', next[0]);
         link.href = next[1];
-        this.root.querySelector('.pond-actions').prepend(link);
+        pads.after(link);
       }
       document.body.append(this.root);
       this.mini = this.root.querySelector('.pond-frog');
@@ -427,10 +472,6 @@
       root.querySelector('.pond-close').addEventListener('click', () => {
         this.toggle(false);
         frog.button.focus();
-      });
-      root.querySelector('.pond-hop').addEventListener('click', () => {
-        this.toggle(false);
-        frog.wander(AUTO.hopsPerBurst);
       });
       document.addEventListener('keydown', event => {
         if (event.key === 'Escape' && this.isOpen) {
@@ -458,17 +499,12 @@
         root.style.removeProperty('--tilt-x');
         root.style.removeProperty('--tilt-y');
       });
-      /* Beim Klick springt der kleine Frosch ins Wasser, dann lädt die Seite. */
+      /* Mit gedrückter Taste (neuer Tab) bleibt das normale Link-Verhalten. */
       root.addEventListener('click', event => {
         const link = event.target.closest('a');
         if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.button !== 0) return;
         event.preventDefault();
-        if (link.matches('.pad')) this.leapTo(link);
-        link.classList.add('is-splash');
-        setTimeout(() => { window.location.href = link.href; }, 420);
-      });
-      window.addEventListener('pageshow', () => {
-        root.querySelectorAll('.is-splash').forEach(link => link.classList.remove('is-splash'));
+        this.onGo(link.href);
       });
     }
 
@@ -488,12 +524,28 @@
       ], { duration: 340, easing: 'ease-out', fill: 'forwards' });
     }
 
+    /* Der Teich öffnet sich dort, wo der Frosch gerade sitzt. */
+    placeNearFrog() {
+      const { frog, root } = this;
+      const margin = 12;
+      const width = root.offsetWidth;
+      const height = root.offsetHeight;
+      const center = frog.center;
+      const left = clamp(center.x - width + frog.size / 2, margin, window.innerWidth - width - margin);
+      const above = frog.y - height - margin;
+      const top = above >= margin ? above : clamp(frog.y + frog.size + margin, margin, window.innerHeight - height - margin);
+      root.style.left = `${left}px`;
+      root.style.top = `${top}px`;
+      root.style.setProperty('--open-x', `${clamp(center.x - left, 0, width)}px`);
+      root.style.setProperty('--open-y', `${clamp(center.y - top, 0, height)}px`);
+    }
+
     toggle(open) {
       this.root.hidden = !open;
       this.frog.button.setAttribute('aria-expanded', String(open));
-      this.frog.button.setAttribute('aria-label', open ? 'Frosch-Wegweiser schließen' : 'Frosch-Wegweiser öffnen');
       this.frog.root.classList.toggle('is-listening', open);
       if (open) {
+        this.placeNearFrog();
         this.frog.hush();
         this.frog.wink();
       } else {
@@ -503,26 +555,84 @@
     }
   }
 
-  /* ---------- 6. Start ---------- */
+  /* ---------- 6. Sprung durch die Scheibe ---------- */
+
+  let glass = null;
+  let leaving = false;
+
+  /* Die neue Seite ist bereits sichtbar geladen; der Übergang zur echten Adresse ist nur eine kurze Überblendung. */
+  window.addEventListener('pageswap', event => {
+    if (event.viewTransition && !leaving) event.viewTransition.skipTransition();
+  });
+
+  async function jumpThroughGlass(url, frog, pond) {
+    if (leaving) return;
+    if (!motionOk || !window.GlassBreak) {
+      window.location.href = url;
+      return;
+    }
+    leaving = true;
+    pond.toggle(false);
+    frog.hush();
+    frog.root.classList.add('is-through');
+    glass = new window.GlassBreak(url);
+    const impact = { x: window.innerWidth / 2, y: window.innerHeight * .46 };
+    const full = clamp(Math.min(window.innerWidth, window.innerHeight) * .5 / frog.size, 2.4, 4.6);
+
+    /* Zwei Sätze aus der Seite auf den Betrachter zu, dann der erste Aufprall. */
+    await frog.leap({ x: (frog.center.x + impact.x) / 2, y: (frog.center.y + impact.y) / 2 + 40 }, full * .42, 340);
+    await frog.leap(impact, full, 300);
+    frog.splat();
+    await glass.crack(impact);
+
+    /* Die Scheibe hält, bis die neue Seite wirklich geladen ist. */
+    const [loaded] = await Promise.all([glass.ready, wait(420)]);
+    if (!loaded) {
+      window.location.href = url;
+      return;
+    }
+    glass.prepare();
+    await frog.recoil(full * .62, 260);
+    await wait(60);
+    await frog.recoil(full * 1.12, 110);
+    frog.splat();
+    await wait(30);
+
+    /* Zweiter Aufprall: Die Scheibe bricht, dahinter steht die neue Seite. */
+    const falling = glass.shatter();
+    frog.fall();
+    await falling;
+    window.location.href = url;
+  }
+
+  window.addEventListener('pageshow', event => {
+    if (!event.persisted) return;
+    leaving = false;
+    if (glass) glass.destroy();
+    glass = null;
+    if (window.simplecommerceFrog) window.simplecommerceFrog.reset();
+  });
+
+  /* ---------- 7. Start ---------- */
 
   const path = window.location.pathname.replace(/index\.html$/, '');
   const isHelpArticle = path.startsWith('/hilfe/') && path !== '/hilfe/';
   const [text, next] = HINTS[path] || (isHelpArticle ? HELP_HINT : DEFAULT_HINT);
   const destinations = DESTINATIONS.filter(([, url]) => url !== path);
 
-  const scatter = new (motionOk ? Scatter : class { measure() {} setSource() {} })();
+  const scatter = motionOk ? new Scatter() : new StillText();
   const frog = new Frog(scatter);
-  const pond = new Pond(frog, text, next, destinations);
-  let engaged = false;
+  const pond = new Pond(frog, text, next, destinations, url => jumpThroughGlass(url, frog, pond));
+  window.simplecommerceFrog = frog;
+  frog.onPicked = () => { if (pond.isOpen) pond.toggle(false); };
 
-  frog.button.addEventListener('click', async () => {
-    engaged = true;
-    if (frog.out) await frog.comeHome();
+  frog.button.addEventListener('click', () => {
+    if (frog.consumeDrag()) return;
     pond.toggle(!pond.isOpen);
   });
   frog.button.addEventListener('pointerenter', () => {
     frog.wink();
-    if (!pond.isOpen) frog.say(text, 3500);
+    if (!pond.isOpen && !frog.dragging) frog.say(text, 3500);
   });
 
   /* Kommentare zu den Abschnitten der Startseite. */
@@ -533,28 +643,12 @@
       entries.forEach(entry => {
         if (!entry.isIntersecting || entry.target === currentSection) return;
         currentSection = entry.target;
-        if (pond.isOpen) return;
+        if (pond.isOpen || frog.dragging) return;
         frog.say(entry.target.dataset.guide);
         frog.wink();
       });
     }, { rootMargin: '-45% 0px -45% 0px' });
     sections.forEach(section => observer.observe(section));
   }
-  setTimeout(() => { if (!currentSection && !pond.isOpen) frog.say(text); }, 1400);
-
-  /* Von selbst hüpft er nur auf Werbeseiten und nur begrenzt oft, nie beim Lesen langer Texte oder beim Tippen. */
-  if (motionOk && !document.querySelector('.prose')) {
-    let bursts = 0;
-    const busy = () => engaged || document.hidden || pond.isOpen || frog.out
-      || document.activeElement.matches('input, textarea, select');
-    const excursion = () => {
-      if (engaged || bursts >= AUTO.bursts) return;
-      if (!busy()) {
-        bursts += 1;
-        frog.wander(AUTO.hopsPerBurst);
-      }
-      setTimeout(excursion, AUTO.interval);
-    };
-    setTimeout(excursion, AUTO.firstDelay);
-  }
+  setTimeout(() => { if (!currentSection && !pond.isOpen && !frog.dragging) frog.say(text); }, 1400);
 })();
