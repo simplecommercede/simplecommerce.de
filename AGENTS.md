@@ -11,7 +11,7 @@ Stand: 04.11.2026. Gilt für dieses Repository. Bei Änderungen diese Regeln zus
 
 ## Dateien und Änderungen
 - `scripts/build.py` erzeugt HTML, Sitemap, Weiterleitungen und Seitenindex. Generierte Dateien in `public/` nicht von Hand ändern; Quelle im Generator oder in `content/` bearbeiten und neu bauen.
-- `public/assets/site.css`, `public/assets/site.js`, `public/assets/guide.css`, `public/assets/guide.js` und `public/kontakt/senden.php` werden direkt gepflegt.
+- `public/assets/site.css`, `public/assets/site.js`, `public/assets/guide.css`, `public/assets/guide.js`, `public/assets/guide-glass.js` und `public/kontakt/senden.php` werden direkt gepflegt.
 - Ausführliche Leistungsseiten (Webseiten, IT-Beratung, IT-Projekte, KI-Anwendungen, Service): Zielgruppe, Ablauf, Fragen und verwandte Leistungen in `content/service-details.json`; Darstellung über `service_detail()`/`related_services()` in `scripts/build.py`.
 - Aktuelle Hilfe: Metadaten in `content/help-updates.json`, ausführliche Abschnitte in `content/help-details.json`, Darstellung in `scripts/help_render.py`. Aktuelle Rechtstexte: `content/legal/`. Öffentlicher Altbestand: `content/wordpress-public.json`. Screenshotnachweise: `content/screenshots.json`. Bildherkunft: `content/image-provenance.json`.
 - Originaldump, `uploads/` und `sec_helpcenter/` bleiben lokale, ignorierte Quellen. Keine Benutzer, Zugangsdaten, Einstellungen oder Einsendungen aus dem Dump übernehmen. `scripts/inventory-wordpress.py` ersetzt den öffentlichen Extrakt; nur bei bewusster Neuübernahme ausführen und Diff prüfen.
@@ -51,7 +51,8 @@ git diff --check
 ## Markenbild
 - Markenorange `#ff6600` aus der bisherigen Startseite verwenden, mit Anthrazit und Weiß. Dunklere Orangevariante für kleine Texte auf Weiß.
 - Originalfroschmotive aus `uploads/2020/10/` gezielt verwenden; veröffentlichte Kopien und Herkunft stehen in `content/brand-assets.json`. Alte in Bilder eingebrannte Werbeaussagen nicht wieder als aktuelle Zusagen zeigen. Bildausschnitte per CSS erhalten den Originalfrosch.
-- Nutzerentscheidung, Startseite bewusst schlank: Leistungen nur als Türen im Kopfbereich, danach Ablauf, Einblick, „Gut zu wissen“ (Fragen + FAQ) und Kontakt.
+- Nutzerentscheidung, Startseite bewusst schlank: Leistungen nur als Slider im Kopfbereich (`slider()` in `scripts/build.py`, `[data-slider]` in `site.js`), danach Ablauf, Einblick, „Gut zu wissen“ (Fragen + FAQ) und Kontakt.
+- Nutzerentscheidung: Der Frosch-Wegweiser ist verschiebbar und springt nicht von selbst; erst bei einem Ziel aus seinem Menü bricht er durch die Scheibe, und die Scheibe bricht erst, wenn die Zielseite geladen ist (`guide-glass.js`).
 - Frosch-Wegweiser (`guide.js`, `guide.css`, Texte zusätzlich in `data-guide`-Attributen; gezeichneter Frosch als SVG) bleibt zusätzlich zur Navigation: alle Ziele müssen auch ohne ihn und ohne JavaScript erreichbar sein; sein Menü zeigt die Leistungen als Seerosenblätter (`.guide-pond`/`.guide-pad`), auf die der Frosch beim Klick springt; keine Browserspeicherung ohne Anpassung der Datenschutztexte.
 - Interaktives Logo: Frosch und „e“ liegen als Ebenen über `assets/logo.jpg`, Maul, Lider, Kehle und Zunge als SVG im Generator (`.brand`/`logo-*` in `site.css`, Markup in `scripts/build.py`, `[data-logo]` in `site.js`). Nutzerentscheidung: Demoprodukte (Becher, Rucksack, Leuchte) nicht als Werbebilder verwenden; sie bleiben der Demo-Umgebung und den Hilfeaufnahmen vorbehalten.
 
