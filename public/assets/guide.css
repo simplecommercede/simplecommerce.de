@@ -1,0 +1,124 @@
+/*
+ * Frosch-Wegweiser: Frosch, Sprechblase, ausweichende Texte und der Teich als Menü.
+ * Verhalten siehe guide.js. Bei reduzierter Bewegung schaltet site.css alle Animationen ab.
+ */
+:root {
+  --pond-deep: #0d3b34;
+  --pond-mid: #14574a;
+  --pond-light: #1f7a66;
+  --leaf: #8fdc5e;
+  --leaf-hover: #b4ee88;
+  --leaf-shape: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 42 58 4A47 47 0 1 1 46 3Z' fill='%238fdc5e'/%3E%3Cpath d='M50 42 18 22M50 42 6 58M50 42l-24 46M50 42l22 46M50 42l42 16M50 42l36-22' stroke='%2378c94a' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+}
+
+/* ---------- Ausweichende Texte ---------- */
+.fg-split { user-select: text; }
+.fg-word, .fg-bit { display: inline-block; }
+.fg-word { white-space: nowrap; }
+.fg-bit { will-change: translate; }
+.fg-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; user-select: none; }
+
+/* ---------- Frosch ---------- */
+.fg { position: fixed; top: 0; left: 0; z-index: 40; pointer-events: none; will-change: translate; }
+.fg-button { position: relative; display: block; width: 108px; height: 108px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; pointer-events: auto; touch-action: manipulation; }
+.fg-button:focus-visible { outline: 3px solid var(--orange-text); outline-offset: 2px; }
+.fg-svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 8px 10px #1f232240); }
+.fg-button:hover .fg-svg { animation: fg-excited .55s var(--ease); }
+.fg-button:active .fg-svg { scale: 1.1 .88; }
+@keyframes fg-excited {
+  30% { transform: translateY(-9px) rotate(-5deg); }
+  65% { transform: translateY(0) rotate(4deg); }
+}
+
+.fg-rig { transform-box: fill-box; transform-origin: 50% 100%; }
+.fg-head { transform-box: fill-box; transform-origin: 50% 80%; transition: transform .25s var(--ease); }
+.fg-legs { transform-box: fill-box; transform-origin: 50% 0; transition: transform .16s var(--ease); }
+.fg-eye { translate: var(--look, 0 0); transition: translate .12s linear; }
+.fg-lid { transform-box: fill-box; transform-origin: 50% 0; transform: scaleY(0); transition: transform .08s linear; }
+.fg-tongue { transform-box: fill-box; transform-origin: 50% 0; transform: scaleY(0); transition: transform .14s var(--ease); }
+.fg-throat { transform-box: fill-box; transform-origin: 50% 30%; animation: fg-breathe 2.8s ease-in-out infinite; }
+@keyframes fg-breathe { 50% { transform: scale(1.08, 1.12); } }
+
+/* Zwinkern, Blinzeln, Zuhören, Flug */
+.fg.is-blinking .fg-lid { transform: none; }
+.fg.is-winking .fg-lid-r { transform: none; }
+.fg.is-winking .fg-head { transform: rotate(-8deg); }
+.fg.is-winking .fg-tongue { transform: none; }
+.fg.is-listening .fg-head { transform: translateY(-3px) rotate(5deg); }
+.fg.is-air .fg-legs { transform: translateY(5px) scale(.86, 1.3); }
+
+.fg-ground { position: absolute; left: 14%; right: 14%; bottom: -2px; height: 12px; border-radius: 50%; background: #1f232226; transform: scale(calc(1 - var(--air, 0) * .55)); opacity: calc(1 - var(--air, 0) * .7); }
+.fg:not(.is-out) .fg-ground { opacity: 0; }
+
+/* Sprechblase */
+.fg-say { position: absolute; right: 8px; bottom: calc(100% + 8px); width: max-content; max-width: 280px; padding: 12px 16px; border-radius: 18px 18px 4px 18px; background: var(--ink); color: var(--white); font-size: 1rem; font-weight: 650; line-height: 1.35; box-shadow: 0 14px 28px #1f232244; opacity: 0; transform: translateY(10px) scale(.7) rotate(4deg); transform-origin: 90% 100%; transition: opacity .18s, transform .32s cubic-bezier(.3, 1.6, .5, 1); }
+.fg-say.is-right { right: auto; left: 8px; border-radius: 18px 18px 18px 4px; transform-origin: 10% 100%; }
+.fg-say.is-visible { opacity: 1; transform: none; }
+
+/* ---------- Teich ---------- */
+.pond { position: fixed; right: 22px; bottom: 138px; z-index: 41; width: 372px; max-width: calc(100vw - 24px); max-height: calc(100vh - 160px); overflow: hidden auto; padding: 22px 20px 20px; color: var(--white); background: radial-gradient(240px circle at var(--glow-x, 70%) var(--glow-y, 20%), #2fa98a55, transparent 70%), radial-gradient(circle at 18% 12%, var(--pond-light), transparent 46%), linear-gradient(160deg, var(--pond-mid), var(--pond-deep)); border-radius: 44px 34px 10px 48px / 38px 46px 10px 34px; box-shadow: 0 0 0 2px #ffffff22 inset, 0 30px 70px #0d3b3488; transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); transition: transform .2s ease-out; animation: pond-open .55s var(--ease); }
+.pond[hidden] { display: none; }
+@keyframes pond-open {
+  from { clip-path: circle(0 at 92% 100%); }
+  to { clip-path: circle(150% at 92% 100%); }
+}
+.pond::before, .pond::after { content: ""; position: absolute; border: 1.5px solid #ffffff1f; border-radius: 50%; pointer-events: none; animation: pond-ripple 5s ease-out infinite; }
+.pond::before { left: 8%; top: 34%; width: 150px; height: 70px; }
+.pond::after { right: 2%; top: 64%; width: 190px; height: 90px; animation-delay: 2.2s; }
+@keyframes pond-ripple {
+  0% { transform: scale(.3); opacity: 0; }
+  25% { opacity: 1; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+.pond :focus-visible { outline-color: var(--leaf-hover); }
+
+.pond-head { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; margin-bottom: 8px; }
+.pond-title { margin: 0; color: var(--white); font-size: 1.14rem; font-weight: 750; line-height: 1.25; }
+.pond-close { flex-shrink: 0; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 50%; background: #ffffff24; color: var(--white); font-size: 1.25rem; line-height: 1; cursor: pointer; transition: rotate .3s var(--ease), background .2s; }
+.pond-close:hover { rotate: 90deg; background: var(--orange); color: var(--ink); }
+
+/* Seerosenblätter */
+.pond-pads { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px 4px; padding-block: 8px 18px; }
+.pad { position: relative; display: grid; place-items: center; aspect-ratio: 1; isolation: isolate; color: var(--ink); text-align: center; text-shadow: 0 0 5px var(--leaf), 0 0 2px var(--leaf); transition: scale .28s cubic-bezier(.3, 1.7, .5, 1), opacity .2s; animation: pad-pop .5s cubic-bezier(.3, 1.6, .5, 1) calc(var(--i) * 40ms + 80ms) backwards; }
+.pad:nth-child(3n + 2) { translate: 0 12px; }
+.pad:hover { text-decoration: none; }
+@keyframes pad-pop { from { opacity: 0; scale: .2; rotate: -40deg; } }
+.pad::before { content: ""; position: absolute; inset: 3%; z-index: -1; background: var(--leaf-shape) center / contain no-repeat; filter: drop-shadow(0 7px 6px #06231f88); rotate: calc(var(--i) * 47deg); transition: rotate .7s var(--ease), filter .25s; animation: pad-bob 4s ease-in-out calc(var(--i) * -500ms) infinite; }
+@keyframes pad-bob { 50% { transform: translateY(-3px) rotate(4deg); } }
+.pad::after { content: ""; position: absolute; inset: 4%; z-index: -2; border: 2px solid #b4ee8800; border-radius: 50%; }
+.pad-label { padding: 0 8px; font-size: .86rem; font-weight: 800; line-height: 1.12; overflow-wrap: anywhere; transition: transform .28s cubic-bezier(.3, 1.7, .5, 1); }
+
+/* Hover: Das Blatt taucht auf und dreht sich, Wellen laufen aus, die Nachbarn treten zurück. */
+.pond-pads:hover .pad:not(:hover) { scale: .92; }
+.pond-pads:hover .pad:not(:hover)::before { filter: drop-shadow(0 4px 4px #06231f88) saturate(.75) brightness(.92); }
+.pad:hover, .pad:focus-visible { z-index: 2; scale: 1.14; }
+.pad:hover::before, .pad:focus-visible::before { rotate: calc(var(--i) * 47deg + 120deg); filter: drop-shadow(0 14px 12px #06231fbb) brightness(1.14); }
+.pad:hover::after, .pad:focus-visible::after { animation: pad-wave 1.1s ease-out infinite; }
+.pad:hover .pad-label, .pad:focus-visible .pad-label { transform: translateY(5px) scale(1.06); }
+@keyframes pad-wave {
+  0% { transform: scale(.85); border-color: #b4ee88cc; }
+  100% { transform: scale(1.34); border-color: #b4ee8800; }
+}
+.pad.is-splash { scale: .7; opacity: .4; transition-duration: .35s; }
+
+/* Der kleine Frosch im Teich */
+.pond-frog { position: absolute; top: 0; left: 0; z-index: 3; width: 44px; height: 44px; opacity: 0; pointer-events: none; transition: opacity .12s; }
+.pond-frog.is-here { opacity: 1; }
+.pond-frog .fg-svg { filter: drop-shadow(0 4px 4px #06231f99); }
+
+/* Aktionen */
+.pond-actions { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.pond-next, .pond-hop { min-height: 44px; padding: 10px 18px; border: 0; border-radius: 999px; font-size: .95rem; font-weight: 800; cursor: pointer; transition: transform .16s var(--ease), box-shadow .16s var(--ease), background .16s; }
+.pond-next { display: inline-flex; align-items: center; background: var(--orange); color: var(--ink); box-shadow: 0 5px 0 #b84700, 0 14px 22px #0006; }
+.pond-next:hover { text-decoration: none; transform: translateY(-2px); box-shadow: 0 7px 0 #b84700, 0 18px 26px #0007; }
+.pond-next:active { transform: translateY(4px); box-shadow: 0 1px 0 #b84700; }
+.pond-hop { background: #ffffff1f; color: var(--white); }
+.pond-hop:hover { background: var(--leaf-hover); color: var(--ink); transform: translateY(-2px) rotate(-2deg); }
+
+/* ---------- Schmale Bildschirme und Druck ---------- */
+@media (max-width: 760px) {
+  .fg-button { width: 80px; height: 80px; }
+  .fg-say { max-width: min(240px, calc(100vw - 40px)); padding: 10px 14px; font-size: .92rem; }
+  .pond { right: 12px; bottom: 100px; max-height: calc(100vh - 116px); padding: 18px 14px 16px; }
+}
+@media print { .fg, .pond { display: none; } }
