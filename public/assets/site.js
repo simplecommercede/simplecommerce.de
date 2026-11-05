@@ -1,9 +1,139 @@
 'use strict';
+// Erst hier aktivieren: Lädt das Skript nicht, bleibt aller Inhalt sichtbar.
+document.documentElement.classList.add('js');
+const prefersMotion = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+
+// Der Frosch im Logo hüpft, trifft mit der Zunge das "e" und neigt sich zum Mauszeiger.
+// Die Szene läuft einmal nach dem Laden und bei jeder Berührung; das "e" dreht zusätzlich von selbst.
+document.querySelectorAll('[data-logo]').forEach(logo => {
+  const play = () => {
+    if (!prefersMotion || logo.classList.contains('is-hopping')) return;
+    logo.classList.add('is-hopping');
+  };
+  setTimeout(play, 1200);
+  logo.addEventListener('pointerenter', play);
+  logo.addEventListener('focus', play);
+  logo.addEventListener('animationend', event => {
+    if (event.animationName === 'logo-spin') logo.classList.remove('is-hopping');
+  });
+  if (prefersMotion) {
+    logo.addEventListener('pointermove', event => {
+      const box = logo.getBoundingClientRect();
+      logo.style.setProperty('--lean', `${((event.clientX - box.left) / box.width - .16) * 5}deg`);
+    });
+    logo.addEventListener('pointerleave', () => logo.style.removeProperty('--lean'));
+  }
+});
+
+// Froschmotive hüpfen, wenn man sie berührt.
+document.querySelectorAll('[data-hop]').forEach(item => {
+  if (!prefersMotion) return;
+  item.addEventListener('pointerenter', () => item.classList.add('is-hopping'));
+  item.addEventListener('animationend', () => item.classList.remove('is-hopping'));
+});
+
+// Inhalte erscheinen einmalig beim Scrollen; ohne Beobachter oder Bewegung bleiben sie sichtbar.
+const revealItems = document.querySelectorAll('.reveal, [data-steps]');
+if (prefersMotion && 'IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+  revealItems.forEach(item => observer.observe(item));
+} else {
+  revealItems.forEach(item => item.classList.add('is-visible'));
+}
+
+// Das Schaufenster bewegt sich leicht mit dem Mauszeiger.
+if (prefersMotion && window.matchMedia('(hover: hover)').matches) {
+  document.querySelectorAll('[data-parallax]').forEach(stage => {
+    const layers = [...stage.querySelectorAll('[data-depth]')];
+    const area = stage.closest('.hero') || stage;
+    area.addEventListener('pointermove', event => {
+      const box = area.getBoundingClientRect();
+      const x = (event.clientX - box.left) / box.width - .5;
+      const y = (event.clientY - box.top) / box.height - .5;
+      layers.forEach(layer => {
+        layer.style.setProperty('--px', `${x * layer.dataset.depth}px`);
+        layer.style.setProperty('--py', `${y * layer.dataset.depth}px`);
+      });
+    });
+  });
+}
+
+// Ohne JavaScript bleiben alle Ansichten untereinander sichtbar.
+document.querySelectorAll('[data-tour]').forEach(tour => {
+  const tablist = tour.querySelector('[role="tablist"]');
+  const tabs = [...tablist.querySelectorAll('[role="tab"]')];
+  const select = (active, focus) => {
+    tabs.forEach(tab => {
+      const selected = tab === active;
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      document.getElementById(tab.getAttribute('aria-controls')).hidden = !selected;
+    });
+    if (focus) active.focus();
+  };
+  tablist.hidden = false;
+  select(tabs[0], false);
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => select(tab, false));
+    tab.addEventListener('keydown', event => {
+      const targets = { ArrowRight: index + 1, ArrowLeft: index - 1, Home: 0, End: tabs.length - 1 };
+      if (!(event.key in targets)) return;
+      event.preventDefault();
+      select(tabs[(targets[event.key] + tabs.length) % tabs.length], true);
+    });
+  });
+});
+
+// Beispielrechnung; die Stufen kommen aus der Preistabelle. Ohne JavaScript bleibt die Stufenübersicht.
+document.querySelectorAll('[data-calculator]').forEach(calculator => {
+  const tiers = JSON.parse(calculator.dataset.calculator);
+  const section = calculator.closest('section');
+  const input = calculator.querySelector('input');
+  const value = calculator.querySelector('output');
+  const total = calculator.querySelector('#calc-total');
+  const parts = calculator.querySelector('#calc-parts');
+  const cards = [...section.querySelectorAll('[data-tier]')];
+  const euro = amount => amount.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+  const update = () => {
+    const revenue = Number(input.value);
+    const index = tiers.findIndex(tier => tier.limit === null || revenue < tier.limit || (revenue === tier.limit && tier.limit < 80000));
+    const tier = tiers[index];
+    value.textContent = revenue.toLocaleString('de-DE') + ' €';
+    input.style.setProperty('--fill', `${revenue / Number(input.max) * 100}%`);
+    cards.forEach((card, cardIndex) => card.classList.toggle('is-active', cardIndex === index));
+    if (tier.rent === null || tier.rate === null) {
+      total.textContent = 'Auf Anfrage';
+      parts.replaceChildren();
+      return;
+    }
+    const commission = revenue * tier.rate / 100;
+    const rows = [['Shopmiete', tier.rent], [`Provision (${tier.rate.toLocaleString('de-DE')} %)`, commission], ['SSL-Leitung', tier.ssl]];
+    total.textContent = euro(tier.rent + commission + tier.ssl);
+    parts.replaceChildren(...rows.flatMap(([label, amount]) => {
+      const term = document.createElement('dt');
+      const detail = document.createElement('dd');
+      term.textContent = label;
+      detail.textContent = !amount && label === 'SSL-Leitung' ? 'inklusive' : euro(amount);
+      return [term, detail];
+    }));
+  };
+  calculator.hidden = false;
+  input.addEventListener('input', update);
+  update();
+});
+
 const search = document.getElementById('hilfe-suche');
 if (search) {
   const entries = [...document.querySelectorAll('#help-topics [data-topic]')];
+  const groups = [...document.querySelectorAll('[data-help-group]')];
   const status = document.getElementById('suchstatus');
-  const normalize = value => value.toLocaleLowerCase('de').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ß/g, 'ss');
+  const normalize = value => value.toLocaleLowerCase('de').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss');
   search.addEventListener('input', () => {
     const terms = normalize(search.value).trim().split(/\s+/).filter(Boolean);
     let count = 0;
@@ -11,6 +141,7 @@ if (search) {
       entry.hidden = !terms.every(term => normalize(entry.textContent).includes(term));
       if (!entry.hidden) count++;
     });
+    groups.forEach(group => { group.hidden = !group.querySelector('[data-topic]:not([hidden])'); });
     status.textContent = terms.length ? (count ? `${count} passende Hilfethemen` : 'Kein passendes Thema gefunden. Versuchen Sie einen anderen Suchbegriff oder kontaktieren Sie uns.') : '';
   });
 }

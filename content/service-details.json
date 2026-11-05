@@ -1,0 +1,91 @@
+{
+  "webseiten": {
+    "passt": [
+      "Sie möchten Ihr Unternehmen zum ersten Mal online zeigen.",
+      "Ihre bisherige Website ist in die Jahre gekommen oder auf dem Smartphone mühsam zu bedienen.",
+      "Besucher finden nicht schnell genug zu Ihren Leistungen oder zum Kontakt."
+    ],
+    "ablauf": [
+      ["Kennenlernen", "Wir besprechen Ihr Angebot, Ihre Zielgruppen und was Besucher auf der Website erreichen sollen."],
+      ["Aufbauen", "Wir ordnen die Inhalte, gestalten die Seiten und setzen sie für alle Bildschirme um. Zwischenstände stimmen wir mit Ihnen ab."],
+      ["Starten", "Ihre Website geht online. Auf Wunsch kümmern wir uns auch danach um Änderungen und Pflege."]
+    ],
+    "fragen": [
+      ["Muss ich die Texte selbst schreiben?", "Nicht unbedingt. Wir strukturieren die Inhalte gemeinsam mit Ihnen und helfen bei verständlichen Formulierungen. Fachliche Angaben zu Ihrem Unternehmen kommen von Ihnen."],
+      ["Kann ich Inhalte später selbst ändern?", "Wenn Sie regelmäßig selbst Inhalte pflegen möchten, planen wir das von Anfang an mit ein. Sonst übernehmen wir Änderungen für Sie."],
+      ["Wird die Website bei Google gefunden?", "Saubere Struktur, klare Texte und passende Metadaten schaffen eine gute Grundlage. Bestimmte Platzierungen kann allerdings niemand seriös versprechen."]
+    ],
+    "verwandt": ["/shopsystem/", "/service/", "/ki-anwendungen/"]
+  },
+  "it-beratung": {
+    "passt": [
+      "Sie stehen vor einer technischen Entscheidung und möchten eine verständliche Einschätzung.",
+      "In Ihrem Unternehmen laufen mehrere Programme nebeneinander und Daten werden doppelt gepflegt.",
+      "Sie haben eine Idee, wissen aber noch nicht, wie sie sich umsetzen lässt."
+    ],
+    "ablauf": [
+      ["Zuhören", "Sie schildern Ihre Situation. Wir fragen nach, bis wir Ihre Abläufe und Ziele verstanden haben."],
+      ["Einordnen", "Wir zeigen mögliche Wege mit Nutzen, Aufwand und Grenzen. Verständlich und ohne Fachchinesisch."],
+      ["Entscheiden", "Sie erhalten eine klare Empfehlung und die nächsten Schritte. Die Umsetzung begleiten wir auf Wunsch."]
+    ],
+    "fragen": [
+      ["Muss ich mich mit Technik auskennen?", "Nein. Sie kennen Ihr Unternehmen, wir übersetzen die Technik. Fachbegriffe erklären wir, wenn sie wichtig sind."],
+      ["Müssen wir danach mit Ihnen umsetzen?", "Nein. Die Beratung steht für sich. Wenn es passt, unterstützen wir Sie gern auch bei der Umsetzung."],
+      ["Wie beginnt eine Beratung?", "Mit einer kurzen Nachricht per E-Mail oder über das <a href=\"/kontakt/\">Kontaktformular</a>. Wir melden uns und besprechen den Rahmen."]
+    ],
+    "verwandt": ["/it-projekte/", "/ki-anwendungen/", "/webseiten/"]
+  },
+  "it-projekte": {
+    "passt": [
+      "Mitarbeitende übertragen Daten von Hand zwischen Programmen.",
+      "Ihre Standardsoftware deckt einen wichtigen Ablauf nicht ab.",
+      "Eine bestehende Anwendung soll erweitert oder modernisiert werden."
+    ],
+    "ablauf": [
+      ["Ablauf verstehen", "Wir schauen uns an, wie heute gearbeitet wird und wo Zeit verloren geht."],
+      ["Schrittweise bauen", "Wir entwickeln in überschaubaren Schritten. Sie sehen früh Zwischenergebnisse und entscheiden mit."],
+      ["Einführen und begleiten", "Wir unterstützen beim Start und entwickeln die Lösung bei Bedarf weiter."]
+    ],
+    "fragen": [
+      ["Können Sie unseren Shop mit anderen Programmen verbinden?", "Oft ja. Welche Schnittstelle passt, hängt von den beteiligten Systemen ab. Das prüfen wir gemeinsam mit Ihnen."],
+      ["Arbeiten Sie auch mit vorhandener Software?", "Ja. Wir prüfen bestehende Anwendungen und planen Erweiterungen oder eine schrittweise Modernisierung."],
+      ["Wie lange dauert ein Projekt?", "Das hängt vom Umfang ab. Wir planen in Schritten, damit Sie nicht bis zum Schluss auf erste Ergebnisse warten."]
+    ],
+    "verwandt": ["/it-beratung/", "/ki-anwendungen/", "/service/"]
+  },
+  "ki-anwendungen": {
+    "passt": [
+      "Ihr Team beantwortet immer wieder ähnliche Anfragen.",
+      "Sie schreiben viele Texte, zum Beispiel Produktbeschreibungen.",
+      "Sie haben viele Daten, aber wenig Zeit, sie auszuwerten."
+    ],
+    "ablauf": [
+      ["Aufgabe finden", "Wir suchen gemeinsam eine konkrete Aufgabe, bei der KI Ihnen Arbeit abnehmen kann."],
+      ["Ausprobieren", "Wir bauen eine erste Lösung und testen sie mit echten Beispielen aus Ihrem Alltag."],
+      ["Einbauen", "Bewährt sie sich, binden wir die KI dort ein, wo Sie ohnehin arbeiten."]
+    ],
+    "fragen": [
+      ["Was ist ein eigenes KI-Modell?", "Ein Modell, das zusätzlich mit Ihren Daten trainiert wird. Dadurch kennt es Ihre Produkte, Begriffe und Abläufe besser als eine allgemeine KI."],
+      ["Brauche ich dafür viele Daten?", "Nicht immer. Für viele Aufgaben reicht eine bestehende KI. Ob sich ein eigenes Modell lohnt, klären wir vorher mit Ihnen."],
+      ["Was passiert mit meinen Daten?", "Welche Daten verwendet werden und wo sie verarbeitet werden, legen wir vor dem Start gemeinsam mit Ihnen fest."]
+    ],
+    "verwandt": ["/it-projekte/", "/it-beratung/", "/shopsystem/"]
+  },
+  "service": {
+    "passt": [
+      "Sie nutzen einen simplecommerce-Shop und haben eine Frage zur Bedienung.",
+      "In Ihrem Shop oder auf Ihrer Website soll sich etwas ändern.",
+      "Neue Mitarbeitende sollen sich in der Verwaltung zurechtfinden."
+    ],
+    "ablauf": [
+      ["Melden", "Beschreiben Sie Ihr Anliegen per E-Mail oder über das Kontaktformular."],
+      ["Klären", "Wir melden uns persönlich und besprechen, was zu tun ist."],
+      ["Erledigen", "Wir helfen weiter oder setzen die Änderung um. Größere Aufgaben stimmen wir vorher mit Ihnen ab."]
+    ],
+    "fragen": [
+      ["Gibt es Anleitungen zum Nachlesen?", "Ja. In der <a href=\"/hilfe/\">Online-Hilfe</a> finden Sie Anleitungen zu Artikeln, Bestellungen, Kunden und Einstellungen."],
+      ["Helfen Sie auch bei Websites, die nicht von Ihnen stammen?", "Sprechen Sie uns an. Wir schauen uns die Website an und sagen Ihnen offen, ob wir helfen können."]
+    ],
+    "verwandt": ["/shopsystem/", "/webseiten/", "/it-projekte/"]
+  }
+}

@@ -2,7 +2,7 @@
   {
     "path": "/",
     "title": "Shops, Webseiten & IT-Beratung",
-    "description": "simplecommerce aus Bispingen: Shopsystem, Webseitenerstellung, IT-Beratung, individuelle Software und persönlicher Service.",
+    "description": "simplecommerce aus Bispingen: Shopsystem, Webseitenerstellung, IT-Beratung, individuelle Software, KI-Anwendungen und persönlicher Service.",
     "noindex": false
   },
   {
@@ -27,6 +27,12 @@
     "path": "/it-projekte/",
     "title": "IT-Projekte & individuelle Software",
     "description": "Wir entwickeln individuelle Lösungen, verbinden Systeme und vereinfachen wiederkehrende Aufgaben.",
+    "noindex": false
+  },
+  {
+    "path": "/ki-anwendungen/",
+    "title": "KI-Anwendungen",
+    "description": "Wir bauen KI-Anwendungen für Ihren Alltag und trainieren auf Wunsch ein eigenes Modell. Einfach erklärt, ohne Fachchinesisch.",
     "noindex": false
   },
   {
