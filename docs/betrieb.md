@@ -41,3 +41,6 @@ Redesign vom 05.11.2026, noch nicht mit dem Kollegen abgestimmt und nicht live: 
 Der PHP-Entwicklungsserver (`cli-server`) akzeptiert seinen exakten lokalen Origin, wenn Host und Client Loopback sind. Ohne explizites `CONTACT_TRANSPORT` prüft er das Formular und meldet einen klar bezeichneten Formulartest ohne Mailversand und ohne Speicherung der Nachricht. Produktive PHP-SAPIs erhalten diese Ausnahme nicht; ihre Origin-Liste und Versandkonfiguration bleiben verbindlich. Explizite lokale Dateitransporttests funktionieren weiterhin wie oben beschrieben.
 
 JavaScript fordert JSON an und zeigt Erfolg/Fehler direkt im Formular. Der Entwurf bleibt bei allen Rückmeldungen erhalten, doppelte laufende Übermittlungen werden verhindert. Ohne JavaScript liefert PHP eine gestaltete Rückmeldeseite mit Logo, Navigation und Kontaktlinks. Ein Netzwerkfehler bestätigt keine Zustellung; die Meldung behauptet deshalb keinen sicheren Versandstatus.
+
+## Alte Admin-Hilfelinks (05.11.2026)
+Zentrale Zuordnung, iframe-Ausnahme und offene Inhalte: [Historische Hilfelinks](legacy-hilfelinks.md). Nur die öffentliche Hilfe darf nach Nutzerfreigabe domainübergreifend eingebettet werden. Apache-Testport 1894; PHP-Port 1890 verarbeitet keine `.htaccess`. Keine Live-Bereitstellung erfolgt.

@@ -60,3 +60,8 @@ git diff --check
 - Vollständige aktuelle Anleitungen mit Inhaltsverzeichnis und abschnittsbezogenen Desktop-/Mobilbildern pflegen; nicht wieder auf wenige Übersichtsschritte kürzen. Inhaltsabgleich: `docs/hilfe-inhaltsabgleich.md`, technische Belege: `docs/admin-hilfe-abgleich.md`.
 - Nutzerentscheidung: Amazon vorerst nicht in öffentlichen Anleitungstexten oder eigenen Bildabschnitten erklären. Offene bzw. nicht freigegebene Funktionen intern dokumentieren; öffentliche Hilfe beschreibt nutzbare Abläufe. Keine Funktionsreife durch Retusche von Warnungen vortäuschen.
 - Vor Produktaufnahmen zusätzlich warten, bis `#TB_load` und `#TB_overlay` verschwunden sind. Bei dynamischen Tabellen/Formularen auf den eigentlichen Inhalt warten, nicht nur die Überschrift.
+
+## Historische Hilfelinks
+- Slug-Zuordnung in `content/legacy-links.json`, genaue URLs/Anker und vollständiges Admin-Inventar in `content/legacy-help.json`. `scripts/legacy_help.py` erzeugt daraus `.htaccess`; Basisregeln in `content/htaccess.conf`. Keine generierten Redirects von Hand bearbeiten.
+- HTTP-Tests mit `python3 scripts/test_legacy_help.py --base http://127.0.0.1:1894`; PHP-Vorschau 1890 wertet `.htaccess` nicht aus. Keine unpassenden Sammelweiterleitungen.
+- Nutzerfreigabe 05.11.2026: Nur öffentliche `/hilfe/` darf ohne Domainliste in beliebigen HTTP(S)-Shop-Admins eingebettet werden. Kontakt und andere Seiten behalten Einbettungsschutz.

@@ -38,3 +38,6 @@ Die Teil-Commits sind umgesetzt; das Git-Protokoll ist die Quelle für konkrete 
 Markenüberarbeitung vom 04.11.2026: Originalorange `#ff6600`, Anthrazit/Weiß und fotografische Froschmotive aus dem bereitgestellten Bestand. Startseite und Leistungs-/Themenansichten individueller gestaltet; Herkunft in `content/brand-assets.json`. Diese vom Nutzer beauftragte Überarbeitung ergänzt den funktionalen Erstentwurf.
 
 Ausführliche Hilfe: `content/help-details.json` enthält die redaktionell abgeglichenen Abschnitte; `scripts/help_render.py` erzeugt Inhaltsverzeichnisse und Bildpaare. Umfang, bewusste Ausschlüsse und alte Lexikonziele sind in `docs/hilfe-inhaltsabgleich.md` dokumentiert. Die frühere Kurzfassung war keine vollständige Inhaltsmigration.
+
+## Admin-Altlinks
+Die 66 Varianten aus den Admins und alten Mails sind zentral inventarisiert; HTTP-Status und offene Inhaltslücken siehe [Historische Hilfelinks](legacy-hilfelinks.md). Die vollständige lokale Prüfliste wird mit `scripts/test_legacy_help.py` erzeugt.

@@ -40,5 +40,11 @@
   "attribute": "/hilfe/artikel-attribute/",
   "google_export": "/hilfe/google-export/",
   "googlebase": "/hilfe/google-export/",
-  "referenzen": "/shopsystem/"
+  "referenzen": "/shopsystem/",
+  "gutscheine": "/hilfe/gutscheine/",
+  "bestandsliste": "/hilfe/bestanduebersicht/",
+  "andoo": "/hilfe/andoo/",
+  "shopbackup": "/hilfe/shopbackup/",
+  "yatego": "/hilfe/yatego/",
+  "bestandsuebersicht": "/hilfe/bestanduebersicht/"
 }
