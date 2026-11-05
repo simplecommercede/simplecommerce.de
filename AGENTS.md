@@ -4,14 +4,15 @@ Stand: 04.11.2026. Gilt für dieses Repository. Bei Änderungen diese Regeln zus
 
 ## Auftrag und Inhalt
 - Statische Unternehmenswebsite als Ersatz für WordPress. PHP nur für das Kontaktformular; kein neues CMS oder unnötiger Build-Stack.
-- Angebote: Shopsystem, Service, Webseitenerstellung, professionelle IT-Beratung sowie IT-Projekte und individuelle Software. „IP-Projekte“ war ein Schreibfehler.
+- Angebote: Shopsystem, Service, Webseitenerstellung, professionelle IT-Beratung, IT-Projekte und individuelle Software sowie KI-Anwendungen mit eigenem Modelltraining (`/ki-anwendungen/`, einfach formuliert). „IP-Projekte“ war ein Schreibfehler.
 - Schritt 1 priorisiert Bedienbarkeit. Der Nutzer hat anschließend eine professionelle Markenüberarbeitung mit Originalorange und Froschmotiven beauftragt; spätere Designarbeit mit dem Kollegen abstimmen. Funktionierende Navigation, Semantik, Tastaturbedienung und responsive Darstellung erhalten.
 - Hauptnavigation: Shop, Leistungen, Hilfe, Kontakt. Shop-Preise gehören unter Shop; die bestehende URL `/preise/` bleibt erhalten. Andere Leistungen bekommen individuelle Angebote und verweisen auf Kontakt.
 - Grundlegende Bestandsinhalte, Preise, Kontakt und Rechtsseiten erhalten. Keine Preise erfinden. Widersprüchliche Telefonzeiten sowie Preis- und Rechtsinhalte vor Livegang klären; keine vollständige rechtliche Freigabe ohne geklärte Betriebsangaben behaupten. Rechtsquellen und offene Angaben stehen in `docs/rechtliches.md`.
 
 ## Dateien und Änderungen
 - `scripts/build.py` erzeugt HTML, Sitemap, Weiterleitungen und Seitenindex. Generierte Dateien in `public/` nicht von Hand ändern; Quelle im Generator oder in `content/` bearbeiten und neu bauen.
-- `public/assets/site.css`, `public/assets/site.js` und `public/kontakt/senden.php` werden direkt gepflegt.
+- `public/assets/site.css`, `public/assets/site.js`, `public/assets/guide.css`, `public/assets/guide.js` und `public/kontakt/senden.php` werden direkt gepflegt.
+- Ausführliche Leistungsseiten (Webseiten, IT-Beratung, IT-Projekte, KI-Anwendungen, Service): Zielgruppe, Ablauf, Fragen und verwandte Leistungen in `content/service-details.json`; Darstellung über `service_detail()`/`related_services()` in `scripts/build.py`.
 - Aktuelle Hilfe: Metadaten in `content/help-updates.json`, ausführliche Abschnitte in `content/help-details.json`, Darstellung in `scripts/help_render.py`. Aktuelle Rechtstexte: `content/legal/`. Öffentlicher Altbestand: `content/wordpress-public.json`. Screenshotnachweise: `content/screenshots.json`. Bildherkunft: `content/image-provenance.json`.
 - Originaldump, `uploads/` und `sec_helpcenter/` bleiben lokale, ignorierte Quellen. Keine Benutzer, Zugangsdaten, Einstellungen oder Einsendungen aus dem Dump übernehmen. `scripts/inventory-wordpress.py` ersetzt den öffentlichen Extrakt; nur bei bewusster Neuübernahme ausführen und Diff prüfen.
 - Ausschließlich `public/` ausliefern. Keine SQL-Dumps, internen Dokumente oder veralteten CGI-/Flash-Dateien veröffentlichen.
@@ -50,6 +51,9 @@ git diff --check
 ## Markenbild
 - Markenorange `#ff6600` aus der bisherigen Startseite verwenden, mit Anthrazit und Weiß. Dunklere Orangevariante für kleine Texte auf Weiß.
 - Originalfroschmotive aus `uploads/2020/10/` gezielt verwenden; veröffentlichte Kopien und Herkunft stehen in `content/brand-assets.json`. Alte in Bilder eingebrannte Werbeaussagen nicht wieder als aktuelle Zusagen zeigen. Bildausschnitte per CSS erhalten den Originalfrosch.
+- Nutzerentscheidung, Startseite bewusst schlank: Leistungen nur als Türen im Kopfbereich, danach Ablauf, Einblick, „Gut zu wissen“ (Fragen + FAQ) und Kontakt.
+- Frosch-Wegweiser (`guide.js`, `guide.css`, Texte zusätzlich in `data-guide`-Attributen; gezeichneter Frosch als SVG) bleibt zusätzlich zur Navigation: alle Ziele müssen auch ohne ihn und ohne JavaScript erreichbar sein; sein Menü zeigt die Leistungen als Seerosenblätter (`.guide-pond`/`.guide-pad`), auf die der Frosch beim Klick springt; keine Browserspeicherung ohne Anpassung der Datenschutztexte.
+- Interaktives Logo: Frosch und „e“ liegen als Ebenen über `assets/logo.jpg`, Maul, Lider, Kehle und Zunge als SVG im Generator (`.brand`/`logo-*` in `site.css`, Markup in `scripts/build.py`, `[data-logo]` in `site.js`). Nutzerentscheidung: Demoprodukte (Becher, Rucksack, Leuchte) nicht als Werbebilder verwenden; sie bleiben der Demo-Umgebung und den Hilfeaufnahmen vorbehalten.
 
 ## Hilfeumfang und Freigaben
 - Vollständige aktuelle Anleitungen mit Inhaltsverzeichnis und abschnittsbezogenen Desktop-/Mobilbildern pflegen; nicht wieder auf wenige Übersichtsschritte kürzen. Inhaltsabgleich: `docs/hilfe-inhaltsabgleich.md`, technische Belege: `docs/admin-hilfe-abgleich.md`.
