@@ -55,7 +55,7 @@ if ($fields['website'] !== '') {
     // Honeypot submissions are never delivered.
     finish(200, 'Vielen Dank.', 'Ihre Anfrage wurde entgegengenommen.');
 }
-$topics = ['Shopsystem','Webseitenerstellung','IT-Beratung','IT-Projekt','Service','Sonstiges'];
+$topics = ['Shopsystem','Webseitenerstellung','IT-Beratung','IT-Projekt','KI-Anwendungen','Service','Sonstiges'];
 if ($fields['name'] === '' || strlen($fields['name']) > 480 || preg_match('/[\r\n\x00-\x1f]/', $fields['name'])
     || strlen($fields['email']) > 254 || !filter_var($fields['email'], FILTER_VALIDATE_EMAIL)
     || preg_match('/[\r\n]/', $fields['email']) || !in_array($fields['thema'], $topics, true)
