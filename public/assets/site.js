@@ -47,22 +47,57 @@ if (prefersMotion && 'IntersectionObserver' in window) {
   revealItems.forEach(item => item.classList.add('is-visible'));
 }
 
-// Das Schaufenster bewegt sich leicht mit dem Mauszeiger.
-if (prefersMotion && window.matchMedia('(hover: hover)').matches) {
-  document.querySelectorAll('[data-parallax]').forEach(stage => {
-    const layers = [...stage.querySelectorAll('[data-depth]')];
-    const area = stage.closest('.hero') || stage;
-    area.addEventListener('pointermove', event => {
-      const box = area.getBoundingClientRect();
-      const x = (event.clientX - box.left) / box.width - .5;
-      const y = (event.clientY - box.top) / box.height - .5;
-      layers.forEach(layer => {
-        layer.style.setProperty('--px', `${x * layer.dataset.depth}px`);
-        layer.style.setProperty('--py', `${y * layer.dataset.depth}px`);
-      });
+// Slider: Ohne JavaScript bleibt das normale Wischen; hier kommen Pfeile, Fortschritt und Ziehen mit der Maus dazu.
+document.querySelectorAll('[data-slider]').forEach(slider => {
+  const track = slider.querySelector('.slider-track');
+  const bar = slider.querySelector('.slider-bar');
+  const progress = slider.querySelector('.slider-progress span');
+  const buttons = [...slider.querySelectorAll('[data-step]')];
+  const stepWidth = () => track.firstElementChild.offsetWidth + parseFloat(getComputedStyle(track).columnGap);
+  const update = () => {
+    const end = track.scrollWidth - track.clientWidth;
+    const share = track.clientWidth / track.scrollWidth;
+    progress.style.setProperty('--progress', (share + (1 - share) * (end ? track.scrollLeft / end : 1)).toFixed(3));
+    buttons.forEach(button => {
+      button.disabled = Number(button.dataset.step) < 0 ? track.scrollLeft < 4 : track.scrollLeft > end - 4;
     });
+  };
+  buttons.forEach(button => button.addEventListener('click', () => {
+    track.scrollBy({ left: Number(button.dataset.step) * stepWidth(), behavior: prefersMotion ? 'smooth' : 'auto' });
+  }));
+
+  // Ziehen nur mit der Maus; Finger scrollen nativ. Nach dem Ziehen löst der Klick keinen Link aus.
+  let grab = null;
+  let dragged = false;
+  track.addEventListener('pointerdown', event => {
+    if (event.pointerType !== 'mouse' || event.button !== 0) return;
+    grab = { x: event.clientX, left: track.scrollLeft };
+    dragged = false;
   });
-}
+  window.addEventListener('pointermove', event => {
+    if (!grab) return;
+    const distance = event.clientX - grab.x;
+    if (!dragged && Math.abs(distance) < 6) return;
+    dragged = true;
+    track.classList.add('is-dragging');
+    track.scrollLeft = grab.left - distance;
+  });
+  window.addEventListener('pointerup', () => {
+    grab = null;
+    track.classList.remove('is-dragging');
+  });
+  track.addEventListener('click', event => {
+    if (!dragged) return;
+    event.preventDefault();
+    dragged = false;
+  }, true);
+  track.addEventListener('dragstart', event => event.preventDefault());
+
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  bar.hidden = false;
+  update();
+});
 
 // Ohne JavaScript bleiben alle Ansichten untereinander sichtbar.
 document.querySelectorAll('[data-tour]').forEach(tour => {
