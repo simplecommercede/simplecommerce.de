@@ -1,0 +1,303 @@
+{
+  "released": false,
+  "factors": {},
+  "effects": {
+    "umsatz-0": {
+      "tier": 0,
+      "label": "Shopmiete, Provision und SSL",
+      "source": "preisliste"
+    },
+    "umsatz-1": {
+      "tier": 1,
+      "label": "Shopmiete, Provision und SSL",
+      "source": "preisliste"
+    },
+    "umsatz-2": {
+      "tier": 2,
+      "label": "Shopmiete, Provision und SSL",
+      "source": "preisliste"
+    },
+    "umsatz-3": {
+      "tier": 3,
+      "label": "Shopmiete und Provision",
+      "source": "preisliste"
+    },
+    "design-anpassung": {
+      "once": [
+        499,
+        499
+      ],
+      "label": "Template-Anpassung",
+      "source": "preisliste"
+    },
+    "design-vorlage": {
+      "once": [
+        990,
+        990
+      ],
+      "label": "Template nach Vorlage",
+      "source": "preisliste"
+    },
+    "shop-wechsel": {
+      "once": [
+        150,
+        150
+      ],
+      "label": "Artikeldaten übernehmen",
+      "source": "preisliste"
+    },
+    "dienst-einweisung": {
+      "once": [
+        500,
+        500
+      ],
+      "label": "Einweisung je Tag, zuzüglich Anfahrt und Übernachtung",
+      "source": "preisliste"
+    },
+    "web-einfach": {
+      "once": [
+        490,
+        990
+      ],
+      "label": "Einfache Website",
+      "source": "entwurf"
+    },
+    "web-neu": {
+      "once": [
+        990,
+        1990
+      ],
+      "label": "Neue Website",
+      "source": "entwurf"
+    },
+    "web-anfragen": {
+      "once": [
+        790,
+        1490
+      ],
+      "label": "Website für mehr Anfragen",
+      "source": "entwurf"
+    },
+    "web-gefunden": {
+      "once": [
+        290,
+        690
+      ],
+      "label": "Bessere Auffindbarkeit",
+      "source": "entwurf"
+    },
+    "web-logo": {
+      "once": [
+        190,
+        490
+      ],
+      "label": "Inhalte erstellen",
+      "source": "entwurf"
+    },
+    "web-null": {
+      "once": [
+        290,
+        690
+      ],
+      "label": "Inhalte und Logo erstellen",
+      "source": "entwurf"
+    },
+    "app-firma": {
+      "once": [
+        7900,
+        24900
+      ],
+      "label": "App",
+      "source": "entwurf"
+    },
+    "app-software": {
+      "once": [
+        9900,
+        29900
+      ],
+      "label": "Individuelle Software",
+      "source": "entwurf"
+    },
+    "app-verbinden": {
+      "once": [
+        690,
+        2490
+      ],
+      "label": "Programme verbinden",
+      "source": "entwurf"
+    },
+    "app-automatik": {
+      "once": [
+        690,
+        2900
+      ],
+      "label": "Automatisierung",
+      "source": "entwurf"
+    },
+    "app-alt": {
+      "once": [
+        1900,
+        7900
+      ],
+      "label": "Bestehende Software erneuern",
+      "source": "entwurf"
+    },
+    "ki-idee": {
+      "once": [
+        190,
+        490
+      ],
+      "label": "KI-Möglichkeiten prüfen",
+      "source": "entwurf"
+    },
+    "ki-modell": {
+      "once": [
+        9900,
+        29900
+      ],
+      "label": "Eigenes KI-Modell",
+      "source": "entwurf"
+    },
+    "ki-anfragen": {
+      "once": [
+        990,
+        2900
+      ],
+      "label": "KI für Kundenanfragen",
+      "source": "entwurf",
+      "monthly": [
+        79,
+        300
+      ]
+    },
+    "ki-texte": {
+      "once": [
+        490,
+        1490
+      ],
+      "label": "KI für Texte",
+      "source": "entwurf"
+    },
+    "ki-daten": {
+      "once": [
+        990,
+        3900
+      ],
+      "label": "KI für Datenauswertung",
+      "source": "entwurf"
+    },
+    "ki-verstreut": {
+      "once": [
+        290,
+        990
+      ],
+      "label": "Daten zusammenführen",
+      "source": "entwurf"
+    },
+    "ki-keine": {
+      "once": [
+        490,
+        1490
+      ],
+      "label": "Datengrundlage aufbauen",
+      "source": "entwurf"
+    },
+    "rat-start": {
+      "once": [
+        290,
+        690
+      ],
+      "label": "Beratung zur passenden Lösung",
+      "source": "entwurf"
+    },
+    "rat-zweit": {
+      "once": [
+        190,
+        390
+      ],
+      "label": "Zweite Meinung",
+      "source": "entwurf"
+    },
+    "rat-plan": {
+      "once": [
+        490,
+        990
+      ],
+      "label": "IT-Plan",
+      "source": "entwurf"
+    },
+    "rat-kosten": {
+      "once": [
+        390,
+        890
+      ],
+      "label": "IT vereinfachen",
+      "source": "entwurf"
+    },
+    "dienst-hilfe": {
+      "monthly": [
+        29,
+        79
+      ],
+      "label": "Hilfe beim Shop",
+      "source": "entwurf"
+    },
+    "dienst-pflege": {
+      "monthly": [
+        39,
+        99
+      ],
+      "label": "Laufende Pflege",
+      "source": "entwurf"
+    },
+    "extra-web": {
+      "once": [
+        490,
+        1990
+      ],
+      "label": "Website dazu",
+      "source": "entwurf"
+    },
+    "extra-shop": {
+      "tier": 0,
+      "once": [
+        499,
+        990
+      ],
+      "label": "Onlineshop dazu, kleinste Umsatzstufe",
+      "source": "preisliste"
+    },
+    "extra-app": {
+      "once": [
+        7900,
+        29900
+      ],
+      "label": "App oder Software dazu",
+      "source": "entwurf"
+    },
+    "extra-ki": {
+      "once": [
+        490,
+        3900
+      ],
+      "label": "KI dazu",
+      "source": "entwurf"
+    },
+    "extra-rat": {
+      "once": [
+        290,
+        990
+      ],
+      "label": "Beratung dazu",
+      "source": "entwurf"
+    },
+    "extra-service": {
+      "monthly": [
+        29,
+        99
+      ],
+      "label": "Laufender Service dazu",
+      "source": "entwurf"
+    }
+  }
+}
