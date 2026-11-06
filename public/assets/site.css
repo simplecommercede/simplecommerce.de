@@ -303,21 +303,8 @@ p { color: var(--muted); }
 .included li:first-child { font-weight: 400; color: var(--muted); }
 
 /* Einblick in die Verwaltung */
-.tour-section { padding-block: 88px; overflow: hidden; }
-.tour-tabs { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 5px; margin-bottom: 22px; background: var(--surface); border-radius: 999px; }
-.tour-tabs[hidden] { display: none; }
-.tour-tabs button { border: 0; background: transparent; color: var(--ink); font-weight: 700; padding: 10px 22px; border-radius: 999px; cursor: pointer; min-height: 44px; transition: background .2s, color .2s; }
-.tour-tabs button:hover { background: var(--orange-soft); }
-.tour-tabs button[aria-selected="true"] { background: var(--ink); color: var(--white); }
-.tour-panel { position: relative; padding-right: 130px; }
-.tour-panel + .tour-panel { margin-top: 40px; }
-.tour-panel[hidden] { display: none; }
-.js .tour-panel:not([hidden]) { animation: panel-in .45s var(--ease); }
 @keyframes panel-in { from { opacity: 0; transform: translateY(10px); } }
 .screen { display: block; width: 100%; background: var(--white); border-radius: 12px; box-shadow: 0 0 0 1px #1f232218, var(--shadow); }
-.tour-desktop { height: auto; aspect-ratio: 1265 / 540; object-fit: cover; object-position: left top; }
-.tour-panel .phone { position: absolute; right: 0; top: 56px; width: clamp(150px, 17vw, 226px); }
-.tour-caption { margin: 18px 0 0; padding-right: 110px; min-height: 72px; font-size: 1.05rem; color: var(--ink); }
 
 /* Schritte mit hüpfendem Frosch */
 .steps-section { position: relative; padding-top: 40px; }
@@ -384,9 +371,6 @@ footer a:hover { color: var(--white); }
 footer :focus-visible { outline-color: var(--orange); }
 
 /* Shopseite */
-.feature-group { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px; align-items: center; padding-block: 64px; border-bottom: 1px solid var(--line); }
-.feature-group .screen { aspect-ratio: 1265 / 540; object-fit: cover; object-position: left top; height: auto; transition: transform .35s var(--ease); }
-.feature-group:hover .screen { transform: scale(1.015); }
 .feature-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; padding-block: 64px; }
 .feature-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .feature-list li { border-bottom: 1px solid var(--line); }
@@ -395,20 +379,11 @@ footer :focus-visible { outline-color: var(--orange); }
 .feature-list a:hover strong { color: var(--orange-text); }
 .feature-list strong { display: block; font-size: 1.05rem; }
 .feature-list span { display: block; color: var(--muted); font-size: .95rem; }
-.mobile-admin { background: var(--surface); padding-block: 72px; }
-.mobile-admin .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 64px; align-items: center; }
-.mobile-phones { display: flex; gap: 20px; align-items: flex-start; }
-.mobile-phones .phone { width: 190px; }
-.mobile-phones .phone:last-child { margin-top: 40px; }
-.shop-teaser { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 56px; align-items: center; padding: 44px; margin-bottom: 8px; border-radius: 22px; background: var(--surface); }
-.shop-teaser .screen { aspect-ratio: 1265 / 640; object-fit: cover; object-position: left top; height: auto; }
 
 /* Unterseiten */
 .page-intro { padding-block: 40px 24px; }
 .intro-actions { margin-bottom: 28px; }
 .page-intro .lead { max-width: 58ch; margin-bottom: 0; }
-.shop-nav { display: flex; flex-wrap: wrap; gap: 24px; padding-block: 12px; font-weight: 600; font-size: .95rem; }
-.shop-nav a[aria-current="page"] { color: var(--orange-text); }
 .service-content { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .service-content article { padding: 28px; border-radius: var(--radius); background: var(--surface); }
 .service-content h2 { font-size: 1.4rem; }
@@ -569,7 +544,7 @@ footer :focus-visible { outline-color: var(--orange); }
   .services { grid-template-columns: 1fr 1fr; }
   .services > .service { grid-column: auto; }
   .tiers { grid-template-columns: 1fr 1fr; }
-  .hero-grid, .feature-group, .feature-duo, .contact-grid, .shop-teaser { gap: 36px; }
+  .hero-grid, .feature-duo, .contact-grid { gap: 36px; }
   .topic-layout { grid-template-columns: minmax(0, 1fr) 230px; gap: 36px; }
   .help-layout { gap: 32px; grid-template-columns: 200px minmax(0, 1fr); }
 }
@@ -581,26 +556,20 @@ footer :focus-visible { outline-color: var(--orange); }
   .nav-sub { display: none; }
   .nav-item > a { min-height: 40px; }
   .wrap { width: calc(100% - 40px); }
-  .section, .calculator-section, .tour-section { padding-block: 40px; }
+  .section, .calculator-section { padding-block: 40px; }
   .lead { font-size: 1.08rem; }
 
   .slider { --gutter: 20px; }
   .hero-intro { grid-template-columns: 1fr; gap: 16px; padding-block: 32px 24px; }
   .slider-track > .service { flex-basis: 82%; }
   .slider-bar { gap: 16px; padding-right: 96px; }
-  .hero-grid, .calculator, .steps, .service-content, .price-extras, .contact-grid, .feature-group, .feature-duo, .mobile-admin .wrap, .shop-teaser, .topic-layout, .questions, .services { grid-template-columns: 1fr; }
+  .hero-grid, .calculator, .steps, .service-content, .price-extras, .contact-grid, .feature-duo, .topic-layout, .questions, .services { grid-template-columns: 1fr; }
   .hero-grid { min-height: 0; padding-block: 36px 52px; gap: 28px; }
   .hero h1, .hero-small h1 { font-size: clamp(2.3rem, 11.5vw, 4rem); }
 
   .calc-input, .calc-result { padding: 26px 22px; }
   .tiers { grid-template-columns: 1fr; gap: 10px; }
 
-  .tour-tabs { display: grid; grid-template-columns: 1fr 1fr; border-radius: 18px; width: 100%; }
-  .tour-tabs button { padding: 8px; border-radius: 14px; }
-  .tour-panel { padding-right: 0; }
-  .tour-desktop { display: none; }
-  .tour-panel .phone { position: relative; top: auto; right: auto; width: min(270px, 78%); margin-inline: auto; }
-  .tour-caption { padding-right: 0; min-height: 0; text-align: center; }
 
   .steps { border-top: 0; border-left: 3px solid var(--line); margin-left: 20px; gap: 24px; }
   .steps li { padding: 0 0 0 34px; }
@@ -612,13 +581,7 @@ footer :focus-visible { outline-color: var(--orange); }
   .contact-band > div { padding-bottom: 0; }
   .contact-band [data-hop] { align-self: flex-end; }
 
-  .feature-group { padding-block: 40px; }
-  .feature-group .screen { display: none; }
   .feature-duo { padding-block: 40px; }
-  .mobile-admin { padding-block: 48px; }
-  .mobile-phones .phone { width: calc(50% - 10px); }
-  .mobile-phones .phone:last-child { margin-top: 24px; }
-  .shop-teaser { padding: 24px; }
   .topic-side { position: static; }
 
   footer { padding: 40px 20px 24px; }

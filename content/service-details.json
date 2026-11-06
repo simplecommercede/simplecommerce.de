@@ -83,7 +83,7 @@
       ["Erledigen", "Wir helfen weiter oder setzen die Änderung um. Größere Aufgaben stimmen wir vorher mit Ihnen ab."]
     ],
     "fragen": [
-      ["Gibt es Anleitungen zum Nachlesen?", "Ja. In der <a href=\"/hilfe/\">Online-Hilfe</a> finden Sie Anleitungen zu Artikeln, Bestellungen, Kunden und Einstellungen."],
+      ["Bekomme ich Unterstützung im Alltag?", "Ja. Wir weisen Sie persönlich ein und helfen Ihnen bei Fragen weiter."],
       ["Helfen Sie auch bei Websites, die nicht von Ihnen stammen?", "Sprechen Sie uns an. Wir schauen uns die Website an und sagen Ihnen offen, ob wir helfen können."]
     ],
     "verwandt": ["/shopsystem/", "/webseiten/", "/it-projekte/"]

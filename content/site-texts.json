@@ -1,0 +1,337 @@
+{
+  "offers": [
+    {
+      "title": "Shopsystem",
+      "description": "Ein individuell gestalteter Onlineshop und eine Verwaltung für die tägliche Arbeit.",
+      "url": "/shopsystem/",
+      "frog": ["v_warenwirtschaft", "Der simplecommerce-Frosch an einem Rechenrahmen"]
+    },
+    {
+      "title": "Webseiten",
+      "description": "Ein klarer Auftritt, der Ihr Unternehmen verständlich macht. Schnell, zugänglich und auf jedem Bildschirm.",
+      "url": "/webseiten/",
+      "frog": ["v_shop_cms", "Der simplecommerce-Frosch als Nahaufnahme"]
+    },
+    {
+      "title": "IT-Beratung",
+      "description": "Anforderungen sortieren. Möglichkeiten bewerten. Entscheidungen auf eine solide Grundlage stellen.",
+      "url": "/it-beratung/",
+      "frog": ["v_sicherheit", "Der simplecommerce-Frosch sitzt in einer Hand"]
+    },
+    {
+      "title": "IT-Projekte",
+      "description": "Schnittstellen, Automatisierung und individuelle Software für Ihre Arbeitsabläufe.",
+      "url": "/it-projekte/",
+      "frog": ["v_updates", "Der simplecommerce-Frosch in Bewegung"]
+    },
+    {
+      "title": "KI-Anwendungen",
+      "description": "KI, die Ihnen Arbeit abnimmt. Auf Wunsch mit einem eigenen Modell, das Ihr Unternehmen kennt.",
+      "url": "/ki-anwendungen/",
+      "frog": ["v_updates", "Der simplecommerce-Frosch läuft voran"],
+      "flip": true
+    },
+    {
+      "title": "Service",
+      "description": "Persönliche Unterstützung für Ihren Shop und Ihre Website. Auch nach dem Start.",
+      "url": "/service/",
+      "frog": ["v_bedienung", "Der simplecommerce-Frosch auf einem Stein"]
+    }
+  ],
+  "home": {
+    "title": "Shops, Webseiten & IT-Beratung",
+    "description": "simplecommerce aus Bispingen: Shopsystem, Webseitenerstellung, IT-Beratung, individuelle Software, KI-Anwendungen und persönlicher Service.",
+    "heading": "Gute Ideen.<br>Starke Technik.<br>Einfach Ihr Ding.",
+    "lead": "Shops, die verkaufen. Websites, die zu Ihnen passen. Software, die Arbeit leichter macht. KI, die wirklich hilft.",
+    "steps": {
+      "guide": "So arbeiten wir zusammen.",
+      "title": "Persönlich. Verständlich. Schritt für Schritt.",
+      "frog_alt": "Der Frosch hüpft zum nächsten Schritt",
+      "items": [
+        ["Verstehen", "Wir besprechen Ihr Vorhaben, Ihre Abläufe und die Menschen, die damit arbeiten."],
+        ["Umsetzen", "Aus Anforderungen werden nachvollziehbare Schritte und eine passende technische Lösung."],
+        ["Begleiten", "Wir unterstützen Sie beim Start und bei den nächsten Aufgaben im Betrieb."]
+      ]
+    },
+    "good_to_know": {
+      "guide": "Die häufigsten Fragen, kurz beantwortet.",
+      "title": "Gut zu wissen",
+      "lead": "Was die meisten zuerst fragen. Kurz beantwortet.",
+      "questions": [
+        {
+          "question": "Wo fange ich an?",
+          "answer": "Mit einem Gespräch. Wir sortieren gemeinsam, was Sie wirklich brauchen.",
+          "url": "/kontakt/",
+          "label": "Gespräch vereinbaren"
+        },
+        {
+          "question": "Was kostet das?",
+          "answer": "Shops haben feste Preise. Alles andere bekommt ein individuelles Angebot.",
+          "url": "/preise/",
+          "label": "Shop-Preise ansehen"
+        },
+        {
+          "question": "Muss ich die Technik verstehen?",
+          "answer": "Nein. Wir erklären verständlich und kümmern uns um die Umsetzung.",
+          "url": "/it-beratung/",
+          "label": "Zur IT-Beratung"
+        },
+        {
+          "question": "Sind Sie nach dem Start noch da?",
+          "answer": "Ja. Wir unterstützen Sie auch bei den nächsten Aufgaben im Betrieb.",
+          "url": "/service/",
+          "label": "Zum Service"
+        }
+      ],
+      "faq": [
+        ["Was kann KI für mein Unternehmen tun?", "Zum Beispiel Texte erstellen, Anfragen vorsortieren oder Daten auswerten. Auf Wunsch trainieren wir auch ein eigenes Modell. Mehr dazu unter <a href=\"/ki-anwendungen/\">KI-Anwendungen</a>."],
+        ["Erstellen Sie auch Websites ohne Shop?", "Ja. <a href=\"/webseiten/\">Webseiten</a> sind eine eigene Leistung, klar aufgebaut und auf jedem Bildschirm nutzbar."],
+        ["Können Sie bestehende Software weiterentwickeln?", "Ja. Wir prüfen vorhandene Anwendungen und planen sinnvolle Erweiterungen oder eine schrittweise Modernisierung."],
+        ["Was kostet eine Website oder ein IT-Projekt?", "Das hängt vom Vorhaben ab. Wir besprechen die Anforderungen und erstellen ein individuelles Angebot."],
+        ["Was kostet ein Onlineshop?", "Das hängt von Ihrem Umsatz ab. Die <a href=\"/preise/\">Shop-Preise</a> zeigen alle Stufen und einen Rechner."],
+        ["Wie erreiche ich Sie?", "Per <a href=\"/kontakt/\">Kontaktformular</a>, unter <a href=\"mailto:info@simplecommerce.de\">info@simplecommerce.de</a> oder unter <a href=\"tel:+4915127036178\">+49 151 270 36 178</a>."]
+      ]
+    },
+    "contact_band": {
+      "guide": "Schön, dass Sie bis hier gekommen sind. Sprechen wir?",
+      "title": "Eine Idee ist ein guter Anfang.",
+      "text": "Ein neuer Shop, eine Website oder ein Prozess, der einfacher werden soll.",
+      "frog_alt": "Der simplecommerce-Frosch schaut neugierig"
+    }
+  },
+  "services_overview": {
+    "title": "Leistungen für Ihr digitales Unternehmen",
+    "description": "Webseitenerstellung, IT-Beratung, individuelle Software und Service von simplecommerce.",
+    "heading": "Gute Technik beginnt<br>bei Ihrer Aufgabe.",
+    "lead": "Ob Shop, Website, Beratung, KI oder individuelle Software: Wir richten die Umsetzung an Ihrem Unternehmen aus."
+  },
+  "service_pages": {
+    "webseiten": {
+      "title": "Webseitenerstellung",
+      "heading": "Ein Auftritt,<br>der zu Ihnen passt.",
+      "description": "Wir erstellen Websites, die Ihr Angebot klar vermitteln und Besucher zum passenden nächsten Schritt führen.",
+      "contact_topic": "Webseitenerstellung",
+      "sections": [
+        ["Konzept und Inhalte", "Wir strukturieren Ihre Leistungen, Zielgruppen und Kontaktwege. So finden Besucher schnell, was sie suchen."],
+        ["Gestaltung für alle Bildschirme", "Ihre Website funktioniert auf Smartphone, Tablet und Desktop. Lesbarkeit und einfache Bedienung stehen im Mittelpunkt."],
+        ["Technisch schlank", "Für Unternehmenswebsites setzen wir auf eine passende, wartbare Lösung. Ein CMS kommt dort zum Einsatz, wo Sie es tatsächlich benötigen."],
+        ["Auffindbar und verständlich", "Saubere Seitenstruktur, klare Texte, Metadaten und strukturierte Informationen unterstützen Suchmaschinen und KI-gestützte Suche."]
+      ]
+    },
+    "it-beratung": {
+      "title": "Professionelle IT-Beratung",
+      "heading": "Klarheit für Ihre<br>nächste Entscheidung.",
+      "description": "Wir helfen Ihnen, Anforderungen zu ordnen, technische Möglichkeiten einzuschätzen und einen umsetzbaren Weg zu finden.",
+      "contact_topic": "IT-Beratung",
+      "sections": [
+        ["Bestand verstehen", "Welche Systeme nutzen Sie? Wo entstehen doppelte Arbeit, Medienbrüche oder unnötige Abhängigkeiten?"],
+        ["Lösungen vergleichen", "Wir betrachten passende technische Ansätze und besprechen Nutzen, Aufwand und Grenzen."],
+        ["Umsetzung planen", "Aus der Empfehlung entsteht eine nachvollziehbare Reihenfolge mit klaren Aufgaben."],
+        ["Projekte begleiten", "Bei Bedarf unterstützen wir die Umsetzung und den Austausch mit beteiligten Dienstleistern."]
+      ]
+    },
+    "it-projekte": {
+      "title": "IT-Projekte & individuelle Software",
+      "heading": "Software für Ihre Abläufe.<br>Nicht umgekehrt.",
+      "description": "Wir entwickeln individuelle Lösungen, verbinden Systeme und vereinfachen wiederkehrende Aufgaben.",
+      "contact_topic": "IT-Projekt",
+      "sections": [
+        ["Schnittstellen", "Wir verbinden Shop, Datenquellen und bestehende Anwendungen über geeignete Schnittstellen."],
+        ["Automatisierung", "Wiederkehrende Arbeitsschritte lassen sich gezielt vereinfachen – von Datenübernahmen bis zu internen Prozessen."],
+        ["Individuelle Anwendungen", "Wenn Standardsoftware nicht ausreicht, entwickeln wir eine Lösung für Ihre konkrete Aufgabe."],
+        ["Bestehendes weiterentwickeln", "Wir prüfen vorhandene Anwendungen und planen sinnvolle Erweiterungen oder eine schrittweise Modernisierung."]
+      ]
+    },
+    "ki-anwendungen": {
+      "title": "KI-Anwendungen",
+      "heading": "KI, die wirklich<br>für Sie arbeitet.",
+      "description": "Wir bauen KI-Anwendungen für Ihren Alltag und trainieren auf Wunsch ein eigenes Modell. Einfach erklärt, ohne Fachchinesisch.",
+      "contact_topic": "KI-Anwendungen",
+      "sections": [
+        ["KI im Alltag", "Texte erstellen, Anfragen vorsortieren, Daten auswerten: Wir finden heraus, wo KI Ihnen wirklich Arbeit abnimmt."],
+        ["Ihr eigenes KI-Modell", "Wir trainieren ein Modell mit Ihren Daten. So kennt es Ihre Produkte, Ihre Begriffe und Ihre Abläufe."],
+        ["Dort, wo Sie arbeiten", "Wir binden die KI in Ihren Shop, Ihre Website oder Ihre Software ein. Sie müssen dafür nichts Neues lernen."],
+        ["Klein anfangen", "Wir starten mit einer konkreten Aufgabe und prüfen gemeinsam, ob sie sich lohnt. Erst dann geht es weiter."]
+      ]
+    },
+    "service": {
+      "title": "Service & Unterstützung",
+      "heading": "Nach dem Start<br>geht es weiter.",
+      "description": "Persönliche Unterstützung für Fragen, Änderungen und den laufenden Betrieb Ihrer digitalen Lösung.",
+      "contact_topic": "Service",
+      "sections": [
+        ["Shop-Unterstützung", "Wir helfen bei Fragen zu Artikeln, Bestellungen, Einstellungen und den täglichen Abläufen."],
+        ["Pflege und Weiterentwicklung", "Neue Inhalte, technische Anpassungen und zusätzliche Funktionen planen wir passend zu Ihrem Bedarf."],
+        ["Einweisung", "Wir erklären die benötigten Funktionen verständlich. Auch danach helfen wir Ihnen persönlich weiter."],
+        ["Persönlicher Kontakt", "Beschreiben Sie uns Ihre Aufgabe per E-Mail oder Kontaktformular. Wir besprechen die nächsten Schritte mit Ihnen."]
+      ]
+    }
+  },
+  "service_price_note": {
+    "title": "Was kostet das?",
+    "text": "Umfang und Aufwand hängen von Ihrem Vorhaben ab. Wir besprechen die Anforderungen und erstellen ein individuelles Angebot."
+  },
+  "brand_motifs": {
+    "webseiten": {"image": "v_shop_cms", "caption": "Ideen brauchen einen eigenen Auftritt.", "alt": "Der simplecommerce-Frosch als Nahaufnahme"},
+    "it-beratung": {"image": "v_sicherheit", "caption": "Gut beraten. Persönlich begleitet.", "alt": "Der simplecommerce-Frosch sitzt in einer Hand"},
+    "it-projekte": {"image": "v_updates", "caption": "Bereit für den nächsten Schritt.", "alt": "Der simplecommerce-Frosch in Bewegung"},
+    "ki-anwendungen": {"image": "v_updates", "caption": "Einfach schlauer arbeiten.", "alt": "Der simplecommerce-Frosch läuft los"},
+    "service": {"image": "v_bedienung", "caption": "Wir bleiben an Ihrer Seite.", "alt": "Der simplecommerce-Frosch auf einem Stein"},
+    "sicherheit": {"image": "v_sicherheit", "caption": "Vertrauen braucht eine solide Grundlage.", "alt": "Der simplecommerce-Frosch in einer Hand"},
+    "warenwirtschaft": {"image": "v_warenwirtschaft", "caption": "Viele Verkaufskanäle. Ein klarer Überblick.", "alt": "Der simplecommerce-Frosch an einem Rechenrahmen"}
+  },
+  "shop": {
+    "title": "Shopsystem für Ihren Onlinehandel",
+    "description": "simplecommerce Shopsystem: Produkte, Bestellungen, Kunden und Inhalte verwalten. Individuelles Design, Schnittstellen und mobile Verwaltung.",
+    "heading": "Alles für Ihren Shop, an einem Ort.",
+    "lead": "Ein individuell gestalteter Onlineshop und eine Verwaltung für die tägliche Arbeit.",
+    "frog_alt": "Der simplecommerce-Frosch an einem Rechenrahmen",
+    "sections": [
+      {
+        "title": "Verkaufen und abwickeln",
+        "topics": [
+          ["50", "Bestellungen bearbeiten, Rechnungen und Lieferscheine erstellen."],
+          ["84", "Warenbestände steuern und verwalten."],
+          ["72", "Verkäufe und Mengen auswerten."],
+          ["34", "Daten mit Plattformen und Buchhaltung austauschen."]
+        ]
+      },
+      {
+        "title": "Präsentieren",
+        "topics": [
+          ["62", "Bestimmen, was Ihre Kunden zuerst sehen."],
+          ["56", "Kunden gestalten Artikel über Attribute selbst."],
+          ["32", "Ein Layout nach Ihrem Corporate Design."],
+          ["166", "Eigene Seiten und Formulare ohne HTML-Kenntnisse."]
+        ]
+      },
+      {
+        "title": "Wachsen und anpassen",
+        "topics": [
+          ["54", "Mehrere Shops auf einer Warenwirtschaft."],
+          ["755", "Struktur und Produkte aus Ihrem bisherigen System übernehmen."],
+          ["370", "Erweiterungen für besondere Anforderungen."],
+          ["38", "Einfach und schnell im täglichen Einsatz."],
+          ["337", "Produkte auf WordPress-Seiten bewerben."]
+        ]
+      },
+      {
+        "title": "Betrieb",
+        "topics": [
+          ["52", "Betreute Server, im Preis enthalten."],
+          ["80", "Neue Funktionen werden zentral bereitgestellt."],
+          ["76", "So sichern wir Shops ab."],
+          ["797", "Alle Funktionen im Überblick."]
+        ]
+      }
+    ],
+    "other_topic_leads": {
+      "803": "Vermitteln Sie unser Shopsystem an interessierte Händler."
+    },
+    "mobile_note": ["Auch auf dem Smartphone", "Bestellungen prüfen und Artikel finden: Die Verwaltung passt sich kleinen Bildschirmen an."],
+    "cta": ["Passt das zu Ihrem Shop?", "Wir schauen uns das gemeinsam an.", "Shop anfragen"]
+  },
+  "text_fixes": [
+    ["Intuitv", "Intuitiv"],
+    ["Sytemen", "Systemen"],
+    ["intigriertem", "integriertem"],
+    ["sicher Abarbeiten", "sicher abarbeiten"],
+    ["können.?", "können."],
+    ["Ihre Interne Datenverwaltung", "Ihre interne Datenverwaltung"],
+    ["Partner..", "Partner."],
+    ["Verfügbarkeit..", "Verfügbarkeit."]
+  ],
+  "legal_descriptions": {
+    "impressum": "Anbieterkennzeichnung und Kontaktdaten der simplecommerce GmbH.",
+    "datenschutz": "Informationen zur Verarbeitung personenbezogener Daten auf unserer Website und bei Kontaktanfragen."
+  },
+  "help": {
+    "title": "Online-Hilfe zur Shopverwaltung",
+    "description": "Anleitungen zu Produkten, Bestellungen, Kunden und Einstellungen in simplecommerce. Finden Sie das passende Thema für Ihre Shopverwaltung.",
+    "heading": "Eine Frage?<br>Hier geht’s weiter.",
+    "lead": "Anleitungen für Ihre tägliche Arbeit, vom ersten Artikel bis zur Bestellabwicklung.",
+    "search_placeholder": "Zum Beispiel Artikel, Versand oder Kunden",
+    "migration_note": "<strong>Diese Anleitung wird überarbeitet.</strong> Der folgende Text stammt aus der bisherigen Hilfe. Menünamen und Schritte können in der neuen Verwaltung abweichen. <a href=\"/kontakt/\">Bei Fragen unterstützen wir Sie persönlich.</a>",
+    "groups": [
+      {"title": "Produkte", "topics": ["Artikel anlegen", "Produkt-Schnellstart", "Artikelliste", "Artikel Attribute", "Bestandübersicht", "Kategorien", "Hersteller"]},
+      {"title": "Verkauf und Kunden", "topics": ["Verkaufsmanager", "Kundenliste", "Gutscheine", "Rabattsystem", "Versand", "Zahlungsarten", "Länder", "Währungen"]},
+      {"title": "Shop einrichten", "topics": ["Shopdaten", "Benutzer verwalten und anlegen", "Sprachen", "Dokumentvorlagen", "Emailvorlagen"]},
+      {"title": "Inhalte und Marketing", "topics": ["Startseite", "Eigene Seiten & Shop CMS", "Boxen anlegen und verwalten", "Google Export", "Begriffe und HTML-Editor"]}
+    ],
+    "cta": ["Nichts Passendes gefunden?", "Wir helfen Ihnen persönlich weiter.", "Kontakt aufnehmen"],
+    "stubs": [
+      {
+        "slug": "andoo",
+        "title": "Datenaustausch und Schnittstellen",
+        "text": "Sie möchten Produkt- oder Bestelldaten mit einem weiteren System austauschen? Wir besprechen die passende Schnittstelle für Ihren Shop."
+      },
+      {
+        "slug": "shopbackup",
+        "title": "Datensicherung des Shops",
+        "text": "Stimmen Sie Sicherungsumfang, Aufbewahrung und Wiederherstellung mit dem zuständigen Betrieb ab. Wir unterstützen Sie bei einem passenden Sicherungskonzept."
+      },
+      {
+        "slug": "yatego",
+        "title": "Weitere Verkaufskanäle",
+        "text": "Sie planen einen zusätzlichen Verkaufskanal? Wir klären die Anforderungen, die benötigten Produktdaten und den passenden Ablauf mit Ihnen."
+      }
+    ]
+  },
+  "prices": {
+    "title": "Shop-Preise – Miete und Umsatzprovision",
+    "description": "Preise für das simplecommerce Shopsystem: Shopmiete, Umsatzprovision, Einrichtung und Gestaltung im Überblick.",
+    "heading": "Die Preise für<br>Ihr Shopsystem.",
+    "lead": "Shopmiete und Umsatzprovision richten sich nach Ihrem Umsatz im Monat.",
+    "calculator_fine_print": "Unverbindliche Beispielrechnung für Bestellungen aus Ihrem eigenen Shop, zuzüglich gesetzlicher Mehrwertsteuer. Für externe und manuelle Bestellungen gilt eine eigene Provision.",
+    "setup_title": "Einrichtung & Gestaltung",
+    "setup_lines": [
+      "Template-Anpassung: 499,00 € einmalig.",
+      "Template nach Vorlage: 990,00 € einmalig.",
+      "Artikeldaten übernehmen: 150,00 € pauschal.",
+      "Einweisung: 500,00 € Tagespauschale zuzüglich Anfahrt und Übernachtung."
+    ],
+    "questions_title": "Fragen zu Ihrem Shop?",
+    "questions_text": "Wir besprechen die passende Umsatzstufe, die Einrichtung und individuelle Erweiterungen.",
+    "cta": ["Bereit für Ihren Shop?", "Wir besprechen die nächsten Schritte persönlich.", "Shop anfragen"]
+  },
+  "contact": {
+    "title": "Kontakt – Ihr Projekt mit simplecommerce",
+    "description": "Kontaktieren Sie simplecommerce in Bispingen: info@simplecommerce.de, +49 151 270 36 178 oder über das Kontaktformular.",
+    "heading": "Lassen Sie uns<br>darüber sprechen.",
+    "lead": "Sie planen etwas Neues oder benötigen Unterstützung? Schreiben Sie uns kurz.",
+    "form_notice": "Wir verwenden Ihre Angaben, um Ihre Anfrage zu bearbeiten. Weitere Informationen finden Sie in unserer <a href=\"/datenschutz/\">Datenschutzerklärung</a>.",
+    "phone_hours": ["Montag–Donnerstag: 11:00–16:30 Uhr", "Freitag: 11:00–14:30 Uhr"],
+    "frog_alt": "Der simplecommerce-Frosch sitzt auf einem Stein"
+  },
+  "estimator": {
+    "title": "Preisrechner – Kosten schätzen",
+    "description": "Schätzen Sie die Kosten für Shop, Website, Software, KI, Beratung und Service mit wenigen Angaben. Unverbindlich und direkt im Browser.",
+    "heading": "Was würde das<br>ungefähr kosten?",
+    "lead": "Wählen Sie ein paar Optionen. Die Schätzung erscheint sofort und lässt sich in Ihre Anfrage übernehmen.",
+    "noscript": "Der Preisrechner benötigt JavaScript. Die Kosten für Ihren Shop stehen bei den <a href=\"/preise/\">Shop-Preisen</a>, für alles andere erstellen wir gern ein <a href=\"/kontakt/\">individuelles Angebot</a>.",
+    "faq": [
+      ["Ist das Ergebnis ein Angebot?", "Nein. Es ist eine unverbindliche Schätzung zuzüglich Mehrwertsteuer. Das verbindliche Angebot erstellen wir nach dem Gespräch."],
+      ["Welche Preise sind fest?", "Shopmiete, Provision und SSL stammen aus den <a href=\"/preise/\">Shop-Preisen</a>, ebenso Template, Artikeldaten und Einweisung. Alles andere ist ein Richtwert, weil es vom Vorhaben abhängt."],
+      ["Was ist mit Anfahrt und Übernachtung?", "Die Einweisung kostet 500,00 € je Tag. Anfahrt und Übernachtung kommen bei einem Termin vor Ort dazu."],
+      ["Was passiert mit meinen Angaben?", "Sie bleiben im Browser, bis Sie selbst eine Anfrage absenden."]
+    ],
+    "cta": ["Passt das ungefähr?", "Wir prüfen die Schätzung und erstellen Ihnen ein verbindliches Angebot.", "Anfrage stellen"]
+  },
+  "cookies": {
+    "title": "Cookies & lokale Speicherung",
+    "description": "Informationen zur Nutzung von Cookies und lokalem Speicher auf simplecommerce.de.",
+    "heading": "Cookies & lokale Speicherung",
+    "lead": "Diese Website lädt ihre Schriften, Styles und Skripte lokal.",
+    "paragraphs": [
+      "Die statischen Seiten setzen keine Analyse- oder Marketing-Cookies und binden keine externen Trackingdienste ein. Die Hilfesuche arbeitet direkt im Browser und überträgt keine Suchbegriffe an einen Server.",
+      "Wenn Sie den Fragebogen im Frosch-Wegweiser oder den Preisrechner nutzen, merkt sich Ihr Browser Ihre Angaben im Sitzungsspeicher (sessionStorage), damit sie auf der Kontaktseite als Textvorschlag erscheinen. Diese Angaben bleiben auf Ihrem Gerät, werden beim Schließen des Tabs gelöscht und erst übertragen, wenn Sie das Kontaktformular selbst absenden.",
+      "Beim Absenden des Kontaktformulars werden die eingegebenen Angaben zur Bearbeitung Ihrer Anfrage an unseren Server übertragen. Informationen zur Verarbeitung personenbezogener Daten finden Sie in der <a href=\"/datenschutz/\">Datenschutzerklärung</a>."
+    ]
+  },
+  "not_found": {
+    "title": "Seite nicht gefunden",
+    "description": "Die gesuchte Seite wurde nicht gefunden. Hier gelangen Sie zu den Leistungen und zum Kontakt.",
+    "heading": "Hier geht es leider<br>nicht weiter.",
+    "lead": "Vielleicht hat sich die Adresse geändert. Über die Navigation finden Sie zu den aktuellen Inhalten."
+  }
+}

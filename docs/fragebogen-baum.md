@@ -6,11 +6,11 @@ Erzeugt von `scripts/fragebogen_baum.js`, nicht von Hand ändern. Sätze und Fra
 
 - **T07** ist ein Baustein, also ein Satz. Wird er geändert, ändert er sich in jedem Text, in dem er vorkommt. Bausteinnummern bleiben fest, neue Bausteine bekommen die nächste freie Nummer.
 - **2.1.3.1.2** ist ein Weg durch den Baum: Thema 2, dann die 1. Antwort, die 3. Folgeantwort und so weiter. Eine **0** an einer Stelle heißt: Frage übersprungen. Neue Antworten kommen ans Ende einer Frage, damit bestehende Nummern gleich bleiben.
-- **Z1 bis Z5** sind die freiwilligen Fragen nach „Genauer angeben“. **R1 bis R7** ist der Textrahmen. **P** sind Kombinationen, die inhaltlich zu prüfen sind.
+- **Z1 bis Z5** sind die freiwilligen Fragen nach „Genauer angeben“. **R1 bis R7** ist der Textrahmen.
 
 ## Prüfergebnis
 
-Getestet wurden **1.057.925 Antwortkombinationen**, also jede mögliche Auswahl einschließlich aller übersprungenen Fragen und jeder Auswahl bei den Zusatzwünschen. Der längste Text hat 686 Zeichen, Laufzeit 215 Sekunden.
+Getestet wurden **1.057.925 Antwortkombinationen**, also jede mögliche Auswahl einschließlich aller übersprungenen Fragen. Der längste Text hat 686 Zeichen, Laufzeit 223 Sekunden.
 
 | Thema | Kombinationen |
 |---|---|
@@ -24,11 +24,7 @@ Getestet wurden **1.057.925 Antwortkombinationen**, also jede mögliche Auswahl 
 
 **Keine harten Fehler.** Geprüft: Anrede und Schluss, keine Programmreste oder doppelten Abstände, Länge passt zum Formular, jede Angabe genau einmal und in Fragenreihenfolge, keine ausgeschlossene Kombination, höchstens ein Kontaktwunsch, Preis stimmt mit einer unabhängigen Gegenprobe, Formularthema und Telefonfeld passen.
 
-Die Prüfung erkennt Form und Rechnung, nicht ob ein Satz inhaltlich gut klingt. Dafür sind die vollen Texte unten und die Liste P da.
-
-## P: Inhaltlich zu prüfende Kombinationen
-
-Derzeit ist keine Kombination offen.
+Die Prüfung erkennt Form und Rechnung, nicht ob ein Satz inhaltlich gut klingt. Dafür sind die vollen Texte unten da.
 
 ## R: Textrahmen
 

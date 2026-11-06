@@ -50,79 +50,79 @@
   {
     "path": "/design-und-layout/",
     "title": "Design und Layout",
-    "description": "Design und Layout bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Design und Layout im simplecommerce Shopsystem: Ein Layout nach Ihrem Corporate Design.",
     "noindex": false
   },
   {
     "path": "/schnittestellen/",
     "title": "Schnittstellen",
-    "description": "Schnittstellen bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Schnittstellen im simplecommerce Shopsystem: Daten mit Plattformen und Buchhaltung austauschen.",
     "noindex": false
   },
   {
     "path": "/bedienung/",
     "title": "Bedienung",
-    "description": "Bedienung bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Bedienung im simplecommerce Shopsystem: Einfach und schnell im täglichen Einsatz.",
     "noindex": false
   },
   {
     "path": "/shopsystem/bestellwesen/",
     "title": "Bestellwesen",
-    "description": "Bestellwesen bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Bestellwesen im simplecommerce Shopsystem: Bestellungen bearbeiten, Rechnungen und Lieferscheine erstellen.",
     "noindex": false
   },
   {
     "path": "/hosting/",
     "title": "Hosting",
-    "description": "Hosting bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Hosting im simplecommerce Shopsystem: Betreute Server, im Preis enthalten.",
     "noindex": false
   },
   {
     "path": "/shopsystem/multishop/",
     "title": "Multishop",
-    "description": "Multishop bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Multishop im simplecommerce Shopsystem: Mehrere Shops auf einer Warenwirtschaft.",
     "noindex": false
   },
   {
     "path": "/shopsystem/personalisierte-produkte/",
     "title": "Personalisierte Produkte",
-    "description": "Personalisierte Produkte bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Personalisierte Produkte im simplecommerce Shopsystem: Kunden gestalten Artikel über Attribute selbst.",
     "noindex": false
   },
   {
     "path": "/shopsystem/ihre-produktpraesentation/",
     "title": "Ihre Produktpräsentation",
-    "description": "Ihre Produktpräsentation bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Ihre Produktpräsentation im simplecommerce Shopsystem: Bestimmen, was Ihre Kunden zuerst sehen.",
     "noindex": false
   },
   {
     "path": "/statistiken/",
     "title": "Statistiken",
-    "description": "Statistiken bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Statistiken im simplecommerce Shopsystem: Verkäufe und Mengen auswerten.",
     "noindex": false
   },
   {
     "path": "/sicherheit/",
     "title": "Sicherheit",
-    "description": "Sicherheit bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Sicherheit im simplecommerce Shopsystem: So sichern wir Shops ab.",
     "noindex": false
   },
   {
     "path": "/updates/",
     "title": "Updates",
-    "description": "Updates bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Updates im simplecommerce Shopsystem: Neue Funktionen werden zentral bereitgestellt.",
     "noindex": false
   },
   {
     "path": "/warenwirtschaft/",
     "title": "Warenwirtschaft",
-    "description": "Warenwirtschaft bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Warenwirtschaft im simplecommerce Shopsystem: Warenbestände steuern und verwalten.",
     "noindex": false
   },
   {
     "path": "/shopsystem/shop-cms/",
     "title": "Shop CMS",
-    "description": "Shop CMS bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Shop CMS im simplecommerce Shopsystem: Eigene Seiten und Formulare ohne HTML-Kenntnisse.",
     "noindex": false
   },
   {
@@ -272,19 +272,19 @@
   {
     "path": "/wordpress-plugin/",
     "title": "Wordpress Plugin",
-    "description": "Wordpress Plugin bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Wordpress Plugin im simplecommerce Shopsystem: Produkte auf WordPress-Seiten bewerben.",
     "noindex": false
   },
   {
     "path": "/programmierung/",
     "title": "Programmierung",
-    "description": "Programmierung bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Programmierung im simplecommerce Shopsystem: Erweiterungen für besondere Anforderungen.",
     "noindex": false
   },
   {
     "path": "/shopsystem/shop-wechseln/",
     "title": "Shop wechseln",
-    "description": "Shop wechseln bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Shop wechseln im simplecommerce Shopsystem: Struktur und Produkte aus Ihrem bisherigen System übernehmen.",
     "noindex": false
   },
   {
@@ -296,13 +296,13 @@
   {
     "path": "/leistungsmerkmale/",
     "title": "Leistungsmerkmale",
-    "description": "Leistungsmerkmale bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Leistungsmerkmale im simplecommerce Shopsystem: Alle Funktionen im Überblick.",
     "noindex": false
   },
   {
     "path": "/vertriebspartner/",
     "title": "Vertriebspartner",
-    "description": "Vertriebspartner bei simplecommerce: Informationen und Möglichkeiten für Ihren Onlineshop.",
+    "description": "Vertriebspartner im simplecommerce Shopsystem: Vermitteln Sie unser Shopsystem an interessierte Händler.",
     "noindex": false
   },
   {
@@ -350,7 +350,7 @@
   {
     "path": "/404/",
     "title": "Seite nicht gefunden",
-    "description": "Die gesuchte Seite wurde nicht gefunden. Hier gelangen Sie zu den Leistungen oder zur Hilfe.",
+    "description": "Die gesuchte Seite wurde nicht gefunden. Hier gelangen Sie zu den Leistungen und zum Kontakt.",
     "noindex": true
   },
   {

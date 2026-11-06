@@ -59,7 +59,7 @@
     if (!message.value.trim() || message.value === lastLetter) insert();
     showStale();
 
-    const main = store.mainTopic() || topicFromStore();
+    const main = topicFromStore();
     if (main && main !== lastTopic && [...topic.options].some(option => option.value === main)) topic.value = main;
     lastTopic = main;
 

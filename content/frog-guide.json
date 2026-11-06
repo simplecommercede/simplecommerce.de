@@ -2,169 +2,141 @@
   "statements": [
     {
       "id": "web-einfach",
-      "topic": "Webseitenerstellung",
       "text": "Ich brauche eine einfache Website für mein Unternehmen.",
       "nr": 1
     },
     {
       "id": "web-neu",
-      "topic": "Webseitenerstellung",
       "text": "Meine Website ist in die Jahre gekommen und braucht einen neuen Auftritt.",
       "nr": 2
     },
     {
       "id": "web-gefunden",
-      "topic": "Webseitenerstellung",
       "text": "Ich möchte im Internet besser gefunden werden.",
       "nr": 4
     },
     {
       "id": "web-anfragen",
-      "topic": "Webseitenerstellung",
       "text": "Meine Website soll mir mehr Anfragen bringen.",
       "nr": 3
     },
     {
       "id": "shop-neu",
-      "topic": "Shopsystem",
       "text": "Ich möchte einen eigenen Onlineshop starten.",
       "nr": 8
     },
     {
       "id": "shop-wechsel",
-      "topic": "Shopsystem",
       "text": "Ich möchte mit meinem bestehenden Shop umziehen.",
       "nr": 9
     },
     {
       "id": "shop-preis",
-      "topic": "Shopsystem",
       "text": "Ich möchte erst wissen, was ein Shop kostet.",
       "nr": 11
     },
     {
       "id": "shop-kanaele",
-      "topic": "Shopsystem",
       "text": "Ich verkaufe über mehrere Kanäle und will alles zusammenführen.",
       "nr": 10
     },
     {
       "id": "app-firma",
-      "topic": "IT-Projekt",
       "text": "Ich brauche eine App für mein Unternehmen.",
       "nr": 16
     },
     {
       "id": "app-software",
-      "topic": "IT-Projekt",
       "text": "Ich suche eine Software, die genau zu den eigenen Abläufen passt.",
       "nr": 17
     },
     {
       "id": "app-verbinden",
-      "topic": "IT-Projekt",
       "text": "Die vorhandenen Programme sollen endlich miteinander reden.",
       "nr": 18
     },
     {
       "id": "app-automatik",
-      "topic": "IT-Projekt",
       "text": "Wiederkehrende Aufgaben sollen automatisch erledigt werden.",
       "nr": 19
     },
     {
       "id": "app-alt",
-      "topic": "IT-Projekt",
       "text": "Die bestehende Software muss modernisiert werden.",
       "nr": 20
     },
     {
       "id": "ki-idee",
-      "topic": "KI-Anwendungen",
       "text": "Ich möchte wissen, was KI meinem Unternehmen bringt.",
       "nr": 25
     },
     {
       "id": "ki-modell",
-      "topic": "KI-Anwendungen",
       "text": "Ich möchte eine KI, die das eigene Unternehmen kennt.",
       "nr": 26
     },
     {
       "id": "ki-anfragen",
-      "topic": "KI-Anwendungen",
       "text": "KI soll bei Kundenanfragen entlasten.",
       "nr": 27
     },
     {
       "id": "ki-texte",
-      "topic": "KI-Anwendungen",
       "text": "KI soll Texte und Produktbeschreibungen erstellen.",
       "nr": 28
     },
     {
       "id": "ki-daten",
-      "topic": "KI-Anwendungen",
       "text": "KI soll Daten auswerten und Arbeit abnehmen.",
       "nr": 29
     },
     {
       "id": "rat-start",
-      "topic": "IT-Beratung",
       "text": "Ich weiß noch nicht, welche Lösung die richtige ist.",
       "nr": 34
     },
     {
       "id": "rat-zweit",
-      "topic": "IT-Beratung",
       "text": "Ich hätte gern eine zweite Meinung zur IT.",
       "nr": 35
     },
     {
       "id": "rat-plan",
-      "topic": "IT-Beratung",
       "text": "Für das IT-Vorhaben fehlt ein klarer Plan.",
       "nr": 36
     },
     {
       "id": "rat-kosten",
-      "topic": "IT-Beratung",
       "text": "Die IT ist zu teuer oder zu kompliziert geworden.",
       "nr": 37
     },
     {
       "id": "dienst-hilfe",
-      "topic": "Service",
       "text": "Ich brauche Unterstützung bei meinem bestehenden Shop.",
       "nr": 42
     },
     {
       "id": "dienst-pflege",
-      "topic": "Service",
       "text": "Jemand soll sich laufend um die Website kümmern.",
       "nr": 43
     },
     {
       "id": "dienst-einweisung",
-      "topic": "Service",
       "text": "Ich wünsche mir eine persönliche Einweisung.",
       "nr": 44
     },
     {
       "id": "info-kurz",
-      "topic": "Sonstiges",
       "text": "Ich brauche nur ein paar Infos.",
       "nr": 48
     },
     {
       "id": "info-preise",
-      "topic": "Sonstiges",
       "text": "Ich hätte gern eine grobe Preisvorstellung.",
       "nr": 49
     },
     {
       "id": "info-rueckruf",
-      "topic": "Sonstiges",
       "text": "Bitte rufen Sie mich einfach zurück.",
       "askPhone": true,
       "closing": true,
@@ -172,248 +144,207 @@
     },
     {
       "id": "info-partner",
-      "topic": "Sonstiges",
       "text": "Ich interessiere mich für eine Zusammenarbeit.",
       "nr": 51
     },
     {
       "id": "web-inhalt",
-      "topic": "Webseitenerstellung",
       "text": "Texte und Bilder habe ich schon.",
       "nr": 5
     },
     {
       "id": "web-logo",
-      "topic": "Webseitenerstellung",
       "text": "Ich habe ein Logo, aber noch kaum Inhalte.",
       "nr": 6
     },
     {
       "id": "web-null",
-      "topic": "Webseitenerstellung",
       "text": "Ich fange bei null an.",
       "nr": 7
     },
     {
       "id": "shop-klein",
-      "topic": "Shopsystem",
       "text": "Mein Sortiment umfasst bis zu 100 Artikel.",
       "nr": 12
     },
     {
       "id": "shop-mittel",
-      "topic": "Shopsystem",
       "text": "Mein Sortiment umfasst bis zu 1.000 Artikel.",
       "nr": 13
     },
     {
       "id": "shop-gross",
-      "topic": "Shopsystem",
       "text": "Mein Sortiment umfasst mehr als 1.000 Artikel.",
       "nr": 14
     },
     {
       "id": "shop-offen",
-      "topic": "Shopsystem",
       "text": "Mein Sortiment steht noch nicht fest.",
       "nr": 15
     },
     {
       "id": "app-listen",
-      "topic": "IT-Projekt",
       "text": "Heute läuft das mit Listen und Papier.",
       "nr": 21
     },
     {
       "id": "app-standard",
-      "topic": "IT-Projekt",
       "text": "Heute läuft das mit fertigen Programmen.",
       "nr": 22
     },
     {
       "id": "app-eigen",
-      "topic": "IT-Projekt",
       "text": "Heute läuft das mit eigener Software.",
       "nr": 23
     },
     {
       "id": "app-frei",
-      "topic": "IT-Projekt",
       "text": "Dafür gibt es noch nichts.",
       "nr": 24
     },
     {
       "id": "ki-geordnet",
-      "topic": "KI-Anwendungen",
       "text": "Passende Daten liegen geordnet vor.",
       "nr": 30
     },
     {
       "id": "ki-verstreut",
-      "topic": "KI-Anwendungen",
       "text": "Passende Daten sind vorhanden, aber verstreut.",
       "nr": 31
     },
     {
       "id": "ki-keine",
-      "topic": "KI-Anwendungen",
       "text": "Passende Daten gibt es eher nicht.",
       "nr": 32
     },
     {
       "id": "ki-unklar",
-      "topic": "KI-Anwendungen",
       "text": "Ob passende Daten vorliegen, weiß ich noch nicht.",
       "nr": 33
     },
     {
       "id": "rat-shop",
-      "topic": "IT-Beratung",
       "text": "Es geht vor allem um Shop und Verkauf.",
       "nr": 38
     },
     {
       "id": "rat-web",
-      "topic": "IT-Beratung",
       "text": "Es geht vor allem um die Website.",
       "nr": 39
     },
     {
       "id": "rat-ablauf",
-      "topic": "IT-Beratung",
       "text": "Es geht vor allem um Abläufe und Software.",
       "nr": 40
     },
     {
       "id": "rat-ki",
-      "topic": "IT-Beratung",
       "text": "Es geht vor allem um KI.",
       "nr": 41
     },
     {
       "id": "dienst-bei",
-      "topic": "Service",
       "text": "Mein Shop läuft bei simplecommerce.",
       "nr": 45
     },
     {
       "id": "dienst-fremd",
-      "topic": "Service",
       "text": "Mein Shop läuft bei einem anderen Anbieter.",
       "nr": 46
     },
     {
       "id": "dienst-web",
-      "topic": "Service",
       "text": "Es geht um eine Website.",
       "nr": 47
     },
     {
       "id": "team-allein",
-      "topic": "",
       "text": "Ich arbeite allein.",
       "nr": 59
     },
     {
       "id": "team-klein",
-      "topic": "",
       "text": "Das Team hat bis zu 10 Personen.",
       "nr": 60
     },
     {
       "id": "team-mittel",
-      "topic": "",
       "text": "Das Unternehmen hat 11 bis 50 Personen.",
       "nr": 61
     },
     {
       "id": "team-gross",
-      "topic": "",
       "text": "Das Unternehmen hat mehr als 50 Personen.",
       "nr": 62
     },
     {
       "id": "wichtig-einfach",
-      "topic": "",
       "text": "Am wichtigsten ist mir eine einfache Bedienung.",
       "nr": 64
     },
     {
       "id": "wichtig-kosten",
-      "topic": "",
       "text": "Am wichtigsten ist mir ein klarer Kostenrahmen.",
       "nr": 65
     },
     {
       "id": "wichtig-betreuung",
-      "topic": "",
       "text": "Am wichtigsten ist mir persönliche Betreuung.",
       "nr": 66
     },
     {
       "id": "zeit-sofort",
-      "topic": "",
       "text": "Es soll möglichst bald losgehen.",
       "nr": 67
     },
     {
       "id": "zeit-monate",
-      "topic": "",
       "text": "Es soll in den nächsten Monaten losgehen.",
       "nr": 68
     },
     {
       "id": "zeit-offen",
-      "topic": "",
       "text": "Einen festen Zeitplan habe ich noch nicht.",
       "nr": 69
     },
     {
       "id": "extra-web",
-      "topic": "",
       "text": "Dazu interessiert mich eine Website.",
       "nr": 70
     },
     {
       "id": "extra-shop",
-      "topic": "",
       "text": "Dazu interessiert mich ein Onlineshop.",
       "nr": 71
     },
     {
       "id": "extra-app",
-      "topic": "",
       "text": "Dazu interessiert mich eine App oder individuelle Software.",
       "nr": 72
     },
     {
       "id": "extra-ki",
-      "topic": "",
       "text": "Dazu interessieren mich KI-Anwendungen.",
       "nr": 73
     },
     {
       "id": "extra-rat",
-      "topic": "",
       "text": "Dazu interessiert mich eine IT-Beratung.",
       "nr": 74
     },
     {
       "id": "extra-service",
-      "topic": "",
       "text": "Dazu interessiert mich laufender Service.",
       "nr": 75
     },
     {
       "id": "kontakt-mail",
-      "topic": "",
       "text": "Antworten Sie mir gern per E-Mail.",
       "closing": true,
       "nr": 76
     },
     {
       "id": "kontakt-rueckruf",
-      "topic": "",
       "text": "Bitte rufen Sie mich zurück.",
       "askPhone": true,
       "closing": true,
@@ -421,50 +352,42 @@
     },
     {
       "id": "kontakt-gespraech",
-      "topic": "",
       "text": "Ich würde das am liebsten persönlich besprechen.",
       "closing": true,
       "nr": 78
     },
     {
       "id": "umsatz-0",
-      "topic": "",
       "text": "Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.",
       "nr": 52
     },
     {
       "id": "umsatz-1",
-      "topic": "",
       "text": "Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.",
       "nr": 53
     },
     {
       "id": "umsatz-2",
-      "topic": "",
       "text": "Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.",
       "nr": 54
     },
     {
       "id": "umsatz-3",
-      "topic": "",
       "text": "Ich rechne mit einem Monatsumsatz von über 80.000 €.",
       "nr": 55
     },
     {
       "id": "design-anpassung",
-      "topic": "",
       "text": "Ich möchte ein vorhandenes Template anpassen lassen.",
       "nr": 56
     },
     {
       "id": "design-vorlage",
-      "topic": "",
       "text": "Ich möchte ein Template nach Vorlage.",
       "nr": 57
     },
     {
       "id": "design-offen",
-      "topic": "",
       "text": "Das Design ist noch offen.",
       "nr": 58
     }

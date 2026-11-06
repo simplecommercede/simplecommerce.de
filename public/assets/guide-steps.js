@@ -114,10 +114,10 @@ window.Frosch.Steps = class {
     const row = this.frame(index, total, `Ebene ${index + 1} von ${total}`);
     const heading = this.heading(level.question);
     const picked = this.chosen(level);
-    if (level.multi || picked.length) {
+    if (picked.length) {
       const hint = document.createElement('p');
       hint.className = 'steps-hint';
-      hint.textContent = level.multi ? 'Mehrere Antworten sind möglich. Nochmals antippen wählt ab.' : 'Nochmals antippen wählt die Antwort ab.';
+      hint.textContent = 'Nochmals antippen wählt die Antwort ab.';
       this.container.append(hint);
     }
 
@@ -125,14 +125,10 @@ window.Frosch.Steps = class {
     pond.className = 'lily-pond';
     level.options.forEach((option, position) => {
       const selected = index === 0 ? option.topic === this.topic : picked.includes(option);
-      const lily = this.lily(option, position, selected, () => {
-        if (level.multi) this.toggle(lily, option); else this.answer(index, option, lily, pond);
-      });
+      const lily = this.lily(option, position, selected, () => this.answer(index, option, lily, pond));
       pond.append(lily);
     });
     this.container.append(pond);
-
-    if (level.multi) this.container.append(this.button('steps-next', 'Weiter', () => this.advance(index)));
 
     this.live = document.createElement('p');
     this.live.className = 'steps-live';
@@ -143,7 +139,7 @@ window.Frosch.Steps = class {
     footer.className = 'steps-footer';
     footer.append(this.button('steps-back', 'Zurück', () => this.back(index)));
     if (index > 1 && this.store.count() && !this.editing) footer.append(this.button('steps-skip', 'Jetzt zur Anfrage', () => this.summary()));
-    if (index > 0 && !level.multi) {
+    if (index > 0) {
       /* Mit einer Antwort geht es weiter, ohne sie zu verlieren. */
       footer.append(picked.length
         ? this.button('steps-skip', 'Weiter', () => this.advance(index))
@@ -161,14 +157,6 @@ window.Frosch.Steps = class {
     const sum = window.Frosch.price.short();
     this.live.hidden = !sum;
     this.live.textContent = sum ? `Bisher geschätzt: ${sum}` : '';
-  }
-
-  toggle(lily, option) {
-    const selected = !this.store.has(option.statement);
-    if (selected) this.store.add(option.statement); else this.store.remove(option.statement);
-    lily.setAttribute('aria-pressed', String(selected));
-    this.showLive();
-    this.onHop(lily);
   }
 
   async answer(index, option, lily, pond) {

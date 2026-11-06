@@ -19,7 +19,7 @@
   const DESTINATIONS = [
     ['Onlineshop', '/shopsystem/'], ['Website', '/webseiten/'], ['IT-Beratung', '/it-beratung/'],
     ['Software', '/it-projekte/'], ['KI', '/ki-anwendungen/'], ['Service', '/service/'],
-    ['Shop-Preise', '/preise/'], ['Preisrechner', '/preisrechner/'], ['Online-Hilfe', '/hilfe/'], ['Kontakt', '/kontakt/']
+    ['Shop-Preise', '/preise/'], ['Preisrechner', '/preisrechner/'], ['Kontakt', '/kontakt/']
   ];
 
   const hour = new Date().getHours();

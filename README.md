@@ -25,7 +25,7 @@ Der lokale PHP-Webserver prüft keine Apache-Weiterleitungen. Ohne Versandkonfig
 
 - `content/wordpress-public.json`: gesicherter öffentlicher Altbestand, keine DB-Konten oder Einsendungen.
 - `content/help-updates.json`: 24 aktualisierte Anleitungen mit Desktop- und Mobilansichten.
-- `scripts/build.py`: reproduzierbarer HTML-Build ohne Fremdpakete.
+- `scripts/build.py`: reproduzierbarer HTML-Build ohne Fremdpakete, dazu `scripts/site_layout.py` (Seitenrahmen), `scripts/wordpress_html.py` (Altbestand) und `content/site-texts.json` (Seitentexte).
 - `public/`: alleiniger Webroot mit statischen Seiten, Assets und Kontakt-Endpunkt.
 - `docs/`: Migration, Betrieb, Prüfung und Screenshot-Herkunft.
 

@@ -154,13 +154,6 @@ window.Frosch = (() => {
     },
     subscribe(listener) { listeners.add(listener); },
 
-    /* Thema mit den meisten Aussagen; bei Gleichstand das zuerst gewählte. */
-    mainTopic() {
-      const counts = new Map();
-      this.items().filter(item => item.topic).forEach(item => counts.set(item.topic, (counts.get(item.topic) || 0) + 1));
-      return [...counts.entries()].reduce((best, entry) => (!best || entry[1] > best[1] ? entry : best), null)?.[0] || null;
-    },
-
     /* Vorlagetext für das Kontaktformular. */
     letter() {
       if (!ids.length) return '';

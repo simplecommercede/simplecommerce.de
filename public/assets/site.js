@@ -99,32 +99,6 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
   update();
 });
 
-// Ohne JavaScript bleiben alle Ansichten untereinander sichtbar.
-document.querySelectorAll('[data-tour]').forEach(tour => {
-  const tablist = tour.querySelector('[role="tablist"]');
-  const tabs = [...tablist.querySelectorAll('[role="tab"]')];
-  const select = (active, focus) => {
-    tabs.forEach(tab => {
-      const selected = tab === active;
-      tab.setAttribute('aria-selected', String(selected));
-      tab.tabIndex = selected ? 0 : -1;
-      document.getElementById(tab.getAttribute('aria-controls')).hidden = !selected;
-    });
-    if (focus) active.focus();
-  };
-  tablist.hidden = false;
-  select(tabs[0], false);
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => select(tab, false));
-    tab.addEventListener('keydown', event => {
-      const targets = { ArrowRight: index + 1, ArrowLeft: index - 1, Home: 0, End: tabs.length - 1 };
-      if (!(event.key in targets)) return;
-      event.preventDefault();
-      select(tabs[(targets[event.key] + tabs.length) % tabs.length], true);
-    });
-  });
-});
-
 // Beispielrechnung; die Stufen kommen aus der Preistabelle. Ohne JavaScript bleibt die Stufenübersicht.
 document.querySelectorAll('[data-calculator]').forEach(calculator => {
   const tiers = JSON.parse(calculator.dataset.calculator);

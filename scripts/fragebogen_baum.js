@@ -82,10 +82,6 @@ const fail = (rule, number, text) => {
   failures.set(rule, entry);
 };
 
-/* Inhaltlich fragwürdig, aber kein Fehler: hier eintragen, was beim Durchgehen auffällt.
- * Format: ['P1', [Aussagen], [Aussagen], 'Warum'] */
-const SOFT = [].map(([nr, first, second, why]) => ({ nr, first, second, why, count: 0, example: null }));
-
 const counts = new Map();
 let total = 0;
 let longest = 0;
@@ -98,13 +94,6 @@ function visit(theme) {
   const ids = items.map(item => item.id);
   const text = store.letter();
   const number = () => `${themes.indexOf(theme) + 1}.${parts.join('.')}`;
-
-  SOFT.forEach(soft => {
-    if (soft.first.some(id => ids.includes(id)) && soft.second.some(id => ids.includes(id))) {
-      soft.count += 1;
-      if (!soft.example) soft.example = number();
-    }
-  });
 
   if (!ids.length) {
     if (text !== '') fail('Ohne Angaben muss das Feld leer bleiben', number(), text);
@@ -145,28 +134,16 @@ function visit(theme) {
   if (hasMonthly && !text.includes(`- laufend etwa ${span(price.monthly)} im Monat\n`)) fail('Monatspreis stimmt mit der Gegenprobe', number(), text);
   if (price.onRequest !== text.includes('- Shopmiete und Provision auf Anfrage\n')) fail('Auf Anfrage erscheint richtig', number(), text);
 
-  const known = store.mainTopic() || F.topicFromStore();
-  if (facts.some(item => item.topic) && known !== theme.topic) fail('Formularthema passt zum gewählten Thema', number(), text);
+  const known = F.topicFromStore();
+  if (known && known !== theme.topic) fail('Formularthema passt zum gewählten Thema', number(), text);
   if (items.some(item => item.askPhone) !== store.wantsCall()) fail('Telefonfeld passt zum Rückrufwunsch', number(), text);
 }
 
-/* Geht jede Kombination durch: jede Antwort und jedes Überspringen, bei Zusatzwünschen jede Auswahl. */
+/* Geht jede Kombination durch: jede Antwort und jedes Überspringen. */
 function walk(theme, index) {
   const levels = F.levelsFor(theme.topic);
   if (index >= levels.length) { visit(theme); return; }
   const level = levels[index];
-  if (level.multi) {
-    const size = 1 << level.options.length;
-    for (let mask = 0; mask < size; mask += 1) {
-      const chosen = level.options.filter((option, bit) => mask & (1 << bit));
-      chosen.forEach(option => store.add(option.statement));
-      parts.push(chosen.map(option => position.get(option.statement)).join('+') || '0');
-      walk(theme, index + 1);
-      parts.pop();
-      chosen.forEach(option => store.remove(option.statement));
-    }
-    return;
-  }
   parts.push('0');
   walk(theme, index + 1);
   parts.pop();
@@ -235,9 +212,9 @@ out.push('Erzeugt von `scripts/fragebogen_baum.js`, nicht von Hand ändern. Sät
 out.push('## So liest man die Nummern', '');
 out.push('- **T07** ist ein Baustein, also ein Satz. Wird er geändert, ändert er sich in jedem Text, in dem er vorkommt. Bausteinnummern bleiben fest, neue Bausteine bekommen die nächste freie Nummer.');
 out.push('- **2.1.3.1.2** ist ein Weg durch den Baum: Thema 2, dann die 1. Antwort, die 3. Folgeantwort und so weiter. Eine **0** an einer Stelle heißt: Frage übersprungen. Neue Antworten kommen ans Ende einer Frage, damit bestehende Nummern gleich bleiben.');
-out.push('- **Z1 bis Z5** sind die freiwilligen Fragen nach „Genauer angeben“. **R1 bis R7** ist der Textrahmen. **P** sind Kombinationen, die inhaltlich zu prüfen sind.', '');
+out.push('- **Z1 bis Z5** sind die freiwilligen Fragen nach „Genauer angeben“. **R1 bis R7** ist der Textrahmen.', '');
 out.push('## Prüfergebnis', '');
-out.push(`Getestet wurden **${total.toLocaleString('de-DE')} Antwortkombinationen**, also jede mögliche Auswahl einschließlich aller übersprungenen Fragen und jeder Auswahl bei den Zusatzwünschen. Der längste Text hat ${longest} Zeichen, Laufzeit ${seconds} Sekunden.`, '');
+out.push(`Getestet wurden **${total.toLocaleString('de-DE')} Antwortkombinationen**, also jede mögliche Auswahl einschließlich aller übersprungenen Fragen. Der längste Text hat ${longest} Zeichen, Laufzeit ${seconds} Sekunden.`, '');
 out.push('| Thema | Kombinationen |', '|---|---|');
 themes.forEach((theme, index) => out.push(`| ${index + 1} ${theme.label} | ${(counts.get(theme.topic) || 0).toLocaleString('de-DE')} |`));
 out.push('');
@@ -249,12 +226,8 @@ if (failures.size) {
 } else {
   out.push('**Keine harten Fehler.** Geprüft: Anrede und Schluss, keine Programmreste oder doppelten Abstände, Länge passt zum Formular, jede Angabe genau einmal und in Fragenreihenfolge, keine ausgeschlossene Kombination, höchstens ein Kontaktwunsch, Preis stimmt mit einer unabhängigen Gegenprobe, Formularthema und Telefonfeld passen.');
 }
-out.push('', 'Die Prüfung erkennt Form und Rechnung, nicht ob ein Satz inhaltlich gut klingt. Dafür sind die vollen Texte unten und die Liste P da.', '');
-out.push('## P: Inhaltlich zu prüfende Kombinationen', '');
-if (SOFT.length) out.push('| Nr. | Bausteine | Warum | Kombinationen | Beispielweg |', '|---|---|---|---|---|');
-else out.push('Derzeit ist keine Kombination offen.');
-SOFT.forEach(soft => out.push(`| ${soft.nr} | ${soft.first.map(t).join(', ')} mit ${soft.second.map(t).join(', ')} | ${soft.why} | ${soft.count.toLocaleString('de-DE')} | ${soft.example || '-'} |`));
-out.push('', '## R: Textrahmen', '', '| Nr. | Text | Wann |', '|---|---|---|');
+out.push('', 'Die Prüfung erkennt Form und Rechnung, nicht ob ein Satz inhaltlich gut klingt. Dafür sind die vollen Texte unten da.', '');
+out.push('## R: Textrahmen', '', '| Nr. | Text | Wann |', '|---|---|---|');
 [
   ['R1', 'Hallo simplecommerce-Team,', 'immer'],
   ['R2', 'darum geht es:', 'wenn es Angaben gibt'],
@@ -293,7 +266,7 @@ themes.forEach((theme, index) => {
 out.push('## Z: Freiwillige Fragen nach „Genauer angeben“', '', 'Sie stehen bei jedem Thema zur Wahl, soweit nicht anders vermerkt, und ergänzen den Text um eine Zeile an fester Stelle.', '');
 Q.common.filter(level => OPTIONAL.includes(level.id)).forEach(level => {
   const note = level.skipFor ? ` (nicht bei ${level.skipFor.join(', ')})` : '';
-  out.push(`### ${zLabel(level.id)} ${level.question}${level.multi ? ' (mehrere möglich)' : ''}${note}`, '', tableHead);
+  out.push(`### ${zLabel(level.id)} ${level.question}${note}`, '', tableHead);
   level.options.forEach(option => out.push(row(option)));
   const hidden = level.options.filter(option => option.hideIf);
   if (hidden.length) {
@@ -313,7 +286,6 @@ fs.writeFileSync(path.join(ROOT, 'docs/fragebogen-baum.md'), `${out.join('\n')}\
 
 console.log(`${total} Kombinationen in ${seconds} s, ${coreTexts.length} Kernwege, längster Text ${longest} Zeichen`);
 themes.forEach(theme => console.log(`  ${theme.label}: ${counts.get(theme.topic)}`));
-SOFT.forEach(soft => console.log(`  ${soft.nr}: ${soft.count}`));
 if (failures.size) {
   console.log('HARTE FEHLER:');
   failures.forEach((entry, rule) => {

@@ -149,7 +149,6 @@
   0% { transform: scale(.85); border-color: #b4ee88cc; }
   100% { transform: scale(1.34); border-color: #b4ee8800; }
 }
-.pad.is-splash { scale: .7; opacity: .4; transition-duration: .35s; }
 
 /* Der kleine Frosch im Teich */
 .pond-frog { position: absolute; top: 0; left: 0; z-index: 3; width: 44px; height: 44px; opacity: 0; pointer-events: none; transition: opacity .12s; }
@@ -222,8 +221,6 @@
 @keyframes lily-rise { from { opacity: 0; scale: .3; } }
 .steps-live { margin: 12px 0 0; padding: 8px 12px; border-radius: 12px; background: #ffffff1c; color: var(--white); font-size: .88rem; font-weight: 700; line-height: 1.3; }
 .steps-live[hidden] { display: none; }
-.steps-next { display: block; width: 100%; min-height: 48px; border: 0; border-radius: 16px; background: var(--leaf); color: var(--ink); font-weight: 800; cursor: pointer; transition: background .15s, transform .16s var(--ease); }
-.steps-next:hover { background: var(--leaf-hover); transform: translateY(-1px); }
 .steps-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; margin-top: 8px; }
 
 /* Preisschätzung: Kasten im Teich, im Formular und im Preisrechner */
