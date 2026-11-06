@@ -3,51 +3,54 @@
  * Fragebogen als Seerosen-Ebenen: Jede Frage ist eine Ebene aus Blättern, der Frosch hüpft aufs
  * gewählte Blatt und von dort zur nächsten Ebene. Die Fragen stehen in content/frog-guide.json,
  * jede Antwort landet als Aussage in Frosch.store und damit im Vorlagetext des Kontaktformulars.
- * Ab der zweiten Ebene lässt sich alles überspringen, die Zusammenfassung erlaubt Änderungen.
+ * Ab der zweiten Ebene lässt sich alles überspringen. Ein zweiter Klick wählt eine Antwort wieder ab,
+ * die Zusammenfassung erlaubt Ändern und Abwählen.
+ * Der kurze Weg endet nach den Fragen zur Sache; die übrigen Fragen sind freiwillig.
  */
+const OPTIONAL_LEVELS = new Set(['team', 'wichtig', 'timing', 'extra', 'kontakt']);
+const coreCount = levels => levels.filter(level => !OPTIONAL_LEVELS.has(level.id)).length;
+
 window.Frosch.Steps = class {
-  constructor(container, { onFinish, onLeave, onChange, onHop, onLevel }) {
+  constructor(container, { onFinish, onLeave, onChange, onHop, onLevel, onArrive }) {
     this.container = container;
     this.onFinish = onFinish;
     this.onLeave = onLeave;
     this.onChange = onChange;
     this.onHop = onHop;
     this.onLevel = onLevel;
+    this.onArrive = onArrive;
     this.store = window.Frosch.store;
     this.questions = window.Frosch.data.questionnaire;
     this.statements = window.Frosch.data.statements;
     this.motionOk = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
     this.topic = null;
     this.editing = false;
+    this.more = false;
     this.busy = false;
   }
 
-  /* Reihenfolge: Thema, Detail und Vertiefung zum Thema, dann die gemeinsamen Fragen, die dazu passen. */
   get levels() {
-    const { first, details, followUp, common } = this.questions;
-    const levels = [{ id: 'first', ...first }, { id: 'details', ...(details[this.topic] || { question: '', options: [] }) }];
-    if (followUp[this.topic]) levels.push({ id: 'followUp', ...followUp[this.topic] });
-    common.filter(level => !(level.skipFor || []).includes(this.topic)).forEach(level => {
-      levels.push({ ...level, options: level.options.filter(option => option.hideFor !== this.topic) });
-    });
-    return levels;
+    return window.Frosch.levelsFor(this.topic);
+  }
+
+  /* Wie viele Ebenen der Weg gerade hat. */
+  totalAt(index = 0) {
+    const { levels } = this;
+    const core = coreCount(levels);
+    return this.more || index >= core ? levels.length : core;
   }
 
   chosen(level) {
     return level.options.filter(option => option.statement && this.store.has(option.statement));
   }
 
-  /* Bereits gegebene Antworten bleiben auch nach einem Seitenwechsel erhalten. */
-  restoreTopic() {
-    const { details } = this.questions;
-    const known = Object.keys(details).find(topic => details[topic].options.some(option => this.store.has(option.statement)));
-    if (known) this.topic = known;
-  }
-
-  start() {
-    this.restoreTopic();
+  /* Kennt die Seite das Thema, entfällt die erste Frage; zurück geht es trotzdem. */
+  start(pageTopic) {
+    this.topic = window.Frosch.topicFromStore() || pageTopic || this.topic;
     this.editing = false;
-    if (this.store.count()) this.summary(); else this.show(0);
+    this.more = false;
+    if (this.store.count()) this.summary();
+    else this.show(pageTopic && this.topic === pageTopic ? 1 : 0);
   }
 
   /* Bausteine */
@@ -104,20 +107,22 @@ window.Frosch.Steps = class {
   show(index) {
     const { levels } = this;
     const level = levels[index];
-    /* Vor der Themenwahl fehlt noch die Vertiefung, die fast jedes Thema mitbringt. */
-    const total = this.topic ? levels.length : levels.length + 1;
+    /* Vor der Themenwahl steht die Länge noch nicht fest: der längste Weg zählt. */
+    const total = this.topic
+      ? this.totalAt(index)
+      : Math.max(...level.options.map(option => coreCount(window.Frosch.levelsFor(option.topic))));
     const row = this.frame(index, total, `Ebene ${index + 1} von ${total}`);
     const heading = this.heading(level.question);
-    if (level.multi) {
+    const picked = this.chosen(level);
+    if (level.multi || picked.length) {
       const hint = document.createElement('p');
       hint.className = 'steps-hint';
-      hint.textContent = 'Mehrere Antworten sind möglich.';
+      hint.textContent = level.multi ? 'Mehrere Antworten sind möglich. Nochmals antippen wählt ab.' : 'Nochmals antippen wählt die Antwort ab.';
       this.container.append(hint);
     }
 
     const pond = document.createElement('div');
     pond.className = 'lily-pond';
-    const picked = this.chosen(level);
     level.options.forEach((option, position) => {
       const selected = index === 0 ? option.topic === this.topic : picked.includes(option);
       const lily = this.lily(option, position, selected, () => {
@@ -129,11 +134,21 @@ window.Frosch.Steps = class {
 
     if (level.multi) this.container.append(this.button('steps-next', 'Weiter', () => this.advance(index)));
 
+    this.live = document.createElement('p');
+    this.live.className = 'steps-live';
+    this.container.append(this.live);
+    this.showLive();
+
     const footer = document.createElement('div');
     footer.className = 'steps-footer';
     footer.append(this.button('steps-back', 'Zurück', () => this.back(index)));
     if (index > 1 && this.store.count() && !this.editing) footer.append(this.button('steps-skip', 'Jetzt zur Anfrage', () => this.summary()));
-    if (index > 0 && !level.multi) footer.append(this.button('steps-skip', 'Überspringen', () => this.skip(index)));
+    if (index > 0 && !level.multi) {
+      /* Mit einer Antwort geht es weiter, ohne sie zu verlieren. */
+      footer.append(picked.length
+        ? this.button('steps-skip', 'Weiter', () => this.advance(index))
+        : this.button('steps-skip', 'Überspringen', () => this.skip(index)));
+    }
     this.container.append(footer);
 
     this.onChange();
@@ -141,55 +156,61 @@ window.Frosch.Steps = class {
     heading.focus({ preventScroll: true });
   }
 
+  /* Der Preis rechnet während der Fragen sichtbar mit. */
+  showLive() {
+    const sum = window.Frosch.price.short();
+    this.live.hidden = !sum;
+    this.live.textContent = sum ? `Bisher geschätzt: ${sum}` : '';
+  }
+
   toggle(lily, option) {
     const selected = !this.store.has(option.statement);
     if (selected) this.store.add(option.statement); else this.store.remove(option.statement);
     lily.setAttribute('aria-pressed', String(selected));
+    this.showLive();
     this.onHop(lily);
   }
 
   async answer(index, option, lily, pond) {
     if (this.busy) return;
+    if (index > 0 && this.store.has(option.statement)) {
+      this.clearLevel(index);
+      this.show(index);
+      return;
+    }
     this.busy = true;
     lily.setAttribute('aria-pressed', 'true');
     await this.onHop(lily);
     if (this.motionOk) {
       pond.classList.add('is-sinking');
-      await new Promise(resolve => setTimeout(resolve, 200));
+      await new Promise(resolve => setTimeout(resolve, 80));
     }
     this.busy = false;
     if (index === 0) {
-      this.chooseTopic(option.topic);
+      window.Frosch.dropForTopic(this.topic, option.topic);
+      this.topic = option.topic;
       this.show(1);
       return;
     }
-    this.chosen(this.levels[index]).forEach(old => this.store.remove(old.statement));
+    this.clearLevel(index);
     this.store.add(option.statement);
     this.advance(index);
   }
 
-  /* Ein anderes Thema verwirft die Antworten, die dazu nicht mehr passen. */
-  chooseTopic(topic) {
-    const { details, followUp, common } = this.questions;
-    if (this.topic && this.topic !== topic) {
-      [details[this.topic], followUp[this.topic]].filter(Boolean).forEach(level => {
-        level.options.forEach(option => this.store.remove(option.statement));
-      });
-    }
-    this.topic = topic;
-    common.forEach(level => {
-      const dropAll = (level.skipFor || []).includes(topic);
-      level.options.filter(option => dropAll || option.hideFor === topic).forEach(option => this.store.remove(option.statement));
-    });
+  /* Eine neue Umsatzstufe ersetzt auch einen genauen Wert aus dem Preisrechner. */
+  clearLevel(index) {
+    const level = this.levels[index];
+    this.chosen(level).forEach(old => this.store.remove(old.statement));
+    if (level.id === 'umsatz') this.store.setRevenue(null);
   }
 
   skip(index) {
-    this.chosen(this.levels[index]).forEach(old => this.store.remove(old.statement));
+    this.clearLevel(index);
     this.advance(index);
   }
 
   advance(index) {
-    if (this.editing || index >= this.levels.length - 1) this.summary(); else this.show(index + 1);
+    if (this.editing || index >= this.totalAt(index) - 1) this.summary(); else this.show(index + 1);
   }
 
   back(index) {
@@ -202,7 +223,8 @@ window.Frosch.Steps = class {
   summary() {
     this.editing = true;
     const { levels } = this;
-    const row = this.frame(levels.length, levels.length, 'Am Ziel');
+    const total = this.totalAt();
+    const row = this.frame(total, total, 'Am Ziel');
     const rows = levels.flatMap((level, index) => (index ? this.chosen(level).map(answer => ({ index, answer })) : []));
     const heading = this.heading(rows.length ? 'Das schreiben wir für Sie in die Anfrage:' : 'Sie haben noch nichts ausgewählt.');
 
@@ -214,23 +236,43 @@ window.Frosch.Steps = class {
       text.textContent = this.statements.find(statement => statement.id === answer.statement).text;
       const change = this.button('steps-change', 'Ändern', () => this.show(index));
       change.setAttribute('aria-label', `Ändern: ${text.textContent}`);
-      item.append(text, change);
+      const remove = this.button('steps-change', 'Abwählen', () => {
+        if (levels[index].id === 'umsatz') this.store.setRevenue(null);
+        this.store.remove(answer.statement);
+        this.summary();
+      });
+      remove.setAttribute('aria-label', `Abwählen: ${text.textContent}`);
+      const actions = document.createElement('span');
+      actions.className = 'steps-actions';
+      actions.append(change, remove);
+      item.append(text, actions);
       list.append(item);
     });
     this.container.append(list);
+    const price = window.Frosch.price.box({ link: true });
+    if (price) this.container.append(price);
     const hint = document.createElement('p');
     hint.className = 'steps-hint';
     hint.textContent = 'Noch wird nichts gesendet. Im Formular können Sie alles ändern und ergänzen.';
-    this.container.append(hint, this.button('steps-finish', 'In die Anfrage übernehmen', () => this.onFinish()));
+    this.container.append(hint, this.button('steps-finish', rows.length ? 'In die Anfrage übernehmen' : 'Zum Formular', () => this.onFinish(this.topic)));
     const footer = document.createElement('div');
     footer.className = 'steps-footer';
     footer.append(this.button('steps-back', 'Von vorn beginnen', () => {
       this.editing = false;
+      this.more = false;
       this.show(0);
     }));
+    if (!this.more && total < levels.length) {
+      footer.append(this.button('steps-skip', 'Genauer angeben (freiwillig)', () => {
+        this.more = true;
+        this.editing = false;
+        this.show(total);
+      }));
+    }
     this.container.append(footer);
     this.onChange();
     this.onLevel(row.lastElementChild);
+    if (this.onArrive) this.onArrive();
     heading.focus({ preventScroll: true });
   }
 };
