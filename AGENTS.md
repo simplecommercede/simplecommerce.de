@@ -1,6 +1,6 @@
 # Arbeitsregeln für simplecommerce.de
 
-Stand: 04.11.2026. Gilt für dieses Repository. Bei Änderungen diese Regeln zusammen mit den zugehörigen Dokumenten aktuell halten.
+Stand: 06.11.2026. Gilt für dieses Repository. Bei Änderungen diese Regeln zusammen mit den zugehörigen Dokumenten aktuell halten.
 
 ## Auftrag und Inhalt
 - Statische Unternehmenswebsite als Ersatz für WordPress. PHP nur für das Kontaktformular; kein neues CMS oder unnötiger Build-Stack.
@@ -63,7 +63,7 @@ git diff --check
 - Nutzerwunsch: Gewählte Antworten lassen sich im Fragebogen wieder abwählen (zweiter Klick auf das Blatt, „Abwählen“ in der Zusammenfassung).
 - Nutzerwunsch: Fragebogen logisch und einfach halten. Antworten mit `hideIf` entfallen, wenn sie einer früheren Antwort widersprechen; bleibt bei einer Folgefrage keine echte Wahl, entfällt sie. Es gibt nur einen Zusatzwunsch. Aussagen mit `closing` sind Kontaktwünsche und bilden den Schlusssatz des Vorlagetexts. Das Telefonfeld erscheint nur bei `askPhone`. Das Thema läuft über `/kontakt/?thema=…`, nicht über weitere Browserspeicherung.
 - Nutzerentscheidung: Wege zu Ergebnis und Infos kurz und flott halten. Der Fragebogen endet nach den Fragen zur Sache; weitere Fragen sind freiwillig. Der Preisrechner zeigt nur Fragen und Antworten, die den Preis ändern, ohne Aufschlag nach Unternehmensgröße. Das Kontaktformular steht vor den Kontaktdaten.
-- Preisschätzung: Frosch, Kontaktformular und `/preisrechner/` rechnen gemeinsam in `guide-price.js`. Shopkosten kommen aus der Preistabelle; Werte in `content/price-estimate.json` mit `source: "entwurf"` sind Platzhalter, keine zugesagten Preise. Vor Livegang fachlich ersetzen und erst dann `released` auf `true` setzen, dann entfällt der Hinweis auf Beispielwerte. Der Vorlagetext folgt immer der Reihenfolge der Fragen. Nutzerwunsch: Preise realistisch und einfach halten; „unschlagbar“ nicht ohne belegten Marktvergleich als Werbeaussage verwenden.
+- Preisschätzung: Frosch, Kontaktformular und `/preisrechner/` rechnen gemeinsam in `guide-price.js`. Shopkosten kommen aus der Preistabelle; Werte in `content/price-estimate.json` mit `source: "entwurf"` sind Platzhalter, keine zugesagten Preise. Solange `released: false`, entfernt der Generator sämtliche Entwurfsbeträge aus den öffentlichen Daten und liefert nur „auf Anfrage“. Die Laufzeitberechnung sperrt diese Werte zusätzlich. Erst nach fachlicher Prüfung aller Entwurfswerte `released` auf `true` setzen. Teilpreise aus der Shop-Preisliste dürfen bei gemischten Anfragen nie als vollständiger Projektpreis erscheinen. Der Vorlagetext folgt immer der Reihenfolge der Fragen. Nutzerwunsch: Preise realistisch und einfach halten; „unschlagbar“ nicht ohne belegten Marktvergleich als Werbeaussage verwenden.
 - Frosch-Wegweiser (`guide.js`, `guide.css`, Texte zusätzlich in `data-guide`-Attributen; gezeichneter Frosch als SVG) bleibt zusätzlich zur Navigation: alle Ziele müssen auch ohne ihn und ohne JavaScript erreichbar sein; sein Menü zeigt die Leistungen als Seerosenblätter (`.guide-pond`/`.guide-pad`), auf die der Frosch beim Klick springt; keine weitere Browserspeicherung ohne Anpassung der Datenschutztexte.
 - Interaktives Logo: Frosch und „e“ liegen als Ebenen über `assets/logo.jpg`, Maul, Lider, Kehle und Zunge als SVG im Generator (`.brand`/`logo-*` in `site.css`, Markup in `scripts/build.py`, `[data-logo]` in `site.js`). Nutzerentscheidung: Demoprodukte (Becher, Rucksack, Leuchte) nicht als Werbebilder verwenden; sie bleiben der Demo-Umgebung und den Hilfeaufnahmen vorbehalten.
 
@@ -76,3 +76,8 @@ git diff --check
 - Slug-Zuordnung in `content/legacy-links.json`, genaue URLs/Anker und vollständiges Admin-Inventar in `content/legacy-help.json`. `scripts/legacy_help.py` erzeugt daraus `.htaccess`; Basisregeln in `content/htaccess.conf`. Keine generierten Redirects von Hand bearbeiten.
 - HTTP-Tests mit `python3 scripts/test_legacy_help.py --base http://127.0.0.1:1894`; PHP-Vorschau 1890 wertet `.htaccess` nicht aus. Keine unpassenden Sammelweiterleitungen.
 - Nutzerfreigabe 05.11.2026: Nur öffentliche `/hilfe/` darf ohne Domainliste in beliebigen HTTP(S)-Shop-Admins eingebettet werden. Kontakt und andere Seiten behalten Einbettungsschutz.
+
+## Veröffentlichungsvorbereitung vom 06.11.2026
+- Keine festen Telefonzeiten ohne Bestätigung nennen; stattdessen einen Gesprächstermin anbieten.
+- Ergebnis des Fragebogens: Aktion „Anfrage ansehen“ vor der Zusammenfassung, Absenden ausschließlich im Formular. Ausgeblendete Telefonnummer deaktivieren; selbst bearbeitete Nachrichtentexte erhalten.
+- Betriebsfreigabe und konkrete Restschritte: `docs/livegang.md`. Ein erfolgreicher lokaler Test ist kein Zustellnachweis auf Hetzner.
