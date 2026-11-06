@@ -2,8 +2,9 @@
 /*
  * Frosch-Wegweiser
  * Zusätzlich zur Navigation: Alle Ziele bleiben auch ohne ihn und ohne JavaScript erreichbar.
- * Er speichert nichts im Browser und bewegt sich nie von selbst über die Seite: Man kann ihn
- * verschieben, und erst bei der Wahl eines Ziels im Teich springt er durch die Scheibe (guide-glass.js).
+ * Er bewegt sich nie von selbst über die Seite: Man kann ihn verschieben, und erst bei der Wahl
+ * eines Ziels im Teich springt er durch die Scheibe (guide-glass.js). Im Teich führt der Fragebogen
+ * (guide-steps.js) zur Anfrage, die Antworten liegen in guide-core.js.
  *
  * Aufbau: 1. Inhalte  2. Hilfsfunktionen  3. Ausweichen  4. Frosch  5. Teich  6. Sprung durch die Scheibe  7. Start
  */
@@ -44,33 +45,10 @@
   ];
 
   const KEY_STEP = 30;
+  const CONTACT_PATH = '/kontakt/';
 
-  const FROG_SVG = `
-    <svg class="fg-svg" viewBox="0 0 120 108" aria-hidden="true" focusable="false">
-      <g class="fg-rig">
-        <g class="fg-legs" fill="#ff8a1f">
-          <ellipse cx="24" cy="97" rx="18" ry="6"/><circle cx="8" cy="97" r="4"/><circle cx="16" cy="102" r="4"/><circle cx="30" cy="103" r="4"/>
-          <ellipse cx="96" cy="97" rx="18" ry="6"/><circle cx="112" cy="97" r="4"/><circle cx="104" cy="102" r="4"/><circle cx="90" cy="103" r="4"/>
-          <ellipse cx="27" cy="78" rx="14" ry="19" fill="#57b92c" transform="rotate(-20 27 78)"/>
-          <ellipse cx="93" cy="78" rx="14" ry="19" fill="#57b92c" transform="rotate(20 93 78)"/>
-        </g>
-        <ellipse cx="60" cy="72" rx="29" ry="27" fill="#6fd13a"/>
-        <ellipse class="fg-throat" cx="60" cy="78" rx="20" ry="19" fill="#fbf7ef"/>
-        <path d="M36 72Q30 88 38 96M84 72Q90 88 82 96" fill="none" stroke="#3f6fd8" stroke-width="7" stroke-linecap="round"/>
-        <ellipse cx="38" cy="98" rx="9" ry="4" fill="#ff8a1f"/><ellipse cx="82" cy="98" rx="9" ry="4" fill="#ff8a1f"/>
-        <g class="fg-head">
-          <path d="M20 44C20 26 40 22 60 22S100 26 100 44 80 66 60 66 20 60 20 44Z" fill="#6fd13a"/>
-          <path class="fg-tongue" d="M51 57q9 17 18 0Z" fill="#ee6a90"/>
-          <path d="M34 50Q60 64 86 50" fill="none" stroke="#2e7a18" stroke-width="2.6" stroke-linecap="round"/>
-          <ellipse cx="30" cy="50" rx="5" ry="3" fill="#ff9a57" opacity=".55"/><ellipse cx="90" cy="50" rx="5" ry="3" fill="#ff9a57" opacity=".55"/>
-          ${[[36, 'l'], [84, 'r']].map(([x, side]) => `
-            <circle cx="${x}" cy="26" r="15" fill="#e8401c" stroke="#2e7a18" stroke-width="2.5"/>
-            <circle cx="${x}" cy="26" r="10.5" fill="#ff7a2a"/>
-            <g class="fg-eye"><ellipse cx="${x}" cy="26" rx="3.6" ry="9.5" fill="#16110f"/><circle cx="${x - 2}" cy="20" r="2.4" fill="#fff"/></g>
-            <circle class="fg-lid fg-lid-${side}" cx="${x}" cy="26" r="15.8" fill="#6fd13a" stroke="#2e7a18" stroke-width="2"/>`).join('')}
-        </g>
-      </g>
-    </svg>`;
+  const FROG_SVG = window.Frosch.art;
+  const { store } = window.Frosch;
 
   /* ---------- 2. Hilfsfunktionen ---------- */
 
@@ -90,6 +68,14 @@
       this.items = [];
       this.source = null;
       this.running = false;
+      this.prepared = false;
+      this.tick = this.tick.bind(this);
+    }
+
+    /* Texte werden erst beim ersten Verschieben zerlegt; das hält die Seite beim Laden schlank. */
+    prepare() {
+      if (this.prepared) return;
+      this.prepared = true;
       SCATTER_GROUPS.forEach(group => {
         document.querySelectorAll(group.selector).forEach(root => {
           if (root.closest(SKIP_INSIDE)) return;
@@ -97,7 +83,6 @@
           parts.forEach(el => this.items.push({ el, ...group, cx: 0, cy: 0, x: 0, y: 0, vx: 0, vy: 0 }));
         });
       });
-      this.tick = this.tick.bind(this);
     }
 
     /* Screenreader lesen den Klartext, sichtbar sind die einzelnen Teile. */
@@ -134,6 +119,7 @@
 
     /* Ruhepositionen auf der Seite, ohne die aktuelle Auslenkung. */
     measure() {
+      this.prepare();
       this.items.forEach(item => {
         const box = item.el.getBoundingClientRect();
         item.hidden = !box.width;
@@ -228,6 +214,7 @@
       this.root.innerHTML = `
         <div class="fg-say" aria-hidden="true"></div>
         <span class="fg-ground"></span>
+        <span class="fg-count" hidden></span>
         <button type="button" class="fg-button" aria-expanded="false" aria-controls="fg-pond" aria-label="Frosch-Wegweiser öffnen, mit den Pfeiltasten verschieben">${FROG_SVG}</button>`;
       document.body.append(this.root);
       this.button = this.root.querySelector('.fg-button');
@@ -444,7 +431,10 @@
       this.root.hidden = true;
       this.root.innerHTML = `
         <div class="pond-head"><p class="pond-title"></p><button type="button" class="pond-close" aria-label="Wegweiser schließen">×</button></div>
+        <button type="button" class="pond-start"><span><strong>Anfrage zusammenstellen</strong><small>Hüpfen Sie mit dem Frosch von Frage zu Frage</small></span></button>
+        <div class="pond-basket" hidden><p></p><a class="pond-next" href="/kontakt/">Zur Anfrage</a></div>
         <nav class="pond-pads" aria-label="Schnell zu"></nav>
+        <div class="pond-steps" hidden></div>
         <span class="pond-frog" aria-hidden="true">${FROG_SVG}</span>`;
       this.root.querySelector('.pond-title').textContent = text;
       const pads = this.root.querySelector('.pond-pads');
@@ -462,10 +452,59 @@
       }
       document.body.append(this.root);
       this.mini = this.root.querySelector('.pond-frog');
+      this.bindSteps();
       this.bind();
     }
 
     get isOpen() { return !this.root.hidden; }
+
+    /* Fragebogen und Korb */
+    bindSteps() {
+      const panel = this.root.querySelector('.pond-steps');
+      const atContact = path === CONTACT_PATH;
+      this.steps = new window.Frosch.Steps(panel, {
+        onLeave: () => this.showAsking(false),
+        onChange: () => this.placeNearFrog(),
+        onHop: lily => this.leapTo(lily),
+        onLevel: mark => { this.leapTo(mark); },
+        onFinish: () => {
+          if (atContact) {
+            this.toggle(false);
+            document.querySelector('#nachricht').focus({ preventScroll: true });
+            document.querySelector('.contact-form').scrollIntoView({ block: 'start', behavior: motionOk ? 'smooth' : 'auto' });
+          } else {
+            this.onGo(CONTACT_PATH);
+          }
+        }
+      });
+      this.root.querySelector('.pond-start').addEventListener('click', () => this.ask());
+      document.addEventListener('frosch:ask', () => {
+        if (!this.isOpen) this.toggle(true);
+        this.ask();
+      });
+      this.updateBasket();
+      store.subscribe(() => this.updateBasket());
+    }
+
+    ask() {
+      this.showAsking(true);
+      this.steps.start();
+    }
+
+    showAsking(asking) {
+      this.root.classList.toggle('is-asking', asking);
+      this.root.querySelector('.pond-steps').hidden = !asking;
+      this.miniAt = null;
+      this.mini.classList.remove('is-here');
+      if (this.isOpen) this.placeNearFrog();
+    }
+
+    updateBasket() {
+      const basket = this.root.querySelector('.pond-basket');
+      const count = store.count();
+      basket.hidden = !count || path === CONTACT_PATH;
+      basket.querySelector('p').textContent = count === 1 ? '1 Angabe gesammelt' : `${count} Angaben gesammelt`;
+    }
 
     bind() {
       const { frog, root } = this;
@@ -508,20 +547,29 @@
       });
     }
 
-    /* Der kleine Frosch springt im Bogen auf das Blatt. */
-    leapTo(pad) {
+    /* Der kleine Frosch springt im Bogen auf das Blatt. Liefert ein Versprechen für den Abschluss des Sprungs. */
+    leapTo(target) {
       const pond = this.root.getBoundingClientRect();
-      const box = pad.getBoundingClientRect();
-      const to = { x: box.left - pond.left + box.width / 2 - 22, y: box.top - pond.top - 12 };
+      const box = (target.querySelector('.lily-leaf') || target).getBoundingClientRect();
+      const width = this.mini.offsetWidth;
+      const height = this.mini.offsetHeight;
+      const to = {
+        x: box.left - pond.left + this.root.scrollLeft + box.width / 2 - width / 2,
+        y: box.top - pond.top + this.root.scrollTop + box.height / 2 - height * .78
+      };
       const from = this.miniAt || { x: to.x, y: to.y + 40 };
       this.miniAt = to;
       this.mini.classList.add('is-here');
-      this.mini.animate([
+      if (!motionOk) {
+        this.mini.style.translate = `${to.x}px ${to.y}px`;
+        return Promise.resolve();
+      }
+      return this.mini.animate([
         { translate: `${from.x}px ${from.y}px`, scale: '1.1 .8' },
         { translate: `${(from.x + to.x) / 2}px ${Math.min(from.y, to.y) - 34}px`, scale: '.92 1.14', offset: .5 },
         { translate: `${to.x}px ${to.y}px`, scale: '1.16 .78', offset: .85 },
         { translate: `${to.x}px ${to.y}px`, scale: '1 1' }
-      ], { duration: 340, easing: 'ease-out', fill: 'forwards' });
+      ], { duration: 340, easing: 'ease-out', fill: 'forwards' }).finished;
     }
 
     /* Der Teich öffnet sich dort, wo der Frosch gerade sitzt. */
@@ -551,6 +599,7 @@
       } else {
         this.miniAt = null;
         this.mini.classList.remove('is-here');
+        this.showAsking(false);
       }
     }
   }
@@ -624,6 +673,17 @@
   const frog = new Frog(scatter);
   const pond = new Pond(frog, text, next, destinations, url => jumpThroughGlass(url, frog, pond));
   window.simplecommerceFrog = frog;
+
+  /* Zähler am Helfer: So viele Angaben warten auf die Anfrage. */
+  const counter = frog.root.querySelector('.fg-count');
+  const showCount = () => {
+    const count = store.count();
+    counter.hidden = !count;
+    counter.textContent = count;
+    frog.button.setAttribute('aria-label', `Frosch-Wegweiser öffnen, mit den Pfeiltasten verschieben${count ? `, ${count} Angaben gesammelt` : ''}`);
+  };
+  showCount();
+  store.subscribe(showCount);
   frog.onPicked = () => { if (pond.isOpen) pond.toggle(false); };
 
   frog.button.addEventListener('click', () => {

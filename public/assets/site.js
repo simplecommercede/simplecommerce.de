@@ -216,6 +216,7 @@ if (contactForm && window.fetch) {
       message.textContent = result.message;
       feedback.replaceChildren(heading, message);
       feedback.dataset.state = response.ok && result.ok ? 'success' : 'error';
+      if (feedback.dataset.state === 'success') contactForm.dispatchEvent(new CustomEvent('contact:sent'));
     } catch (error) {
       const heading = document.createElement('h3');
       heading.textContent = 'Wir konnten den Versand nicht bestätigen.';

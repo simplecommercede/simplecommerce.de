@@ -1,5 +1,5 @@
 /*
- * Frosch-Wegweiser: Frosch, Sprechblase, ausweichende Texte, der Teich als Menü und der Scheibenbruch.
+ * Frosch-Wegweiser: Frosch, Sprechblase, ausweichende Texte, Teich mit Fragebogen und Scheibenbruch.
  * Verhalten siehe guide.js und guide-glass.js. Bei reduzierter Bewegung schaltet site.css alle Animationen ab.
  */
 :root {
@@ -15,7 +15,7 @@
 .fg-split { user-select: text; }
 .fg-word, .fg-bit { display: inline-block; }
 .fg-word { white-space: nowrap; }
-.fg-bit { will-change: translate; }
+
 .fg-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; user-select: none; }
 
 /* ---------- Frosch ---------- */
@@ -112,11 +112,90 @@
 .pond-frog.is-here { opacity: 1; }
 .pond-frog .fg-svg { filter: drop-shadow(0 4px 4px #06231f99); }
 
-/* Nächster Schritt */
-.pond-next { position: relative; z-index: 2; width: fit-content; min-height: 44px; padding: 10px 18px; border: 0; border-radius: 999px; font-size: .95rem; font-weight: 800; cursor: pointer; transition: transform .16s var(--ease), box-shadow .16s var(--ease), background .16s; }
-.pond-next { display: flex; align-items: center; background: var(--orange); color: var(--ink); box-shadow: 0 5px 0 #b84700, 0 14px 22px #0006; }
-.pond-next:hover { text-decoration: none; transform: translateY(-2px); box-shadow: 0 7px 0 #b84700, 0 18px 26px #0007; }
-.pond-next:active { transform: translateY(4px); box-shadow: 0 1px 0 #b84700; }
+
+/* ---------- Fragebogen und Anfrage ---------- */
+/* Zähler am Helfer */
+.fg-count { position: absolute; top: -2px; right: -2px; z-index: 2; display: grid; place-items: center; min-width: 30px; height: 30px; padding: 0 7px; border: 3px solid var(--white); border-radius: 999px; background: var(--orange); color: var(--ink); font-size: .9rem; font-weight: 800; }
+.fg-count[hidden] { display: none; }
+
+/* Einstieg, Korb und Fragebogen im Teich */
+.pond-start { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 14px; width: 100%; margin: 8px 0 10px; padding: 12px 12px 12px 20px; border: 0; border-radius: 22px; background: linear-gradient(180deg, #ff8126, var(--orange)); color: var(--ink); text-align: left; cursor: pointer; box-shadow: inset 0 1px 0 #ffffff66, 0 5px 0 #b84700, 0 16px 26px #06231f88; transition: transform .16s var(--ease), box-shadow .16s var(--ease), filter .16s; }
+.pond-start::after { content: ""; flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; background: var(--ink) var(--arrow-light) center / 18px no-repeat; }
+.pond-start:hover { filter: brightness(1.05); transform: translateY(-2px); box-shadow: inset 0 1px 0 #ffffff66, 0 7px 0 #b84700, 0 22px 32px #06231faa; }
+.pond-start:hover::after { animation: button-hop .5s var(--ease); }
+.pond-start:active { transform: translateY(4px); box-shadow: inset 0 1px 0 #ffffff33, 0 1px 0 #b84700; }
+.pond-start strong { display: block; font-size: 1.08rem; font-weight: 800; line-height: 1.2; }
+.pond-start small { display: block; margin-top: 2px; font-size: .84rem; font-weight: 600; line-height: 1.25; }
+.pond-basket { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; padding: 8px 8px 8px 14px; border-radius: 16px; background: #ffffff1c; }
+.pond-basket[hidden] { display: none; }
+.pond-basket p { margin: 0; color: var(--white); font-size: .92rem; font-weight: 700; }
+
+/* Weitere Wege treten hinter den Fragebogen zurück. */
+.pond-next { position: relative; z-index: 2; display: flex; align-items: center; width: fit-content; min-height: 42px; padding: 8px 16px; border-radius: 999px; background: #ffffff1f; box-shadow: inset 0 0 0 1.5px #ffffff55; color: var(--white); font-size: .92rem; font-weight: 750; transition: background .16s, color .16s, transform .16s var(--ease); }
+.pond-next:hover { background: var(--leaf-hover); box-shadow: none; color: var(--ink); text-decoration: none; transform: translateY(-1px); }
+
+.pond.is-asking .pond-pads, .pond.is-asking .pond-start, .pond.is-asking .pond-basket, .pond.is-asking > .pond-next { display: none; }
+.pond.is-asking .pond-title { visibility: hidden; height: 0; }
+.pond.is-asking .pond-head { position: absolute; top: 14px; right: 14px; margin: 0; }
+
+.pond-steps { position: relative; z-index: 2; }
+.pond-steps[hidden] { display: none; }
+.steps-back, .steps-skip, .steps-change { padding: 8px 2px; border: 0; background: none; color: #d6ecf4; font-size: .92rem; font-weight: 700; text-decoration: underline; text-underline-offset: .2em; cursor: pointer; }
+.steps-back:hover, .steps-skip:hover, .steps-change:hover { color: var(--white); }
+.steps-summary { display: grid; gap: 4px; margin: 0 0 10px; padding: 0; list-style: none; }
+.steps-summary li { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 5px 10px; border-radius: 12px; background: #ffffff14; color: var(--white); font-size: .86rem; line-height: 1.3; }
+.steps-change { flex-shrink: 0; padding: 4px 0; font-size: .84rem; }
+.steps-finish { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 58px; padding: 8px 10px 8px 20px; border: 0; border-radius: 20px; background: linear-gradient(180deg, #ff8126, var(--orange)); color: var(--ink); font-size: 1.05rem; font-weight: 800; cursor: pointer; box-shadow: inset 0 1px 0 #ffffff66, 0 5px 0 #b84700, 0 14px 24px #06231f88; transition: transform .16s var(--ease), box-shadow .16s var(--ease); }
+.steps-finish::after { content: ""; flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; background: var(--ink) var(--arrow-light) center / 17px no-repeat; }
+.steps-finish:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 #ffffff66, 0 7px 0 #b84700, 0 20px 30px #06231faa; }
+.steps-finish:hover::after { animation: button-hop .5s var(--ease); }
+.steps-finish:active { transform: translateY(4px); box-shadow: 0 1px 0 #b84700; }
+
+/* Seerosen-Ebenen des Fragebogens */
+.pond.is-asking { min-height: min(600px, calc(100vh - 116px)); }
+.pond.is-asking .pond-frog { width: 34px; height: 31px; }
+.steps-count { margin: 4px 44px 18px 0; color: #d6ecf4; font-size: .85rem; font-weight: 700; }
+.lily-path { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 44px 0 0; padding: 0; list-style: none; }
+.lily-path li { width: 22px; height: 22px; background: var(--leaf-shape) center / contain no-repeat; opacity: .28; filter: saturate(.5); transition: opacity .25s, filter .25s; }
+.lily-path li.is-done { opacity: .85; filter: none; }
+.lily-path li.is-current { opacity: 1; filter: none; }
+.steps-question { margin: 14px 0 4px; color: var(--white); font-size: 1.22rem; font-weight: 750; line-height: 1.22; outline: 0; }
+.steps-hint { margin: 0 0 8px; color: #d6ecf4; font-size: .86rem; line-height: 1.3; }
+
+.lily-pond { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px 6px; padding-block: 10px 8px; }
+.lily { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 104px; padding: 4px 2px 6px; border: 0; border-radius: 16px; background: none; color: var(--white); font-size: .84rem; font-weight: 700; line-height: 1.15; cursor: pointer; animation: lily-rise .5s cubic-bezier(.3, 1.6, .5, 1) calc(var(--i) * 50ms) backwards; transition: opacity .2s, scale .2s var(--ease); }
+.lily:nth-child(3n + 2) { translate: 0 8px; }
+.lily-leaf { position: relative; flex-shrink: 0; width: 62px; height: 62px; background: var(--leaf-shape) center / contain no-repeat; filter: drop-shadow(0 6px 6px #06231f88); rotate: calc(var(--i) * 53deg); transition: scale .28s cubic-bezier(.3, 1.7, .5, 1), rotate .7s var(--ease), filter .2s; }
+.lily-label { overflow-wrap: anywhere; }
+.lily::after { content: ""; position: absolute; left: 50%; top: 35px; width: 66px; height: 66px; margin: -33px 0 0 -33px; border: 2px solid #b4ee8800; border-radius: 50%; pointer-events: none; }
+.lily:hover .lily-leaf, .lily:focus-visible .lily-leaf { scale: 1.16; rotate: calc(var(--i) * 53deg + 120deg); filter: drop-shadow(0 12px 10px #06231fbb) brightness(1.12); }
+.lily:hover::after, .lily:focus-visible::after { animation: pad-wave 1.1s ease-out infinite; }
+.lily[aria-pressed="true"] .lily-leaf { filter: drop-shadow(0 0 10px var(--leaf-hover)) brightness(1.15); }
+.lily[aria-pressed="true"] .lily-label { color: var(--leaf-hover); }
+.lily-pond:hover .lily:not(:hover) .lily-leaf { filter: drop-shadow(0 4px 4px #06231f88) saturate(.8) brightness(.94); }
+.lily-pond.is-sinking .lily[aria-pressed="false"] { opacity: 0; scale: .7; }
+@keyframes lily-rise { from { opacity: 0; scale: .3; } }
+.steps-next { display: block; width: 100%; min-height: 48px; border: 0; border-radius: 16px; background: var(--leaf); color: var(--ink); font-weight: 800; cursor: pointer; transition: background .15s, transform .16s var(--ease); }
+.steps-next:hover { background: var(--leaf-hover); transform: translateY(-1px); }
+.steps-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; margin-top: 8px; }
+
+/* Einstieg in den Fragebogen direkt im Kontaktformular */
+.form-help { display: flex; align-items: center; gap: 14px; width: 100%; margin: 14px 0 4px; padding: 10px 16px 10px 10px; border: 0; border-radius: 18px; background: var(--orange-soft); box-shadow: inset 0 0 0 1.5px #ff660055; color: var(--ink); text-align: left; cursor: pointer; transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s; }
+.form-help:hover { background: #ffe9d9; box-shadow: inset 0 0 0 2px var(--orange), 0 10px 22px #d9560033; transform: translateY(-2px); }
+.form-help .fg-svg { flex-shrink: 0; width: 54px; height: 48px; filter: none; }
+.form-help .fg-throat { animation: none; }
+.form-help:hover .fg-tongue { transform: none; }
+.form-help strong { display: block; font-size: 1.02rem; line-height: 1.25; }
+.form-help small { display: block; margin-top: 2px; color: var(--muted); font-size: .88rem; line-height: 1.3; }
+
+/* Aussagen im Kontaktformular */
+.form-basket:empty { display: none; }
+.form-basket { margin: 14px 0 4px; padding: 14px 16px; border-radius: 14px; background: var(--orange-soft); }
+.form-basket-title { margin: 0 0 8px; color: var(--ink); font-weight: 750; }
+.form-basket ul { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.form-basket li { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: .95rem; line-height: 1.3; }
+.form-basket li button { flex-shrink: 0; width: 28px; height: 28px; padding: 0; border: 0; border-radius: 50%; background: var(--white); font-size: 1.05rem; line-height: 1; cursor: pointer; }
+.form-basket li button:hover { background: var(--orange); }
 
 /* ---------- Scheibenbruch ---------- */
 @view-transition { navigation: auto; }
