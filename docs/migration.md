@@ -29,7 +29,7 @@ Semantisches HTML, aussagekräftige Titel und Beschreibungen, kanonische URLs, S
 4. Kontaktversand, Weiterleitungen und Abschlussprüfung.
 
 ## Umgesetzter Stand (04.11.2026)
-59 statische Seiten und 24 aktualisierte Hilfeartikel mit 50 Bildern. Andoo, Shopbackup und Yatego haben eigene historische Statusseiten. Die Hauptnavigation besteht aus Shop, Leistungen, Hilfe und Kontakt. Die Preisliste gilt ausschließlich für den Shop und ist unter Shop als „Shop-Preise“ verlinkt; `/preise/` bleibt aus Gründen der bestehenden Verlinkung unverändert. Neue Leistungen verweisen für Preise auf ein individuelles Kontaktangebot.
+62 statische Seiten und 24 aktualisierte Hilfeartikel mit 50 Bildern. Andoo, Shopbackup und Yatego haben eigene historische Statusseiten. Die Hauptnavigation besteht aus Shop, Leistungen, Hilfe und Kontakt. Die Preisliste gilt ausschließlich für den Shop und ist unter Shop als „Shop-Preise“ verlinkt; `/preise/` bleibt aus Gründen der bestehenden Verlinkung unverändert. Neue Leistungen verweisen für Preise auf ein individuelles Kontaktangebot.
 
 SEO-Grundlage im aktuellen Generator: Organization, WebPage (bzw. übergebener Seitentyp) und BreadcrumbList als JSON-LD, individuelle Titel/Beschreibungen, Canonicals und Sitemap. Dies ist keine Garantie für Indexierung, Rankings oder Aufnahme in KI-Antworten.
 
