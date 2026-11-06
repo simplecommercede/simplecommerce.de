@@ -160,7 +160,7 @@ window.Frosch.Steps = class {
   showLive() {
     const sum = window.Frosch.price.short();
     this.live.hidden = !sum;
-    this.live.textContent = sum ? `Bisher geschätzt: ${sum}` : '';
+    this.live.textContent = sum ? `Kostenrahmen: ${sum}` : '';
   }
 
   toggle(lily, option) {
@@ -226,7 +226,7 @@ window.Frosch.Steps = class {
     const total = this.totalAt();
     const row = this.frame(total, total, 'Am Ziel');
     const rows = levels.flatMap((level, index) => (index ? this.chosen(level).map(answer => ({ index, answer })) : []));
-    const heading = this.heading(rows.length ? 'Das schreiben wir für Sie in die Anfrage:' : 'Sie haben noch nichts ausgewählt.');
+    const heading = this.heading(rows.length ? 'Ihre Anfrage ist vorbereitet.' : 'Sie haben noch nichts ausgewählt.');
 
     const list = document.createElement('ul');
     list.className = 'steps-summary';
@@ -248,13 +248,14 @@ window.Frosch.Steps = class {
       item.append(text, actions);
       list.append(item);
     });
+    this.container.append(this.button('steps-finish', rows.length ? 'Anfrage ansehen' : 'Zum Formular', () => this.onFinish(this.topic)));
     this.container.append(list);
     const price = window.Frosch.price.box({ link: true });
     if (price) this.container.append(price);
     const hint = document.createElement('p');
     hint.className = 'steps-hint';
     hint.textContent = 'Noch wird nichts gesendet. Im Formular können Sie alles ändern und ergänzen.';
-    this.container.append(hint, this.button('steps-finish', rows.length ? 'In die Anfrage übernehmen' : 'Zum Formular', () => this.onFinish(this.topic)));
+    this.container.append(hint);
     const footer = document.createElement('div');
     footer.className = 'steps-footer';
     footer.append(this.button('steps-back', 'Von vorn beginnen', () => {

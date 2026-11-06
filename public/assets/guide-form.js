@@ -66,6 +66,7 @@
     const wanted = store.wantsCall();
     phoneField.classList.toggle('is-wanted', wanted);
     phone.required = wanted;
+    phone.disabled = !wanted;
     if (!wanted && phoneField.dataset.shown) phone.value = '';
     if (wanted) phoneField.dataset.shown = 'true'; else delete phoneField.dataset.shown;
 
@@ -73,7 +74,7 @@
     help.querySelector('strong').textContent = count ? `${count === 1 ? '1 Angabe' : `${count} Angaben`} übernommen` : 'Nicht sicher, was Sie schreiben sollen?';
     const sum = price.short();
     help.querySelector('small').textContent = count
-      ? `${sum ? `${sum}${price.isDraft() ? ', Beispielwerte' : ''} · ` : ''}Ändern`
+      ? `${sum ? `${sum} · ` : ''}Ändern`
       : 'Der Frosch stellt ein paar kurze Fragen und schreibt den Text vor.';
   };
 
@@ -89,7 +90,11 @@
   store.subscribe(render);
   render();
   form.addEventListener('contact:sent', () => {
-    lastLetter = message.value;
+    const sentText = message.value;
     store.clear();
+    message.value = sentText;
+    lastLetter = sentText;
+    stale.hidden = true;
+    fit();
   });
 })();
