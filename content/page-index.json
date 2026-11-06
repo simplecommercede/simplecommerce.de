@@ -336,6 +336,12 @@
     "noindex": false
   },
   {
+    "path": "/preisrechner/",
+    "title": "Preisrechner – Kosten schätzen",
+    "description": "Schätzen Sie die Kosten für Shop, Website, Software, KI, Beratung und Service mit wenigen Angaben. Unverbindlich und direkt im Browser.",
+    "noindex": false
+  },
+  {
     "path": "/cookie-richtlinie-eu/",
     "title": "Cookies & lokale Speicherung",
     "description": "Informationen zur Nutzung von Cookies und lokalem Speicher auf simplecommerce.de.",

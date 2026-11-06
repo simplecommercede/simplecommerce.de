@@ -134,7 +134,14 @@ document.querySelectorAll('[data-calculator]').forEach(calculator => {
   const total = calculator.querySelector('#calc-total');
   const parts = calculator.querySelector('#calc-parts');
   const cards = [...section.querySelectorAll('[data-tier]')];
-  const euro = amount => amount.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+  /* Cent-Beträge erscheinen kleiner. */
+  const showEuro = (node, amount) => {
+    const [euros, cents] = amount.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).split(',');
+    const small = document.createElement('span');
+    small.className = 'cents';
+    small.textContent = `,${cents}`;
+    node.replaceChildren(euros, small, ' €');
+  };
   const update = () => {
     const revenue = Number(input.value);
     const index = tiers.findIndex(tier => tier.limit === null || revenue < tier.limit || (revenue === tier.limit && tier.limit < 80000));
@@ -148,13 +155,13 @@ document.querySelectorAll('[data-calculator]').forEach(calculator => {
       return;
     }
     const commission = revenue * tier.rate / 100;
-    const rows = [['Shopmiete', tier.rent], [`Provision (${tier.rate.toLocaleString('de-DE')} %)`, commission], ['SSL-Leitung', tier.ssl]];
-    total.textContent = euro(tier.rent + commission + tier.ssl);
+    const rows = [['Shopmiete', tier.rent], [`Provision: ${tier.rate.toLocaleString('de-DE')} % von ${revenue.toLocaleString('de-DE')} €`, commission], ['SSL-Leitung', tier.ssl]];
+    showEuro(total, tier.rent + commission + tier.ssl);
     parts.replaceChildren(...rows.flatMap(([label, amount]) => {
       const term = document.createElement('dt');
       const detail = document.createElement('dd');
       term.textContent = label;
-      detail.textContent = !amount && label === 'SSL-Leitung' ? 'inklusive' : euro(amount);
+      if (!amount && label === 'SSL-Leitung') detail.textContent = 'inklusive'; else showEuro(detail, amount);
       return [term, detail];
     }));
   };
