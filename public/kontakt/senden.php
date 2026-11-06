@@ -47,7 +47,7 @@ if (!in_array($origin, $allowed, true)) {
     finish(403, 'Bitte öffnen Sie das Formular neu.', 'Die Anfrage konnte nicht zugeordnet werden. Ihre Nachricht wurde nicht versendet. Öffnen Sie die Kontaktseite über die Website-Adresse und versuchen Sie es erneut.');
 }
 $fields = [];
-foreach (['name', 'email', 'thema', 'nachricht', 'website'] as $key) {
+foreach (['name', 'email', 'telefon', 'thema', 'nachricht', 'website'] as $key) {
     $value = $_POST[$key] ?? '';
     if (!is_string($value) || !preg_match('//u', $value)) {
         finish(422, 'Bitte prüfen Sie Ihre Angaben.', 'Die Formularwerte haben ein ungültiges Format.');
@@ -68,6 +68,10 @@ if ($fields['name'] === '' || strlen($fields['name']) > 480 || preg_match('/[\p{
     || preg_match('/[\r\n]/', $fields['email']) || !in_array($fields['thema'], $topics, true)
     || strlen($fields['nachricht']) < 10 || strlen($fields['nachricht']) > 10000 || str_contains($fields['nachricht'], "\0")) {
     finish(422, 'Bitte prüfen Sie Ihre Angaben.', 'Name, eine gültige E-Mail-Adresse und eine Nachricht mit 10 bis 10.000 Zeichen sind erforderlich. Nutzen Sie die Zurück-Funktion Ihres Browsers, um Ihre Eingaben zu korrigieren.');
+}
+// Die Telefonnummer ist freiwillig; ein Zeilenumbruch kann hier nicht durchrutschen.
+if ($fields['telefon'] !== '' && preg_match('#^[0-9+()/ .\-]{5,40}$#D', $fields['telefon']) !== 1) {
+    finish(422, 'Bitte prüfen Sie Ihre Telefonnummer.', 'Die Telefonnummer darf nur Ziffern und die Zeichen + ( ) / . - enthalten. Nutzen Sie die Zurück-Funktion Ihres Browsers, um sie zu korrigieren.');
 }
 if ($isLocalPreview) finish(200, 'Formulartest erfolgreich.', 'Sie sind in der lokalen Vorschau. Ihre Angaben wurden geprüft; es wurde keine E-Mail versendet.');
 $to = getenv('CONTACT_TO') ?: '';
@@ -116,7 +120,7 @@ foreach (glob($state.'/*.json') ?: [] as $old) { if (@filemtime($old) < $now - 7
 // Steuerzeichen und Richtungs-Tricks entfernen, Zeilenenden vereinheitlichen; Base64 macht den Inhalt für SMTP harmlos.
 $message = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F\x{2028}\x{2029}\x{202A}-\x{202E}\x{2066}-\x{2069}]/u', '', str_replace(["\r\n", "\r"], "\n", $fields['nachricht']));
 $subject = 'Website-Anfrage: '.$fields['thema'];
-$body = 'Name: '.$fields['name']."\nE-Mail: ".$fields['email']."\nThema: ".$fields['thema']."\n\n--- Nachricht des Absenders ---\n".$message;
+$body = 'Name: '.$fields['name']."\nE-Mail: ".$fields['email'].($fields['telefon'] !== '' ? "\nTelefon: ".$fields['telefon'] : '')."\nThema: ".$fields['thema']."\n\n--- Nachricht des Absenders ---\n".$message;
 if ($isFileTest) {
     $sent = file_put_contents($testFile, json_encode(['subject'=>$subject,'body'=>$body], JSON_UNESCAPED_UNICODE)."\n", FILE_APPEND | LOCK_EX) !== false;
 } else {
