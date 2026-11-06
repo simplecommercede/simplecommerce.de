@@ -31,7 +31,7 @@ Stand: 06.11.2026. Gilt für dieses Repository. Bei Änderungen diese Regeln zus
 
 ## Hilfe und Screenshots
 - Anleitungen anhand des aktuellen sichtbaren Ablaufs prüfen. Historische Funktionen als solche kennzeichnen; keine alte Anleitung ungeprüft als aktuelle Hilfe veröffentlichen.
-- Echte Browserausgabe aufnehmen, keine Bedienoberfläche per Bildgenerierung rekonstruieren. Desktop nur Browserinhalt, Mobil echte schmale Ansicht; bisher 390 × 844 CSS-Pixel.
+- Echte Browserausgabe aufnehmen, keine Bedienoberfläche per Bildgenerierung rekonstruieren. Desktop nur Browserinhalt, Mobil echte schmale Ansicht; 375 × 812 oder 390 × 844 CSS-Pixel; tatsächliche Maße im Screenshotmanifest dokumentieren.
 - Vor Aufnahme auf geladene Daten warten; besonders Tabellen und ausgewählte Bestellungen laden asynchron. Auf leere Ansichten, abgeschnittene Inhalte, Bildfehler und Überlappungen prüfen.
 - Kein DEV-Banner in den veröffentlichten Aufnahmen. Nur in der neutralen Demo vorübergehend `/admin2/?help_screenshots=1` öffnen, danach mit `help_screenshots=0` beenden. Dies blendet nur den Banner aus; Sicherheits- und Mailblockaden bleiben aktiv.
 - Mobile Aufnahmen werden auf Hilfeseiten in wechselnden illustrativen CSS-Handyrahmen gezeigt. `.phone` muss `display:block` behalten; sonst funktioniert der Rahmen am Bildlink nicht. Original-JPEGs enthalten den Rahmen nicht. Rahmen nicht als bestimmtes echtes Gerät oder Hardwaretest bezeichnen.

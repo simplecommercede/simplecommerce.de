@@ -52,7 +52,8 @@
       "html": "<ol><li>Wechseln Sie zu „Artikelbilder“. Wählen Sie den gewünschten Bildplatz und laden Sie eine passende Produktaufnahme hoch.</li><li>Verwenden Sie ein klares Hauptbild und weitere Ansichten, die Details, Größe und Verwendung zeigen. Die gezeigte Demo bietet zehn Bildplätze; die Anzahl richtet sich nach der Shopkonfiguration.</li><li>Kontrollieren Sie die Vorschau, die Reihenfolge und gegebenenfalls beschreibende Bildtexte. Ein gutes Produktbild zeigt den verkauften Artikel eindeutig und enthält keine fremden Kundendaten.</li><li>Speichern Sie und prüfen Sie die Ausgabe im Shop. Kontrollieren Sie auch eine schmale Ansicht: Wichtige Bildteile dürfen nicht ungewollt abgeschnitten sein.</li></ol><p>Bewahren Sie die Originaldateien separat auf. Kleine Vorschaubilder sind kein Ersatz für Ihre Originale. Entfernen Sie nur einen wirklich nicht mehr benötigten Bildplatz; das Löschen eines Bildes ist eine andere Aktion als das Löschen des Artikels.</p><p>Sound und Video sind zusätzliche Felder der aktuellen Maske. Ob die Inhalte ausgegeben werden und welche Formate unterstützt sind, hängt vom Shoptemplate ab. Für Varianten können eigene Bilder im Reiter „Merkmale“ hinterlegt werden. Die Option zur Anzeige von Merkmalbildern als Thumbnails betrifft diese Variantenbilder, nicht die allgemeine Reihenfolge der Produktfotos.</p><p>Im Upload-Dialog wählen Sie pro freiem Bildplatz eine Datei. Markieren Sie das gewünschte Galeriebild und ergänzen Sie „Alt.-Bildtext“ als kurze, konkrete Bildbeschreibung. Mit „Dateien hochladen“ übernehmen Sie die Auswahl. Kontrollieren Sie danach die Bildübersicht. Die Medienfelder sind im Dialog als Audio (mp3) und Video (mp4/m4a) beschriftet.</p>",
       "shots": [
         "produkt-artikelbilder",
-        "produkt-bildupload"
+        "produkt-bildupload",
+        "produkt-bildbearbeiten"
       ]
     },
     {
@@ -102,7 +103,9 @@
       "id": "abschluss",
       "title": "13. Speichern, Vorlage und Abschlusskontrolle",
       "html": "<p>„speichern“ übernimmt die Änderungen, „speichern und zur Liste“ führt anschließend zur Übersicht zurück. „Als Vorlage verwenden“ kennzeichnet einen geeigneten Ausgangsartikel für weitere Produkte. Verwenden Sie dafür einen kontrollierten Datenstand und prüfen Sie später trotzdem jeden neu angelegten Artikel.</p><ul><li>Stimmen Titel, Artikelnummer, Aktivität und Zeitraum?</li><li>Sind Verkaufspreis, Steuerart, Bestand und Versandgewicht korrekt?</li><li>Sind Texte, Bilder, Kategorien und Übersetzungen vollständig?</li><li>Zeigen alle Varianten den richtigen Preis und Bestand?</li><li>Funktionieren PDF, Empfehlungen und die Auswahloptionen im eigenen Shop?</li><li>Enthält ein benötigter Export die erwarteten Daten?</li></ul><p>Auf dem Smartphone können Sie die Reiter nacheinander öffnen; breite Variantentabellen werden innerhalb ihres Bereichs seitlich gescrollt. Für umfangreiche Texte und viele Varianten ist ein größerer Bildschirm übersichtlicher. Die Bilder hier zeigen einen neutralen Demoshop, keine echten Kundendaten.</p>",
-      "shots": []
+      "shots": [
+        "produkt-aktionen"
+      ]
     }
   ],
   "artikel-attribute": [
@@ -744,7 +747,8 @@
       "title": "Eine Bestellung manuell anlegen",
       "html": "<ol><li>Öffnen Sie „Bestellung manuell hinzufügen“.</li><li>Wählen Sie unter „Kunde“ einen vorhandenen Kunden oder erfassen Sie den vorgesehenen neuen Datensatz.</li><li>Fügen Sie unter „Artikel“ die Produkte mit Variante, Menge und gegebenenfalls Attributen hinzu. Prüfen Sie den Warenkorb.</li><li>Kontrollieren Sie unter „Adressen“ Rechnungs- und Lieferadresse.</li><li>Wählen Sie „Zahlung“ und anschließend „Versand“ passend zum Auftrag.</li><li>Prüfen Sie Positionen, Kosten und Gesamtsumme vor dem Abschluss.</li></ol><p>Öffnen Sie die angelegte Bestellung danach in der Liste und kontrollieren Sie den Status. Verwenden Sie für eine weitere Bestellung die passende Neuanlage; eine Duplizierung übernimmt Angaben, die erneut geprüft werden müssen.</p>",
       "shots": [
-        "verkauf-manuell"
+        "verkauf-manuell",
+        "verkauf-neukunde"
       ]
     },
     {
