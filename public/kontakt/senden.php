@@ -1,5 +1,8 @@
 <?php
 declare(strict_types=1);
+// Interne Meldungen gehören ins Serverprotokoll, nie in die Antwort.
+ini_set('display_errors', '0');
+header_remove('X-Powered-By');
 // No session or third-party service is needed by the static contact page.
 header('Content-Type: text/html; charset=UTF-8');
 header('Cache-Control: no-store');
@@ -51,12 +54,16 @@ foreach (['name', 'email', 'thema', 'nachricht', 'website'] as $key) {
     }
     $fields[$key] = trim($value);
 }
+if (array_sum(array_map('strlen', $fields)) > 20000) {
+    // Auch ohne Längenangabe im Request, etwa bei Chunked Encoding.
+    finish(413, 'Die Nachricht ist zu lang.', 'Bitte kürzen Sie Ihre Nachricht und senden Sie sie erneut.');
+}
 if ($fields['website'] !== '') {
     // Honeypot submissions are never delivered.
     finish(200, 'Vielen Dank.', 'Ihre Anfrage wurde entgegengenommen.');
 }
 $topics = ['Shopsystem','Webseitenerstellung','IT-Beratung','IT-Projekt','KI-Anwendungen','Service','Sonstiges'];
-if ($fields['name'] === '' || strlen($fields['name']) > 480 || preg_match('/[\r\n\x00-\x1f]/', $fields['name'])
+if ($fields['name'] === '' || strlen($fields['name']) > 480 || preg_match('/[\p{Cc}\x{2028}\x{2029}\x{202A}-\x{202E}\x{2066}-\x{2069}]/u', $fields['name'])
     || strlen($fields['email']) > 254 || !filter_var($fields['email'], FILTER_VALIDATE_EMAIL)
     || preg_match('/[\r\n]/', $fields['email']) || !in_array($fields['thema'], $topics, true)
     || strlen($fields['nachricht']) < 10 || strlen($fields['nachricht']) > 10000 || str_contains($fields['nachricht'], "\0")) {
@@ -82,25 +89,39 @@ if (!$saltHandle || !flock($saltHandle, LOCK_EX)) finish(503, 'Bitte versuchen S
 $salt = stream_get_contents($saltHandle);
 if (!$salt) { $salt = bin2hex(random_bytes(32)); rewind($saltHandle); fwrite($saltHandle, $salt); fflush($saltHandle); @chmod($saltFile, 0600); }
 flock($saltHandle, LOCK_UN); fclose($saltHandle);
-$key = hash_hmac('sha256', $_SERVER['REMOTE_ADDR'] ?? 'unknown', $salt);
-$path = $state.'/'.$key.'.json';
-$handle = @fopen($path, 'c+');
-if (!$handle || !flock($handle, LOCK_EX)) finish(503, 'Bitte versuchen Sie es später erneut.', 'Ihre Nachricht wurde nicht versendet.');
+// Prüft und zählt unter Dateisperre. IPv6 zählt je /64, weil ein Anschluss viele Adressen besitzt.
+function withinLimit(string $path, int $limit, int $now): bool {
+    $handle = @fopen($path, 'c+');
+    if (!$handle || !flock($handle, LOCK_EX)) finish(503, 'Bitte versuchen Sie es später erneut.', 'Ihre Nachricht wurde nicht versendet.');
+    $times = json_decode(stream_get_contents($handle), true);
+    $times = is_array($times) ? array_values(array_filter($times, fn($t) => is_int($t) && $t > $now - 3600)) : [];
+    $allowed = count($times) < $limit;
+    if ($allowed) {
+        $times[] = $now;
+        ftruncate($handle, 0); rewind($handle); fwrite($handle, json_encode($times)); fflush($handle); @chmod($path, 0600);
+    }
+    flock($handle, LOCK_UN); fclose($handle);
+    return $allowed;
+}
+$address = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+$packed = @inet_pton($address);
+if ($packed !== false && strlen($packed) === 16) $address = bin2hex(substr($packed, 0, 8));
 $now = time();
-$times = json_decode(stream_get_contents($handle), true);
-$times = is_array($times) ? array_values(array_filter($times, fn($t) => is_int($t) && $t > $now - 3600)) : [];
-if (count($times) >= 5) { flock($handle, LOCK_UN); fclose($handle); header('Retry-After: 3600'); finish(429, 'Bitte warten Sie einen Moment.', 'Es wurden bereits mehrere Anfragen gesendet. Versuchen Sie es später erneut oder kontaktieren Sie uns per E-Mail.'); }
-$times[] = $now;
-ftruncate($handle, 0); rewind($handle); fwrite($handle, json_encode($times)); fflush($handle); @chmod($path, 0600);
-flock($handle, LOCK_UN); fclose($handle);
-foreach (glob($state.'/*.json') ?: [] as $old) { if (filemtime($old) < $now - 7200) @unlink($old); }
+// Fünf Anfragen je Anschluss und 100 insgesamt je Stunde begrenzen auch verteilte Angriffe auf das Postfach.
+if (!withinLimit($state.'/'.hash_hmac('sha256', $address, $salt).'.json', 5, $now) || !withinLimit($state.'/global.json', 100, $now)) {
+    header('Retry-After: 3600');
+    finish(429, 'Bitte warten Sie einen Moment.', 'Es wurden bereits mehrere Anfragen gesendet. Versuchen Sie es später erneut oder kontaktieren Sie uns per E-Mail.');
+}
+foreach (glob($state.'/*.json') ?: [] as $old) { if (@filemtime($old) < $now - 7200) @unlink($old); }
+// Steuerzeichen und Richtungs-Tricks entfernen, Zeilenenden vereinheitlichen; Base64 macht den Inhalt für SMTP harmlos.
+$message = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F\x{2028}\x{2029}\x{202A}-\x{202E}\x{2066}-\x{2069}]/u', '', str_replace(["\r\n", "\r"], "\n", $fields['nachricht']));
 $subject = 'Website-Anfrage: '.$fields['thema'];
-$body = 'Name: '.$fields['name']."\nE-Mail: ".$fields['email']."\nThema: ".$fields['thema']."\n\n".$fields['nachricht'];
+$body = 'Name: '.$fields['name']."\nE-Mail: ".$fields['email']."\nThema: ".$fields['thema']."\n\n--- Nachricht des Absenders ---\n".$message;
 if ($isFileTest) {
     $sent = file_put_contents($testFile, json_encode(['subject'=>$subject,'body'=>$body], JSON_UNESCAPED_UNICODE)."\n", FILE_APPEND | LOCK_EX) !== false;
 } else {
-    $headers = ['From'=>$from, 'Reply-To'=>$fields['email'], 'MIME-Version'=>'1.0', 'Content-Type'=>'text/plain; charset=UTF-8'];
-    $sent = @mail($to, '=?UTF-8?B?'.base64_encode($subject).'?=', $body, $headers);
+    $headers = ['From'=>$from, 'Reply-To'=>$fields['email'], 'MIME-Version'=>'1.0', 'Content-Type'=>'text/plain; charset=UTF-8', 'Content-Transfer-Encoding'=>'base64'];
+    $sent = @mail($to, '=?UTF-8?B?'.base64_encode($subject).'?=', rtrim(chunk_split(base64_encode($body), 76, "\n")), $headers);
 }
 if (!$sent) finish(503, 'Der Versand hat nicht funktioniert.', 'Ihre Nachricht wurde nicht versendet. Bitte versuchen Sie es später erneut oder schreiben Sie uns direkt per E-Mail.');
 finish(200, 'Vielen Dank für Ihre Nachricht.', 'Ihre Anfrage wurde an den Mailversand übergeben. Wir melden uns bei Ihnen.');
