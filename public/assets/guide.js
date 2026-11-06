@@ -6,6 +6,8 @@
  * eines Ziels im Teich springt er durch die Scheibe (guide-glass.js). Im Teich führt der Fragebogen
  * (guide-steps.js) zur Anfrage, die Antworten liegen in guide-core.js.
  *
+ * Die Mimik bleibt an Ort und Stelle: Freude bei Antworten, Fliege fangen und Nickerchen, wenn nichts passiert.
+ *
  * Aufbau: 1. Inhalte  2. Hilfsfunktionen  3. Ausweichen  4. Frosch  5. Teich  6. Sprung durch die Scheibe  7. Start
  */
 (() => {
@@ -17,24 +19,39 @@
   const DESTINATIONS = [
     ['Onlineshop', '/shopsystem/'], ['Website', '/webseiten/'], ['IT-Beratung', '/it-beratung/'],
     ['Software', '/it-projekte/'], ['KI', '/ki-anwendungen/'], ['Service', '/service/'],
-    ['Shop-Preise', '/preise/'], ['Online-Hilfe', '/hilfe/'], ['Kontakt', '/kontakt/']
+    ['Shop-Preise', '/preise/'], ['Preisrechner', '/preisrechner/'], ['Online-Hilfe', '/hilfe/'], ['Kontakt', '/kontakt/']
   ];
 
+  const hour = new Date().getHours();
+  const GREETING = hour < 11 ? 'Quak, guten Morgen!' : hour < 18 ? 'Quak, hallo!' : 'Quak, guten Abend!';
+
   const HINTS = {
-    '/': ['Quak! Wohin darf ich Sie bringen?', null],
-    '/shopsystem/': ['Das steckt im Shopsystem. Wollen Sie den Preis wissen?', ['Zum Preisrechner', '/preise/#rechner']],
-    '/preise/': ['Schieben Sie den Regler, ich rechne mit.', ['Shop anfragen', '/kontakt/']],
+    '/': [`${GREETING} Wohin darf ich Sie bringen?`, null],
+    '/shopsystem/': ['Das steckt im Shopsystem. Wollen Sie den Preis wissen?', ['Preis schätzen', '/preisrechner/?thema=Shopsystem']],
+    '/preisrechner/': ['Wählen Sie Ihre Optionen, ich rechne mit.', ['Zur Anfrage', '/kontakt/']],
+    '/preise/': ['Schieben Sie den Regler, ich rechne mit.', ['Gesamtkosten schätzen', '/preisrechner/?thema=Shopsystem']],
     '/leistungen/': ['Was steht bei Ihnen an?', ['Projekt besprechen', '/kontakt/']],
-    '/webseiten/': ['Eine eigene Website? Erzählen Sie uns davon.', ['Website anfragen', '/kontakt/']],
-    '/it-beratung/': ['Sortieren wir das gemeinsam?', ['Beratung anfragen', '/kontakt/']],
-    '/it-projekte/': ['Haben Sie schon einen Ablauf im Kopf?', ['Projekt besprechen', '/kontakt/']],
-    '/ki-anwendungen/': ['Welche Aufgabe soll Ihnen die KI abnehmen?', ['KI-Projekt besprechen', '/kontakt/']],
-    '/service/': ['Wo können wir Ihnen helfen?', ['Unterstützung anfragen', '/kontakt/']],
+    '/webseiten/': ['Eine eigene Website? Erzählen Sie uns davon.', ['Preis schätzen', '/preisrechner/?thema=Webseitenerstellung']],
+    '/it-beratung/': ['Sortieren wir das gemeinsam?', ['Preis schätzen', '/preisrechner/?thema=IT-Beratung']],
+    '/it-projekte/': ['Haben Sie schon einen Ablauf im Kopf?', ['Preis schätzen', '/preisrechner/?thema=IT-Projekt']],
+    '/ki-anwendungen/': ['Welche Aufgabe soll Ihnen die KI abnehmen?', ['Preis schätzen', '/preisrechner/?thema=KI-Anwendungen']],
+    '/service/': ['Wo können wir Ihnen helfen?', ['Preis schätzen', '/preisrechner/?thema=Service']],
     '/hilfe/': ['Suchen Sie oben einfach nach Ihrem Thema.', ['Lieber persönlich fragen', '/kontakt/']],
     '/kontakt/': ['Schreiben Sie uns kurz, wir melden uns persönlich.', null]
   };
   const HELP_HINT = ['Eine andere Anleitung gesucht?', ['Alle Hilfethemen', '/hilfe/']];
   const DEFAULT_HINT = ['Mehr wissen? Ich bringe Sie hin.', ['Projekt besprechen', '/kontakt/']];
+
+  /* Auf diesen Seiten kennt der Frosch das Thema und überspringt die erste Frage. */
+  const PAGE_TOPICS = {
+    '/shopsystem/': 'Shopsystem', '/preise/': 'Shopsystem', '/webseiten/': 'Webseitenerstellung', '/it-beratung/': 'IT-Beratung',
+    '/it-projekte/': 'IT-Projekt', '/ki-anwendungen/': 'KI-Anwendungen', '/service/': 'Service'
+  };
+  const topicOfPage = path => PAGE_TOPICS[path] || (path.startsWith('/shopsystem/') ? 'Shopsystem' : undefined);
+
+  /* Nichts los: erst schnappt er sich eine Fliege, später nickt er ein. */
+  const FLY_AFTER = 20000;
+  const SLEEP_AFTER = 45000;
 
   /* Was beim Verschieben ausweicht: Buchstaben, Wörter und ganze Formen, jeweils mit eigener Reichweite und Stärke. */
   const SKIP_INSIDE = '.prose, .help-section, .help-sidebar, .calculator, .table-scroll, .contact-form, .faq';
@@ -225,7 +242,10 @@
       window.addEventListener('resize', () => {
         if (this.moved) this.moveTo(this.x, this.y); else this.placeInDock();
       });
-      if (motionOk) this.startBlinking();
+      if (motionOk) {
+        this.startBlinking();
+        this.watchIdle();
+      }
       if (motionOk && hasHover) {
         document.addEventListener('pointermove', event => this.lookAt(event.clientX, event.clientY), { passive: true });
       }
@@ -334,6 +354,66 @@
 
     wink() { this.expression('is-winking', 650); }
 
+    /* Freut sich über eine Antwort. */
+    happy() { this.expression('is-happy', 620); }
+
+    /* Sobald sich etwas tut, ist er wieder wach. */
+    watchIdle() {
+      const schedule = () => {
+        clearTimeout(this.flyTimer);
+        clearTimeout(this.sleepTimer);
+        if (!this.flyCaught) this.flyTimer = setTimeout(() => this.catchFly(), FLY_AFTER);
+        this.sleepTimer = setTimeout(() => this.fallAsleep(), SLEEP_AFTER);
+      };
+      const wake = () => {
+        if (this.root.classList.contains('is-sleeping')) {
+          this.root.classList.remove('is-sleeping');
+          this.wink();
+        }
+        schedule();
+      };
+      ['pointermove', 'pointerdown', 'keydown', 'scroll'].forEach(type => {
+        window.addEventListener(type, wake, { passive: true });
+      });
+      schedule();
+    }
+
+    get mayRest() { return !this.dragging && !document.hidden && (!this.canRest || this.canRest()); }
+
+    /* Einmal je Seite: Die Fliege kommt angeflogen, die Zunge holt sie. */
+    async catchFly() {
+      if (!this.mayRest) return;
+      this.flyCaught = true;
+      this.hush();
+      const fly = element('span', 'fg-fly');
+      fly.setAttribute('aria-hidden', 'true');
+      this.root.append(fly);
+      const spot = { x: -14, y: 22 };
+      await fly.animate([
+        { translate: '-130px -90px', opacity: 0 },
+        { translate: '-96px -30px', opacity: 1, offset: .25 },
+        { translate: '-34px -62px', offset: .5 },
+        { translate: '-70px 8px', offset: .75 },
+        { translate: `${spot.x}px ${spot.y}px` }
+      ], { duration: 1700, easing: 'ease-in-out', fill: 'forwards' }).finished;
+      this.lookAt(this.x + spot.x, this.y + spot.y);
+      const lash = element('span', 'fg-lash');
+      lash.setAttribute('aria-hidden', 'true');
+      this.root.append(lash);
+      await lash.animate([{ scale: '0 1' }, { scale: '1 1' }], { duration: 90, easing: 'ease-out', fill: 'forwards' }).finished;
+      const mouth = { x: 50, y: 56 };
+      fly.animate([{ translate: `${spot.x}px ${spot.y}px` }, { translate: `${mouth.x}px ${mouth.y}px`, scale: .4 }], { duration: 110, easing: 'ease-in', fill: 'forwards' });
+      await lash.animate([{ scale: '1 1' }, { scale: '0 1' }], { duration: 110, easing: 'ease-in', fill: 'forwards' }).finished;
+      fly.remove();
+      lash.remove();
+      this.expression('is-gulping', 420);
+      setTimeout(() => this.wink(), 420);
+    }
+
+    fallAsleep() {
+      if (this.mayRest) this.root.classList.add('is-sleeping');
+    }
+
     startBlinking() {
       const next = () => setTimeout(() => {
         this.expression('is-blinking', 180);
@@ -431,8 +511,9 @@
       this.root.hidden = true;
       this.root.innerHTML = `
         <div class="pond-head"><p class="pond-title"></p><button type="button" class="pond-close" aria-label="Wegweiser schließen">×</button></div>
-        <button type="button" class="pond-start"><span><strong>Anfrage zusammenstellen</strong><small>Hüpfen Sie mit dem Frosch von Frage zu Frage</small></span></button>
+        <button type="button" class="pond-start"><span><strong>Anfrage zusammenstellen</strong><small>Ein paar kurze Fragen, den Preis rechne ich mit</small></span></button>
         <div class="pond-basket" hidden><p></p><a class="pond-next" href="/kontakt/">Zur Anfrage</a></div>
+        <div class="pond-search"><label class="fg-sr" for="pond-suche">Seite oder Thema suchen</label><input id="pond-suche" type="search" placeholder="Oder suchen Sie etwas?" autocomplete="off" enterkeyhint="go"><div class="pond-results" aria-live="polite"></div></div>
         <nav class="pond-pads" aria-label="Schnell zu"></nav>
         <div class="pond-steps" hidden></div>
         <span class="pond-frog" aria-hidden="true">${FROG_SVG}</span>`;
@@ -452,6 +533,10 @@
       }
       document.body.append(this.root);
       this.mini = this.root.querySelector('.pond-frog');
+      this.search = new window.Frosch.Search(this.root.querySelector('.pond-search'), searching => {
+        this.root.classList.toggle('is-searching', searching);
+        if (this.isOpen) this.placeNearFrog();
+      });
       this.bindSteps();
       this.bind();
     }
@@ -467,13 +552,17 @@
         onChange: () => this.placeNearFrog(),
         onHop: lily => this.leapTo(lily),
         onLevel: mark => { this.leapTo(mark); },
-        onFinish: () => {
+        onArrive: () => this.cheer(),
+        onFinish: topic => {
           if (atContact) {
             this.toggle(false);
-            document.querySelector('#nachricht').focus({ preventScroll: true });
+            if (topic && !store.count()) document.querySelector('#thema').value = topic;
+            /* Weiter im ersten Feld, das noch fehlt. */
+            const missing = [...document.querySelectorAll('.contact-form [required]')].find(field => !field.value.trim());
+            (missing || document.querySelector('#nachricht')).focus({ preventScroll: true });
             document.querySelector('.contact-form').scrollIntoView({ block: 'start', behavior: motionOk ? 'smooth' : 'auto' });
           } else {
-            this.onGo(CONTACT_PATH);
+            this.onGo(topic ? `${CONTACT_PATH}?thema=${encodeURIComponent(topic)}` : CONTACT_PATH);
           }
         }
       });
@@ -487,8 +576,24 @@
     }
 
     ask() {
+      this.search.clear();
       this.showAsking(true);
-      this.steps.start();
+      this.steps.start(topicOfPage(path));
+    }
+
+    /* Am Ziel: Der kleine Frosch macht einen Freudensprung, der große freut sich mit. */
+    cheer() {
+      this.frog.happy();
+      if (!motionOk) return;
+      setTimeout(() => {
+        this.mini.querySelector('.fg-rig').animate([
+          { transform: 'none' },
+          { transform: 'translateY(-26px) rotate(-10deg)', offset: .3 },
+          { transform: 'none', offset: .55 },
+          { transform: 'translateY(-14px) rotate(8deg)', offset: .75 },
+          { transform: 'none' }
+        ], { duration: 720, easing: 'ease-in-out' });
+      }, 220);
     }
 
     showAsking(asking) {
@@ -541,7 +646,7 @@
       /* Mit gedrückter Taste (neuer Tab) bleibt das normale Link-Verhalten. */
       root.addEventListener('click', event => {
         const link = event.target.closest('a');
-        if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.button !== 0) return;
+        if (!link || link.dataset.direct || event.ctrlKey || event.metaKey || event.shiftKey || event.button !== 0) return;
         event.preventDefault();
         this.onGo(link.href);
       });
@@ -569,7 +674,7 @@
         { translate: `${(from.x + to.x) / 2}px ${Math.min(from.y, to.y) - 34}px`, scale: '.92 1.14', offset: .5 },
         { translate: `${to.x}px ${to.y}px`, scale: '1.16 .78', offset: .85 },
         { translate: `${to.x}px ${to.y}px`, scale: '1 1' }
-      ], { duration: 340, easing: 'ease-out', fill: 'forwards' }).finished;
+      ], { duration: 200, easing: 'ease-out', fill: 'forwards' }).finished;
     }
 
     /* Der Teich öffnet sich dort, wo der Frosch gerade sitzt. */
@@ -596,7 +701,11 @@
         this.placeNearFrog();
         this.frog.hush();
         this.frog.wink();
+        this.frog.root.classList.remove('is-sleeping');
+        /* Mit Maus und Tastatur kann man sofort lostippen; auf dem Handy öffnet sich keine Tastatur von selbst. */
+        if (hasHover) this.search.input.focus({ preventScroll: true });
       } else {
+        this.search.clear();
         this.miniAt = null;
         this.mini.classList.remove('is-here');
         this.showAsking(false);
@@ -673,11 +782,15 @@
   const frog = new Frog(scatter);
   const pond = new Pond(frog, text, next, destinations, url => jumpThroughGlass(url, frog, pond));
   window.simplecommerceFrog = frog;
+  frog.canRest = () => !pond.isOpen && !leaving;
 
   /* Zähler am Helfer: So viele Angaben warten auf die Anfrage. */
   const counter = frog.root.querySelector('.fg-count');
+  let lastCount = store.count();
   const showCount = () => {
     const count = store.count();
+    if (count > lastCount) frog.happy();
+    lastCount = count;
     counter.hidden = !count;
     counter.textContent = count;
     frog.button.setAttribute('aria-label', `Frosch-Wegweiser öffnen, mit den Pfeiltasten verschieben${count ? `, ${count} Angaben gesammelt` : ''}`);
@@ -695,7 +808,19 @@
     if (!pond.isOpen && !frog.dragging) frog.say(text, 3500);
   });
 
-  /* Kommentare zu den Abschnitten der Startseite. */
+  /* Nach dem Absenden bedankt er sich. */
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('contact:sent', () => {
+      frog.happy();
+      frog.say('Danke! Wir melden uns persönlich bei Ihnen.', 7000);
+    });
+  }
+
+  /* Kommentare zu den Abschnitten der Startseite; auf dem Handy würden sie den Inhalt verdecken. */
+  const chatty = window.matchMedia('(min-width: 761px)').matches;
+  /* Rechner und Formular sollen frei bleiben: dort spricht der Frosch nur, wenn man ihn berührt. */
+  const atWork = ['/preisrechner/', '/kontakt/'].includes(window.location.pathname);
   let currentSection = null;
   const sections = document.querySelectorAll('[data-guide]');
   if ('IntersectionObserver' in window && sections.length) {
@@ -703,12 +828,12 @@
       entries.forEach(entry => {
         if (!entry.isIntersecting || entry.target === currentSection) return;
         currentSection = entry.target;
-        if (pond.isOpen || frog.dragging) return;
+        if (!chatty || pond.isOpen || frog.dragging) return;
         frog.say(entry.target.dataset.guide);
         frog.wink();
       });
     }, { rootMargin: '-45% 0px -45% 0px' });
     sections.forEach(section => observer.observe(section));
   }
-  setTimeout(() => { if (!currentSection && !pond.isOpen && !frog.dragging) frog.say(text); }, 1400);
+  setTimeout(() => { if (chatty && !atWork && !currentSection && !pond.isOpen && !frog.dragging) frog.say(text); }, 1400);
 })();

@@ -47,6 +47,35 @@
 .fg.is-listening .fg-head { transform: translateY(-3px) rotate(5deg); }
 .fg.is-air .fg-legs { transform: translateY(5px) scale(.86, 1.3); }
 
+/* Freude, Schlucken, Nickerchen */
+.fg.is-happy .fg-rig { animation: fg-happy .6s var(--ease); }
+.fg.is-happy .fg-tongue { transform: none; }
+.fg.is-happy .fg-head { transform: rotate(4deg); }
+@keyframes fg-happy {
+  0% { transform: scale(1.12, .84); }
+  35% { transform: translateY(-16px) scale(.94, 1.08); }
+  70% { transform: scale(1.08, .9); }
+}
+.fg.is-gulping .fg-throat { animation: fg-gulp .42s var(--ease); }
+@keyframes fg-gulp { 50% { transform: scale(1.3, 1.34); } }
+.fg.is-sleeping .fg-lid { transform: scaleY(.72); transition-duration: .5s; }
+.fg.is-sleeping .fg-head { transform: translateY(3px) rotate(-3deg); }
+.fg.is-sleeping .fg-throat { animation-duration: 4.6s; }
+.fg.is-sleeping .fg-button::after { content: "z"; position: absolute; top: 4px; left: 8px; color: var(--muted); font-size: 1.15rem; font-weight: 800; animation: fg-snore 2.6s ease-out infinite; }
+@keyframes fg-snore {
+  0% { opacity: 0; translate: 10px 12px; scale: .6; }
+  30% { opacity: 1; }
+  100% { opacity: 0; translate: -10px -22px; scale: 1.25; }
+}
+
+/* Fliege und Zunge */
+.fg-fly { position: absolute; top: 0; left: 0; width: 9px; height: 7px; border-radius: 50%; background: var(--ink); pointer-events: none; }
+.fg-fly::before, .fg-fly::after { content: ""; position: absolute; top: -5px; width: 7px; height: 6px; border-radius: 50%; background: #1f232255; transform-origin: 50% 100%; animation: fg-wing .09s linear infinite alternate; }
+.fg-fly::before { left: -3px; rotate: -24deg; }
+.fg-fly::after { left: 4px; rotate: 24deg; }
+@keyframes fg-wing { to { transform: scaleY(.45); } }
+.fg-lash { position: absolute; top: 57px; left: 54px; width: 64px; height: 7px; margin-top: -3px; border-radius: 4px; background: #ee6a90; pointer-events: none; rotate: 208deg; transform-origin: 0 50%; scale: 0 1; }
+
 .fg-ground { position: absolute; left: 14%; right: 14%; bottom: -14px; height: 12px; border-radius: 50%; background: #1f232226; }
 .fg:not(.is-dragging) .fg-ground { opacity: 0; }
 .fg.is-dragging { z-index: 45; }
@@ -56,7 +85,7 @@
 .fg.is-dragging .fg-legs { transform: translateY(4px) scale(.9, 1.22); }
 
 /* Sprechblase */
-.fg-say { position: absolute; right: 8px; bottom: calc(100% + 8px); width: max-content; max-width: 280px; padding: 12px 16px; border-radius: 18px 18px 4px 18px; background: var(--ink); color: var(--white); font-size: 1rem; font-weight: 650; line-height: 1.35; box-shadow: 0 14px 28px #1f232244; opacity: 0; transform: translateY(10px) scale(.7) rotate(4deg); transform-origin: 90% 100%; transition: opacity .18s, transform .32s cubic-bezier(.3, 1.6, .5, 1); }
+.fg-say { position: absolute; right: 8px; bottom: calc(100% + 8px); width: max-content; max-width: 280px; padding: 12px 16px; border-radius: 18px 18px 4px 18px; background: var(--ink); color: var(--white); font-size: 1rem; font-weight: 650; line-height: 1.35; box-shadow: 0 0 0 1.5px #ffffff66, 0 14px 28px #1f232244; opacity: 0; transform: translateY(10px) scale(.7) rotate(4deg); transform-origin: 90% 100%; transition: opacity .18s, transform .32s cubic-bezier(.3, 1.6, .5, 1); }
 .fg-say.is-right { right: auto; left: 8px; border-radius: 18px 18px 18px 4px; transform-origin: 10% 100%; }
 .fg-say.is-below { top: calc(100% + 8px); bottom: auto; border-radius: 4px 18px 18px 18px; transform-origin: 10% 0; }
 .fg-say.is-visible { opacity: 1; transform: none; }
@@ -83,10 +112,25 @@
 .pond-close { flex-shrink: 0; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 50%; background: #ffffff24; color: var(--white); font-size: 1.25rem; line-height: 1; cursor: pointer; transition: rotate .3s var(--ease), background .2s; }
 .pond-close:hover { rotate: 90deg; background: var(--orange); color: var(--ink); }
 
+/* Suche */
+.pond-search { position: relative; z-index: 2; margin-bottom: 4px; }
+.pond-search input { width: 100%; min-height: 44px; padding: 8px 16px; border: 0; border-radius: 999px; background: #ffffff24; box-shadow: inset 0 0 0 1.5px #ffffff55; color: var(--white); font: inherit; font-size: .96rem; }
+.pond-search input::placeholder { color: #ffffffcc; opacity: 1; }
+.pond-search input:focus { outline: 0; background: #ffffff33; box-shadow: inset 0 0 0 2px var(--leaf-hover); }
+.pond-results:not(:empty) { display: grid; gap: 6px; margin-top: 10px; }
+.pond-hit { display: block; padding: 10px 14px; border-radius: 16px; background: #ffffff1c; color: var(--white); transition: background .16s, color .16s; }
+.pond-hit:hover, .pond-hit:focus-visible { background: var(--leaf-hover); color: var(--ink); text-decoration: none; }
+.pond-hit strong { display: block; font-size: .95rem; line-height: 1.25; }
+.pond-hit small { display: -webkit-box; margin-top: 2px; overflow: hidden; font-size: .8rem; line-height: 1.3; opacity: .85; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.pond-empty { margin: 0; color: var(--white); font-size: .92rem; }
+.pond.is-searching .pond-start, .pond.is-searching .pond-basket, .pond.is-searching .pond-pads, .pond.is-searching > .pond-next { display: none; }
+.pond.is-asking .pond-search { display: none; }
+
 /* Seerosenblätter */
 .pond-pads { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px 4px; padding-block: 8px 18px; }
 .pad { position: relative; display: grid; place-items: center; aspect-ratio: 1; isolation: isolate; color: var(--ink); text-align: center; text-shadow: 0 0 5px var(--leaf), 0 0 2px var(--leaf); transition: scale .28s cubic-bezier(.3, 1.7, .5, 1), opacity .2s; animation: pad-pop .5s cubic-bezier(.3, 1.6, .5, 1) calc(var(--i) * 40ms + 80ms) backwards; }
 .pad:nth-child(3n + 2) { translate: 0 12px; }
+.pad:last-child:nth-child(3n + 1) { grid-column: 2; translate: 0 12px; }
 .pad:hover { text-decoration: none; }
 @keyframes pad-pop { from { opacity: 0; scale: .2; rotate: -40deg; } }
 .pad::before { content: ""; position: absolute; inset: 3%; z-index: -1; background: var(--leaf-shape) center / contain no-repeat; filter: drop-shadow(0 7px 6px #06231f88); rotate: calc(var(--i) * 47deg); transition: rotate .7s var(--ease), filter .25s; animation: pad-bob 4s ease-in-out calc(var(--i) * -500ms) infinite; }
@@ -145,6 +189,7 @@
 .steps-summary { display: grid; gap: 4px; margin: 0 0 10px; padding: 0; list-style: none; }
 .steps-summary li { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 5px 10px; border-radius: 12px; background: #ffffff14; color: var(--white); font-size: .86rem; line-height: 1.3; }
 .steps-change { flex-shrink: 0; padding: 4px 0; font-size: .84rem; }
+.steps-actions { display: flex; flex-shrink: 0; gap: 10px; }
 .steps-finish { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 58px; padding: 8px 10px 8px 20px; border: 0; border-radius: 20px; background: linear-gradient(180deg, #ff8126, var(--orange)); color: var(--ink); font-size: 1.05rem; font-weight: 800; cursor: pointer; box-shadow: inset 0 1px 0 #ffffff66, 0 5px 0 #b84700, 0 14px 24px #06231f88; transition: transform .16s var(--ease), box-shadow .16s var(--ease); }
 .steps-finish::after { content: ""; flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; background: var(--ink) var(--arrow-light) center / 17px no-repeat; }
 .steps-finish:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 #ffffff66, 0 7px 0 #b84700, 0 20px 30px #06231faa; }
@@ -152,7 +197,7 @@
 .steps-finish:active { transform: translateY(4px); box-shadow: 0 1px 0 #b84700; }
 
 /* Seerosen-Ebenen des Fragebogens */
-.pond.is-asking { min-height: min(600px, calc(100vh - 116px)); }
+.pond.is-asking { min-height: min(420px, calc(100vh - 116px)); }
 .pond.is-asking .pond-frog { width: 34px; height: 31px; }
 .steps-count { margin: 4px 44px 18px 0; color: #d6ecf4; font-size: .85rem; font-weight: 700; }
 .lily-path { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 44px 0 0; padding: 0; list-style: none; }
@@ -175,11 +220,35 @@
 .lily-pond:hover .lily:not(:hover) .lily-leaf { filter: drop-shadow(0 4px 4px #06231f88) saturate(.8) brightness(.94); }
 .lily-pond.is-sinking .lily[aria-pressed="false"] { opacity: 0; scale: .7; }
 @keyframes lily-rise { from { opacity: 0; scale: .3; } }
+.steps-live { margin: 12px 0 0; padding: 8px 12px; border-radius: 12px; background: #ffffff1c; color: var(--white); font-size: .88rem; font-weight: 700; line-height: 1.3; }
+.steps-live[hidden] { display: none; }
 .steps-next { display: block; width: 100%; min-height: 48px; border: 0; border-radius: 16px; background: var(--leaf); color: var(--ink); font-weight: 800; cursor: pointer; transition: background .15s, transform .16s var(--ease); }
 .steps-next:hover { background: var(--leaf-hover); transform: translateY(-1px); }
 .steps-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; margin-top: 8px; }
 
+/* Preisschätzung: Kasten im Teich, im Formular und im Preisrechner */
+.price-box { margin: 0 0 12px; padding: 14px 16px; border-radius: 16px; background: var(--white); color: var(--ink); }
+.price-box-title { margin: 0 0 8px; color: var(--ink); font-size: .95rem; font-weight: 800; }
+.price-box dl { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 14px; margin: 0; font-variant-numeric: tabular-nums; }
+.price-box dt { color: var(--muted); }
+.price-box dd { margin: 0; font-weight: 800; text-align: right; }
+.price-box-lines { margin-top: 10px !important; padding-top: 10px; border-top: 1px solid var(--line); font-size: .9rem; }
+.price-box-lines dd { font-weight: 600; }
+.price-box-note, .price-box-draft { margin: 8px 0 0; color: var(--muted); font-size: .8rem; line-height: 1.3; }
+.price-box-draft { color: var(--orange-text); font-weight: 700; }
+.price-box-link { display: inline-block; margin-top: 8px; color: var(--orange-text); font-size: .9rem; font-weight: 700; text-decoration: underline; text-underline-offset: .2em; }
+.price-box-empty { margin: 0; color: var(--white); }
+.price-line-note { grid-column: 1 / -1; margin: -2px 0 6px !important; color: var(--muted); font-size: .8rem; font-weight: 400 !important; line-height: 1.3; text-align: left !important; }
+.price-box-more { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+.price-box-more summary { min-height: 24px; font-weight: 700; color: var(--ink); cursor: pointer; }
+.price-box-facts { margin: 8px 0 0; padding: 0 0 0 18px; color: var(--muted); font-size: .84rem; line-height: 1.35; }
+.price-box-facts li { margin-bottom: 5px; }
+
 /* Einstieg in den Fragebogen direkt im Kontaktformular */
+.js .phone-field:not(.is-wanted) { display: none; }
+.form-stale { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; margin: 8px 0 0; padding: 8px 12px; border-radius: 12px; background: var(--orange-soft); color: var(--ink); font-size: .9rem; }
+.form-stale[hidden] { display: none; }
+.form-stale button { padding: 4px 0; border: 0; background: none; color: var(--orange-text); font-weight: 750; text-decoration: underline; text-underline-offset: .2em; cursor: pointer; }
 .form-help { display: flex; align-items: center; gap: 14px; width: 100%; margin: 14px 0 4px; padding: 10px 16px 10px 10px; border: 0; border-radius: 18px; background: var(--orange-soft); box-shadow: inset 0 0 0 1.5px #ff660055; color: var(--ink); text-align: left; cursor: pointer; transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s; }
 .form-help:hover { background: #ffe9d9; box-shadow: inset 0 0 0 2px var(--orange), 0 10px 22px #d9560033; transform: translateY(-2px); }
 .form-help .fg-svg { flex-shrink: 0; width: 54px; height: 48px; filter: none; }
@@ -189,13 +258,6 @@
 .form-help small { display: block; margin-top: 2px; color: var(--muted); font-size: .88rem; line-height: 1.3; }
 
 /* Aussagen im Kontaktformular */
-.form-basket:empty { display: none; }
-.form-basket { margin: 14px 0 4px; padding: 14px 16px; border-radius: 14px; background: var(--orange-soft); }
-.form-basket-title { margin: 0 0 8px; color: var(--ink); font-weight: 750; }
-.form-basket ul { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
-.form-basket li { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: .95rem; line-height: 1.3; }
-.form-basket li button { flex-shrink: 0; width: 28px; height: 28px; padding: 0; border: 0; border-radius: 50%; background: var(--white); font-size: 1.05rem; line-height: 1; cursor: pointer; }
-.form-basket li button:hover { background: var(--orange); }
 
 /* ---------- Scheibenbruch ---------- */
 @view-transition { navigation: auto; }
