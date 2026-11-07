@@ -41,6 +41,7 @@ const zLabel = id => `Z${OPTIONAL.indexOf(id) + 1}`;
 const money = value => value.toLocaleString('de-DE', { minimumFractionDigits: Number.isInteger(value) ? 0 : 2, maximumFractionDigits: 2 });
 const span = ([low, high]) => (low === high ? `${money(low)} €` : `${money(low)} bis ${money(high)} €`);
 const { tiers, effects } = prices;
+if (!prices.released && Object.values(effects).some(effect => effect.source === 'entwurf' && (effect.once || effect.monthly))) throw new Error('Nicht freigegebene Preiszahlen in öffentlichen Daten');
 const tierSpan = index => {
   const tier = tiers[index];
   if (tier.rent === null || tier.rate === null) return null;
@@ -52,9 +53,11 @@ function expectedPrice(ids) {
   const once = [0, 0];
   const monthly = [0, 0];
   let onRequest = false;
+  let individual = false;
   ids.forEach(id => {
     const effect = effects[id];
     if (!effect) return;
+    if (effect.onRequest || (effect.source === 'entwurf' && !prices.released)) { individual = true; return; }
     if (effect.once) { once[0] += effect.once[0]; once[1] += effect.once[1]; }
     if (effect.monthly) { monthly[0] += effect.monthly[0]; monthly[1] += effect.monthly[1]; }
     if (effect.tier !== undefined) {
@@ -62,12 +65,12 @@ function expectedPrice(ids) {
       if (range) { monthly[0] += range[0]; monthly[1] += range[1]; } else onRequest = true;
     }
   });
-  return { once, monthly, onRequest };
+  return { once, monthly, onRequest, individual };
 }
 
 /* ---------- Prüfungen ---------- */
 const HEAD = 'Hallo simplecommerce-Team,\n\n';
-const PRICE_HEAD = 'Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):\n';
+const PRICE_HEAD = 'Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):\n';
 const DEFAULT_CLOSING = 'Können wir darüber sprechen?';
 const conflicts = [];
 [...Object.values(Q.followUp), ...Q.common].forEach(level => level.options.forEach(option => (option.hideIf || []).forEach(id => conflicts.push([id, option.statement]))));
@@ -126,6 +129,7 @@ function visit(theme) {
   conflicts.forEach(([a, b]) => { if (ids.includes(a) && ids.includes(b)) fail('Keine ausgeschlossene Kombination', number(), text); });
 
   const price = expectedPrice(ids);
+  if (price.individual !== text.includes('Bitte erstellen Sie mir ein individuelles Angebot')) fail('Individuelles Angebot statt nicht freigegebener Zahlen', number(), text);
   const hasOnce = price.once[1] > 0;
   const hasMonthly = price.monthly[1] > 0;
   const hasPrice = hasOnce || hasMonthly || price.onRequest;
@@ -275,7 +279,7 @@ Q.common.filter(level => OPTIONAL.includes(level.id)).forEach(level => {
   }
   out.push('');
 });
-out.push(`## Volle Texte der Kernwege (${coreTexts.length})`, '', 'Ohne übersprungene Fragen und ohne Z-Fragen. Preise mit Beispielwerten sind noch nicht freigegeben.', '');
+out.push(`## Volle Texte der Kernwege (${coreTexts.length})`, '', 'Ohne übersprungene Fragen und ohne Z-Fragen. Nicht freigegebene Preise erscheinen als individuelles Angebot, ohne Zahlen.', '');
 themes.forEach((theme, index) => {
   out.push(`### Thema ${index + 1}: ${theme.label}`, '');
   coreTexts.filter(entry => entry.theme === theme).forEach(entry => {

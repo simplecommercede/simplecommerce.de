@@ -65,7 +65,7 @@
       ["Einbauen", "Bewährt sie sich, binden wir die KI dort ein, wo Sie ohnehin arbeiten."]
     ],
     "fragen": [
-      ["Was ist ein eigenes KI-Modell?", "Ein Modell, das zusätzlich mit Ihren Daten trainiert wird. Dadurch kennt es Ihre Produkte, Begriffe und Abläufe besser als eine allgemeine KI."],
+      ["Brauchen wir ein eigenes KI-Modell?", "Das klären wir anhand Ihrer Aufgabe. Oft genügt eine bestehende KI mit Zugriff auf ausgewählte Unternehmensinformationen. Wenn eine Anpassung oder zusätzliches Training sinnvoll ist, planen und prüfen wir dies gezielt."],
       ["Brauche ich dafür viele Daten?", "Nicht immer. Für viele Aufgaben reicht eine bestehende KI. Ob sich ein eigenes Modell lohnt, klären wir vorher mit Ihnen."],
       ["Was passiert mit meinen Daten?", "Welche Daten verwendet werden und wo sie verarbeitet werden, legen wir vor dem Start gemeinsam mit Ihnen fest."]
     ],

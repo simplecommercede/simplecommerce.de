@@ -10,7 +10,7 @@ Erzeugt von `scripts/fragebogen_baum.js`, nicht von Hand ändern. Sätze und Fra
 
 ## Prüfergebnis
 
-Getestet wurden **1.057.925 Antwortkombinationen**, also jede mögliche Auswahl einschließlich aller übersprungenen Fragen. Der längste Text hat 686 Zeichen, Laufzeit 223 Sekunden.
+Getestet wurden **1.057.925 Antwortkombinationen**, also jede mögliche Auswahl einschließlich aller übersprungenen Fragen. Der längste Text hat 833 Zeichen, Laufzeit 86 Sekunden.
 
 | Thema | Kombinationen |
 |---|---|
@@ -32,7 +32,7 @@ Die Prüfung erkennt Form und Rechnung, nicht ob ein Satz inhaltlich gut klingt.
 |---|---|---|
 | R1 | Hallo simplecommerce-Team, | immer |
 | R2 | darum geht es: | wenn es Angaben gibt |
-| R3 | Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer): | wenn es einen Preis gibt |
+| R3 | Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer): | wenn es einen Preis gibt |
 | R4 | - einmalig etwa … € | bei einmaligen Kosten |
 | R5 | - laufend etwa … € im Monat | bei laufenden Kosten |
 | R6 | - Shopmiete und Provision auf Anfrage | bei einem Monatsumsatz über 80.000 € |
@@ -46,18 +46,18 @@ Die Prüfung erkennt Form und Rechnung, nicht ob ein Satz inhaltlich gut klingt.
 
 | Baustein | Knopf | Satz im Text | Preis |
 |---|---|---|---|
-| T01 | Einfache Website | Ich brauche eine einfache Website für mein Unternehmen. | 490 bis 990 € einmalig (Beispielwert) |
-| T02 | Website erneuern | Meine Website ist in die Jahre gekommen und braucht einen neuen Auftritt. | 990 bis 1.990 € einmalig (Beispielwert) |
-| T03 | Mehr Anfragen | Meine Website soll mir mehr Anfragen bringen. | 790 bis 1.490 € einmalig (Beispielwert) |
-| T04 | Besser gefunden werden | Ich möchte im Internet besser gefunden werden. | 290 bis 690 € einmalig (Beispielwert) |
+| T01 | Einfache Website | Ich brauche eine einfache Website für mein Unternehmen. |  (Beispielwert) |
+| T02 | Website erneuern | Meine Website ist in die Jahre gekommen und braucht einen neuen Auftritt. |  (Beispielwert) |
+| T03 | Mehr Anfragen | Meine Website soll mir mehr Anfragen bringen. |  (Beispielwert) |
+| T04 | Besser gefunden werden | Ich möchte im Internet besser gefunden werden. |  (Beispielwert) |
 
 **1.x.y Was haben Sie schon?**
 
 | Baustein | Knopf | Satz im Text | Preis |
 |---|---|---|---|
 | T05 | Texte und Bilder | Texte und Bilder habe ich schon. |  |
-| T06 | Nur ein Logo | Ich habe ein Logo, aber noch kaum Inhalte. | 190 bis 490 € einmalig (Beispielwert) |
-| T07 | Noch nichts | Ich fange bei null an. | 290 bis 690 € einmalig (Beispielwert) |
+| T06 | Nur ein Logo | Ich habe ein Logo, aber noch kaum Inhalte. |  (Beispielwert) |
+| T07 | Noch nichts | Ich fange bei null an. |  (Beispielwert) |
 
 - T06 „Nur ein Logo“ entfällt nach T02, T03, T04.
 - T07 „Noch nichts“ entfällt nach T02, T03, T04.
@@ -111,11 +111,11 @@ Bleibt nach einer Antwort nur eine Möglichkeit, entfällt die ganze Frage.
 
 | Baustein | Knopf | Satz im Text | Preis |
 |---|---|---|---|
-| T16 | Eine App | Ich brauche eine App für mein Unternehmen. | 7.900 bis 24.900 € einmalig (Beispielwert) |
-| T17 | Software für Abläufe | Ich suche eine Software, die genau zu den eigenen Abläufen passt. | 9.900 bis 29.900 € einmalig (Beispielwert) |
-| T18 | Programme verbinden | Die vorhandenen Programme sollen endlich miteinander reden. | 690 bis 2.490 € einmalig (Beispielwert) |
-| T19 | Automatisieren | Wiederkehrende Aufgaben sollen automatisch erledigt werden. | 690 bis 2.900 € einmalig (Beispielwert) |
-| T20 | Alte Software erneuern | Die bestehende Software muss modernisiert werden. | 1.900 bis 7.900 € einmalig (Beispielwert) |
+| T16 | Eine App | Ich brauche eine App für mein Unternehmen. |  (Beispielwert) |
+| T17 | Software für Abläufe | Ich suche eine Software, die genau zu den eigenen Abläufen passt. |  (Beispielwert) |
+| T18 | Programme verbinden | Die vorhandenen Programme sollen endlich miteinander reden. |  (Beispielwert) |
+| T19 | Automatisieren | Wiederkehrende Aufgaben sollen automatisch erledigt werden. |  (Beispielwert) |
+| T20 | Alte Software erneuern | Die bestehende Software muss modernisiert werden. |  (Beispielwert) |
 
 **3.x.y Womit arbeiten Sie heute?**
 
@@ -137,19 +137,19 @@ Bleibt nach einer Antwort nur eine Möglichkeit, entfällt die ganze Frage.
 
 | Baustein | Knopf | Satz im Text | Preis |
 |---|---|---|---|
-| T25 | Möglichkeiten zeigen | Ich möchte wissen, was KI meinem Unternehmen bringt. | 190 bis 490 € einmalig (Beispielwert) |
-| T26 | Eigenes Modell | Ich möchte eine KI, die das eigene Unternehmen kennt. | 9.900 bis 29.900 € einmalig (Beispielwert) |
-| T27 | Anfragen entlasten | KI soll bei Kundenanfragen entlasten. | 990 bis 2.900 € einmalig + 79 bis 300 € im Monat (Beispielwert) |
-| T28 | Texte erstellen | KI soll Texte und Produktbeschreibungen erstellen. | 490 bis 1.490 € einmalig (Beispielwert) |
-| T29 | Daten auswerten | KI soll Daten auswerten und Arbeit abnehmen. | 990 bis 3.900 € einmalig (Beispielwert) |
+| T25 | Möglichkeiten zeigen | Ich möchte wissen, was KI meinem Unternehmen bringt. |  (Beispielwert) |
+| T26 | Eigenes Modell | Ich möchte eine KI, die das eigene Unternehmen kennt. |  (Beispielwert) |
+| T27 | Anfragen entlasten | KI soll bei Kundenanfragen entlasten. |  (Beispielwert) |
+| T28 | Texte erstellen | KI soll Texte und Produktbeschreibungen erstellen. |  (Beispielwert) |
+| T29 | Daten auswerten | KI soll Daten auswerten und Arbeit abnehmen. |  (Beispielwert) |
 
 **4.x.y Haben Sie schon Daten dafür?**
 
 | Baustein | Knopf | Satz im Text | Preis |
 |---|---|---|---|
 | T30 | Ja, gut geordnet | Passende Daten liegen geordnet vor. |  |
-| T31 | Ja, aber verstreut | Passende Daten sind vorhanden, aber verstreut. | 290 bis 990 € einmalig (Beispielwert) |
-| T32 | Eher nicht | Passende Daten gibt es eher nicht. | 490 bis 1.490 € einmalig (Beispielwert) |
+| T31 | Ja, aber verstreut | Passende Daten sind vorhanden, aber verstreut. |  (Beispielwert) |
+| T32 | Eher nicht | Passende Daten gibt es eher nicht. |  (Beispielwert) |
 | T33 | Weiß ich nicht | Ob passende Daten vorliegen, weiß ich noch nicht. |  |
 
 - T30 „Ja, gut geordnet“ entfällt nach T25, T28.
@@ -165,10 +165,10 @@ Bleibt nach einer Antwort nur eine Möglichkeit, entfällt die ganze Frage.
 
 | Baustein | Knopf | Satz im Text | Preis |
 |---|---|---|---|
-| T34 | Lösung finden | Ich weiß noch nicht, welche Lösung die richtige ist. | 290 bis 690 € einmalig (Beispielwert) |
-| T35 | Zweite Meinung | Ich hätte gern eine zweite Meinung zur IT. | 190 bis 390 € einmalig (Beispielwert) |
-| T36 | Klarer Plan | Für das IT-Vorhaben fehlt ein klarer Plan. | 490 bis 990 € einmalig (Beispielwert) |
-| T37 | IT vereinfachen | Die IT ist zu teuer oder zu kompliziert geworden. | 390 bis 890 € einmalig (Beispielwert) |
+| T34 | Lösung finden | Ich weiß noch nicht, welche Lösung die richtige ist. |  (Beispielwert) |
+| T35 | Zweite Meinung | Ich hätte gern eine zweite Meinung zur IT. |  (Beispielwert) |
+| T36 | Klarer Plan | Für das IT-Vorhaben fehlt ein klarer Plan. |  (Beispielwert) |
+| T37 | IT vereinfachen | Die IT ist zu teuer oder zu kompliziert geworden. |  (Beispielwert) |
 
 **5.x.y Um welchen Bereich geht es?**
 
@@ -185,8 +185,8 @@ Bleibt nach einer Antwort nur eine Möglichkeit, entfällt die ganze Frage.
 
 | Baustein | Knopf | Satz im Text | Preis |
 |---|---|---|---|
-| T42 | Hilfe beim Shop | Ich brauche Unterstützung bei meinem bestehenden Shop. | 29 bis 79 € im Monat (Beispielwert) |
-| T43 | Laufende Pflege | Jemand soll sich laufend um die Website kümmern. | 39 bis 99 € im Monat (Beispielwert) |
+| T42 | Hilfe beim Shop | Ich brauche Unterstützung bei meinem bestehenden Shop. |  (Beispielwert) |
+| T43 | Laufende Pflege | Jemand soll sich laufend um die Website kümmern. |  (Beispielwert) |
 | T44 | Einweisung | Ich wünsche mir eine persönliche Einweisung. | 500 € einmalig (Preisliste) |
 
 **6.x.y Worum geht es genau?**
@@ -247,12 +247,12 @@ Sie stehen bei jedem Thema zur Wahl, soweit nicht anders vermerkt, und ergänzen
 
 | Baustein | Knopf | Satz im Text | Preis |
 |---|---|---|---|
-| T70 | Website | Dazu interessiert mich eine Website. | 490 bis 1.990 € einmalig (Beispielwert) |
+| T70 | Website | Dazu interessiert mich eine Website. |  (Beispielwert) |
 | T71 | Onlineshop | Dazu interessiert mich ein Onlineshop. | 499 bis 990 € einmalig + 20 bis 370 € im Monat (Preisliste) |
-| T72 | App oder Software | Dazu interessiert mich eine App oder individuelle Software. | 7.900 bis 29.900 € einmalig (Beispielwert) |
-| T73 | KI | Dazu interessieren mich KI-Anwendungen. | 490 bis 3.900 € einmalig (Beispielwert) |
-| T74 | Beratung | Dazu interessiert mich eine IT-Beratung. | 290 bis 990 € einmalig (Beispielwert) |
-| T75 | Laufender Service | Dazu interessiert mich laufender Service. | 29 bis 99 € im Monat (Beispielwert) |
+| T72 | App oder Software | Dazu interessiert mich eine App oder individuelle Software. |  (Beispielwert) |
+| T73 | KI | Dazu interessieren mich KI-Anwendungen. |  (Beispielwert) |
+| T74 | Beratung | Dazu interessiert mich eine IT-Beratung. |  (Beispielwert) |
+| T75 | Laufender Service | Dazu interessiert mich laufender Service. |  (Beispielwert) |
 
 - T70 „Website“ entfällt nach T47, T43, T39.
 - T71 „Onlineshop“ entfällt nach T45, T46, T42, T38.
@@ -269,7 +269,7 @@ Sie stehen bei jedem Thema zur Wahl, soweit nicht anders vermerkt, und ergänzen
 
 ## Volle Texte der Kernwege (230)
 
-Ohne übersprungene Fragen und ohne Z-Fragen. Preise mit Beispielwerten sind noch nicht freigegeben.
+Ohne übersprungene Fragen und ohne Z-Fragen. Nicht freigegebene Preise erscheinen als individuelles Angebot, ohne Zahlen.
 
 ### Thema 1: Website
 
@@ -282,8 +282,7 @@ darum geht es:
 - Ich brauche eine einfache Website für mein Unternehmen.
 - Texte und Bilder habe ich schon.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 490 bis 990 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -297,8 +296,7 @@ darum geht es:
 - Ich brauche eine einfache Website für mein Unternehmen.
 - Ich habe ein Logo, aber noch kaum Inhalte.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 680 bis 1.480 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -312,8 +310,7 @@ darum geht es:
 - Ich brauche eine einfache Website für mein Unternehmen.
 - Ich fange bei null an.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 780 bis 1.680 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -326,8 +323,7 @@ Hallo simplecommerce-Team,
 darum geht es:
 - Meine Website ist in die Jahre gekommen und braucht einen neuen Auftritt.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 990 bis 1.990 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -340,8 +336,7 @@ Hallo simplecommerce-Team,
 darum geht es:
 - Meine Website soll mir mehr Anfragen bringen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 790 bis 1.490 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -354,8 +349,7 @@ Hallo simplecommerce-Team,
 darum geht es:
 - Ich möchte im Internet besser gefunden werden.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 290 bis 690 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -373,7 +367,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -391,7 +385,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -409,7 +403,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 20 bis 370 € im Monat
 
 Können wir darüber sprechen?
@@ -426,7 +420,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -444,7 +438,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -462,7 +456,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 310 bis 810 € im Monat
 
 Können wir darüber sprechen?
@@ -479,7 +473,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -497,7 +491,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -515,7 +509,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 560 bis 1.310 € im Monat
 
 Können wir darüber sprechen?
@@ -532,7 +526,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - Shopmiete und Provision auf Anfrage
 
@@ -550,7 +544,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - Shopmiete und Provision auf Anfrage
 
@@ -568,7 +562,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - Shopmiete und Provision auf Anfrage
 
 Können wir darüber sprechen?
@@ -585,7 +579,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -603,7 +597,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -621,7 +615,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 20 bis 370 € im Monat
 
 Können wir darüber sprechen?
@@ -638,7 +632,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -656,7 +650,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -674,7 +668,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 310 bis 810 € im Monat
 
 Können wir darüber sprechen?
@@ -691,7 +685,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -709,7 +703,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -727,7 +721,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 560 bis 1.310 € im Monat
 
 Können wir darüber sprechen?
@@ -744,7 +738,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - Shopmiete und Provision auf Anfrage
 
@@ -762,7 +756,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - Shopmiete und Provision auf Anfrage
 
@@ -780,7 +774,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - Shopmiete und Provision auf Anfrage
 
 Können wir darüber sprechen?
@@ -797,7 +791,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -815,7 +809,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -833,7 +827,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 20 bis 370 € im Monat
 
 Können wir darüber sprechen?
@@ -850,7 +844,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -868,7 +862,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -886,7 +880,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 310 bis 810 € im Monat
 
 Können wir darüber sprechen?
@@ -903,7 +897,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -921,7 +915,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -939,7 +933,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 560 bis 1.310 € im Monat
 
 Können wir darüber sprechen?
@@ -956,7 +950,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - Shopmiete und Provision auf Anfrage
 
@@ -974,7 +968,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - Shopmiete und Provision auf Anfrage
 
@@ -992,7 +986,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - Shopmiete und Provision auf Anfrage
 
 Können wir darüber sprechen?
@@ -1009,7 +1003,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -1027,7 +1021,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -1045,7 +1039,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 20 bis 370 € im Monat
 
 Können wir darüber sprechen?
@@ -1062,7 +1056,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -1080,7 +1074,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -1098,7 +1092,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 310 bis 810 € im Monat
 
 Können wir darüber sprechen?
@@ -1115,7 +1109,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -1133,7 +1127,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -1151,7 +1145,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 560 bis 1.310 € im Monat
 
 Können wir darüber sprechen?
@@ -1168,7 +1162,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - Shopmiete und Provision auf Anfrage
 
@@ -1186,7 +1180,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - Shopmiete und Provision auf Anfrage
 
@@ -1204,7 +1198,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - Shopmiete und Provision auf Anfrage
 
 Können wir darüber sprechen?
@@ -1221,7 +1215,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -1239,7 +1233,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -1257,7 +1251,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -1275,7 +1269,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -1293,7 +1287,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -1311,7 +1305,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -1329,7 +1323,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -1347,7 +1341,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -1365,7 +1359,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -1383,7 +1377,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
 - Shopmiete und Provision auf Anfrage
 
@@ -1401,7 +1395,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
 - Shopmiete und Provision auf Anfrage
 
@@ -1419,7 +1413,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
 - Shopmiete und Provision auf Anfrage
 
@@ -1437,7 +1431,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -1455,7 +1449,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -1473,7 +1467,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -1491,7 +1485,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -1509,7 +1503,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -1527,7 +1521,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -1545,7 +1539,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -1563,7 +1557,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -1581,7 +1575,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -1599,7 +1593,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
 - Shopmiete und Provision auf Anfrage
 
@@ -1617,7 +1611,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
 - Shopmiete und Provision auf Anfrage
 
@@ -1635,7 +1629,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
 - Shopmiete und Provision auf Anfrage
 
@@ -1653,7 +1647,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -1671,7 +1665,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -1689,7 +1683,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -1707,7 +1701,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -1725,7 +1719,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -1743,7 +1737,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -1761,7 +1755,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -1779,7 +1773,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -1797,7 +1791,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -1815,7 +1809,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
 - Shopmiete und Provision auf Anfrage
 
@@ -1833,7 +1827,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
 - Shopmiete und Provision auf Anfrage
 
@@ -1851,7 +1845,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
 - Shopmiete und Provision auf Anfrage
 
@@ -1869,7 +1863,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -1887,7 +1881,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -1905,7 +1899,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 20 bis 370 € im Monat
 
 Können wir darüber sprechen?
@@ -1922,7 +1916,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -1940,7 +1934,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -1958,7 +1952,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 310 bis 810 € im Monat
 
 Können wir darüber sprechen?
@@ -1975,7 +1969,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -1993,7 +1987,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -2011,7 +2005,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 560 bis 1.310 € im Monat
 
 Können wir darüber sprechen?
@@ -2028,7 +2022,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - Shopmiete und Provision auf Anfrage
 
@@ -2046,7 +2040,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - Shopmiete und Provision auf Anfrage
 
@@ -2064,7 +2058,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - Shopmiete und Provision auf Anfrage
 
 Können wir darüber sprechen?
@@ -2081,7 +2075,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -2099,7 +2093,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -2117,7 +2111,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 20 bis 370 € im Monat
 
 Können wir darüber sprechen?
@@ -2134,7 +2128,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -2152,7 +2146,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -2170,7 +2164,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 310 bis 810 € im Monat
 
 Können wir darüber sprechen?
@@ -2187,7 +2181,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -2205,7 +2199,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -2223,7 +2217,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 560 bis 1.310 € im Monat
 
 Können wir darüber sprechen?
@@ -2240,7 +2234,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - Shopmiete und Provision auf Anfrage
 
@@ -2258,7 +2252,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - Shopmiete und Provision auf Anfrage
 
@@ -2276,7 +2270,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - Shopmiete und Provision auf Anfrage
 
 Können wir darüber sprechen?
@@ -2293,7 +2287,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -2311,7 +2305,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -2329,7 +2323,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 20 bis 370 € im Monat
 
 Können wir darüber sprechen?
@@ -2346,7 +2340,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -2364,7 +2358,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -2382,7 +2376,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 310 bis 810 € im Monat
 
 Können wir darüber sprechen?
@@ -2399,7 +2393,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -2417,7 +2411,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -2435,7 +2429,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 560 bis 1.310 € im Monat
 
 Können wir darüber sprechen?
@@ -2452,7 +2446,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - Shopmiete und Provision auf Anfrage
 
@@ -2470,7 +2464,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - Shopmiete und Provision auf Anfrage
 
@@ -2488,7 +2482,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - Shopmiete und Provision auf Anfrage
 
 Können wir darüber sprechen?
@@ -2505,7 +2499,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -2523,7 +2517,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -2541,7 +2535,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 20 bis 370 € im Monat
 
 Können wir darüber sprechen?
@@ -2558,7 +2552,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -2576,7 +2570,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -2594,7 +2588,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 310 bis 810 € im Monat
 
 Können wir darüber sprechen?
@@ -2611,7 +2605,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -2629,7 +2623,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -2647,7 +2641,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 560 bis 1.310 € im Monat
 
 Können wir darüber sprechen?
@@ -2664,7 +2658,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - Shopmiete und Provision auf Anfrage
 
@@ -2682,7 +2676,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - Shopmiete und Provision auf Anfrage
 
@@ -2700,7 +2694,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - Shopmiete und Provision auf Anfrage
 
 Können wir darüber sprechen?
@@ -2717,7 +2711,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -2735,7 +2729,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -2753,7 +2747,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 20 bis 370 € im Monat
 
 Können wir darüber sprechen?
@@ -2770,7 +2764,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -2788,7 +2782,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -2806,7 +2800,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 310 bis 810 € im Monat
 
 Können wir darüber sprechen?
@@ -2823,7 +2817,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -2841,7 +2835,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -2859,7 +2853,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 560 bis 1.310 € im Monat
 
 Können wir darüber sprechen?
@@ -2876,7 +2870,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - Shopmiete und Provision auf Anfrage
 
@@ -2894,7 +2888,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - Shopmiete und Provision auf Anfrage
 
@@ -2912,7 +2906,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - Shopmiete und Provision auf Anfrage
 
 Können wir darüber sprechen?
@@ -2929,7 +2923,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -2947,7 +2941,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -2965,7 +2959,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 20 bis 370 € im Monat
 
 Können wir darüber sprechen?
@@ -2982,7 +2976,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -3000,7 +2994,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -3018,7 +3012,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 310 bis 810 € im Monat
 
 Können wir darüber sprechen?
@@ -3035,7 +3029,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -3053,7 +3047,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -3071,7 +3065,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 560 bis 1.310 € im Monat
 
 Können wir darüber sprechen?
@@ -3088,7 +3082,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - Shopmiete und Provision auf Anfrage
 
@@ -3106,7 +3100,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - Shopmiete und Provision auf Anfrage
 
@@ -3124,7 +3118,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - Shopmiete und Provision auf Anfrage
 
 Können wir darüber sprechen?
@@ -3141,7 +3135,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -3159,7 +3153,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 20 bis 370 € im Monat
 
@@ -3177,7 +3171,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von bis zu 10.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 20 bis 370 € im Monat
 
 Können wir darüber sprechen?
@@ -3194,7 +3188,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -3212,7 +3206,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 310 bis 810 € im Monat
 
@@ -3230,7 +3224,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 310 bis 810 € im Monat
 
 Können wir darüber sprechen?
@@ -3247,7 +3241,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -3265,7 +3259,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - laufend etwa 560 bis 1.310 € im Monat
 
@@ -3283,7 +3277,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - laufend etwa 560 bis 1.310 € im Monat
 
 Können wir darüber sprechen?
@@ -3300,7 +3294,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein vorhandenes Template anpassen lassen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
 - Shopmiete und Provision auf Anfrage
 
@@ -3318,7 +3312,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Ich möchte ein Template nach Vorlage.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
 - Shopmiete und Provision auf Anfrage
 
@@ -3336,7 +3330,7 @@ darum geht es:
 - Ich rechne mit einem Monatsumsatz von über 80.000 €.
 - Das Design ist noch offen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - Shopmiete und Provision auf Anfrage
 
 Können wir darüber sprechen?
@@ -3353,8 +3347,7 @@ darum geht es:
 - Ich brauche eine App für mein Unternehmen.
 - Heute läuft das mit Listen und Papier.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 7.900 bis 24.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3368,8 +3361,7 @@ darum geht es:
 - Ich brauche eine App für mein Unternehmen.
 - Heute läuft das mit fertigen Programmen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 7.900 bis 24.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3383,8 +3375,7 @@ darum geht es:
 - Ich brauche eine App für mein Unternehmen.
 - Heute läuft das mit eigener Software.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 7.900 bis 24.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3398,8 +3389,7 @@ darum geht es:
 - Ich brauche eine App für mein Unternehmen.
 - Dafür gibt es noch nichts.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 7.900 bis 24.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3413,8 +3403,7 @@ darum geht es:
 - Ich suche eine Software, die genau zu den eigenen Abläufen passt.
 - Heute läuft das mit Listen und Papier.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 9.900 bis 29.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3428,8 +3417,7 @@ darum geht es:
 - Ich suche eine Software, die genau zu den eigenen Abläufen passt.
 - Heute läuft das mit fertigen Programmen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 9.900 bis 29.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3443,8 +3431,7 @@ darum geht es:
 - Ich suche eine Software, die genau zu den eigenen Abläufen passt.
 - Heute läuft das mit eigener Software.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 9.900 bis 29.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3458,8 +3445,7 @@ darum geht es:
 - Ich suche eine Software, die genau zu den eigenen Abläufen passt.
 - Dafür gibt es noch nichts.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 9.900 bis 29.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3473,8 +3459,7 @@ darum geht es:
 - Die vorhandenen Programme sollen endlich miteinander reden.
 - Heute läuft das mit fertigen Programmen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 690 bis 2.490 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3488,8 +3473,7 @@ darum geht es:
 - Die vorhandenen Programme sollen endlich miteinander reden.
 - Heute läuft das mit eigener Software.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 690 bis 2.490 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3503,8 +3487,7 @@ darum geht es:
 - Wiederkehrende Aufgaben sollen automatisch erledigt werden.
 - Heute läuft das mit Listen und Papier.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 690 bis 2.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3518,8 +3501,7 @@ darum geht es:
 - Wiederkehrende Aufgaben sollen automatisch erledigt werden.
 - Heute läuft das mit fertigen Programmen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 690 bis 2.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3533,8 +3515,7 @@ darum geht es:
 - Wiederkehrende Aufgaben sollen automatisch erledigt werden.
 - Heute läuft das mit eigener Software.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 690 bis 2.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3548,8 +3529,7 @@ darum geht es:
 - Wiederkehrende Aufgaben sollen automatisch erledigt werden.
 - Dafür gibt es noch nichts.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 690 bis 2.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3563,8 +3543,7 @@ darum geht es:
 - Die bestehende Software muss modernisiert werden.
 - Heute läuft das mit fertigen Programmen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 1.900 bis 7.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3578,8 +3557,7 @@ darum geht es:
 - Die bestehende Software muss modernisiert werden.
 - Heute läuft das mit eigener Software.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 1.900 bis 7.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3594,8 +3572,7 @@ Hallo simplecommerce-Team,
 darum geht es:
 - Ich möchte wissen, was KI meinem Unternehmen bringt.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 190 bis 490 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3609,8 +3586,7 @@ darum geht es:
 - Ich möchte eine KI, die das eigene Unternehmen kennt.
 - Passende Daten liegen geordnet vor.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 9.900 bis 29.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3624,8 +3600,7 @@ darum geht es:
 - Ich möchte eine KI, die das eigene Unternehmen kennt.
 - Passende Daten sind vorhanden, aber verstreut.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 10.190 bis 30.890 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3639,8 +3614,7 @@ darum geht es:
 - Ich möchte eine KI, die das eigene Unternehmen kennt.
 - Passende Daten gibt es eher nicht.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 10.390 bis 31.390 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3654,8 +3628,7 @@ darum geht es:
 - Ich möchte eine KI, die das eigene Unternehmen kennt.
 - Ob passende Daten vorliegen, weiß ich noch nicht.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 9.900 bis 29.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3669,9 +3642,7 @@ darum geht es:
 - KI soll bei Kundenanfragen entlasten.
 - Passende Daten liegen geordnet vor.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 990 bis 2.900 €
-- laufend etwa 79 bis 300 € im Monat
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3685,9 +3656,7 @@ darum geht es:
 - KI soll bei Kundenanfragen entlasten.
 - Passende Daten sind vorhanden, aber verstreut.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 1.280 bis 3.890 €
-- laufend etwa 79 bis 300 € im Monat
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3701,9 +3670,7 @@ darum geht es:
 - KI soll bei Kundenanfragen entlasten.
 - Passende Daten gibt es eher nicht.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 1.480 bis 4.390 €
-- laufend etwa 79 bis 300 € im Monat
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3717,9 +3684,7 @@ darum geht es:
 - KI soll bei Kundenanfragen entlasten.
 - Ob passende Daten vorliegen, weiß ich noch nicht.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 990 bis 2.900 €
-- laufend etwa 79 bis 300 € im Monat
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3732,8 +3697,7 @@ Hallo simplecommerce-Team,
 darum geht es:
 - KI soll Texte und Produktbeschreibungen erstellen.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 490 bis 1.490 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3747,8 +3711,7 @@ darum geht es:
 - KI soll Daten auswerten und Arbeit abnehmen.
 - Passende Daten liegen geordnet vor.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 990 bis 3.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3762,8 +3725,7 @@ darum geht es:
 - KI soll Daten auswerten und Arbeit abnehmen.
 - Passende Daten sind vorhanden, aber verstreut.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 1.280 bis 4.890 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3777,8 +3739,7 @@ darum geht es:
 - KI soll Daten auswerten und Arbeit abnehmen.
 - Passende Daten gibt es eher nicht.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 1.480 bis 5.390 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3792,8 +3753,7 @@ darum geht es:
 - KI soll Daten auswerten und Arbeit abnehmen.
 - Ob passende Daten vorliegen, weiß ich noch nicht.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 990 bis 3.900 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3809,8 +3769,7 @@ darum geht es:
 - Ich weiß noch nicht, welche Lösung die richtige ist.
 - Es geht vor allem um Shop und Verkauf.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 290 bis 690 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3824,8 +3783,7 @@ darum geht es:
 - Ich weiß noch nicht, welche Lösung die richtige ist.
 - Es geht vor allem um die Website.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 290 bis 690 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3839,8 +3797,7 @@ darum geht es:
 - Ich weiß noch nicht, welche Lösung die richtige ist.
 - Es geht vor allem um Abläufe und Software.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 290 bis 690 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3854,8 +3811,7 @@ darum geht es:
 - Ich weiß noch nicht, welche Lösung die richtige ist.
 - Es geht vor allem um KI.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 290 bis 690 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3869,8 +3825,7 @@ darum geht es:
 - Ich hätte gern eine zweite Meinung zur IT.
 - Es geht vor allem um Shop und Verkauf.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 190 bis 390 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3884,8 +3839,7 @@ darum geht es:
 - Ich hätte gern eine zweite Meinung zur IT.
 - Es geht vor allem um die Website.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 190 bis 390 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3899,8 +3853,7 @@ darum geht es:
 - Ich hätte gern eine zweite Meinung zur IT.
 - Es geht vor allem um Abläufe und Software.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 190 bis 390 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3914,8 +3867,7 @@ darum geht es:
 - Ich hätte gern eine zweite Meinung zur IT.
 - Es geht vor allem um KI.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 190 bis 390 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3929,8 +3881,7 @@ darum geht es:
 - Für das IT-Vorhaben fehlt ein klarer Plan.
 - Es geht vor allem um Shop und Verkauf.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 490 bis 990 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3944,8 +3895,7 @@ darum geht es:
 - Für das IT-Vorhaben fehlt ein klarer Plan.
 - Es geht vor allem um die Website.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 490 bis 990 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3959,8 +3909,7 @@ darum geht es:
 - Für das IT-Vorhaben fehlt ein klarer Plan.
 - Es geht vor allem um Abläufe und Software.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 490 bis 990 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3974,8 +3923,7 @@ darum geht es:
 - Für das IT-Vorhaben fehlt ein klarer Plan.
 - Es geht vor allem um KI.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 490 bis 990 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -3989,8 +3937,7 @@ darum geht es:
 - Die IT ist zu teuer oder zu kompliziert geworden.
 - Es geht vor allem um Shop und Verkauf.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 390 bis 890 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -4004,8 +3951,7 @@ darum geht es:
 - Die IT ist zu teuer oder zu kompliziert geworden.
 - Es geht vor allem um die Website.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 390 bis 890 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -4019,8 +3965,7 @@ darum geht es:
 - Die IT ist zu teuer oder zu kompliziert geworden.
 - Es geht vor allem um Abläufe und Software.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 390 bis 890 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -4034,8 +3979,7 @@ darum geht es:
 - Die IT ist zu teuer oder zu kompliziert geworden.
 - Es geht vor allem um KI.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- einmalig etwa 390 bis 890 €
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -4051,8 +3995,7 @@ darum geht es:
 - Ich brauche Unterstützung bei meinem bestehenden Shop.
 - Mein Shop läuft bei simplecommerce.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 29 bis 79 € im Monat
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -4066,8 +4009,7 @@ darum geht es:
 - Ich brauche Unterstützung bei meinem bestehenden Shop.
 - Mein Shop läuft bei einem anderen Anbieter.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 29 bis 79 € im Monat
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -4080,8 +4022,7 @@ Hallo simplecommerce-Team,
 darum geht es:
 - Jemand soll sich laufend um die Website kümmern.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 39 bis 99 € im Monat
+Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.
 
 Können wir darüber sprechen?
 ```
@@ -4095,7 +4036,7 @@ darum geht es:
 - Ich wünsche mir eine persönliche Einweisung.
 - Mein Shop läuft bei simplecommerce.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 500 €
 
 Können wir darüber sprechen?
@@ -4110,7 +4051,7 @@ darum geht es:
 - Ich wünsche mir eine persönliche Einweisung.
 - Mein Shop läuft bei einem anderen Anbieter.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 500 €
 
 Können wir darüber sprechen?
@@ -4125,7 +4066,7 @@ darum geht es:
 - Ich wünsche mir eine persönliche Einweisung.
 - Es geht um eine Website.
 
-Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):
+Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 500 €
 
 Können wir darüber sprechen?

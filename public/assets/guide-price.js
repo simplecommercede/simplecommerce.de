@@ -3,7 +3,7 @@
  * Preisschätzung aus den gewählten Angaben. Frosch, Kontaktformular und die Seite /preisrechner/
  * nutzen dieselbe Berechnung und dieselbe Auswahl aus Frosch.store.
  * Shopkosten folgen der Preistabelle: Miete und SSL je Umsatzstufe plus Provision auf den Umsatz.
- * Werte stehen in content/price-estimate.json; "entwurf" ist nicht freigegeben und wird gekennzeichnet.
+ * Werte stehen in content/price-estimate.json; "entwurf" wird bis zur fachlichen Freigabe ausschließlich als individuelles Angebot dargestellt.
  *
  * Aufbau: 1. Berechnung  2. Darstellung  3. Seite Preisrechner
  */
@@ -27,13 +27,19 @@
 
   function estimate() {
     const items = store.items();
-    const result = { once: [0, 0], monthly: [0, 0], lines: [], onRequest: false, draft: false, shop: false, ranged: false };
+    const result = { once: [0, 0], monthly: [0, 0], lines: [], onRequest: false, draft: false, individual: false, shop: false, ranged: false };
     const add = (target, range) => { target[0] += range[0]; target[1] += range[1]; };
     items.forEach(item => {
       const effect = effects[item.id];
       if (!effect) return;
       const isDraft = effect.source === 'entwurf';
       const line = { label: effect.label, draft: isDraft };
+      if (effect.onRequest || (isDraft && !released)) {
+        result.individual = true;
+        line.individual = true;
+        result.lines.push(line);
+        return;
+      }
       if (effect.once) {
         line.once = effect.once;
         add(result.once, line.once);
@@ -55,10 +61,6 @@
           line.note = 'Ab 80.000 € Monatsumsatz erstellen wir ein eigenes Angebot.';
           result.onRequest = true;
         }
-      }
-      if (isDraft) {
-        result.draft = true;
-        line.note = 'Beispielwert';
       }
       if ((line.once && line.once[0] !== line.once[1]) || (line.monthly && line.monthly[0] !== line.monthly[1])) result.ranged = true;
       result.lines.push(line);
@@ -110,7 +112,8 @@
     if (hasValue(result.once)) rows.push(`- einmalig etwa ${span(result.once)}`);
     if (hasValue(result.monthly)) rows.push(`- laufend etwa ${span(result.monthly)} im Monat`);
     if (result.onRequest) rows.push('- Shopmiete und Provision auf Anfrage');
-    return `Mein grober Preisrahmen laut Preisrechner (unverbindlich, zuzüglich Mehrwertsteuer):\n${rows.join('\n')}\n\n`;
+    const known = rows.length ? `Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):\n${rows.join('\n')}\n\n` : '';
+    return known + (result.individual ? `Bitte erstellen Sie mir ein individuelles Angebot für die gewählten Leistungen.${known ? ' Weitere Kosten sind in den genannten Preisbestandteilen nicht enthalten.' : ''}\n\n` : '');
   }
 
   /* Klärt, was die Zahlen bedeuten; nur was zur aktuellen Auswahl passt. */
@@ -131,7 +134,7 @@
     const result = estimate();
     if (!result.lines.length) return null;
     const root = element('div', 'price-box');
-    root.append(element('p', 'price-box-title', 'Geschätzter Preis'));
+    root.append(element('p', 'price-box-title', result.individual ? 'Ihr individuelles Angebot' : 'Kostenübersicht'));
     const totals = element('dl', 'price-box-totals');
     const row = (list, term, fill) => {
       const value = element('dd');
@@ -141,6 +144,8 @@
     if (hasValue(result.once)) row(totals, 'Einmalig', node => addSpan(node, result.once));
     if (hasValue(result.monthly)) row(totals, 'Im Monat', node => addSpan(node, result.monthly));
     if (result.onRequest) row(totals, 'Shop', node => node.append('auf Anfrage'));
+    if (result.individual) root.append(element('p', 'price-box-request', 'Wir klären Umfang und Aufwand mit Ihnen und erstellen ein passendes Angebot.'));
+    if (result.individual && (hasValue(result.once) || hasValue(result.monthly))) root.append(element('p', 'price-box-note', 'Die folgenden Preisbestandteile decken nur einen Teil Ihrer Auswahl ab. Individuelle Leistungen kommen hinzu.'));
     root.append(totals);
     if (details) {
       const list = element('dl', 'price-box-lines');
@@ -155,7 +160,7 @@
             addSpan(node, line.monthly);
             node.append(' im Monat');
           }
-          if (line.onRequest) node.append('auf Anfrage');
+          if (line.onRequest || line.individual) node.append('auf Anfrage');
         });
         if (line.note) list.append(element('dd', 'price-line-note', line.note));
       });
@@ -170,9 +175,9 @@
         root.append(more);
       }
     }
-    root.append(element('p', 'price-box-note', 'Unverbindliche Schätzung zuzüglich Mehrwertsteuer. Das verbindliche Angebot folgt nach dem Gespräch.'));
-    if (result.draft && !released) root.append(element('p', 'price-box-draft', 'Enthält Beispielwerte, die noch nicht freigegeben sind.'));
-    if (link) {
+    if (hasValue(result.once) || hasValue(result.monthly) || result.onRequest) root.append(element('p', 'price-box-note', 'Preisbestandteile gemäß Shop-Preisliste, zuzüglich Mehrwertsteuer. Das verbindliche Angebot folgt nach dem Gespräch.'));
+
+    if (link && !result.individual) {
       const check = element('a', 'price-box-link', 'Im Preisrechner prüfen');
       check.href = '/preisrechner/';
       root.append(check);
@@ -187,6 +192,7 @@
     if (hasValue(result.once)) parts.push(`${span(result.once)} einmalig`);
     if (hasValue(result.monthly)) parts.push(`${span(result.monthly)} im Monat`);
     if (result.onRequest) parts.push('Shop auf Anfrage');
+    if (result.individual) parts.push(parts.length ? 'weitere Leistungen auf Anfrage' : 'Individuelles Angebot');
     return parts.join(' + ');
   }
 
@@ -254,6 +260,8 @@
         dropForTopic(topic, option.topic);
         topic = option.topic;
         renderForm();
+        renderResult();
+        form.querySelector('input[name="est-topic"]:checked')?.focus();
       });
     });
     return fieldset;
@@ -357,6 +365,8 @@
       store.clear();
       topic = null;
       renderForm();
+      renderResult();
+      form.querySelector('input')?.focus();
     });
     form.append(reset);
   }
@@ -375,7 +385,8 @@
       addSpan(text, sum.monthly);
       text.append(' im Monat');
     }
-    if (sum.onRequest) text.append(hasValue(sum.once) || hasValue(sum.monthly) ? ' + Shop auf Anfrage' : 'Shop auf Anfrage');
+    if (sum.individual) text.append(hasValue(sum.once) || hasValue(sum.monthly) ? ' + Angebot für weitere Leistungen' : 'Individuelles Angebot');
+    if (sum.onRequest) text.append(hasValue(sum.once) || hasValue(sum.monthly) || sum.individual ? ' + Shop auf Anfrage' : 'Shop auf Anfrage');
     bar.append(text, element('span', 'est-bar-go', 'Ansehen'));
   }
 
@@ -384,7 +395,7 @@
     result.replaceChildren();
     renderBar();
     if (!priceBox) {
-      result.append(element('p', 'price-box-empty', topic ? 'Wählen Sie eine Option, der Preis erscheint hier.' : 'Wählen Sie zuerst, wobei wir helfen dürfen.'));
+      result.append(element('p', 'price-box-empty', topic ? 'Wählen Sie aus, was Sie vorhaben. Hier erscheint der nächste Schritt.' : 'Wählen Sie zuerst, wobei wir helfen dürfen.'));
       return;
     }
     const next = element('a', 'button', 'In die Anfrage übernehmen');

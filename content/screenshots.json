@@ -24,25 +24,45 @@
   },
   "bestanduebersicht": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showbestandsuebersicht",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/bestanduebersicht-desktop.jpg",
     "mobile": "/assets/help/bestanduebersicht-mobile.jpg",
     "mobile_viewport": {
       "width": 390,
       "height": 844
     },
-    "data": "synthetisch"
+    "data": "synthetisch",
+    "desktop_size": {
+      "width": 1250,
+      "height": 704
+    },
+    "mobile_size": {
+      "width": 390,
+      "height": 844
+    },
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "hersteller": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showherstelleradmin",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/hersteller-desktop.jpg",
     "mobile": "/assets/help/hersteller-mobile.jpg",
     "mobile_viewport": {
       "width": 390,
       "height": 844
     },
-    "data": "synthetisch"
+    "data": "synthetisch",
+    "desktop_size": {
+      "width": 1265,
+      "height": 712
+    },
+    "mobile_size": {
+      "width": 390,
+      "height": 844
+    },
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft. Ohne Ladeoverlay, Tabelle vollständig geladen."
   },
   "kundenliste": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showkundenadmin",
@@ -169,14 +189,24 @@
   },
   "sprachen": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showsprachenadmin",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/sprachen-desktop.jpg",
     "mobile": "/assets/help/sprachen-mobile.jpg",
     "mobile_viewport": {
       "width": 390,
       "height": 844
     },
-    "data": "synthetisch"
+    "data": "synthetisch",
+    "desktop_size": {
+      "width": 1265,
+      "height": 712
+    },
+    "mobile_size": {
+      "width": 390,
+      "height": 844
+    },
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "versand": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showversandadmin",
@@ -257,155 +287,265 @@
   },
   "google-export": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showfroogle",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/google-export-desktop.jpg",
     "mobile": "/assets/help/google-export-mobile.jpg",
     "mobile_viewport": {
       "width": 390,
       "height": 844
     },
-    "data": "synthetisch"
+    "data": "synthetisch",
+    "desktop_size": {
+      "width": 1265,
+      "height": 712
+    },
+    "mobile_size": {
+      "width": 390,
+      "height": 844
+    },
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "artikelliste": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopproduktliste",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/artikelliste-desktop.jpg",
     "mobile": "/assets/help/artikelliste-mobile.jpg",
     "mobile_viewport": {
       "width": 390,
       "height": 844
     },
-    "data": "synthetisch"
+    "data": "synthetisch",
+    "desktop_size": {
+      "width": 1265,
+      "height": 712
+    },
+    "mobile_size": {
+      "width": 390,
+      "height": 844
+    },
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "produkt-artikeldaten": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=artikeldaten",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/produkt-artikeldaten-desktop.jpg",
     "mobile": "/assets/help/produkt-artikeldaten-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
-    "title": "Artikeldaten und Kennungen"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "title": "Artikeldaten und Kennungen",
+    "desktop_size": {
+      "width": 1265,
+      "height": 712
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "produkt-preise": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=preise",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/produkt-preise-desktop.jpg",
     "mobile": "/assets/help/produkt-preise-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
-    "title": "Preise und Werte"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "title": "Preise und Werte",
+    "desktop_size": {
+      "width": 1280,
+      "height": 900
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "produkt-artikeltexte": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=artikeltexte",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/produkt-artikeltexte-desktop.jpg",
     "mobile": "/assets/help/produkt-artikeltexte-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
-    "title": "Artikeltexte und Produkt-Tabs"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "title": "Artikeltexte und Produkt-Tabs",
+    "desktop_size": {
+      "width": 1250,
+      "height": 704
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "produkt-artikelbilder": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=artikelbilder",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/produkt-artikelbilder-desktop.jpg",
     "mobile": "/assets/help/produkt-artikelbilder-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
-    "title": "Produktbilder in der Übersicht"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "title": "Produktbilder in der Übersicht",
+    "desktop_size": {
+      "width": 1250,
+      "height": 704
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "produkt-kategorien": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=kategorien",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/produkt-kategorien-desktop.jpg",
     "mobile": "/assets/help/produkt-kategorien-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
-    "title": "Kategorien zuordnen"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "title": "Kategorien zuordnen",
+    "desktop_size": {
+      "width": 1265,
+      "height": 712
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "produkt-darstellung": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=darstellung",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/produkt-darstellung-desktop.jpg",
     "mobile": "/assets/help/produkt-darstellung-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
-    "title": "Zubehör und Attributset"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "title": "Zubehör und Attributset",
+    "desktop_size": {
+      "width": 1265,
+      "height": 712
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "produkt-merkmale": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=merkmale",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/produkt-merkmale-desktop.jpg",
     "mobile": "/assets/help/produkt-merkmale-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
-    "title": "Varianten und ihre Werte"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "title": "Varianten und ihre Werte",
+    "desktop_size": {
+      "width": 1265,
+      "height": 889
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "produkt-export": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=export",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/produkt-export-desktop.jpg",
     "mobile": "/assets/help/produkt-export-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
-    "title": "Exportfreigaben am Produkt"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "title": "Exportfreigaben am Produkt",
+    "desktop_size": {
+      "width": 1265,
+      "height": 712
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "produkt-sonstiges": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=sonstiges",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/produkt-sonstiges-desktop.jpg",
     "mobile": "/assets/help/produkt-sonstiges-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
-    "title": "Zusatzfelder des Produkts"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "title": "Zusatzfelder des Produkts",
+    "desktop_size": {
+      "width": 1265,
+      "height": 712
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "produkt-tags": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=tags",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/produkt-tags-desktop.jpg",
     "mobile": "/assets/help/produkt-tags-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
-    "title": "Tag-Zuordnung"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "title": "Tag-Zuordnung",
+    "desktop_size": {
+      "width": 1250,
+      "height": 704
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "versand-einstellungen": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showversandadmin&VersandGruppen:VersandKlassenID=1&tab=einstellungen",
@@ -541,7 +681,7 @@
   },
   "shopdaten-script": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopdatenadmin&tab=script",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/shopdaten-script-desktop.jpg",
     "mobile": "/assets/help/shopdaten-script-mobile.jpg",
     "mobile_viewport": {
@@ -549,7 +689,16 @@
       "height": 844
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "desktop_size": {
+      "width": 1265,
+      "height": 712
+    },
+    "mobile_size": {
+      "width": 390,
+      "height": 844
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "startseite-texte": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showstartseitenadmin&tab=texte",
@@ -613,51 +762,87 @@
   },
   "mailvorlage-bearbeiten": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showmailtemplateadmin&Sprache=de&MailTemplateID=1",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/mailvorlage-bearbeiten-desktop.jpg",
     "mobile": "/assets/help/mailvorlage-bearbeiten-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "desktop_size": {
+      "width": 1265,
+      "height": 889
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Nach Editorlayout-Korrektur neu aufgenommen; tatsächlicher Scrollzustand zeigt Inhalt und Aktionsleiste. Keine Inhalte gespeichert."
   },
   "dokumentvorlage-bearbeiten": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showdocumenttemplateadmin&Sprache=de&MailTemplateID=2",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/dokumentvorlage-bearbeiten-desktop.jpg",
     "mobile": "/assets/help/dokumentvorlage-bearbeiten-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "desktop_size": {
+      "width": 1280,
+      "height": 900
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Nach Editorlayout-Korrektur neu aufgenommen; tatsächlicher Scrollzustand zeigt Inhalt und Aktionsleiste. Keine Inhalte gespeichert."
   },
   "cms-seite-bearbeiten": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showeigeneseitenadmin&Sprache=de&PageID=1",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/cms-seite-bearbeiten-desktop.jpg",
     "mobile": "/assets/help/cms-seite-bearbeiten-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
+    "desktop_size": {
+      "width": 1265,
+      "height": 889
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Nach Editorlayout-Korrektur neu aufgenommen; tatsächlicher Scrollzustand zeigt Inhalt und Aktionsleiste. Keine Inhalte gespeichert."
   },
   "cms-fusszeile": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showeditbox&nextadd=showeditbox&Box=footer&iamapopup=1",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/cms-fusszeile-desktop.jpg",
     "mobile": "/assets/help/cms-fusszeile-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "desktop_size": {
+      "width": 1250,
+      "height": 704
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "attribute-set": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add[]=showattribute&ProduktAttributSets:ProduktAttributSetID=1",
@@ -673,15 +858,24 @@
   },
   "attribute-werte": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?height=450&width=800&add=showattributwerte&nextadd=showattributwerte&ProduktAttributSetID=1&ProduktAttributOberGruppenID=1&ProduktAttributGruppenID=1&ProduktAttributID=1&iamapopup=1&random=1793796061322",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/attribute-werte-desktop.jpg",
     "mobile": "/assets/help/attribute-werte-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "desktop_size": {
+      "width": 1250,
+      "height": 704
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "gutschein-set": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showgutscheinadmin&Gutscheine:GutscheinID=1",
@@ -721,15 +915,24 @@
   },
   "zahlung-laender": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showzahlungsadmin&Zahlungsmoeglichkeiten:ZahlungsmoeglichkeitenID=1&tab=laender",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/zahlung-laender-desktop.jpg",
     "mobile": "/assets/help/zahlung-laender-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "desktop_size": {
+      "width": 1265,
+      "height": 712
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "sprache-produkt": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showsprachenadmin&edit=1&translate=&search=&Sprache=de&Where=Produkt_YToyOntzOjk6IlByb2R1a3RJRCI7czoxOiIxIjtzOjc6IlNwcmFjaGUiO3M6MjoiZGUiO30=",
@@ -771,7 +974,7 @@
   },
   "verkauf-manuell": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showbestellunganlegen",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/verkauf-manuell-desktop.jpg",
     "mobile": "/assets/help/verkauf-manuell-mobile.jpg",
     "mobile_viewport": {
@@ -779,8 +982,17 @@
       "height": 844
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
-    "title": "Manuelle Bestellung: Kundenauswahl"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "title": "Manuelle Bestellung: Kundenauswahl",
+    "desktop_size": {
+      "width": 1265,
+      "height": 712
+    },
+    "mobile_size": {
+      "width": 390,
+      "height": 844
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "produkt-warenwirtschaft": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showeinkaeufe&ProduktID=1&MerkmalID=1&MerkmalValueID=1",
@@ -811,16 +1023,25 @@
   },
   "produkt-bildupload": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showimagetoolbox&nextadd=showimagetoolbox&ProduktID=1&ImageNr=new&MerkmalID=0&MerkmalValueID=0&iamapopup=1",
-    "captured": "2026-11-04",
+    "captured": "2026-11-06",
     "desktop": "/assets/help/produkt-bildupload-desktop.jpg",
     "mobile": "/assets/help/produkt-bildupload-mobile.jpg",
     "mobile_viewport": {
-      "width": 390,
-      "height": 844
+      "width": 375,
+      "height": 812
     },
     "data": "synthetisch",
-    "capture_mode": "help_screenshots=1; Ladeabdeckung vor Aufnahme beendet; Mailblockade unverändert",
-    "title": "Bilddateien, Galeriebild und Alternativtext"
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "title": "Bilddateien, Galeriebild und Alternativtext",
+    "desktop_size": {
+      "width": 1250,
+      "height": 704
+    },
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
   },
   "produkt-zubehoerauswahl": {
     "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showzubehoeredit&ProduktID=1",
@@ -849,5 +1070,72 @@
     "capture_mode": "help_screenshots=1; keine internen Banner; Schutzfunktionen aktiv",
     "action": "Desktop: manuelle Auswahl geöffnet; Mobil: Auswahl zwischen Zufall und manueller Auswahl; nichts gespeichert",
     "title": "Cross-Selling konfigurieren"
+  },
+  "produkt-bildbearbeiten": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?height=450&width=640&add=showimagetoolbox&nextadd=showimagetoolbox&ProduktID=1&ImageNr=0&MerkmalID=0&MerkmalValueID=0&iamapopup=1&random=1793972652666",
+    "title": "Vorhandenes Produktbild bearbeiten",
+    "desktop": "/assets/help/produkt-bildbearbeiten-desktop.jpg",
+    "desktop_size": {
+      "width": 1250,
+      "height": 704
+    },
+    "mobile": "/assets/help/produkt-bildbearbeiten-mobile.jpg",
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "captured": "2026-11-06",
+    "mobile_viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "data": "synthetisch",
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft. Bestehender Bildplatz 1 des Demo-Bechers; mobil bis zur vollständigen Aktionsleiste gescrollt."
+  },
+  "verkauf-neukunde": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showbestellunganlegen",
+    "title": "Neue Kundendaten vorbereiten",
+    "capture_steps": "Neue Kundendaten öffnen; fiktive Beispieldaten im Formular, nicht gespeichert.",
+    "desktop": "/assets/help/verkauf-neukunde-desktop.jpg",
+    "desktop_size": {
+      "width": 1280,
+      "height": 900
+    },
+    "mobile": "/assets/help/verkauf-neukunde-mobile.jpg",
+    "mobile_size": {
+      "width": 390,
+      "height": 844
+    },
+    "captured": "2026-11-06",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "data": "synthetisch",
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft."
+  },
+  "produkt-aktionen": {
+    "source_url": "http://127.0.0.1:1892/admin2/index.php?add=showshopeditprodukt&ProduktID=1&tab=preise",
+    "title": "Artikel speichern und Bearbeitung abschließen",
+    "desktop": "/assets/help/produkt-aktionen-desktop.jpg",
+    "desktop_size": {
+      "width": 1280,
+      "height": 900
+    },
+    "mobile": "/assets/help/produkt-aktionen-mobile.jpg",
+    "mobile_size": {
+      "width": 375,
+      "height": 812
+    },
+    "captured": "2026-11-06",
+    "mobile_viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "data": "synthetisch",
+    "capture_mode": "Neutrale Demo 1892; help_screenshots=1; echte Browserausgabe; keine UI-Retusche; keine Mail-/Bestellaktion.",
+    "review_note": "Desktop und Mobilansicht nach AdminNew-Korrekturen neu aufgenommen und visuell geprüft. Mobil zum unteren Formularende gescrollt; alle Aktionen vollständig sichtbar."
   }
 }

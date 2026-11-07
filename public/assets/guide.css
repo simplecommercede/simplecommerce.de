@@ -289,3 +289,10 @@
   .pond { max-height: calc(100vh - 116px); padding: 18px 14px 16px; }
 }
 @media print { .fg, .pond, .glass { display: none; } }
+
+/* Ergebnis: nächste Aktion zuerst, Antworten mit genügend Platz zum Bearbeiten. */
+.steps-finish + .steps-summary { margin-top: 20px; }
+.steps-summary li { display: grid; gap: 6px; padding: 10px 12px; }
+.steps-actions { justify-content: flex-end; flex-wrap: wrap; }
+.steps-actions button { min-height: 36px; }
+.price-box-request { margin: 0 0 10px; font-size: .9rem; line-height: 1.5; }

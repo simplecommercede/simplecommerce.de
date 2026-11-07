@@ -1,4 +1,5 @@
 """Seitenrahmen der Website: Kopf, Navigation, Fuß und kleine HTML-Bausteine."""
+import re
 from html import escape
 import json
 
@@ -223,6 +224,7 @@ def render_page(path, title, description, body, kind='WebPage', noindex=False, s
         '</body></html>'
     )
     # Altbestandstexte bringen Leerraum am Zeilenende mit; die Ausgabe enthält keinen.
+    html = re.sub(r'((?:src|href)="/assets/[^"?]+\.(?:css|js))"', r'\1?v=20261107-1"', html)
     return '\n'.join(line.rstrip() for line in html.splitlines()) + '\n'
 
 

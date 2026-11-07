@@ -234,7 +234,7 @@ def home_hero(texts):
         f'<h1>{texts["heading"]}</h1>'
         f'<div><p class="lead">{texts["lead"]}</p>'
         '<div class="actions"><a class="button" href="/kontakt/">Ihr Projekt besprechen</a>'
-        '<a class="text-link" href="/preisrechner/">Preis schätzen</a></div></div>'
+        '<a class="text-link" href="/preisrechner/">Vorhaben zusammenstellen</a></div></div>'
         '</div>'
         f'{slider(OFFER_CARDS, "Unsere Leistungen")}'
         '</div>'
@@ -354,14 +354,14 @@ def service_body(slug, texts):
         intro(texts['heading'], texts['description'])
         + '<div class="wrap intro-actions"><div class="actions">'
         f'<a class="button" href="{contact_url}">Angebot anfragen</a>'
-        f'<a class="text-link" href="{estimate_url}">Preis schätzen</a>'
+        f'<a class="text-link" href="{estimate_url}">Vorhaben zusammenstellen</a>'
         '</div></div>'
         + brand_motif(slug)
         + f'<section class="wrap service-content">{articles}</section>'
         + service_detail(slug)
         + f'<section class="wrap note"><h2>{note["title"]}</h2><p>{note["text"]}</p>'
         f'<a href="{contact_url}">Individuelles Angebot anfragen →</a>'
-        f'<a href="{estimate_url}">Preis schätzen →</a></section>'
+        f'<a href="{estimate_url}">Vorhaben zusammenstellen →</a></section>'
         + related_services(slug)
         + cta(url=contact_url)
     )
@@ -627,7 +627,7 @@ def build_contact_page():
         f'<a class="contact-link" href="{EMAIL_URL}">{EMAIL}</a>'
         f'<a class="contact-link" href="{PHONE_URL}">{PHONE_DISPLAY}</a>'
         f'<p>{COMPANY}<br>{ADDRESS_HTML}</p>'
-        f'<h3>Telefonische Erreichbarkeit</h3><p>{"<br>".join(texts["phone_hours"])}</p>'
+        f'<h3>Lieber persönlich sprechen?</h3><p>{"<br>".join(texts["appointment_text"])}</p>'
         '<p>Sie nutzen bereits einen Shop?<br>Wir helfen Ihnen persönlich weiter.</p>'
         f'<span class="contact-frog" data-hop>{frog("v_bedienung", texts["frog_alt"])}</span>'
         '</div></section>'
@@ -687,6 +687,12 @@ def write_guide_data():
     guide = read_json('frog-guide.json')
     estimate = read_json('price-estimate.json')
     check_guide_data(guide, estimate)
+    if not estimate['released']:
+        estimate['effects'] = {
+            key: ({'label': value['label'], 'source': value['source'], 'onRequest': True}
+                  if value['source'] == 'entwurf' else value)
+            for key, value in estimate['effects'].items()
+        }
     data = {**guide, 'prices': {**estimate, 'tiers': PRICE_TIERS}}
     (OUT / 'assets/guide-data.js').write_text(f'window.FROSCH_DATA={compact_json(data)};\n', encoding='utf-8')
 

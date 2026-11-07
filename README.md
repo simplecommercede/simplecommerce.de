@@ -37,8 +37,10 @@ Originaldump, alte Hilfe und Originaluploads bleiben lokal und sind ignoriert. K
 - [Betrieb](docs/betrieb.md): Webserver, Kontaktversand und Voraussetzungen für den Livegang.
 - [Hilfe und Prüfung](docs/hilfe-pruefung.md): Aufnahmeverfahren, Nachweise und Grenzen.
 
-Stand 06.11.2026: 62 statische Seiten, 24 aktualisierte Hilfeartikel, 50 Screenshots. Shop-Preise sind der Shop-Navigation zugeordnet; `/preise/` bleibt bestehen. Die neutrale Admin-Demo läuft getrennt auf Port 1892; deren Testdaten bleiben erhalten. Live-Mailzustellung und Produktivumstellung sind noch offen.
+Stand 06.11.2026: 62 statische Seiten, 25 Hilfethemen, 128 eingebundene Screenshots. Shop-Preise sind der Shop-Navigation zugeordnet; `/preise/` bleibt bestehen. Die neutrale Admin-Demo läuft getrennt auf Port 1892; deren Testdaten bleiben erhalten. Live-Mailzustellung und Produktivumstellung sind noch offen.
 
 Markenüberarbeitung vom 04.11.2026: Originalorange `#ff6600`, Anthrazit/Weiß und fotografische Froschmotive aus dem bereitgestellten Bestand. Startseite und Leistungs-/Themenansichten individueller gestaltet; Herkunft in `content/brand-assets.json`. Diese vom Nutzer beauftragte Überarbeitung ergänzt den funktionalen Erstentwurf.
 
 Ausführliche Hilfe: `content/help-details.json` enthält die redaktionell abgeglichenen Abschnitte; `scripts/help_render.py` erzeugt Inhaltsverzeichnisse und Bildpaare. Umfang, bewusste Ausschlüsse und alte Lexikonziele sind in `docs/hilfe-inhaltsabgleich.md` dokumentiert. Die frühere Kurzfassung war keine vollständige Inhaltsmigration.
+
+Veröffentlichungsvorbereitung vom 06.11.2026: Der Assistent erhält die kurzen Wege zur Anfrage; ungeprüfte Entwurfspreise werden nicht ausgeliefert. Für individuelle Leistungen wird ein Angebot angefragt. Prüfstand und Schritte auf dem Zielhost: [Livegang](docs/livegang.md).
