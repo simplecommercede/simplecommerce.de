@@ -1,6 +1,6 @@
 # Arbeitsregeln für simplecommerce.de
 
-Stand: 07.11.2026. Gilt für dieses Repository. Bei Änderungen diese Regeln zusammen mit den zugehörigen Dokumenten aktuell halten.
+Stand: 08.11.2026. Gilt für dieses Repository. Bei Änderungen diese Regeln zusammen mit den zugehörigen Dokumenten aktuell halten.
 
 ## Auftrag und Inhalt
 - Statische Unternehmenswebsite als Ersatz für WordPress. PHP nur für das Kontaktformular; kein neues CMS oder unnötiger Build-Stack.
@@ -83,3 +83,9 @@ git diff --check
 - Keine festen Telefonzeiten ohne Bestätigung nennen; stattdessen einen Gesprächstermin anbieten.
 - Ergebnis des Fragebogens: Aktion „Anfrage ansehen“ vor der Zusammenfassung, Absenden ausschließlich im Formular. Ausgeblendete Telefonnummer deaktivieren; selbst bearbeitete Nachrichtentexte erhalten.
 - Betriebsfreigabe und konkrete Restschritte: `docs/livegang.md`. Ein erfolgreicher lokaler Test ist kein Zustellnachweis auf Hetzner.
+
+## Bestätigungen vom 08.11.2026
+- Bestehende Shoppreise vorerst bestätigt; Entwurfswerte für individuelle Leistungen weiterhin gesperrt.
+- Aktuelle Hilfe bleibt auf ausdrücklichen Nutzerwunsch indexierbar.
+- Hetzner-AVV und vorhandene Backups belegt; Weblog-Löschung älter als eine Woche vom Nutzer gespeichert. Details und Grenzen in `docs/rechtliches.md`.
+- Livegang ausschließlich gemeinsam mit Benjamin und Georgie; Push bedeutet keine Deploymentfreigabe.

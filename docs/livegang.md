@@ -1,9 +1,9 @@
 # Veröffentlichung des integrierten Website-Stands
 
-Stand: 06.11.2026. Vorbereitung abgeschlossen ist nicht gleichbedeutend mit einer bereits erfolgten Veröffentlichung.
+Stand: 08.11.2026. Vorbereitung abgeschlossen ist nicht gleichbedeutend mit einer bereits erfolgten Veröffentlichung.
 
 ## Inhalt und Preisfreigabe
-- Bestehende Shop-Preisliste bleibt erhalten. Der Rechner bildet deren Stufen ab; Shoppreise und Provisionsmodell sind vom Betreiber vor Veröffentlichung zu bestätigen.
+- Bestehende Shop-Preisliste bleibt erhalten. Der Rechner bildet deren Stufen ab; Benjamin hat die bestehenden Shoppreise vorerst bestätigt; bestehendes Modell bleibt unverändert.
 - Keine neuen Preiszusagen: Entwurfsbeträge bleiben in `content/price-estimate.json`, werden bei `released: false` aber vor der Auslieferung aus `public/assets/guide-data.js` entfernt. Zusätzlich blockiert die gemeinsame Berechnung nicht freigegebene Entwurfswerte.
 - Individuelle Leistungen führen zu einer Angebotsanfrage. Bei gemischter Auswahl sind bekannte Shopkosten nur Teilkosten; das steht auch im Nachrichtentext.
 - Keine unbestätigten Telefonzeiten. Rückrufwünsche werden im Assistenten erfasst; die Telefonnummer wird nur dann aktiviert und zur Pflichtangabe.
@@ -25,7 +25,7 @@ Stand: 06.11.2026. Vorbereitung abgeschlossen ist nicht gleichbedeutend mit eine
 2. `CONTACT_TO`, `CONTACT_FROM` und beschreibbares `CONTACT_STATE_DIR` außerhalb des DocumentRoots setzen. Entwicklungstransport und Entwicklungsumgebung deaktivieren. Konfiguration siehe `betrieb.md`.
 3. HTTPS, erlaubte Origin-Domain, Apache-Regeln und iframe-Ausnahme ausschließlich für `/hilfe/` prüfen.
 4. Eine echte Anfrage zustellen und im Zielpostfach prüfen, einschließlich Antworten an den Absender. Lokale Dateitests ersetzen diesen Schritt nicht.
-5. Tatsächliche Hetzner-Log-/Backup-Einstellungen und AV-Vertrag mit den Angaben in `rechtliches.md` abgleichen.
+5. AV-Vertrag und vorhandene Backups sind bestätigt, Weblog-Löschung nach einer Woche ist gespeichert. Beim Livegang Backup-Umfang/Wiederherstellungsstände und ausgeführte Log-Bereinigung kontrollieren; siehe `rechtliches.md`.
 6. Vorherigen DocumentRoot-Stand für eine Rücknahme sichern. Nach Umschaltung Startseite, Shoppreise, Kontakt und einen alten Hilfelink testen.
 
 ## Lokale Prüfung
@@ -44,3 +44,9 @@ Die regulären Prüfungen stehen in `AGENTS.md`. Der Fragebogen-Test prüft alle
 Branch `codex/integration-redesign-live` führt `redesign-website` (aa8aa9b) und `codex/live-vorbereitung` (5d296d1) zusammen. Responsive Gestaltung, vereinfachte Navigation und aufgeteilter Generator stammen aus dem Redesign. Preissperre, Anfrageführung und aktuelle Hilfebilder stammen aus der Live-Vorbereitung. Konflikte im Generator wurden in die neue Struktur und `content/site-texts.json` übertragen; HTML und Fragebogendokumentation werden neu erzeugt. Hilfe bleibt unter ihren bisherigen URLs erreichbar, außerhalb der Werbenavigation und Frosch-Suche.
 
 62 Seiten strukturell fehlerfrei; PHP-Syntax geprüft. Kontaktseite auf Desktop und Mobil geprüft, keine horizontale Überbreite; verborgenes Telefonfeld deaktiviert. Bildmanifest und alle Hilfeaufnahmen unverändert gegenüber dem freigegebenen Hilfe-Branch. Entwurfspreise sind nicht in öffentlichen Preisdaten enthalten. Keine Produktivumstellung.
+
+## Betreiberentscheidungen vom 08.11.2026
+- Bestehende Shoppreise vorerst bestätigt; keine Freigabe neuer Entwurfspreise.
+- Aktuelle Hilfe bleibt ausdrücklich für Suchmaschinen indexierbar. Historische Entwurfsseiten behalten ihre bisherigen Einschränkungen.
+- Livegang gemeinsam mit Benjamin und Georgie; Commit/Push ist keine Freigabe zur eigenständigen Produktivumstellung.
+- AV-Vertrag, Backups und gespeicherte Weblog-Löschregel dokumentiert. Für diese Textaktualisierung keine weitere Rückfrage erforderlich. Mailzustellung, Zielhost-Prüfung und konkrete Backup-Kontrolle bleiben technische Schritte beim gemeinsamen Livegang.
