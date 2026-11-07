@@ -129,6 +129,10 @@ def price_number(value):
 
 PRICE_TABLE = price_table_html()
 PRICE_ROWS = parse_price_rows(PRICE_TABLE)
+# Hinweiszeilen bleiben auf dem Handy trotz breiter Tabelle ganz lesbar.
+PRICE_TABLE_HTML = re.sub(
+    r'(<td colspan="\d+">)(?:<br>\s*)?(.*?)(</td>)', r'\1<span class="table-note">\2</span>\3', PRICE_TABLE, flags=re.S
+)
 PRICE_TIERS = [
     {
         'limit': limit,
@@ -562,7 +566,7 @@ def build_price_page():
         + price_calculator()
         + f'<section class="wrap section">{section_title("Alle Preise im Detail")}'
         '<div class="table-scroll reveal" tabindex="0" role="region" aria-label="Shoppreise nach Umsatzstufe">'
-        f'{PRICE_TABLE}</div>{extras}</section>'
+        f'{PRICE_TABLE_HTML}</div>{extras}</section>'
         + cta(*texts['cta'])
     )
     page('/preise/', texts['title'], texts['description'], small_cents(body))

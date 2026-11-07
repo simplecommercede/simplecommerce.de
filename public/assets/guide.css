@@ -280,8 +280,11 @@
 .glass-splinter { position: absolute; background: linear-gradient(135deg, #ffffffee, #bfdce788); clip-path: polygon(50% 0, 100% 72%, 28% 100%); }
 
 /* ---------- Schmale Bildschirme und Druck ---------- */
+@media (max-width: 1023px) {
+  .fg-button { width: 88px; height: 88px; }
+}
 @media (max-width: 760px) {
-  .fg-button { width: 80px; height: 80px; }
+  .fg-button { width: 72px; height: 72px; }
   .fg-say { max-width: min(240px, calc(100vw - 40px)); padding: 10px 14px; font-size: .92rem; }
   .pond { max-height: calc(100vh - 116px); padding: 18px 14px 16px; }
 }
