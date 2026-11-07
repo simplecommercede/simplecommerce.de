@@ -25,7 +25,7 @@ Stand: 08.11.2026. Vorbereitung abgeschlossen ist nicht gleichbedeutend mit eine
 2. `CONTACT_TO`, `CONTACT_FROM` und beschreibbares `CONTACT_STATE_DIR` außerhalb des DocumentRoots setzen. Entwicklungstransport und Entwicklungsumgebung deaktivieren. Konfiguration siehe `betrieb.md`.
 3. HTTPS, erlaubte Origin-Domain, Apache-Regeln und iframe-Ausnahme ausschließlich für `/hilfe/` prüfen.
 4. Eine echte Anfrage zustellen und im Zielpostfach prüfen, einschließlich Antworten an den Absender. Lokale Dateitests ersetzen diesen Schritt nicht.
-5. AV-Vertrag und vorhandene Backups sind bestätigt, Weblog-Löschung nach einer Woche ist gespeichert. Beim Livegang Backup-Umfang/Wiederherstellungsstände und ausgeführte Log-Bereinigung kontrollieren; siehe `rechtliches.md`.
+5. AV-Vertrag und vorhandene Backups sind bestätigt, Weblog-Löschung nach einer Woche ist gespeichert. Beim Livegang Backup-Umfang/Wiederherstellbarkeit und ausgeführte Log-Bereinigung kontrollieren; siehe `rechtliches.md`.
 6. Vorherigen DocumentRoot-Stand für eine Rücknahme sichern. Nach Umschaltung Startseite, Shoppreise, Kontakt und einen alten Hilfelink testen.
 
 ## Lokale Prüfung
@@ -50,3 +50,5 @@ Branch `codex/integration-redesign-live` führt `redesign-website` (aa8aa9b) und
 - Aktuelle Hilfe bleibt ausdrücklich für Suchmaschinen indexierbar. Historische Entwurfsseiten behalten ihre bisherigen Einschränkungen.
 - Livegang gemeinsam mit Benjamin und Georgie; Commit/Push ist keine Freigabe zur eigenständigen Produktivumstellung.
 - AV-Vertrag, Backups und gespeicherte Weblog-Löschregel dokumentiert. Für diese Textaktualisierung keine weitere Rückfrage erforderlich. Mailzustellung, Zielhost-Prüfung und konkrete Backup-Kontrolle bleiben technische Schritte beim gemeinsamen Livegang.
+
+Backup-Nachweis ergänzt: Die konsoleH-Auswahl zeigt 13 Stände vom 24.10. bis 07.11.2026; der 25./26.10. ist nicht aufgeführt. Das belegt die angebotenen Wiederherstellungspunkte, nicht deren Inhalt oder einen erfolgreichen Restore. Keine Wiederherstellung ausgeführt.

@@ -11,7 +11,7 @@ Die alten pauschalen Haftungsausschlüsse und die unzutreffenden Aussagen zu reC
 Der Betreiber bestätigt Website und E-Mail bei Hetzner Managed Server in Deutschland sowie einen Mitarbeiter (Benjamin Bartels). Am 08.11.2026 sind folgende Nachweise ergänzt:
 - AV-Vertrag vom 08.10.2018 für simplecommerce GmbH vorgelegt. Anlage 1 umfasst Personenstamm-, Kommunikations-, Vertrags- und Protokolldaten sowie Kunden/Interessenten und Mitarbeiter/Lieferanten. Vorhandensein ist damit geklärt; keine pauschale rechtliche Einzelfallfreigabe.
 - TÜV-Rheinland-Bericht vom 19.02.2026 vorgelegt; geprüft wurden Hetzners technische und organisatorische Maßnahmen, nicht die individuelle Websitekonfiguration. Die vertraulichen PDFs bleiben außerhalb des Repositorys und der Website.
-- Backups laut Benjamin vorhanden. Hetzners Produktdokumentation nennt für Managed Server 14 Tage; die konkrete Wiederherstellungsspanne und der Sicherungsumfang dieses Accounts sind noch nicht separat geprüft. Die öffentliche Erklärung kennzeichnet die Frist als Anbieterangabe.
+- Backups laut Benjamin vorhanden. Hetzners Produktdokumentation nennt für Managed Server 14 Tage; Screenshot der Backup-Auswahl vom 08.11.2026 zeigt 13 auswählbare Stände vom 24.10. bis 07.11.2026. Der 25. und 26.10. fehlen in der Liste; daraus wird keine lückenlose tägliche Sicherung abgeleitet. Sicherungsinhalt und erfolgreiche Wiederherstellung sind noch nicht geprüft. Die öffentliche Erklärung kennzeichnet die Frist als Anbieterangabe.
 - Domainweite Wartungsregeln aktiviert: Weblogs löschen, wenn älter als eine Woche. Speicherung der Einstellung am 08.11.2026 ausdrücklich bestätigt. Zuvor galt „Nicht löschen“. Keine Behauptung einer bereits kontrollierten Bereinigung vorhandener Altlogs.
 - Screenshot zeigt zusätzlich sieben Tage für Spam und Papierkorb. Diese Ordnerregeln sind keine allgemeine Löschfrist für Kontaktanfragen oder Mailserver-Protokolle.
 - Für Mailserver-Protokolle nennt Hetzner sieben Tage, für Weblogs IP-Maskierung. Mailinhalte sind davon getrennt; für Kontaktanfragen gelten die zweckbezogenen Löschkriterien der Erklärung.
@@ -19,7 +19,7 @@ Der Betreiber bestätigt Website und E-Mail bei Hetzner Managed Server in Deutsc
 Benjamin Bartels ist Datenschutz-Ansprechpartner. Er ist zugleich Geschäftsführer; keine förmliche Benennung als unabhängiger Datenschutzbeauftragter behaupten. Eine etwaige Benennungspflicht hängt auch von den Verarbeitungen ab und ist nicht allein durch die Mitarbeiterzahl geklärt.
 
 ## Noch zu klären
-- Beim gemeinsamen Livegang Backup-Umfang und verfügbare Wiederherstellungsstände prüfen; regelmäßige Weblog-Bereinigung anhand der tatsächlichen Dateien kontrollieren.
+- Beim gemeinsamen Livegang Backup-Umfang und Wiederherstellbarkeit prüfen; regelmäßige Weblog-Bereinigung anhand der tatsächlichen Dateien kontrollieren.
 - Betreiberantwort „Nein, Rest passt“ bestätigt keine Verpflichtung/freiwillige Zusage zur Verbraucherschlichtung; entsprechender Hinweis im Impressum ergänzt. Er wird unabhängig von der Kleinunternehmer-Ausnahme nach § 36 Abs. 3 VSBG angezeigt.
 - Keine zusätzliche Wirtschafts-Identifikationsnummer mitgeteilt; übrige Angaben vom Betreiber bestätigt. Vorhandene USt-ID übernommen; bei späterer Zuteilung erneut prüfen.
 - Unternehmensangaben und tatsächliche Produktionskonfiguration vor Freigabe bestätigen. Weitere Dienste erfordern erneute Anpassung.
