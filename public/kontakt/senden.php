@@ -8,9 +8,85 @@ header('Content-Type: text/html; charset=UTF-8');
 header('Cache-Control: no-store');
 header('X-Content-Type-Options: nosniff');
 header("Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'");
-function finish(int $status, string $title, string $message): never {
+// Private, bounded diagnostics: never log form contents, addresses or exception messages.
+umask(0077);
+$contactSec = getenv('CONTACT_STATE_DIR') ?: dirname(__DIR__, 2).'/SEC/contact';
+$contactLogReady = false;
+$contactFinished = false;
+$contactRequestId = bin2hex(random_bytes(8));
+function contactLog(string $event, array $details = []): void {
+    global $contactSec, $contactLogReady, $contactRequestId;
+    if (!$contactLogReady) return;
+    $record = ['time' => gmdate('c'), 'request' => $contactRequestId, 'event' => $event];
+    foreach (['status', 'type', 'file', 'line', 'php'] as $key) {
+        if (isset($details[$key])) $record[$key] = $details[$key];
+    }
+    $kind = $event === 'runtime_error' || $event === 'runtime_unsupported' ? 'php_error' : 'contact';
+    $file = $contactSec.'/'.$kind.'_'.gmdate('Y-m-d').'.jsonl';
+    $handle = @fopen($file, 'c+');
+    if (!$handle) return;
+    if (flock($handle, LOCK_EX)) {
+        $size = fstat($handle)['size'];
+        $line = json_encode($record, JSON_UNESCAPED_SLASHES)."\n";
+        if ($size + strlen($line) <= 1048576) {
+            fseek($handle, 0, SEEK_END);
+            fwrite($handle, $line);
+        }
+        flock($handle, LOCK_UN);
+    }
+    fclose($handle);
+}
+function contactFailure(): void {
+    global $contactFinished;
+    if ($contactFinished) return;
+    finish(503, 'Der Versand konnte nicht bestätigt werden.', 'Bitte schreiben Sie uns an projekt@simplecommerce.de. Prüfen Sie vor einer erneuten Anfrage, ob bereits eine Bestätigung vorliegt.');
+}
+set_exception_handler(function (Throwable $error): void {
+    contactLog('runtime_error', ['type' => get_class($error), 'file' => basename($error->getFile()), 'line' => $error->getLine()]);
+    contactFailure();
+});
+set_error_handler(function (int $type, string $message, string $file, int $line): bool {
+    if (!(error_reporting() & $type)) return true;
+    contactLog('runtime_error', ['type' => $type, 'file' => basename($file), 'line' => $line]);
+    return true;
+});
+register_shutdown_function(function (): void {
+    $error = error_get_last();
+    if ($error && in_array($error['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR], true)) {
+        contactLog('runtime_error', ['type' => $error['type'], 'file' => basename($error['file']), 'line' => $error['line']]);
+        contactFailure();
+    }
+});
+// Refuse a storage path inside the document tree, including symlink targets.
+$documentRoot = realpath($_SERVER['DOCUMENT_ROOT'] ?? '') ?: realpath(dirname(__DIR__));
+$existingParent = $contactSec;
+while (!file_exists($existingParent) && dirname($existingParent) !== $existingParent) $existingParent = dirname($existingParent);
+$parentReal = realpath($existingParent);
+if (!$parentReal || ($documentRoot && ($parentReal === $documentRoot || strpos($parentReal.'/', $documentRoot.'/') === 0))) {
+    finish(503, 'Der Versand ist derzeit nicht verfügbar.', 'Bitte schreiben Sie uns an projekt@simplecommerce.de.');
+}
+if (!is_dir($contactSec) && !@mkdir($contactSec, 0700, true) && !is_dir($contactSec)) contactFailure();
+$secReal = realpath($contactSec);
+if (!$secReal || ($documentRoot && ($secReal === $documentRoot || strpos($secReal.'/', $documentRoot.'/') === 0)) || !is_writable($contactSec)) contactFailure();
+$contactLogReady = true;
+// Seven UTC calendar days, max. 1 MiB per day and log type; cleanup on requests.
+foreach (['contact_', 'php_error_'] as $prefix) {
+    foreach (glob($contactSec.'/'.$prefix.'*.jsonl') ?: [] as $old) {
+        if (basename($old) < $prefix.gmdate('Y-m-d', time() - 6 * 86400).'.jsonl') @unlink($old);
+    }
+}
+if (PHP_VERSION_ID < 80200) {
+    contactLog('runtime_unsupported', ['php' => PHP_VERSION]);
+    finish(503, 'Das Kontaktformular wird gerade eingerichtet.', 'Bitte schreiben Sie uns direkt an projekt@simplecommerce.de.');
+}
+
+function finish(int $status, string $title, string $message): void {
+    global $contactFinished, $contactRequestId;
+    $contactFinished = true;
+    contactLog('response', ['status' => $status]);
+    header('X-Request-ID: '.$contactRequestId);
     http_response_code($status);
-    if (str_contains($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json')) {
+    if (strpos($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json') !== false) {
         header('Content-Type: application/json; charset=UTF-8');
         echo json_encode(['ok' => $status >= 200 && $status < 300, 'title' => $title, 'message' => $message], JSON_UNESCAPED_UNICODE);
         exit;
@@ -46,43 +122,7 @@ if ($isLocalServer) $allowed[] = 'http://'.$localHost;
 if (!in_array($origin, $allowed, true)) {
     finish(403, 'Bitte öffnen Sie das Formular neu.', 'Die Anfrage konnte nicht zugeordnet werden. Ihre Nachricht wurde nicht versendet. Öffnen Sie die Kontaktseite über die Website-Adresse und versuchen Sie es erneut.');
 }
-$fields = [];
-foreach (['name', 'email', 'telefon', 'thema', 'nachricht', 'website'] as $key) {
-    $value = $_POST[$key] ?? '';
-    if (!is_string($value) || !preg_match('//u', $value)) {
-        finish(422, 'Bitte prüfen Sie Ihre Angaben.', 'Die Formularwerte haben ein ungültiges Format.');
-    }
-    $fields[$key] = trim($value);
-}
-if (array_sum(array_map('strlen', $fields)) > 20000) {
-    // Auch ohne Längenangabe im Request, etwa bei Chunked Encoding.
-    finish(413, 'Die Nachricht ist zu lang.', 'Bitte kürzen Sie Ihre Nachricht und senden Sie sie erneut.');
-}
-if ($fields['website'] !== '') {
-    // Honeypot submissions are never delivered.
-    finish(200, 'Vielen Dank.', 'Ihre Anfrage wurde entgegengenommen.');
-}
-$topics = ['Shopsystem','Webseitenerstellung','IT-Beratung','IT-Projekt','KI-Anwendungen','Service','Sonstiges'];
-if ($fields['name'] === '' || strlen($fields['name']) > 480 || preg_match('/[\p{Cc}\x{2028}\x{2029}\x{202A}-\x{202E}\x{2066}-\x{2069}]/u', $fields['name'])
-    || strlen($fields['email']) > 254 || !filter_var($fields['email'], FILTER_VALIDATE_EMAIL)
-    || preg_match('/[\r\n]/', $fields['email']) || !in_array($fields['thema'], $topics, true)
-    || strlen($fields['nachricht']) < 10 || strlen($fields['nachricht']) > 10000 || str_contains($fields['nachricht'], "\0")) {
-    finish(422, 'Bitte prüfen Sie Ihre Angaben.', 'Name, eine gültige E-Mail-Adresse und eine Nachricht mit 10 bis 10.000 Zeichen sind erforderlich. Nutzen Sie die Zurück-Funktion Ihres Browsers, um Ihre Eingaben zu korrigieren.');
-}
-// Die Telefonnummer ist freiwillig; ein Zeilenumbruch kann hier nicht durchrutschen.
-if ($fields['telefon'] !== '' && preg_match('#^[0-9+()/ .\-]{5,40}$#D', $fields['telefon']) !== 1) {
-    finish(422, 'Bitte prüfen Sie Ihre Telefonnummer.', 'Die Telefonnummer darf nur Ziffern und die Zeichen + ( ) / . - enthalten. Nutzen Sie die Zurück-Funktion Ihres Browsers, um sie zu korrigieren.');
-}
-if ($isLocalPreview) finish(200, 'Formulartest erfolgreich.', 'Sie sind in der lokalen Vorschau. Ihre Angaben wurden geprüft; es wurde keine E-Mail versendet.');
-$to = getenv('CONTACT_TO') ?: '';
-$from = getenv('CONTACT_FROM') ?: '';
-$transport = getenv('CONTACT_TRANSPORT') ?: 'mail';
-$testFile = getenv('CONTACT_TEST_FILE') ?: '';
-$isFileTest = $transport === 'file' && getenv('CONTACT_ENV') === 'development' && $testFile !== '';
-if (!$isFileTest && (!filter_var($to, FILTER_VALIDATE_EMAIL) || !filter_var($from, FILTER_VALIDATE_EMAIL) || preg_match('/[\r\n]/', $to.$from) || $transport !== 'mail')) {
-    finish(503, 'Bitte kontaktieren Sie uns per E-Mail.', 'Der Formularversand ist derzeit nicht verfügbar. Ihre Nachricht wurde nicht versendet.');
-}
-$state = getenv('CONTACT_STATE_DIR') ?: dirname(__DIR__, 2).'/var/contact';
+$state = $contactSec;
 if (!is_dir($state) && !@mkdir($state, 0700, true) && !is_dir($state)) {
     finish(503, 'Bitte versuchen Sie es später erneut.', 'Ihre Nachricht konnte nicht versendet werden.');
 }
@@ -111,12 +151,55 @@ $address = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 $packed = @inet_pton($address);
 if ($packed !== false && strlen($packed) === 16) $address = bin2hex(substr($packed, 0, 8));
 $now = time();
+// Bound all same-origin submissions, including invalid forms and honeypots.
+if (!withinLimit($state.'/attempt-'.hash_hmac('sha256', $address, $salt).'.json', 20, $now) || !withinLimit($state.'/attempt-global.json', 1000, $now)) {
+    header('Retry-After: 3600');
+    finish(429, 'Bitte warten Sie einen Moment.', 'Zu viele Anfragen. Bitte versuchen Sie es später erneut.');
+}
+foreach (glob($state.'/*.json') ?: [] as $old) { if (@filemtime($old) < $now - 7200) @unlink($old); }
+
+$fields = [];
+foreach (['name', 'email', 'telefon', 'thema', 'nachricht', 'website'] as $key) {
+    $value = $_POST[$key] ?? '';
+    if (!is_string($value) || !preg_match('//u', $value)) {
+        finish(422, 'Bitte prüfen Sie Ihre Angaben.', 'Die Formularwerte haben ein ungültiges Format.');
+    }
+    $fields[$key] = trim($value);
+}
+if (array_sum(array_map('strlen', $fields)) > 20000) {
+    // Auch ohne Längenangabe im Request, etwa bei Chunked Encoding.
+    finish(413, 'Die Nachricht ist zu lang.', 'Bitte kürzen Sie Ihre Nachricht und senden Sie sie erneut.');
+}
+if ($fields['website'] !== '') {
+    contactLog('spam_honeypot');
+    // Honeypot submissions are never delivered.
+    finish(200, 'Vielen Dank.', 'Ihre Anfrage wurde entgegengenommen.');
+}
+$topics = ['Shopsystem','Webseitenerstellung','IT-Beratung','IT-Projekt','KI-Anwendungen','Service','Sonstiges'];
+if ($fields['name'] === '' || strlen($fields['name']) > 480 || preg_match('/[\p{Cc}\x{2028}\x{2029}\x{202A}-\x{202E}\x{2066}-\x{2069}]/u', $fields['name'])
+    || strlen($fields['email']) > 254 || !filter_var($fields['email'], FILTER_VALIDATE_EMAIL)
+    || preg_match('/[\r\n]/', $fields['email']) || !in_array($fields['thema'], $topics, true)
+    || strlen($fields['nachricht']) < 10 || strlen($fields['nachricht']) > 10000 || str_contains($fields['nachricht'], "\0")) {
+    finish(422, 'Bitte prüfen Sie Ihre Angaben.', 'Name, eine gültige E-Mail-Adresse und eine Nachricht mit 10 bis 10.000 Zeichen sind erforderlich. Nutzen Sie die Zurück-Funktion Ihres Browsers, um Ihre Eingaben zu korrigieren.');
+}
+// Die Telefonnummer ist freiwillig; ein Zeilenumbruch kann hier nicht durchrutschen.
+if ($fields['telefon'] !== '' && preg_match('#^[0-9+()/ .\-]{5,40}$#D', $fields['telefon']) !== 1) {
+    finish(422, 'Bitte prüfen Sie Ihre Telefonnummer.', 'Die Telefonnummer darf nur Ziffern und die Zeichen + ( ) / . - enthalten. Nutzen Sie die Zurück-Funktion Ihres Browsers, um sie zu korrigieren.');
+}
+if ($isLocalPreview) finish(200, 'Formulartest erfolgreich.', 'Sie sind in der lokalen Vorschau. Ihre Angaben wurden geprüft; es wurde keine E-Mail versendet.');
+$to = getenv('CONTACT_TO') ?: '';
+$from = getenv('CONTACT_FROM') ?: '';
+$transport = getenv('CONTACT_TRANSPORT') ?: 'mail';
+$testFile = getenv('CONTACT_TEST_FILE') ?: '';
+$isFileTest = $transport === 'file' && getenv('CONTACT_ENV') === 'development' && $testFile !== '';
+if (!$isFileTest && (!filter_var($to, FILTER_VALIDATE_EMAIL) || !filter_var($from, FILTER_VALIDATE_EMAIL) || preg_match('/[\r\n]/', $to.$from) || $transport !== 'mail')) {
+    finish(503, 'Bitte kontaktieren Sie uns per E-Mail.', 'Der Formularversand ist derzeit nicht verfügbar. Ihre Nachricht wurde nicht versendet.');
+}
 // Fünf Anfragen je Anschluss und 100 insgesamt je Stunde begrenzen auch verteilte Angriffe auf das Postfach.
 if (!withinLimit($state.'/'.hash_hmac('sha256', $address, $salt).'.json', 5, $now) || !withinLimit($state.'/global.json', 100, $now)) {
     header('Retry-After: 3600');
     finish(429, 'Bitte warten Sie einen Moment.', 'Es wurden bereits mehrere Anfragen gesendet. Versuchen Sie es später erneut oder kontaktieren Sie uns per E-Mail.');
 }
-foreach (glob($state.'/*.json') ?: [] as $old) { if (@filemtime($old) < $now - 7200) @unlink($old); }
 // Steuerzeichen und Richtungs-Tricks entfernen, Zeilenenden vereinheitlichen; Base64 macht den Inhalt für SMTP harmlos.
 $message = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F\x{2028}\x{2029}\x{202A}-\x{202E}\x{2066}-\x{2069}]/u', '', str_replace(["\r\n", "\r"], "\n", $fields['nachricht']));
 $subject = 'Website-Anfrage: '.$fields['thema'];
@@ -127,5 +210,6 @@ if ($isFileTest) {
     $headers = ['From'=>$from, 'Reply-To'=>$fields['email'], 'MIME-Version'=>'1.0', 'Content-Type'=>'text/plain; charset=UTF-8', 'Content-Transfer-Encoding'=>'base64'];
     $sent = @mail($to, '=?UTF-8?B?'.base64_encode($subject).'?=', rtrim(chunk_split(base64_encode($body), 76, "\n")), $headers);
 }
+contactLog($sent ? ($isFileTest ? 'test_written' : 'mail_accepted') : 'mail_failed');
 if (!$sent) finish(503, 'Der Versand hat nicht funktioniert.', 'Ihre Nachricht wurde nicht versendet. Bitte versuchen Sie es später erneut oder schreiben Sie uns direkt per E-Mail.');
 finish(200, 'Vielen Dank für Ihre Nachricht.', 'Ihre Anfrage wurde an den Mailversand übergeben. Wir melden uns bei Ihnen.');

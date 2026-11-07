@@ -7,7 +7,7 @@ Apache 2.4 mit mod_rewrite und AllowOverride FileInfo Indexes Options oder gleic
 Im PHP-Prozess setzen, nicht in öffentlich zugänglichen Dateien:
 - `CONTACT_TO`: tatsächlicher Empfänger, z. B. projekt@simplecommerce.de.
 - `CONTACT_FROM`: `projekt@simplecommerce.de` als autorisierte Absenderadresse; der Server muss diese zustellen dürfen.
-- `CONTACT_STATE_DIR`: beschreibbarer Ordner außerhalb des DocumentRoots, standardmäßig `var/contact` im Projekt.
+- `CONTACT_STATE_DIR`: beschreibbarer Ordner außerhalb des DocumentRoots, standardmäßig `SEC/contact` im Projekt.
 - Produktiv weder `CONTACT_ENV=development` noch `CONTACT_TRANSPORT=file` setzen.
 
 Ohne Empfänger/Absender zeigt der Endpunkt ehrlich einen Versandfehler und die direkte E-Mail-Adresse. Kein stiller Datenverlust durch eine vorgetäuschte Bestätigung. Die Mailfunktion bestätigt nur Übergabe an den MTA, nicht Eingang im Zielpostfach. Vor Produktivumstellung eine echte Zustellprobe mit Zustimmung durchführen und SPF/DKIM/DMARC der Absenderdomain prüfen.
@@ -63,3 +63,6 @@ AV-Vertrag vorhanden, Backups vom Betreiber bestätigt. Domainweite Weblog-Lösc
 
 ## Kontaktadresse vom 08.11.2026
 Benjamin hat `projekt@simplecommerce.de` als Verteiler an BB und GD eingerichtet und für öffentliche Kontaktangaben bestätigt. Geschützte Vorschau: echter Mailversand ausdrücklich zum Test freigegeben, Upload-Konfiguration siehe `vorschau-upload.md`. Die Empfangsprüfung durch Benjamin/Georgie steht noch aus.
+
+## Formularschutz und Diagnose
+PHP 8.4 für die Hetzner-Vorschau; Mindestversion 8.2. Ältere Versionen erhalten eine kontrollierte Nichtverfügbarkeitsmeldung statt einer leeren Antwort. SEC liegt außerhalb des DocumentRoots; Pfade innerhalb des Webroots werden verweigert. Pro Anschluss (/64 bei IPv6) maximal 20 Formularversuche und fünf Zustellversuche pro Stunde; global 1.000 Versuche und 100 Zustellversuche. Origin-Prüfung ist zusätzlicher Schutz, kein Botnachweis. Honeypot und serverseitige Prüfungen bleiben aktiv. Kein externer CAPTCHA-Dienst integriert. Datenschutzarme, größenbegrenzte Tagesprotokolle und Löschung siehe `vorschau-upload.md`. Keine Garantie vollständiger Spamerkennung oder Zustellung.

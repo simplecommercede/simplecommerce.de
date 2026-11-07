@@ -94,3 +94,5 @@ git diff --check
 - Öffentliche Kontaktadresse: `projekt@simplecommerce.de`, vom Betreiber eingerichteter Verteiler an BB und GD.
 - Echter Kontaktversand in der passwortgeschützten Vorschau ist ausdrücklich zum Test autorisiert. Kein Nachweis des Empfangs bis zur Bestätigung durch Benjamin/Georgie.
 - FTPS-Upload und bestehender Hetzner-Verzeichnisschutz: `docs/vorschau-upload.md`. Standardhost wegen gültigem Zertifikat `dedi1693.your-server.de`; keine Zertifikatsprüfung deaktivieren.
+
+- Vorschau ab 08.11.2026 per Hetzner-FcgidWrapper auf PHP 8.4. Formularlogs und Spam-Zähler unter `SEC/simplecommerce-preview` im Account-Home, außerhalb von `public_html`. Keine Formulardaten in Diagnoseprotokolle schreiben. Regressionen: `python3 scripts/test_contact_security.py`.

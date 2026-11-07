@@ -35,7 +35,8 @@ ht = re.sub(r'(RewriteRule\s+\S+\s+)/', r'\1/redesign/', ht)
 ht = ht.replace('ErrorDocument 404 /404/', 'ErrorDocument 404 /redesign/404/')
 ht = ht.replace('m#^/hilfe/#', 'm#^/redesign/hilfe/#')
 # Preserve Hetzner's authentication directives and replace only our own block.
-preview = ('<IfModule mod_headers.c>\nHeader always set X-Robots-Tag "noindex, nofollow"\n</IfModule>\n')
+preview = ('FcgidWrapper "/home/httpd/cgi-bin/php84-fcgi-starter.fcgi" .php\n'
+           '<IfModule mod_headers.c>\nHeader always set X-Robots-Tag "noindex, nofollow"\n</IfModule>\n')
 (out / '.htaccess').write_text(existing.rstrip() + '\n\n' + start + '\n' + preview + ht + '\n' + end + '\n')
 # Real delivery explicitly authorized for the protected preview by Benjamin.
 # Rewrite only URL attributes in PHP, never PHP regexes or filesystem paths.
@@ -45,7 +46,7 @@ php = re.sub(r'((?:href|src)=")/(?!/)', r'\1/redesign/', php)
 php = php.replace("$to = getenv('CONTACT_TO') ?: '';", "$to = getenv('CONTACT_TO') ?: 'projekt@simplecommerce.de';")
 php = php.replace("$from = getenv('CONTACT_FROM') ?: '';", "$from = getenv('CONTACT_FROM') ?: 'projekt@simplecommerce.de';")
 # Deployment: ACCOUNT/public_html/new/redesign/kontakt => state outside public_html.
-php = php.replace("dirname(__DIR__, 2).'/var/contact'", "dirname(__DIR__, 4).'/.simplecommerce-preview-contact'")
+php = php.replace("dirname(__DIR__, 2).'/SEC/contact'", "dirname(__DIR__, 4).'/SEC/simplecommerce-preview'")
 endpoint.write_text(php)
 # Do not publish a preview sitemap with production destinations.
 (out / 'sitemap.xml').unlink(missing_ok=True)

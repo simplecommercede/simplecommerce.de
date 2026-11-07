@@ -439,3 +439,8 @@ Header unset X-Frame-Options "expr=%{REQUEST_URI} =~ m#^/hilfe/#"
 Header always unset X-Frame-Options "expr=%{REQUEST_URI} =~ m#^/hilfe/#"
 Header always set Content-Security-Policy "frame-ancestors 'self' http: https:" "expr=%{REQUEST_URI} =~ m#^/hilfe/#"
 </IfModule>
+
+# PHP-Konfiguration und interne Laufzeitdateien niemals ausliefern.
+<FilesMatch "^(\.user\.ini|.*\.(log|jsonl))$">
+Require all denied
+</FilesMatch>
