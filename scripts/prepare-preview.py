@@ -5,7 +5,10 @@ from pathlib import Path
 p = argparse.ArgumentParser()
 p.add_argument('--output', required=True)
 p.add_argument('--existing-htaccess', required=True)
+p.add_argument('--account-login', default='seccom')
 a = p.parse_args()
+if not re.fullmatch(r'[A-Za-z0-9_-]+', a.account_login):
+    raise SystemExit('Invalid Hetzner account login')
 root = Path(__file__).resolve().parents[1]
 out = Path(a.output)
 if out.exists():
@@ -45,8 +48,8 @@ php = endpoint.read_text()
 php = re.sub(r'((?:href|src)=")/(?!/)', r'\1/redesign/', php)
 php = php.replace("$to = getenv('CONTACT_TO') ?: '';", "$to = getenv('CONTACT_TO') ?: 'projekt@simplecommerce.de';")
 php = php.replace("$from = getenv('CONTACT_FROM') ?: '';", "$from = getenv('CONTACT_FROM') ?: 'projekt@simplecommerce.de';")
-# Deployment: ACCOUNT/public_html/new/redesign/kontakt => state outside public_html.
-php = php.replace("dirname(__DIR__, 2).'/SEC/contact'", "dirname(__DIR__, 4).'/SEC/simplecommerce-preview'")
+# Hetzner documents /usr/home/<login>; do not infer home from resolved web symlinks.
+php = php.replace("dirname(__DIR__, 2).'/SEC/contact'", f"'/usr/home/{a.account_login}/SEC/simplecommerce-preview'")
 endpoint.write_text(php)
 # Do not publish a preview sitemap with production destinations.
 (out / 'sitemap.xml').unlink(missing_ok=True)

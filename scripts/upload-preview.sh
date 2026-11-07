@@ -38,11 +38,13 @@ check_protection() {
 check_protection
 cat "$TMP/connect.lftp" > "$TMP/download.lftp"
 cat >> "$TMP/download.lftp" <<EOF
+mkdir -p "SEC/simplecommerce-preview"
+chmod 700 "SEC/simplecommerce-preview"
 get "$DEST/.htaccess" -o "$TMP/existing.htaccess"
 bye
 EOF
 lftp --norc -f "$TMP/download.lftp"
-python3 scripts/prepare-preview.py --output "$TMP/site" --existing-htaccess "$TMP/existing.htaccess"
+python3 scripts/prepare-preview.py --output "$TMP/site" --existing-htaccess "$TMP/existing.htaccess" --account-login "$FTP_USER"
 cat "$TMP/connect.lftp" > "$TMP/protect.lftp"
 cat >> "$TMP/protect.lftp" <<EOF
 put "$TMP/site/.htaccess" -o "$DEST/.htaccess"

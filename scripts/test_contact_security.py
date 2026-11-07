@@ -45,4 +45,11 @@ class ContactSecurity(unittest.TestCase):
   status,result=self.call(endpoint=fault)
   self.assertEqual(status,503); self.assertFalse(result['ok']); self.assertNotIn('PRIVATE',str(result))
   logs=''.join(p.read_text() for p in self.state.glob('*.jsonl')); self.assertIn('RuntimeException',logs); self.assertNotIn('PRIVATE',logs)
+ def test_preview_uses_account_home(self):
+  auth=self.dir/'auth'; auth.write_text('AuthType Basic\nAuthUserFile /example/.htpasswd\nRequire valid-user\n')
+  out=self.dir/'preview'
+  subprocess.run(['python3', str(ROOT/'scripts/prepare-preview.py'), '--output', str(out), '--existing-htaccess', str(auth), '--account-login', 'seccom'],check=True,capture_output=True)
+  self.assertIn("'/usr/home/seccom/SEC/simplecommerce-preview'",(out/'kontakt/senden.php').read_text())
+  self.assertNotIn('dirname(__DIR__, 4)',(out/'kontakt/senden.php').read_text())
+  self.assertIn('php84-fcgi-starter.fcgi',(out/'.htaccess').read_text())
 if __name__=='__main__': unittest.main()
