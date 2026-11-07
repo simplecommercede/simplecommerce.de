@@ -8,7 +8,7 @@ COMPANY = 'simplecommerce GmbH'
 STREET = 'Vor den Höfen 20a'
 POSTAL_CODE = '29646'
 CITY = 'Bispingen'
-EMAIL = 'info@simplecommerce.de'
+EMAIL = 'projekt@simplecommerce.de'
 PHONE_DISPLAY = '+49 151 270 36 178'
 PHONE_E164 = '+4915127036178'
 PHONE_URL = f'tel:{PHONE_E164}'
@@ -224,7 +224,7 @@ def render_page(path, title, description, body, kind='WebPage', noindex=False, s
         '</body></html>'
     )
     # Altbestandstexte bringen Leerraum am Zeilenende mit; die Ausgabe enthält keinen.
-    html = re.sub(r'((?:src|href)="/assets/[^"?]+\.(?:css|js))"', r'\1?v=20261107-1"', html)
+    html = re.sub(r'((?:src|href)="/assets/[^"?]+\.(?:css|js))"', r'\1?v=20261108-1"', html)
     return '\n'.join(line.rstrip() for line in html.splitlines()) + '\n'
 
 

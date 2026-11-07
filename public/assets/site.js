@@ -202,7 +202,7 @@ if (contactForm && window.fetch) {
       const heading = document.createElement('h3');
       heading.textContent = 'Wir konnten den Versand nicht bestätigen.';
       const message = document.createElement('p');
-      message.textContent = 'Ihre Eingaben bleiben erhalten. Bitte prüfen Sie Ihre Verbindung. Sie erreichen uns auch unter info@simplecommerce.de.';
+      message.textContent = 'Ihre Eingaben bleiben erhalten. Bitte prüfen Sie Ihre Verbindung. Sie erreichen uns auch unter projekt@simplecommerce.de.';
       feedback.replaceChildren(heading, message);
       feedback.dataset.state = 'error';
     } finally {

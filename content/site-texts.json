@@ -133,7 +133,7 @@
         ],
         [
           "Wie erreiche ich Sie?",
-          "Per <a href=\"/kontakt/\">Kontaktformular</a>, unter <a href=\"mailto:info@simplecommerce.de\">info@simplecommerce.de</a> oder unter <a href=\"tel:+4915127036178\">+49 151 270 36 178</a>."
+          "Per <a href=\"/kontakt/\">Kontaktformular</a>, unter <a href=\"mailto:projekt@simplecommerce.de\">projekt@simplecommerce.de</a> oder unter <a href=\"tel:+4915127036178\">+49 151 270 36 178</a>."
         ]
       ]
     },
@@ -560,7 +560,7 @@
   },
   "contact": {
     "title": "Kontakt – Ihr Projekt mit simplecommerce",
-    "description": "Kontaktieren Sie simplecommerce in Bispingen: info@simplecommerce.de, +49 151 270 36 178 oder über das Kontaktformular.",
+    "description": "Kontaktieren Sie simplecommerce in Bispingen: projekt@simplecommerce.de, +49 151 270 36 178 oder über das Kontaktformular.",
     "heading": "Lassen Sie uns<br>darüber sprechen.",
     "lead": "Sie planen etwas Neues oder benötigen Unterstützung? Schreiben Sie uns kurz.",
     "form_notice": "Wir verwenden Ihre Angaben, um Ihre Anfrage zu bearbeiten. Weitere Informationen finden Sie in unserer <a href=\"/datenschutz/\">Datenschutzerklärung</a>.",

@@ -89,3 +89,8 @@ git diff --check
 - Aktuelle Hilfe bleibt auf ausdrücklichen Nutzerwunsch indexierbar.
 - Hetzner-AVV und vorhandene Backups belegt; Weblog-Löschung älter als eine Woche vom Nutzer gespeichert. Details und Grenzen in `docs/rechtliches.md`.
 - Livegang ausschließlich gemeinsam mit Benjamin und Georgie; Push bedeutet keine Deploymentfreigabe.
+
+## Kontakt und geschützte Vorschau (08.11.2026)
+- Öffentliche Kontaktadresse: `projekt@simplecommerce.de`, vom Betreiber eingerichteter Verteiler an BB und GD.
+- Echter Kontaktversand in der passwortgeschützten Vorschau ist ausdrücklich zum Test autorisiert. Kein Nachweis des Empfangs bis zur Bestätigung durch Benjamin/Georgie.
+- FTPS-Upload und bestehender Hetzner-Verzeichnisschutz: `docs/vorschau-upload.md`. Standardhost wegen gültigem Zertifikat `dedi1693.your-server.de`; keine Zertifikatsprüfung deaktivieren.

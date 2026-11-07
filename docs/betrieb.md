@@ -5,8 +5,8 @@ Apache 2.4 mit mod_rewrite und AllowOverride FileInfo Indexes Options oder gleic
 
 ## Kontaktversand
 Im PHP-Prozess setzen, nicht in öffentlich zugänglichen Dateien:
-- `CONTACT_TO`: tatsächlicher Empfänger, z. B. info@simplecommerce.de.
-- `CONTACT_FROM`: autorisierte Absenderadresse derselben Domain; der Server muss diese zustellen dürfen.
+- `CONTACT_TO`: tatsächlicher Empfänger, z. B. projekt@simplecommerce.de.
+- `CONTACT_FROM`: `projekt@simplecommerce.de` als autorisierte Absenderadresse; der Server muss diese zustellen dürfen.
 - `CONTACT_STATE_DIR`: beschreibbarer Ordner außerhalb des DocumentRoots, standardmäßig `var/contact` im Projekt.
 - Produktiv weder `CONTACT_ENV=development` noch `CONTACT_TRANSPORT=file` setzen.
 
@@ -60,3 +60,6 @@ CSS und JavaScript bekommen gemeinsam einen Versionsparameter im Generator. Bei 
 
 ## Hetzner-Nachweise vom 08.11.2026
 AV-Vertrag vorhanden, Backups vom Betreiber bestätigt. Domainweite Weblog-Löschung für Dateien älter als eine Woche gespeichert. Backup-Auswahl belegt 13 Stände vom 24.10. bis 07.11.2026 (25./26.10. fehlen). Sicherungsumfang, Wiederherstellbarkeit und erfolgreiche Log-Bereinigung beim gemeinsamen Livegang mit Benjamin und Georgie kontrollieren. Anbieterangaben und Betreiberbelege sind in `rechtliches.md` getrennt dokumentiert. Vertrauliche Vertrags-/Audit-PDFs nicht in Git oder `public/` ablegen.
+
+## Kontaktadresse vom 08.11.2026
+Benjamin hat `projekt@simplecommerce.de` als Verteiler an BB und GD eingerichtet und für öffentliche Kontaktangaben bestätigt. Geschützte Vorschau: echter Mailversand ausdrücklich zum Test freigegeben, Upload-Konfiguration siehe `vorschau-upload.md`. Die Empfangsprüfung durch Benjamin/Georgie steht noch aus.
