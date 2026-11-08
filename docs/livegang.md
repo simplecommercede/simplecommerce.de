@@ -58,3 +58,6 @@ Backup-Nachweis ergänzt: Die konsoleH-Auswahl zeigt 13 Stände vom 24.10. bis 0
 - SSL ist kostenlos; separater Preisposten und Zuschlag aus Tabelle und beiden Rechnern entfernt.
 - Die vier bisherigen Demoshops sind laut Benjamin wegen Bildrechten offline. Ihre Links werden auf `/design-und-layout/` entfernt; die Angebotsseite bleibt bestehen.
 - Todo an den Chat „UI für Menüpunkte verbessern“ (019fddac-1b81-7063-a089-d906b61428d9) übermittelt: zunächst einen responsiven Demoshop mit neutralen Produkten und nachweislich freigegebenen Bildern vorbereiten; keine echten Zahlungen oder externen Mailaktionen. Bildherkunft, Desktop/Mobil, HTTPS, Demo-Kennzeichnung und endgültige URL vor Verlinkung prüfen. Veröffentlichung mit Benjamin abstimmen. Bestehende Arbeit soll dafür nicht abgebrochen werden.
+
+## Geplanter Feinschliff mit Georgie
+Technische Aufgaben für Animationshäufigkeit, Sitzungsspeicher, mobile Bedienbarkeit und Demoshop: [Animationen und Demoshop-Todos](animationen-und-demoshop-todos.md). Die Liste beschreibt offene Vorschläge und Prüfungen; eine Umsetzung oder Zusage durch Georgie ist damit nicht bestätigt.

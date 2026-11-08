@@ -34,10 +34,11 @@ Originaldump, alte Hilfe und Originaluploads bleiben lokal und sind ignoriert. K
 ## Dokumentation
 - [AGENTS.md](AGENTS.md): verbindliche Arbeitsregeln und bisherige Erkenntnisse.
 - [Migration](docs/migration.md): Quellen, Inhalte, Navigation und URLs.
+- [Animationen und Demoshop-Todos](docs/animationen-und-demoshop-todos.md): technische Vorschläge aus der Abstimmung mit Georgie, Status und Abnahmekriterien.
 - [Betrieb](docs/betrieb.md): Webserver, Kontaktversand und Voraussetzungen für den Livegang.
 - [Hilfe und Prüfung](docs/hilfe-pruefung.md): Aufnahmeverfahren, Nachweise und Grenzen.
 
-Stand 08.11.2026: 62 statische Seiten, 25 Hilfethemen, 128 eingebundene Screenshots. Shop-Preise sind der Shop-Navigation zugeordnet; `/preise/` bleibt bestehen. Die neutrale Admin-Demo läuft getrennt auf Port 1892; deren Testdaten bleiben erhalten. Live-Mailzustellung und Produktivumstellung sind noch offen.
+Stand 08.11.2026: 62 statische Seiten, 25 Hilfethemen, 128 eingebundene Screenshots. Shop-Preise sind der Shop-Navigation zugeordnet; `/preise/` bleibt bestehen. Die neutrale Admin-Demo läuft getrennt auf Port 1892; deren Testdaten bleiben erhalten. Funktion und Mailzustellung der geschützten Vorschau wurden von Benjamin bestätigt; die Produktivumstellung steht noch aus.
 
 Markenüberarbeitung vom 04.11.2026: Originalorange `#ff6600`, Anthrazit/Weiß und fotografische Froschmotive aus dem bereitgestellten Bestand. Startseite und Leistungs-/Themenansichten individueller gestaltet; Herkunft in `content/brand-assets.json`. Diese vom Nutzer beauftragte Überarbeitung ergänzt den funktionalen Erstentwurf.
 
@@ -45,4 +46,4 @@ Ausführliche Hilfe: `content/help-details.json` enthält die redaktionell abgeg
 
 Veröffentlichungsvorbereitung vom 06.11.2026: Der Assistent erhält die kurzen Wege zur Anfrage; ungeprüfte Entwurfspreise werden nicht ausgeliefert. Für individuelle Leistungen wird ein Angebot angefragt. Prüfstand und Schritte auf dem Zielhost: [Livegang](docs/livegang.md).
 
-Betreiberfreigaben: Bestehende Shoppreise vorerst bestätigt, aktuelle Hilfe bleibt indexierbar. Hetzner-AVV, vorhandene Backups und gespeicherte Weblog-Löschung nach einer Woche dokumentiert. Livegang gemeinsam mit Benjamin und Georgie; Zielhost-/Mailprüfung und konkrete Backup-Kontrolle stehen noch aus.
+Betreiberfreigaben: Bestehende Shoppreise vorerst bestätigt, aktuelle Hilfe bleibt indexierbar. Hetzner-AVV, vorhandene Backups und gespeicherte Weblog-Löschung nach einer Woche dokumentiert. Livegang gemeinsam mit Benjamin und Georgie; Vorschau-Funktion und Mailzustellung sind von Benjamin bestätigt; die abschließende Prüfung nach Produktivumschaltung und konkrete Backup-Kontrolle stehen noch aus.
