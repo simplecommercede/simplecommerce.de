@@ -725,7 +725,8 @@
 
   async function jumpThroughGlass(url, frog, pond) {
     if (leaving) return;
-    if (!motionOk || !window.GlassBreak) {
+    const budget = window.simplecommerceMotion;
+    if (!motionOk || !window.GlassBreak || !budget || !budget.claim()) {
       window.location.href = url;
       return;
     }
@@ -760,6 +761,7 @@
     const falling = glass.shatter();
     frog.fall();
     await falling;
+    budget.finish();
     window.location.href = url;
   }
 

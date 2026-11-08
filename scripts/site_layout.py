@@ -224,7 +224,7 @@ def render_page(path, title, description, body, kind='WebPage', noindex=False, s
         '</body></html>'
     )
     # Altbestandstexte bringen Leerraum am Zeilenende mit; die Ausgabe enthält keinen.
-    html = re.sub(r'((?:src|href)="/assets/[^"?]+\.(?:css|js))"', r'\1?v=20261108-2"', html)
+    html = re.sub(r'((?:src|href)="/assets/[^"?]+\.(?:css|js))"', r'\1?v=20261108-3"', html)
     return '\n'.join(line.rstrip() for line in html.splitlines()) + '\n'
 
 

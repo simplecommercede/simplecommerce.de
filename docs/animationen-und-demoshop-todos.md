@@ -8,15 +8,7 @@ Frosch und Markenidentität erhalten. Große Effekte gezielt einsetzen; Navigati
 
 ## A1 – Große Animation einmal pro Tab-Sitzung
 
-Status: von Benjamin vorgeschlagen, technische Umsetzung offen. Mit Georgie festlegen, ob das Budget ausschließlich den Scheibenbruch oder auch die große Logo-/Einstiegsanimation umfasst. Kleine, bewusst ausgelöste Froschreaktionen sollen erhalten bleiben.
-
-- [ ] Einen gemeinsamen Zustand für die ausgewählten großen Effekte einführen. Vorschlag: `sessionStorage`-Schlüssel `simplecommerce:motion:v1:preview` beziehungsweise `simplecommerce:motion:v1:live`, damit Vorschau und Hauptseite derselben Origin sich nicht gegenseitig beeinflussen.
-- [ ] Zustand vor dem Start prüfen und beim tatsächlichen Start reservieren. Nach erfolgreichem Abschluss als beendet markieren. Bei Abbruch oder Seitenwechsel keinen automatischen erneuten Großeffekt starten. Zustände beispielsweise `unseen`, `started`, `done`; `started` und `done` unterdrücken Wiederholungen.
-- [ ] Folgeseiten, Reload sowie Zurück/Vorwärts ohne wiederholten Großeffekt anzeigen. Nicht auf jedem Seitenaufruf oder bei Navigation zurücksetzen. `sessionStorage` gilt für eine Tab-Sitzung; wiederhergestellte oder duplizierte Tabs können den Zustand übernehmen. Nicht als garantiert „einmal pro Besuch/Person“ beschreiben.
-- [ ] Zugriffe auf Browserspeicher mit `try/catch` absichern. Bei gesperrtem Speicher direkt die dezente Variante verwenden; niemals Navigation blockieren oder eine Fehlerseite erzeugen.
-- [ ] Der für den Scheibenübergang geladene iframe darf das Animationsbudget nicht eigenständig verbrauchen oder eine zweite Einstiegsanimation auslösen. Nur der tatsächliche Hauptseitenaufruf darf diese Entscheidung treffen.
-- [ ] Ohne JavaScript bleiben Links und Inhalte direkt nutzbar. Keine dauerhafte Speicherung per `localStorage`, Cookies oder Tracking für diese Funktion einführen.
-- [ ] Erst bei Implementierung die zusätzliche Speicherung in `content/legal/datenschutz.html` beschreiben. Keine bereits vorhandene Speicherung behaupten.
+Status: umgesetzt am 08.11.2026 in `site.js` (`window.simplecommerceMotion`, `sessionStorage`-Schlüssel `simplecommerce:motion:v1:<Host>`, Zustände `started`/`done`). Das Budget umfasst Logo-Einstieg und Scheibenbruch; bewusst ausgelöste Reaktionen (Logo-Hover, Frosch-Mimik) bleiben. Bei gesperrtem Speicher, reduzierter Bewegung oder verbrauchtem Budget navigiert der Frosch direkt. Der iframe des Scheibenübergangs verbraucht nichts. Datenschutz und Cookie-Seite ergänzt. Browserprüfung: Logo-Einstieg läuft einmal, danach `claim()` = false. Offen: Beurteilung auf echten Geräten mit Georgie.
 
 Betroffene Stellen: `public/assets/guide.js` (Zielnavigation), `guide-glass.js` (iframe/Scheibenbruch), `site.js` (Logo), zugehörige CSS-Dateien. `guide-core.js` nutzt bereits `sessionStorage` für Fragebogen und Umsatz; diese Daten weder überschreiben noch beim Animationswechsel löschen. Cache-Version im Generator bei Änderungen erhöhen.
 
