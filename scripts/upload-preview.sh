@@ -38,7 +38,9 @@ check_protection() {
 check_protection
 cat "$TMP/connect.lftp" > "$TMP/download.lftp"
 cat >> "$TMP/download.lftp" <<EOF
-mkdir -p "SEC/simplecommerce-preview"
+mkdir -p "SEC/simplecommerce-preview" || echo "SEC-Ordner vorhanden oder Anlage abgewiesen; prüfe Zugriff."
+cd "SEC/simplecommerce-preview"
+cd ../..
 chmod 700 "SEC/simplecommerce-preview"
 get "$DEST/.htaccess" -o "$TMP/existing.htaccess"
 bye
