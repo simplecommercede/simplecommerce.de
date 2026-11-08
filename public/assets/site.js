@@ -3,6 +3,22 @@
 document.documentElement.classList.add('js');
 const prefersMotion = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
 
+// Große Effekte (Logo-Einstieg, Scheibenbruch) laufen höchstens einmal pro Tab-Sitzung.
+// Zustand unseen/started/done im Sitzungsspeicher; bei gesperrtem Speicher gibt es nur die dezente Variante.
+// Im iframe des Scheibenübergangs verbraucht die Seite das Budget nie.
+window.simplecommerceMotion = (() => {
+  const key = `simplecommerce:motion:v1:${location.host}`;
+  const read = () => { try { return sessionStorage.getItem(key); } catch (error) { return 'blocked'; } };
+  const write = value => { try { sessionStorage.setItem(key, value); return true; } catch (error) { return false; } };
+  return {
+    claim() {
+      if (window.self !== window.top || read() !== null) return false;
+      return write('started');
+    },
+    finish() { if (read() === 'started') write('done'); }
+  };
+})();
+
 // Der Frosch im Logo hüpft, trifft mit der Zunge das "e" und neigt sich zum Mauszeiger.
 // Die Szene läuft einmal nach dem Laden und bei jeder Berührung; das "e" dreht zusätzlich von selbst.
 document.querySelectorAll('[data-logo]').forEach(logo => {
@@ -10,11 +26,16 @@ document.querySelectorAll('[data-logo]').forEach(logo => {
     if (!prefersMotion || logo.classList.contains('is-hopping')) return;
     logo.classList.add('is-hopping');
   };
-  setTimeout(play, 1200);
+  setTimeout(() => {
+    if (prefersMotion && !logo.classList.contains('is-hopping') && window.simplecommerceMotion.claim()) play();
+  }, 1200);
   logo.addEventListener('pointerenter', play);
   logo.addEventListener('focus', play);
   logo.addEventListener('animationend', event => {
-    if (event.animationName === 'logo-spin') logo.classList.remove('is-hopping');
+    if (event.animationName === 'logo-spin') {
+      logo.classList.remove('is-hopping');
+      window.simplecommerceMotion.finish();
+    }
   });
   if (prefersMotion) {
     logo.addEventListener('pointermove', event => {

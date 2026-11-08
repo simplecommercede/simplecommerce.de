@@ -8,17 +8,13 @@ Frosch und Markenidentität erhalten. Große Effekte gezielt einsetzen; Navigati
 
 ## A1 – Große Animation einmal pro Tab-Sitzung
 
-Status: von Benjamin vorgeschlagen, technische Umsetzung offen. Mit Georgie festlegen, ob das Budget ausschließlich den Scheibenbruch oder auch die große Logo-/Einstiegsanimation umfasst. Kleine, bewusst ausgelöste Froschreaktionen sollen erhalten bleiben.
-
-- [ ] Einen gemeinsamen Zustand für die ausgewählten großen Effekte einführen. Vorschlag: `sessionStorage`-Schlüssel `simplecommerce:motion:v1:preview` beziehungsweise `simplecommerce:motion:v1:live`, damit Vorschau und Hauptseite derselben Origin sich nicht gegenseitig beeinflussen.
-- [ ] Zustand vor dem Start prüfen und beim tatsächlichen Start reservieren. Nach erfolgreichem Abschluss als beendet markieren. Bei Abbruch oder Seitenwechsel keinen automatischen erneuten Großeffekt starten. Zustände beispielsweise `unseen`, `started`, `done`; `started` und `done` unterdrücken Wiederholungen.
-- [ ] Folgeseiten, Reload sowie Zurück/Vorwärts ohne wiederholten Großeffekt anzeigen. Nicht auf jedem Seitenaufruf oder bei Navigation zurücksetzen. `sessionStorage` gilt für eine Tab-Sitzung; wiederhergestellte oder duplizierte Tabs können den Zustand übernehmen. Nicht als garantiert „einmal pro Besuch/Person“ beschreiben.
-- [ ] Zugriffe auf Browserspeicher mit `try/catch` absichern. Bei gesperrtem Speicher direkt die dezente Variante verwenden; niemals Navigation blockieren oder eine Fehlerseite erzeugen.
-- [ ] Der für den Scheibenübergang geladene iframe darf das Animationsbudget nicht eigenständig verbrauchen oder eine zweite Einstiegsanimation auslösen. Nur der tatsächliche Hauptseitenaufruf darf diese Entscheidung treffen.
-- [ ] Ohne JavaScript bleiben Links und Inhalte direkt nutzbar. Keine dauerhafte Speicherung per `localStorage`, Cookies oder Tracking für diese Funktion einführen.
-- [ ] Erst bei Implementierung die zusätzliche Speicherung in `content/legal/datenschutz.html` beschreiben. Keine bereits vorhandene Speicherung behaupten.
+Status: umgesetzt am 08.11.2026 in `site.js` (`window.simplecommerceMotion`, `sessionStorage`-Schlüssel `simplecommerce:motion:v1:<Host>`, Zustände `started`/`done`). Das Budget umfasst Logo-Einstieg und Scheibenbruch; bewusst ausgelöste Reaktionen (Logo-Hover, Frosch-Mimik) bleiben. Bei gesperrtem Speicher, reduzierter Bewegung oder verbrauchtem Budget navigiert der Frosch direkt. Der iframe des Scheibenübergangs verbraucht nichts. Datenschutz und Cookie-Seite ergänzt. Browserprüfung: Logo-Einstieg läuft einmal, danach `claim()` = false. Offen: Beurteilung auf echten Geräten mit Georgie.
 
 Betroffene Stellen: `public/assets/guide.js` (Zielnavigation), `guide-glass.js` (iframe/Scheibenbruch), `site.js` (Logo), zugehörige CSS-Dateien. `guide-core.js` nutzt bereits `sessionStorage` für Fragebogen und Umsatz; diese Daten weder überschreiben noch beim Animationswechsel löschen. Cache-Version im Generator bei Änderungen erhöhen.
+
+## Umsetzungsstand A2/A3 (08.11.2026)
+
+Code umgesetzt, Gerätetests offen. A2: Der Sprung durch die Scheibe fällt bei jedem Fehler (Ausnahme, Zeitüberschreitung, nicht geladene Zielseite) direkt auf die Zieladresse zurück; `leaving` verhindert Mehrfachstarts bei Doppelklick. A3: Die Fliegenanimation respektiert reduzierte Bewegung. Fliege und Nickerchen ruhen, solange ein Formularfeld den Fokus hat. Auf schmalen Bildschirmen blendet sich der Frosch aus, solange ein Kontaktfeld fokussiert ist (Browser bei 375 px geprüft). Das Ziehen nutzt bereits `touch-action: none`. Offen: Prüfung auf echten Geräten (Tastatur, Drehung, langsame Zielseite, Zurück/Vorwärts) und Beurteilung der Leerlaufanimationen mit Georgie.
 
 ## A2 – Navigation darf nicht auf Effekte warten müssen
 
@@ -44,6 +40,12 @@ Status: Empfehlungen und Abnahmeaufgaben, keine pauschal bestätigten Defekte.
 ## Abnahme der Animationen
 
 Desktop und echte Mobilgeräte, zusätzlich 375/390 CSS-Pixel: erste Animation, zweiter Seitenwechsel, Reload, Zurück/Vorwärts, gespeicherter/gesperrter Sitzungszustand, reduzierter Bewegungswunsch, langsame/fehlgeschlagene Zielseite, Doppelklick und Formular mit geöffnetem Keyboard. Erfolg bedeutet: keine wiederholte große Animation nach Verbrauch des Budgets, keine verdeckten Hauptaktionen, keine verlorenen Eingaben und immer erreichbare Navigation. Ergebnisse und verbleibende Auffälligkeiten dokumentieren. Änderungen an zustandsabhängiger UI nach dem projektlokalen Adaptive-UI-Skill prüfen.
+
+## Lokale Browserprüfung vom 08.11.2026
+
+Emulierte Ansichten mit 375 × 812, 390 × 844 und 844 × 390 CSS-Pixeln: auf der Kontaktseite keine horizontale Überbreite; Formular und Absende-Schaltfläche bleiben im Layout. Bei Fokus in einem Kontaktfeld wird der Frosch auf schmaler Ansicht ausgeblendet. Bei 390 × 844 öffnete ein Ziel im Froschmenü den Scheibenübergang mit geladenem Ziel im iframe; anschließend wurde `/service/` erreicht und das Sitzungsbudget als `done` gespeichert.
+
+Das ist keine Geräteabnahme: Touchscreen und echte Bildschirmtastatur, Betriebssystem-Einstellung für reduzierte Bewegung, Zurück/Vorwärts, langsame oder fehlerhafte Zielseiten sowie echte Mobilgeräte wurden nicht geprüft. Die offenen Prüfpunkte oben bleiben bestehen.
 
 ## D1 – Einen öffentlichen Demoshop wieder bereitstellen
 

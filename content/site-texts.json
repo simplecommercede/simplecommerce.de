@@ -614,7 +614,7 @@
     "lead": "Diese Website lädt ihre Schriften, Styles und Skripte lokal.",
     "paragraphs": [
       "Die statischen Seiten setzen keine Analyse- oder Marketing-Cookies und binden keine externen Trackingdienste ein. Die Hilfesuche arbeitet direkt im Browser und überträgt keine Suchbegriffe an einen Server.",
-      "Wenn Sie den Fragebogen im Frosch-Wegweiser oder den Preisrechner nutzen, merkt sich Ihr Browser Ihre Angaben im Sitzungsspeicher (sessionStorage), damit sie auf der Kontaktseite als Textvorschlag erscheinen. Diese Angaben bleiben auf Ihrem Gerät, werden beim Schließen des Tabs gelöscht und erst übertragen, wenn Sie das Kontaktformular selbst absenden.",
+      "Wenn Sie den Fragebogen im Frosch-Wegweiser oder den Preisrechner nutzen, merkt sich Ihr Browser Ihre Angaben im Sitzungsspeicher (sessionStorage), damit sie auf der Kontaktseite als Textvorschlag erscheinen. Diese Angaben bleiben auf Ihrem Gerät, werden beim Schließen des Tabs gelöscht und erst übertragen, wenn Sie das Kontaktformular selbst absenden. Außerdem merkt sich der Browser im Sitzungsspeicher nur, ob die große Animation (Logo-Einstieg, Scheibenbruch) in diesem Tab schon gezeigt wurde, damit sie sich nicht wiederholt.",
       "Beim Absenden des Kontaktformulars werden die eingegebenen Angaben zur Bearbeitung Ihrer Anfrage an unseren Server übertragen. Informationen zur Verarbeitung personenbezogener Daten finden Sie in der <a href=\"/datenschutz/\">Datenschutzerklärung</a>."
     ]
   },
