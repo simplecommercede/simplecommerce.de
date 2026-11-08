@@ -382,7 +382,7 @@
 
     /* Einmal je Seite: Die Fliege kommt angeflogen, die Zunge holt sie. */
     async catchFly() {
-      if (!this.mayRest) return;
+      if (!motionOk || !this.mayRest) return;
       this.flyCaught = true;
       this.hush();
       const fly = element('span', 'fg-fly');
@@ -731,6 +731,14 @@
       return;
     }
     leaving = true;
+    try {
+      await playJump(url, frog, pond, budget);
+    } catch (error) {
+      window.location.href = url;
+    }
+  }
+
+  async function playJump(url, frog, pond, budget) {
     pond.toggle(false);
     frog.hush();
     frog.root.classList.add('is-through');
@@ -747,6 +755,7 @@
     /* Die Scheibe hält, bis die neue Seite wirklich geladen ist. */
     const [loaded] = await Promise.all([glass.ready, wait(420)]);
     if (!loaded) {
+      budget.finish();
       window.location.href = url;
       return;
     }
@@ -784,7 +793,8 @@
   const frog = new Frog(scatter);
   const pond = new Pond(frog, text, next, destinations, url => jumpThroughGlass(url, frog, pond));
   window.simplecommerceFrog = frog;
-  frog.canRest = () => !pond.isOpen && !leaving;
+  const typing = () => Boolean(document.activeElement && document.activeElement.closest('input, textarea, select'));
+  frog.canRest = () => !pond.isOpen && !leaving && !typing();
 
   /* Zähler am Helfer: So viele Angaben warten auf die Anfrage. */
   const counter = frog.root.querySelector('.fg-count');

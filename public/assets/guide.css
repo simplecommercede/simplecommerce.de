@@ -287,6 +287,8 @@
   .fg-button { width: 72px; height: 72px; }
   .fg-say { max-width: min(240px, calc(100vw - 40px)); padding: 10px 14px; font-size: .92rem; }
   .pond { max-height: calc(100vh - 116px); padding: 18px 14px 16px; }
+  /* Beim Tippen bleibt der Frosch aus dem Weg, damit er Felder und Absenden nicht verdeckt. */
+  body:has(.contact-form :is(input, textarea, select):focus) .fg { opacity: 0; pointer-events: none; }
 }
 @media print { .fg, .pond, .glass { display: none; } }
 

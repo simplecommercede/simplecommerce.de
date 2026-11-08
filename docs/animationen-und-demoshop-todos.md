@@ -12,6 +12,10 @@ Status: umgesetzt am 08.11.2026 in `site.js` (`window.simplecommerceMotion`, `se
 
 Betroffene Stellen: `public/assets/guide.js` (Zielnavigation), `guide-glass.js` (iframe/Scheibenbruch), `site.js` (Logo), zugehörige CSS-Dateien. `guide-core.js` nutzt bereits `sessionStorage` für Fragebogen und Umsatz; diese Daten weder überschreiben noch beim Animationswechsel löschen. Cache-Version im Generator bei Änderungen erhöhen.
 
+## Umsetzungsstand A2/A3 (08.11.2026)
+
+Code umgesetzt, Gerätetests offen. A2: Der Sprung durch die Scheibe fällt bei jedem Fehler (Ausnahme, Zeitüberschreitung, nicht geladene Zielseite) direkt auf die Zieladresse zurück; `leaving` verhindert Mehrfachstarts bei Doppelklick. A3: Die Fliegenanimation respektiert reduzierte Bewegung. Fliege und Nickerchen ruhen, solange ein Formularfeld den Fokus hat. Auf schmalen Bildschirmen blendet sich der Frosch aus, solange ein Kontaktfeld fokussiert ist (Browser bei 375 px geprüft). Das Ziehen nutzt bereits `touch-action: none`. Offen: Prüfung auf echten Geräten (Tastatur, Drehung, langsame Zielseite, Zurück/Vorwärts) und Beurteilung der Leerlaufanimationen mit Georgie.
+
 ## A2 – Navigation darf nicht auf Effekte warten müssen
 
 Status: Empfehlung; vorhandene Fallbacks und Ladebedingungen zuerst prüfen, nicht doppelt implementieren.
