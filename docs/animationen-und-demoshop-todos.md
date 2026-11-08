@@ -41,6 +41,12 @@ Status: Empfehlungen und Abnahmeaufgaben, keine pauschal bestätigten Defekte.
 
 Desktop und echte Mobilgeräte, zusätzlich 375/390 CSS-Pixel: erste Animation, zweiter Seitenwechsel, Reload, Zurück/Vorwärts, gespeicherter/gesperrter Sitzungszustand, reduzierter Bewegungswunsch, langsame/fehlgeschlagene Zielseite, Doppelklick und Formular mit geöffnetem Keyboard. Erfolg bedeutet: keine wiederholte große Animation nach Verbrauch des Budgets, keine verdeckten Hauptaktionen, keine verlorenen Eingaben und immer erreichbare Navigation. Ergebnisse und verbleibende Auffälligkeiten dokumentieren. Änderungen an zustandsabhängiger UI nach dem projektlokalen Adaptive-UI-Skill prüfen.
 
+## Lokale Browserprüfung vom 08.11.2026
+
+Emulierte Ansichten mit 375 × 812, 390 × 844 und 844 × 390 CSS-Pixeln: auf der Kontaktseite keine horizontale Überbreite; Formular und Absende-Schaltfläche bleiben im Layout. Bei Fokus in einem Kontaktfeld wird der Frosch auf schmaler Ansicht ausgeblendet. Bei 390 × 844 öffnete ein Ziel im Froschmenü den Scheibenübergang mit geladenem Ziel im iframe; anschließend wurde `/service/` erreicht und das Sitzungsbudget als `done` gespeichert.
+
+Das ist keine Geräteabnahme: Touchscreen und echte Bildschirmtastatur, Betriebssystem-Einstellung für reduzierte Bewegung, Zurück/Vorwärts, langsame oder fehlerhafte Zielseiten sowie echte Mobilgeräte wurden nicht geprüft. Die offenen Prüfpunkte oben bleiben bestehen.
+
 ## D1 – Einen öffentlichen Demoshop wieder bereitstellen
 
 Status: Todo am 08.11.2026 an den bestehenden Chat „UI für Menüpunkte verbessern“ übermittelt (Chat-ID `019fddac-1b81-7063-a089-d906b61428d9`). Keine bestätigte Fertigstellung oder Terminvereinbarung. Laufende Arbeit soll dafür nicht abgebrochen werden.
