@@ -46,7 +46,7 @@ const tierSpan = index => {
   const tier = tiers[index];
   if (tier.rent === null || tier.rate === null) return null;
   const from = index ? tiers[index - 1].limit : 0;
-  const at = revenue => tier.rent + revenue * tier.rate / 100 + tier.ssl;
+  const at = revenue => tier.rent + revenue * tier.rate / 100;
   return [at(from), at(tier.limit)];
 };
 function expectedPrice(ids) {

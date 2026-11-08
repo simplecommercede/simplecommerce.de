@@ -3,17 +3,17 @@
   "effects": {
     "umsatz-0": {
       "tier": 0,
-      "label": "Shopmiete, Provision und SSL",
+      "label": "Shopmiete und Provision",
       "source": "preisliste"
     },
     "umsatz-1": {
       "tier": 1,
-      "label": "Shopmiete, Provision und SSL",
+      "label": "Shopmiete und Provision",
       "source": "preisliste"
     },
     "umsatz-2": {
       "tier": 2,
-      "label": "Shopmiete, Provision und SSL",
+      "label": "Shopmiete und Provision",
       "source": "preisliste"
     },
     "umsatz-3": {

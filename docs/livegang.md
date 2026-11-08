@@ -52,3 +52,9 @@ Branch `codex/integration-redesign-live` führt `redesign-website` (aa8aa9b) und
 - AV-Vertrag, Backups und gespeicherte Weblog-Löschregel dokumentiert. Für diese Textaktualisierung keine weitere Rückfrage erforderlich. Mailzustellung, Zielhost-Prüfung und konkrete Backup-Kontrolle bleiben technische Schritte beim gemeinsamen Livegang.
 
 Backup-Nachweis ergänzt: Die konsoleH-Auswahl zeigt 13 Stände vom 24.10. bis 07.11.2026; der 25./26.10. ist nicht aufgeführt. Das belegt die angebotenen Wiederherstellungspunkte, nicht deren Inhalt oder einen erfolgreichen Restore. Keine Wiederherstellung ausgeführt.
+
+## Nachträge vom 08.11.2026
+- Benjamin bestätigt Funktion und Mailversand der geschützten Vorschau. Spätere Produktivumschaltung und Merge nach main bleiben getrennt.
+- SSL ist kostenlos; separater Preisposten und Zuschlag aus Tabelle und beiden Rechnern entfernt.
+- Die vier bisherigen Demoshops sind laut Benjamin wegen Bildrechten offline. Ihre Links werden auf `/design-und-layout/` entfernt; die Angebotsseite bleibt bestehen.
+- Todo an den Chat „UI für Menüpunkte verbessern“ (019fddac-1b81-7063-a089-d906b61428d9) übermittelt: zunächst einen responsiven Demoshop mit neutralen Produkten und nachweislich freigegebenen Bildern vorbereiten; keine echten Zahlungen oder externen Mailaktionen. Bildherkunft, Desktop/Mobil, HTTPS, Demo-Kennzeichnung und endgültige URL vor Verlinkung prüfen. Veröffentlichung mit Benjamin abstimmen. Bestehende Arbeit soll dafür nicht abgebrochen werden.

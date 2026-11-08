@@ -10,7 +10,7 @@ Erzeugt von `scripts/fragebogen_baum.js`, nicht von Hand ändern. Sätze und Fra
 
 ## Prüfergebnis
 
-Getestet wurden **1.057.925 Antwortkombinationen**, also jede mögliche Auswahl einschließlich aller übersprungenen Fragen. Der längste Text hat 833 Zeichen, Laufzeit 86 Sekunden.
+Getestet wurden **1.057.925 Antwortkombinationen**, also jede mögliche Auswahl einschließlich aller übersprungenen Fragen. Der längste Text hat 833 Zeichen, Laufzeit 76 Sekunden.
 
 | Thema | Kombinationen |
 |---|---|
@@ -92,9 +92,9 @@ Bleibt nach einer Antwort nur eine Möglichkeit, entfällt die ganze Frage.
 
 | Baustein | Knopf | Satz im Text | Preis |
 |---|---|---|---|
-| T52 | Bis 10.000 € | Ich rechne mit einem Monatsumsatz von bis zu 10.000 €. | 20 bis 370 € im Monat (Preisliste) |
-| T53 | 10.000 bis 30.000 € | Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €. | 310 bis 810 € im Monat (Preisliste) |
-| T54 | 30.000 bis 80.000 € | Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €. | 560 bis 1.310 € im Monat (Preisliste) |
+| T52 | Bis 10.000 € | Ich rechne mit einem Monatsumsatz von bis zu 10.000 €. | 10 bis 360 € im Monat (Preisliste) |
+| T53 | 10.000 bis 30.000 € | Ich rechne mit einem Monatsumsatz von 10.000 bis 30.000 €. | 300 bis 800 € im Monat (Preisliste) |
+| T54 | 30.000 bis 80.000 € | Ich rechne mit einem Monatsumsatz von 30.000 bis 80.000 €. | 550 bis 1.300 € im Monat (Preisliste) |
 | T55 | Über 80.000 € | Ich rechne mit einem Monatsumsatz von über 80.000 €. | auf Anfrage (Preisliste) |
 
 **2.x.y.z.z Wie soll Ihr Shop aussehen?**
@@ -248,7 +248,7 @@ Sie stehen bei jedem Thema zur Wahl, soweit nicht anders vermerkt, und ergänzen
 | Baustein | Knopf | Satz im Text | Preis |
 |---|---|---|---|
 | T70 | Website | Dazu interessiert mich eine Website. |  (Beispielwert) |
-| T71 | Onlineshop | Dazu interessiert mich ein Onlineshop. | 499 bis 990 € einmalig + 20 bis 370 € im Monat (Preisliste) |
+| T71 | Onlineshop | Dazu interessiert mich ein Onlineshop. | 499 bis 990 € einmalig + 10 bis 360 € im Monat (Preisliste) |
 | T72 | App oder Software | Dazu interessiert mich eine App oder individuelle Software. |  (Beispielwert) |
 | T73 | KI | Dazu interessieren mich KI-Anwendungen. |  (Beispielwert) |
 | T74 | Beratung | Dazu interessiert mich eine IT-Beratung. |  (Beispielwert) |
@@ -369,7 +369,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -387,7 +387,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -404,7 +404,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -422,7 +422,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -440,7 +440,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -457,7 +457,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -475,7 +475,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -493,7 +493,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -510,7 +510,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -581,7 +581,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -599,7 +599,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -616,7 +616,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -634,7 +634,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -652,7 +652,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -669,7 +669,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -687,7 +687,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -705,7 +705,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -722,7 +722,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -793,7 +793,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -811,7 +811,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -828,7 +828,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -846,7 +846,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -864,7 +864,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -881,7 +881,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -899,7 +899,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -917,7 +917,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -934,7 +934,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1005,7 +1005,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1023,7 +1023,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1040,7 +1040,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1058,7 +1058,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1076,7 +1076,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1093,7 +1093,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1111,7 +1111,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1129,7 +1129,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1146,7 +1146,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1217,7 +1217,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1235,7 +1235,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1253,7 +1253,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1271,7 +1271,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1289,7 +1289,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1307,7 +1307,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1325,7 +1325,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1343,7 +1343,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1361,7 +1361,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1433,7 +1433,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1451,7 +1451,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1469,7 +1469,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1487,7 +1487,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1505,7 +1505,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1523,7 +1523,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1541,7 +1541,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1559,7 +1559,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1577,7 +1577,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1649,7 +1649,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1667,7 +1667,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1685,7 +1685,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1703,7 +1703,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1721,7 +1721,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1739,7 +1739,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1757,7 +1757,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 649 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1775,7 +1775,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 1.140 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1793,7 +1793,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 150 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1865,7 +1865,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1883,7 +1883,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1900,7 +1900,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1918,7 +1918,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1936,7 +1936,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1953,7 +1953,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1971,7 +1971,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -1989,7 +1989,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2006,7 +2006,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2077,7 +2077,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2095,7 +2095,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2112,7 +2112,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2130,7 +2130,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2148,7 +2148,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2165,7 +2165,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2183,7 +2183,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2201,7 +2201,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2218,7 +2218,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2289,7 +2289,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2307,7 +2307,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2324,7 +2324,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2342,7 +2342,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2360,7 +2360,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2377,7 +2377,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2395,7 +2395,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2413,7 +2413,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2430,7 +2430,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2501,7 +2501,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2519,7 +2519,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2536,7 +2536,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2554,7 +2554,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2572,7 +2572,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2589,7 +2589,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2607,7 +2607,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2625,7 +2625,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2642,7 +2642,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2713,7 +2713,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2731,7 +2731,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2748,7 +2748,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2766,7 +2766,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2784,7 +2784,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2801,7 +2801,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2819,7 +2819,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2837,7 +2837,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2854,7 +2854,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2925,7 +2925,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2943,7 +2943,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2960,7 +2960,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2978,7 +2978,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -2996,7 +2996,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -3013,7 +3013,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -3031,7 +3031,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -3049,7 +3049,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -3066,7 +3066,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -3137,7 +3137,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -3155,7 +3155,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -3172,7 +3172,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 20 bis 370 € im Monat
+- laufend etwa 10 bis 360 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -3190,7 +3190,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -3208,7 +3208,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -3225,7 +3225,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 310 bis 810 € im Monat
+- laufend etwa 300 bis 800 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -3243,7 +3243,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 499 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -3261,7 +3261,7 @@ darum geht es:
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
 - einmalig etwa 990 €
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```
@@ -3278,7 +3278,7 @@ darum geht es:
 - Das Design ist noch offen.
 
 Bekannte Preisbestandteile laut Shop-Preisliste (unverbindlich, zuzüglich Mehrwertsteuer):
-- laufend etwa 560 bis 1.310 € im Monat
+- laufend etwa 550 bis 1.300 € im Monat
 
 Können wir darüber sprechen?
 ```

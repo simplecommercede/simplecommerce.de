@@ -2,7 +2,7 @@
 /*
  * Preisschätzung aus den gewählten Angaben. Frosch, Kontaktformular und die Seite /preisrechner/
  * nutzen dieselbe Berechnung und dieselbe Auswahl aus Frosch.store.
- * Shopkosten folgen der Preistabelle: Miete und SSL je Umsatzstufe plus Provision auf den Umsatz.
+ * Shopkosten folgen der Preistabelle: Miete je Umsatzstufe plus Provision auf den Umsatz.
  * Werte stehen in content/price-estimate.json; "entwurf" wird bis zur fachlichen Freigabe ausschließlich als individuelles Angebot dargestellt.
  *
  * Aufbau: 1. Berechnung  2. Darstellung  3. Seite Preisrechner
@@ -14,7 +14,7 @@
   /* ---------- 1. Berechnung ---------- */
 
   const tierOf = revenue => tiers.findIndex(tier => tier.limit === null || revenue < tier.limit || (revenue === tier.limit && tier.limit < 80000));
-  const monthlyAt = (tier, revenue) => tier.rent + revenue * tier.rate / 100 + tier.ssl;
+  const monthlyAt = (tier, revenue) => tier.rent + revenue * tier.rate / 100;
 
   /* Mit bekanntem Umsatz ein genauer Wert, sonst die Spanne innerhalb der Stufe. Ohne Preis in der Tabelle: null. */
   function tierRange(index, revenue) {
@@ -82,10 +82,9 @@
 
   /* So setzt sich der Shop-Monatsbetrag zusammen. */
   function tierNote(tier, revenue) {
-    const ssl = tier.ssl ? `SSL ${money(tier.ssl)} €` : 'SSL inklusive';
     const rate = tier.rate.toLocaleString('de-DE');
-    if (revenue === null) return `Miete ${money(tier.rent)} € + ${rate} % Provision auf den Umsatz + ${ssl}. Die Spanne gilt für die ganze Umsatzstufe.`;
-    return `Miete ${money(tier.rent)} € + ${rate} % von ${money(revenue)} € = ${money(revenue * tier.rate / 100)} € Provision + ${ssl}`;
+    if (revenue === null) return `Miete ${money(tier.rent)} € + ${rate} % Provision auf den Umsatz. Die Spanne gilt für die ganze Umsatzstufe.`;
+    return `Miete ${money(tier.rent)} € + ${rate} % von ${money(revenue)} € = ${money(revenue * tier.rate / 100)} € Provision`;
   }
 
   /* Cent-Beträge erscheinen kleiner. */

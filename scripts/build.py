@@ -103,6 +103,8 @@ def price_table_html():
     source = WP_BY_ID[PRICE_ID]['post_content']
     found = re.search(r'<table\b.*?</table>', source, re.S)
     table = clean_html(found[0] if found else source, LEGACY_LINKS)
+    # Betreiberfreigabe: SSL ist kostenlos und kein eigener Preisbestandteil mehr.
+    table = re.sub(r'<tr>\s*<td>SSL-Leitung</td>.*?</tr>', '', table, flags=re.S)
     # Nur die Schreibweise vereinheitlichen (10.00 € zu 10,00 €), die Beträge bleiben unverändert.
     return re.sub(r'(\d)\.(\d\d) €', r'\1,\2 €', table)
 
@@ -138,7 +140,6 @@ PRICE_TIERS = [
         'limit': limit,
         'rent': price_number(PRICE_ROWS['Shopmiete'][tier]),
         'rate': price_number(PRICE_ROWS['Umsatzprovision'][tier]),
-        'ssl': price_number(PRICE_ROWS['SSL-Leitung'][tier]),
     }
     for tier, limit in enumerate(TIER_LIMITS)
 ]
@@ -160,7 +161,7 @@ def tier_card(tier):
         f'<h3>{PRICE_ROWS["Ihr Umsatz / Monat"][tier]}</h3>'
         f'<p class="tier-rent">{rent_html(PRICE_ROWS["Shopmiete"][tier])}</p>'
         f'<dl><dt>Umsatzprovision</dt><dd>{PRICE_ROWS["Umsatzprovision"][tier]}</dd>'
-        f'<dt>SSL-Leitung</dt><dd>{PRICE_ROWS["SSL-Leitung"][tier]}</dd></dl>'
+        '</dl>'
         '</div>'
     )
 
@@ -474,7 +475,12 @@ def build_topic_page(wp_page):
     title = wp_page['post_title']
     lead = TOPIC_LEADS.get(page_id, '')
     description = f'{title} im simplecommerce Shopsystem: {lead}' if lead else f'{title} bei simplecommerce.'
-    content = tidy_topic_content(clean_html(wp_page['post_content'], LEGACY_LINKS), title, TEXTS['text_fixes'])
+    source = wp_page['post_content']
+    if wp_page['post_name'] == 'design-und-layout':
+        # Die alten vier Demos sind offline; erst den freigegebenen Neubau verlinken.
+        source = re.sub(r'<ol>\s*<li><a href="http://demoshop\.simplecommerce\.de/".*?</ol>', '', source, flags=re.S)
+        source = source.replace('Eines der folgenden Layouts wird', 'Eine simplecommerce-Vorlage wird')
+    content = tidy_topic_content(clean_html(source, LEGACY_LINKS), title, TEXTS['text_fixes'])
     if page_id in SHOP_IDS:
         article = (
             f'<div class="wrap topic-layout"><article class="prose">{content}</article>'

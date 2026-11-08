@@ -129,13 +129,13 @@ document.querySelectorAll('[data-calculator]').forEach(calculator => {
       return;
     }
     const commission = revenue * tier.rate / 100;
-    const rows = [['Shopmiete', tier.rent], [`Provision: ${tier.rate.toLocaleString('de-DE')} % von ${revenue.toLocaleString('de-DE')} €`, commission], ['SSL-Leitung', tier.ssl]];
-    showEuro(total, tier.rent + commission + tier.ssl);
+    const rows = [['Shopmiete', tier.rent], [`Provision: ${tier.rate.toLocaleString('de-DE')} % von ${revenue.toLocaleString('de-DE')} €`, commission]];
+    showEuro(total, tier.rent + commission);
     parts.replaceChildren(...rows.flatMap(([label, amount]) => {
       const term = document.createElement('dt');
       const detail = document.createElement('dd');
       term.textContent = label;
-      if (!amount && label === 'SSL-Leitung') detail.textContent = 'inklusive'; else showEuro(detail, amount);
+      showEuro(detail, amount);
       return [term, detail];
     }));
   };
