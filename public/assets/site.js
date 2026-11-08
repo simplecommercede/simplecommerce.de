@@ -26,7 +26,9 @@ document.querySelectorAll('[data-logo]').forEach(logo => {
     if (!prefersMotion || logo.classList.contains('is-hopping')) return;
     logo.classList.add('is-hopping');
   };
-  setTimeout(() => { if (prefersMotion && window.simplecommerceMotion.claim()) play(); }, 1200);
+  setTimeout(() => {
+    if (prefersMotion && !logo.classList.contains('is-hopping') && window.simplecommerceMotion.claim()) play();
+  }, 1200);
   logo.addEventListener('pointerenter', play);
   logo.addEventListener('focus', play);
   logo.addEventListener('animationend', event => {
